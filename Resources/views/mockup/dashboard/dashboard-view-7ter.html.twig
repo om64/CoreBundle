@@ -5,210 +5,179 @@
 {% block panelRest %}
 
 <div class="panel-body">
-<div class="container-fluid">
-    <div class="row features">
-        <div class="col-xs-3">
-            <table class="table">
-                <tr>
-                    <td><button class="btn btn-primary" title="Créer une nouvelle vue">Créer une nouvelle vue <i class="fa fa-plus-square"></i></button></td>
-                </tr>
-                <tr>
-                    <td><div class="form-group input-group"><input type="text" class="form-control" placeholder="Recherche">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i></span>
-                                </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                <tr>
-                    <td><a href="#" title="Ouvrir cette vue">Exercices</a></td>
-                    <td style="text-align: right"><a href="#" title="Supprimer cette vue"><button class="btn btn-danger"> <i class="fa fa-times"></i></button></a>
-                        <a href="#" title="Exporter cette vue"><button class="btn btn-primary"> <i class="fa fa-upload"></i></button></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><a href="#" title="Ouvrir cette vue">Parcours</a></td>
-                    <td style="text-align: right"><a href="#" title="Supprimer cette vue"><button class="btn btn-danger"> <i class="fa fa-times"></i></button></a>
-                        <a href="#" title="Exporter cette vue"><button class="btn btn-primary"> <i class="fa fa-upload"></i></button></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><a href="#" title="Ouvrir cette vue">Fréquentation</a></td>
-                    <td style="text-align: right"><a href="#" title="Supprimer cette vue"><button class="btn btn-danger"> <i class="fa fa-times"></i></button></a>
-                        <a href="#" title="Exporter cette vue"><button class="btn btn-primary"> <i class="fa fa-upload"></i></button></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td><a href="#" title="Ouvrir cette vue">Forums</a></td>
-                    <td style="text-align: right"><a href="#" title="Supprimer cette vue"><button class="btn btn-danger"> <i class="fa fa-times"></i></button></a>
-                        <a href="#" title="Exporter cette vue"><button class="btn btn-primary"> <i class="fa fa-upload"></i></button></a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="container-fluid; col-xs-9">
-            <div class="row features">
-                <div class="col-xs-9">
-                    FILTRES: <button class="btn btn-success">Util. tous | <i class="fa fa-times-circle"></i></button>
-                    <button class="btn btn-success">Exerc. Tous | <i class="fa fa-times-circle"></i></button>
-                    <button class="btn btn-success">Scores | <i class="fa fa-times-circle"></i> </button>
-                    <button class="btn btn-success">% réalisés | <i class="fa fa-times-circle"></i> </button>
-                    <button class="btn btn-success">% terminés | <i class="fa fa-times-circle"></i> </button>
-                    <img src="{{ asset('bundles/clarolinecore/images/mockup/floppy-disk-128.png') }}" title="Enregistrez votre vue" height="48px">
-                    <img src="{{ asset('bundles/clarolinecore/images/mockup/compose.png') }}" title="Modifiez vos filtres" height="48px">
-                </div>
-                <div class="col-xs2; dropdown float-right-top">
-                    <a class="btn btn-xs btn-primary" role="button" href="#" data-toggle="dropdown">
-                        Actions
-                        <span class="fa fa-gear" title="Menu d'actions">
-                        </span>
-                        <i class="caret"></i>
-                    </a>
-                    <ul class="dropdown-menu pull-right" role="menu"></ul>
-                </div>
+    <div class="container-fluid">
+        <div class="row features">
+            <div class="col-xs-8">
+                <p>FILTRES: <button class="btn btn-success"><i class="fa fa-trash"> | Util. tous</i></button>
+                <button class="btn btn-success"><i class="fa fa-trash"> | Exerc. Tous</i></button>
+                <button class="btn btn-success"><i class="fa fa-trash"> | Scores</i> </button>
+                <button class="btn btn-success">% réalisés | <i class="fa fa-times-circle"></i> </button>
+                <button class="btn btn-success">% terminés | <i class="fa fa-times-circle"></i> </button>
             </div>
-            <div class="row features">
-                <div class="col-xs-1">
-                    <p><img src="{{ asset('bundles/clarolinecore/images/mockup/chart_om.png') }}" title="Vue histogramme" height="48px" width="48px"></p>
-                    <p><img src="{{ asset('bundles/clarolinecore/images/mockup/chart.png') }}" title="Vue bâtonnets" height="48px"></p>
-                    <p><img src="{{ asset('bundles/clarolinecore/images/mockup/chart-line.png') }}" title="Vue graphique" height="48px"></p>
-                    <p><img src="{{ asset('bundles/clarolinecore/images/mockup/chart-pie.png') }}" title="Vue en camembert" height="48px"</p>
-                </div>
-                <div class="col-xs-11">
-                    <table class="table table-bordered table-striped table-condensed">
-                        <tr>
-                            <td></td>
-                            <td>Utilisateur</td>
-                            <td></td>
-                            <td>Score</td>
-                            <td>% réalisé</td>
-                            <td>% terminé</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa fa-check-square-o"></i></td>
-                            <td>Jean-Jacques</td>
-                            <td style="text-align: center"><i class="fa fa-search" title="Voir détails"></i></td>
-                            <td>15/25</td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width:77%">
-                                        77%
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width:84%">
-                                        84%
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa fa-check-square-o"></i></td>
-                            <td>David</td>
-                            <td style="text-align: center"><i class="fa fa-search"></i></td>
-                            <td>18/30</td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
-                                        75%
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">75%</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa fa-square-o"></i>
-                                </i></td>
-                            <td>Philippe</td>
-                            <td style="text-align: center"><i class="fa fa-search"></i></td>
-                            <td>17/25</td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width:62%">62%</div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" style="width:68%">68%</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa fa-check-square-o"></i></td>
-                            <td>Nathalie</td>
-                            <td style="text-align: center"><i class="fa fa-search"></i></td>
-                            <td>21/25</td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width:62%">
-                                        62%
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width:62%">
-                                        62%
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa fa-square-o"></i></td>
-                            <td>Shahira</td>
-                            <td style="text-align: center"><i class="fa fa-search"></i></td>
-                            <td>19/25</td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width:72%">72%</div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width:78%">78%</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa fa-check-square-o"></i></td>
-                            <td>Christophe</td>
-                            <td style="text-align: center"><i class="fa fa-search"></i></td>
-                            <td>23/25</td>
-                            <td>
-                                <div class="progress">
-                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width:91%">
-                                    91%
-                                </div>
-                            </div>
-                            </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="width:89%">
-                                        89%
-                                    </div>
-                                </div>
-                        </tr>
-                    </table>
-                </div>
+            <div class="col-xs-2">
+                <i class="fa fa-pencil-square-o fa-3x" title="Modifiez cette vue"></i> | 
+                <i class="fa fa-floppy-o fa-3x" title="Enregistrez cette vue"></i>
+            </div>
+<!--
+            <div class="col-xs-2">
+                <img src="{{ asset('bundles/clarolinecore/images/mockup/floppy-disk-128.png') }}" title="Enregistrez votre vue" height="48px">
+                <img src="{{ asset('bundles/clarolinecore/images/mockup/compose.png') }}" title="Modifiez vos filtres" height="48px"></p>
+            </div>
+-->
+            <div class="col-xs-2">
+                <a class="btn btn-xs btn-primary" role="button" href="#" data-toggle="dropdown">
+                    Actions
+                    <span class="fa fa-gear fa-2x" title="Menu d'actions">
+                    </span>
+                    <i class="caret"></i>
+                </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>Envoyer un message</li>
+                        <li>Exporter vers Excel</li>
+                    </ul>
             </div>
         </div>
     </div>
-</div>
+    <div class="container-fluid">
+        <div class="row features">
+<!--                <div class="col-xs-1">
+                <p><img src="{{ asset('bundles/clarolinecore/images/mockup/chart_om.png') }}" title="Vue histogramme" height="48px" width="48px"></p>
+                <p><img src="{{ asset('bundles/clarolinecore/images/mockup/chart.png') }}" title="Vue bâtonnets" height="48px"></p>
+                <p><img src="{{ asset('bundles/clarolinecore/images/mockup/chart-line.png') }}" title="Vue graphique" height="48px"></p>
+                <p><img src="{{ asset('bundles/clarolinecore/images/mockup/chart-pie.png') }}" title="Vue en camembert" height="48px"</p>
+            </div>
+-->
+            <div class="col-xs-12">
+                <table class="table table-bordered table-striped">
+                    <tr>
+                        <td></td>
+                        <td>Utilisateur</td>
+                        <td></td>
+                        <td>Score</td>
+                        <td>% réalisé</td>
+                        <td>% terminé</td>
+                    </tr>
+                    <tr class="warning">
+                        <td><i class="fa fa-check-square-o"></i></td>
+                        <td>Jean-Jacques</td>
+                        <td style="text-align: center"><i class="fa fa-search" title="Voir détails"></i></td>
+                        <td>15/25</td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width:77%">
+                                    77%
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width:84%">
+                                    84%
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="active">
+                        <td><i class="fa fa-check-square-o"></i></td>
+                        <td>David</td>
+                        <td style="text-align: center"><i class="fa fa-search"></i></td>
+                        <td>18/30</td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+                                    75%
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">75%</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="danger">
+                        <td><i class="fa fa-square-o"></i>
+                            </i></td>
+                        <td>Philippe</td>
+                        <td style="text-align: center"><i class="fa fa-search"></i></td>
+                        <td>17/25</td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width:62%">62%</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" style="width:68%">68%</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-check-square-o"></i></td>
+                        <td>Nathalie</td>
+                        <td style="text-align: center"><i class="fa fa-search"></i></td>
+                        <td>21/25</td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width:62%">
+                                    62%
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width:62%">
+                                    62%
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-square-o"></i></td>
+                        <td>Shahira</td>
+                        <td style="text-align: center"><i class="fa fa-search"></i></td>
+                        <td>19/25</td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width:72%">72%</div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width:78%">78%</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-check-square-o"></i></td>
+                        <td>Christophe</td>
+                        <td style="text-align: center"><i class="fa fa-search"></i></td>
+                        <td>23/25</td>
+                        <td>
+                            <div class="progress">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width:91%">
+                                91%
+                            </div>
+                        </div>
+                        </td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="width:89%">
+                                    89%
+                                </div>
+                            </div>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 <div id="footer">
     <div class="container">
         <div class="row">
             <p>
                 <span class="pull-right locale-select label label-default">FR</span>
-                <span>Développé par <a href="#">Claroline</a></span>
+                <span>Développé par <a href="http://www.claroline.net" target="blank">Claroline</a></span>
             </p>
         </div>
     </div>
