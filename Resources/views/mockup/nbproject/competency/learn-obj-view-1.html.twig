@@ -1,0 +1,33 @@
+{% extends "HeVinciMockupBundle::mockup/competency/learn-obj-tool.html.twig" %}
+
+{% set activeTab = 'objectives' %}
+
+{% block activeTab %}
+    <br>
+    <table class="table table-bordered table-condensed">
+        <tr>
+            <th>Objectif</th>
+            <th>Référentiel</th>
+            <th>Niveau</th>
+            <th>Statut <i class="fa fa-info-circle" style="cursor: pointer"></i></th>
+            <th colspan="5">Actions</th>
+        </tr>
+        <tr>
+            <td class="objective">Améliorer ses compétences en lecture</td>
+            <td>-</td>
+            <td>-</td>
+            <td class="danger"><a href="#">Incomplet</a></td>
+            <td><a href="#"><i class="fa fa-search-plus disabled" title="Détails"></i></a></td>
+            <td><a href="#"><i class="fa fa-user" title="Apprenants"></i></a></td>
+            <td><a href="#"><i class="fa fa-plus" title="Ajouter une compétence"></i></a></td>
+            <td><a href="#"><i class="fa fa-pencil" title="Modifier"></i></a></td>
+            <td><a href="#"><i class="fa fa-remove" title="Supprimer"></i></a></td>
+        </tr>
+    </table>
+{% endblock %}
+
+{% block panelFooter %}
+    <button id="show-add-form" class="btn btn-primary">
+        Créer un objectif
+    </button>
+{% endblock %}

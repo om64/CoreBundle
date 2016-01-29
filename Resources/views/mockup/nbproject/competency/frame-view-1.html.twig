@@ -1,0 +1,86 @@
+{% extends 'HeVinciMockupBundle::mockup/competency/frame-tool.html.twig' %}
+
+{% block panelTitle %}Palef{% endblock %}
+
+{% block panelRest %}
+    <style>
+        ul.framework li {
+            list-style: none;
+        }
+
+        ul.framework li i:first-of-type {
+            vertical-align: middle;
+            font-size: 80%;
+            color: rgba(0,0,0,0.70);
+            cursor: pointer;
+        }
+
+        i.invisible {
+            visibility: hidden;
+        }
+    </style>
+
+    <div class="panel-body">
+        <ul class="framework">
+            <li class="dropdown">
+                <i class="fa fa-minus-square-o"></i>
+                <a href="#">
+                    Palef
+                    <span class="caret"></span>
+                </a>
+                <ul>
+                    <li>
+                        <i class="fa fa-plus-square-o"></i>
+                        <a href="#">
+                            Savoir lire
+                            <span class="caret"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fa fa-plus-square-o invisible"></i>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Savoir écrire
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation">
+                                <a role="menuitem" href="#" tabindex="-1">
+                                    Modifier
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" href="#" tabindex="-1">
+                                    Supprimer
+                                </a>
+                            </li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation">
+                                <a role="menuitem" href="#" tabindex="-1">
+                                    Créer une sous-compétence
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" href="#" tabindex="-1">
+                                    Créer une capacité
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" href="#" tabindex="-1">
+                                    Ajouter une capacité
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="panel-footer">
+        <button class="btn btn-primary">
+            Changer d'échelle
+        </button>
+        <button class="btn btn-danger">
+            Supprimer
+        </button>
+    </div>
+{% endblock %}

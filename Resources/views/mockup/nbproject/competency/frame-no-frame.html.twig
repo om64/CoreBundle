@@ -1,0 +1,21 @@
+{% extends 'HeVinciMockupBundle::mockup/competency/frame-tool.html.twig' %}
+
+{% block panelRest %}
+    <div class="panel-body">
+        <br>
+        <div class="alert alert-info" role="alert">
+            <i class="fa fa-info-circle"></i>
+            Il n'y a pas encore de référentiels.
+            Vous pouvez créer un nouveau référentiel ou gérer les échelles
+            de difficultés à l'aide des boutons ci-dessous.
+        </div>
+    </div>
+    <div class="panel-footer">
+        <button id="show-add-form" class="btn btn-primary">
+            Créer un référentiel
+        </button>
+        <button id="show-add-form" class="btn btn-primary">
+            Gérer les échelles
+        </button>
+    </div>
+{% endblock %}

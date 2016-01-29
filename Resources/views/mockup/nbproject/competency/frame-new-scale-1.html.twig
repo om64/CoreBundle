@@ -1,0 +1,45 @@
+{% extends "HeVinciMockupBundle::mockup/competency/frame-no-scale.html.twig" %}
+
+{% block modal %}
+    {% embed "HeVinciMockupBundle::library/claroline/modal.html.twig" %}
+        {% block title %}Créer une échelle{% endblock %}
+        {% block body %}
+            <form id="competence-create-form" action="#" method="POST">
+                <div id="competence_form">
+                    <div class="form-group row">
+                        <label class="control-label col-md-3 required" for="competence_form_name">
+                            Nom
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text"
+                                   id="competence_form_name" name="competence_form[name]"
+                                   value="CECR"
+                                   required="required" class="form-control"
+                                   autofocus
+                                   onfocus="this.value = this.value;"
+                                    />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="control-label col-md-3 required" for="competence_form_description">
+                            Degrés
+                        </label>
+                        <div class="col-md-9">
+                            <textarea
+                                    id="competence_form_description"
+                                    name="competence_form[description]"
+                                    required="required"
+                                    class="form-control"
+                                    rows="6"
+                                    placeholder="Les degrés doivent être séparés par des retours à la ligne. Exemple :
+
+Facile
+Moyen
+Difficile"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

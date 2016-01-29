@@ -1,0 +1,196 @@
+{% extends "HeVinciMockupBundle::mockup/competency/learn-obj-tool.html.twig" %}
+
+{% set activeTab = 'users' %}
+
+{% block activeTab %}
+    <nav style="margin:auto; width:300px">
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <table class="table table-bordered table-condensed">
+        <tr>
+            <th>Utilisateur</th>
+            <th>Référentiel</th>
+            <th>Progression</th>
+            <th>Niveau obtenu</th>
+            <th>Niveau attendu</th>
+            <th colspan="3">Actions</th>
+        </tr>
+        <tr>
+            <td class="objective">Jane Doe</td>
+            <td>-</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45" style="width: 35%;"></div>
+                </div>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="#"><i class="fa fa-search-minus" title="Détails"></i></a></td>
+            <td><a href="#"><i class="fa fa-bar-chart" title="Historique et statistiques"></i></a></td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="competency level-1">Améliorer ses compétences en lecture</td>
+            <td>Palef</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45" style="width: 45%;"></div>
+                </div>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="#"><i class="fa fa-search-plus" title="Détails"></i></a></td>
+            <td><a href="#"><i class="fa fa-bar-chart" title="Historique et statistiques"></i></a></td>
+            <td><a href="#"><i class="fa fa-remove" title="Retirer cet objectif"></i></a></td>
+        </tr>
+        <tr>
+            <td class="competency level-1">Comprendre les bases de la biologie</td>
+            <td>Biologie (I)</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45" style="width: 25%;"></div>
+                </div>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="#"><i class="fa fa-search-plus" title="Détails"></i></a></td>
+            <td><a href="#"><i class="fa fa-bar-chart" title="Historique et statistiques"></i></a></td>
+            <td><a href="#"><i class="fa fa-remove" title="Retirer cet objectif"></i></a></td>
+        </tr>
+        <tr>
+            <td class="objective">Leida Pickard</td>
+            <td>-</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45" style="width: 72%;"></div>
+                </div>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="#"><i class="fa fa-search-plus" title="Détails"></i></a></td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="objective">Emilio Rashid</td>
+            <td>-</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45" style="width: 10%;"></div>
+                </div>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="#"><i class="fa fa-search-plus" title="Détails"></i></a></td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="objective">Sherice Griest</td>
+            <td>-</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45" style="width: 24%;"></div>
+                </div>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="#"><i class="fa fa-search-plus" title="Détails"></i></a></td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="objective">Cassi Moraga</td>
+            <td>-</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45" style="width: 62%;"></div>
+                </div>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="#"><i class="fa fa-search-plus" title="Détails"></i></a></td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="objective">Mauro Lanphear</td>
+            <td>-</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45" style="width: 0%;"></div>
+                </div>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="#"><i class="fa fa-search-plus" title="Détails"></i></a></td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="objective">Ione Peloquin</td>
+            <td>-</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45" style="width: 59%;"></div>
+                </div>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="#"><i class="fa fa-search-plus" title="Détails"></i></a></td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="objective">Hassan Valvo</td>
+            <td>-</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45" style="width: 100%;"></div>
+                </div>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="#"><i class="fa fa-search-plus" title="Détails"></i></a></td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="objective">Wilhelmina Bradburn</td>
+            <td>-</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45" style="width: 80%;"></div>
+                </div>
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="#"><i class="fa fa-search-plus" title="Détails"></i></a></td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+    </table>
+{% endblock %}
+
+{% block panelFooter %}
+    <button id="show-add-form" class="btn btn-primary">
+        Créer un objectif
+    </button>
+{% endblock %}

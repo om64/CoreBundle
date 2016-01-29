@@ -1,0 +1,103 @@
+{% extends 'HeVinciMockupBundle::library/claroline/tool.html.twig' %}
+
+{% set toolName = "Ressources" %}
+{% set toolIcon = "folder-open" %}
+{% set toolPage = ['Espace personnel - admin', 'Activité 1', 'Gestion des compétences'] %}
+
+{% block panelTitle %}
+    Activité 1 - Gestion des compétences
+{% endblock %}
+
+{% block panelRest %}
+    <style>
+        table {
+            font-size: inherit;
+        }
+
+        table ul {
+            padding-left: 2em;
+            list-style-type: none;
+        }
+
+        table ul li:before {
+            content: "-";
+            position: relative;
+            left: -5px;
+        }
+
+        table ul li {
+            text-indent: -5px;
+        }
+    </style>
+    <div class="panel-body">
+        <table class="table table-condensed table-bordered">
+            <thead>
+            <tr>
+                <th>Compétences liées</th>
+                <th>Origine</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tr>
+                <td>
+                    Activer ses connaissances à propos des genres
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            Palef
+                            <ul>
+                                <li>
+                                    Savoir lire
+                                    <ul>
+                                        <li>
+                                            Comprendre l'organisation du texte
+                                            <ul>
+                                                <li>
+                                                    Reconnaître le genre du message
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <i class="fa fa-remove"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Saisir la progression de l'information
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            Palef
+                            <ul>
+                                <li>
+                                    Savoir lire
+                                    <ul>
+                                        <li>
+                                            Percevoir la cohérence dans le texte
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <i class="fa fa-remove"></i>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-footer">
+        <button id="show-add-form" class="btn btn-primary">
+            Associer une compétence
+        </button>
+    </div>
+{% endblock %}

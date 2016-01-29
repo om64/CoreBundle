@@ -1,0 +1,25 @@
+{% extends 'HeVinciMockupBundle::library/claroline/tool.html.twig' %}
+
+{% set toolName = "Ressources" %}
+{% set toolIcon = "folder-open" %}
+{% set toolPage = ['Espace personnel - admin', 'Activité 1', 'Gestion des compétences'] %}
+
+{% block panelTitle %}
+    Activité 1 - Gestion des compétences
+{% endblock %}
+
+{% block panelRest %}
+    <div class="panel-body">
+        <br>
+        <div class="alert alert-info" role="alert">
+            <i class="fa fa-info-circle"></i>
+            Il n'y a encore aucune compétence associée à cette activité.
+            Cliquez sur le bouton ci-dessous pour sélectionner une compétence.
+        </div>
+    </div>
+    <div class="panel-footer">
+        <button id="show-add-form" class="btn btn-primary">
+            Associer une compétence
+        </button>
+    </div>
+{% endblock %}

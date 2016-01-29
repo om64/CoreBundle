@@ -1,0 +1,254 @@
+{% extends 'HeVinciMockupBundle::mockup/competency/frame-tool.html.twig' %}
+
+{% block panelTitle %}Palef{% endblock %}
+
+{% block panelRest %}
+    <style>
+        ul.framework li {
+            list-style: none;
+        }
+
+        ul.framework li i:first-of-type {
+            vertical-align: middle;
+            font-size: 80%;
+            color: rgba(0,0,0,0.70);
+            cursor: pointer;
+        }
+
+        ul.framework li table {
+            margin-bottom: 2px;
+            font-size: inherit;
+            color: rgba(0,0,0,0.80);
+        }
+
+        ul.framework li table td {
+            padding: 2px;
+        }
+
+        ul.framework li table td:first-of-type {
+            color: rgba(0,0,0,0.70);
+        }
+
+        ul.framework li table td i {
+            color: red;
+            vertical-align: middle;
+        }
+
+        i.invisible {
+            visibility: hidden;
+        }
+    </style>
+
+    <div class="panel-body">
+    <ul class="framework">
+    <li class="dropdown">
+        <i class="fa fa-minus-square-o"></i>
+        <a href="#">
+            Palef
+            <span class="caret"></span>
+        </a>
+        <ul>
+            <li>
+                <i class="fa fa-minus-square-o"></i>
+                <a href="#">
+                    Savoir lire
+                    <span class="caret"></span>
+                </a>
+                <ul>
+                    <li>
+                        <i class="fa fa-minus-square-o"></i>
+                        <a href="#">
+                            Comprendre l'organisation du texte
+                            <span class="caret"></span>
+                        </a>
+                        <ul>
+                            <li>
+                                <i class="fa fa-minus-square-o"></i>
+                                <a href="#">
+                                    Reconnaître le genre du message
+                                    <span class="caret"></span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <i class="fa fa-minus-square-o"></i>
+                                        <a href="#">
+                                            Activer ses connaissances à propos des genres
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul>
+                                            <li>
+                                                <table class="table table-bordered table-condensed">
+                                                    <tr>
+                                                        <td>A1</td>
+                                                        <td>
+                                                            Identifier parmi une série de textes celui qui correspond à un genre donné
+                                                        </td>
+                                                        <td>
+                                                            <i class="fa fa-pencil"></i>
+                                                        </td>
+                                                        <td>
+                                                            <i class="fa fa-remove"></i>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>A2</td>
+                                                        <td>
+                                                            Aparier des textes et identifier les points communs
+                                                        </td>
+                                                        <td>
+                                                            <i class="fa fa-pencil"></i>
+                                                        </td>
+                                                        <td>
+                                                            <i class="fa fa-remove"></i>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>B1</td>
+                                                        <td>
+                                                            Exclure un texte d'une série en fonction de sa non adéquation au genre défini
+                                                        </td>
+                                                        <td>
+                                                            <i class="fa fa-pencil"></i>
+                                                        </td>
+                                                        <td>
+                                                            <i class="fa fa-remove"></i>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>B2</td>
+                                                        <td>
+                                                            Choisir un genre de texte en fonction d'une situation de communication donnée
+                                                        </td>
+                                                        <td>
+                                                            <i class="fa fa-pencil"></i>
+                                                        </td>
+                                                        <td>
+                                                            <i class="fa fa-remove"></i>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>C1</td>
+                                                        <td>
+                                                            Assembler des extraits d'un texte en fonction d'un genre
+                                                        </td>
+                                                        <td>
+                                                            <i class="fa fa-pencil"></i>
+                                                        </td>
+                                                        <td>
+                                                            <i class="fa fa-remove"></i>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>C2</td>
+                                                        <td>
+                                                            Expliquer sa démarche d'identification d'un genre et son intérêt
+                                                        </td>
+                                                        <td>
+                                                            <i class="fa fa-pencil"></i>
+                                                        </td>
+                                                        <td>
+                                                            <i class="fa fa-remove"></i>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-plus-square-o"></i>
+                                        <a href="#">
+                                            Confronter un texte à différents modèles de schémas
+                                            <span class="caret"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <i class="fa fa-minus-square-o"></i>
+                                <a href="#">
+                                    Relier entre elles les différentes informations
+                                    <span class="caret"></span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <i class="fa fa-plus-square-o"></i>
+                                        <a href="#">
+                                            Identifier la progression d'un texte
+                                            <span class="caret"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-plus-square-o"></i>
+                                        <a href="#">
+                                            Identifier les consignes d'un texte injonctif
+                                            <span class="caret"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-plus-square-o"></i>
+                                        <a href="#">
+                                            Identifier les arguments d'un texte
+                                            <span class="caret"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="fa fa-plus-square-o"></i>
+                        <a href="#">
+                            Percevoir la cohérence dans le texte
+                            <span class="caret"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fa fa-plus-square-o"></i>
+                        <a href="#">
+                            Distinguer les unités lexicales
+                            <span class="caret"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fa fa-plus-square-o"></i>
+                        <a href="#">
+                            Distinguer les unités grammaticales
+                            <span class="caret"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fa fa-plus-square-o"></i>
+                        <a href="#">
+                            Saisir la dimension non verbale
+                            <span class="caret"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fa fa-plus-square-o"></i>
+                        <a href="#">
+                            Maîtriser les situations de communication
+                            <span class="caret"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <i class="fa fa-plus-square-o"></i>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Savoir écrire
+                    <span class="caret"></span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    </ul>
+    </div>
+    <div class="panel-footer">
+        <button id="show-add-form" class="btn btn-primary" disabled>
+            Changer d'échelle
+        </button>
+        <button id="show-add-form" class="btn btn-danger">
+            Supprimer
+        </button>
+    </div>
+{% endblock %}

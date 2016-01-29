@@ -1,0 +1,66 @@
+{% extends 'HeVinciMockupBundle::library/claroline/tool.html.twig' %}
+
+{% set toolName = "Mes objectifs d'apprentissage" %}
+{% set toolSection = "Bureau" %}
+{% set toolIcon = "arrow-up" %}
+
+{% block panelRest %}
+    <style>
+        table {
+            font-size: inherit;
+            border-collapse: collapse;
+        }
+
+        table ul {
+            padding-left: 2em;
+            list-style-type: none;
+        }
+
+        table ul li:before {
+            content: "-";
+            position: relative;
+            left: -5px;
+        }
+
+        table ul li {
+            text-indent: -5px;
+        }
+
+        table td i.fa {
+            line-height: inherit;
+        }
+
+        .table-bordered > tbody > tr > td.objective {
+            border-bottom: none;
+            font-weight: bold;
+        }
+
+        .table-bordered > tbody > tr > td.competency {
+            border-style: dashed;
+        }
+
+        .table-bordered > tbody > tr > td.competency.level-1 {
+            padding-left: 30px;
+        }
+
+        .table-bordered > tbody > tr > td.competency.level-2 {
+            padding-left: 60px;
+        }
+
+        .table-bordered > tbody > tr > td.competency.level-3 {
+            padding-left: 90px;
+        }
+
+        .table-bordered > tbody > tr > td:not(:first-child) {
+            text-align: center;
+        }
+
+        div.progress {
+            min-width: 80px;
+            margin: inherit;
+        }
+    </style>
+    <div class="panel-body">
+        {% block panelBody %}{% endblock %}
+    </div>
+{% endblock %}

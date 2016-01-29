@@ -1,0 +1,48 @@
+{% extends 'HeVinciMockupBundle::library/claroline/resourceManager.html.twig' %}
+{% import 'HeVinciMockupBundle::library/claroline/resourceManager.html.twig' as macros %}
+
+{% set toolPage = ['Espace personnel - admin'] %}
+
+{% block panelTitle %}Ressources{% endblock %}
+
+{% block resources %}
+    {{
+        macros.resource({
+            "name": "Divers",
+            "icon": "bundles/clarolinecore/images/resources/icons/res_folder.png"
+        })
+    }}
+    {{
+        macros.resource({
+            "name": "Document",
+            "icon": "bundles/clarolinecore/images/resources/icons/res_pdf.png"
+        })
+    }}
+    {{
+        macros.resource({
+            "name": "Exercice 1",
+            "icon": "bundles/ujmexo/images/icons/res_exo.png",
+            "customActions": ['Composer']
+        })
+    }}
+    {{
+        macros.resource({
+            "name": "Activité 1",
+            "icon": "bundles/clarolinecore/images/resources/icons/res_activity.png",
+            "customActions": ['Gérer les compétences']
+        })
+    }}
+
+    <script>
+        // open the activity menu
+        $(function () {
+            var activityLink = $('.node-thumbnail:nth-of-type(4) a')[0];
+            var event = document.createEvent('MouseEvents');
+            event.initMouseEvent(
+                'click', true, true, window, 0, 0, 0, 0, 0,
+                false, false, false, false, 0, activityLink
+            );
+            activityLink.dispatchEvent(event);
+        });
+    </script>
+{% endblock %}

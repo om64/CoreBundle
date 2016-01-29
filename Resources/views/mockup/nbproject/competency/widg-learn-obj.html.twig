@@ -1,0 +1,169 @@
+{% extends 'HeVinciMockupBundle::library/claroline/tool.html.twig' %}
+
+{% set toolName = 'Accueil' %}
+{% set toolSection = 'Bureau' %}
+
+{% block panelRest %}
+    <style>
+        table {
+            font-size: inherit;
+            border-collapse: collapse;
+        }
+
+        table ul {
+            padding-left: 2em;
+            list-style-type: none;
+        }
+
+        .table-bordered > tbody > tr > td {
+            vertical-align: middle;
+            line-height: inherit;
+        }
+
+        table td.action {
+            text-align: center;
+        }
+
+        .progress {
+            min-width: 200px;
+            margin: inherit;
+        }
+
+        .progress-bar {
+            line-height: 20px
+        }
+    </style>
+    <div class="panel-body">
+        <ul class="nav nav-tabs margin-bottom-md">
+            <li class="hometab-element  active ">
+                <a href="#" class="hometab-link">
+                    Informations
+                </a>
+            </li>
+        </ul>
+        <div class="panel-group">
+            <div id="widgets-list-panel">
+                <div class="panel panel-default widget-instance-panel">
+                    <div class="panel-heading relative">
+                        <div class="panel-title">
+                            <a class="accordion-toggle widget-instance-name" data-toggle="collapse" href="#collapse1">
+                                Mes objectifs
+                            </a>
+                        </div>
+                    </div>
+                    <div id="collapse1" class="collapse-widget collapse in">
+                        <div class="panel-body widget-instance-view">
+                            <table class="table table-bordered table-condensed">
+                                <tr>
+                                    <td class="objective">Améliorer ses compétences en lecture</td>
+                                    <td>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45" style="width: 45%;">
+                                                45%
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="action"><a href="#" class="btn btn-default btn-sm">Poursuivre</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="objective">Comprendre les bases de la biologie</td>
+                                    <td>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+                                                30%
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="action"><a href="#" class="btn btn-default btn-sm">Commencer</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default widget-instance-panel">
+                    <div class="panel-heading relative">
+                        <div class="panel-title">
+                            <a class="accordion-toggle widget-instance-name" data-toggle="collapse" href="#collapse1">
+                                Mes espaces
+                            </a>
+                        </div>
+                    </div>
+                    <div id="collapse1" class="collapse-widget collapse in">
+                        <div class="panel-body widget-instance-view">
+                            <ul class="nav nav-pills">
+                                <li id="all-my-workspaces-btn" class="active">
+                                    <a href="">
+                                        Tous mes espaces d'activités
+                                    </a>
+                                </li>
+                                <li id="favourite-workspaces-btn">
+                                    <a href="">
+                                        Mes espaces d'activités favoris
+                                    </a>
+                                </li>
+                            </ul>
+                            <br>
+
+                            <div id="workspaces-list-element">
+                                <div id="mode-element" data-mode="0">
+                                </div>
+
+                                <a class="col-md-6" href="/claronext/web/app_dev.php/workspaces/1/open">
+                                    <i class="fa fa-book"></i>
+                                    Espace personnel - admin
+                                    <span>
+                                        <small>
+                                            (admin)
+                                        </small>
+                                    </span>
+                                </a>
+                            </div>
+                            <div id="workspaces-list-element">
+                                <div id="mode-element" data-mode="0">
+                                </div>
+
+                                <a class="col-md-6" href="/claronext/web/app_dev.php/workspaces/1/open">
+                                    <i class="fa fa-book"></i>
+                                    Géographie
+                                </a>
+                            </div>
+                            <div id="workspaces-list-element">
+                                <div id="mode-element" data-mode="0">
+                                </div>
+
+                                <a class="col-md-6" href="/claronext/web/app_dev.php/workspaces/1/open">
+                                    <i class="fa fa-book"></i>
+                                    Mathématiques
+                                    <span>
+                                        <small>
+                                            (admin)
+                                        </small>
+                                    </span>
+                                </a>
+                            </div>
+                            <div id="workspaces-list-element">
+                                <div id="mode-element" data-mode="0">
+                                </div>
+
+                                <a class="col-md-6" href="/claronext/web/app_dev.php/workspaces/1/open">
+                                    <i class="fa fa-book"></i>
+                                    Groupe de travail
+                                </a>
+                            </div>
+                            <div id="workspaces-list-element">
+                                <div id="mode-element" data-mode="0">
+                                </div>
+
+                                <a class="col-md-6" href="/claronext/web/app_dev.php/workspaces/1/open">
+                                    <i class="fa fa-book"></i>
+                                    Français
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

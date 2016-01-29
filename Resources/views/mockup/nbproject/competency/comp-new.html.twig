@@ -1,0 +1,28 @@
+{% extends "HeVinciMockupBundle::mockup/competency/frame-view-1.html.twig" %}
+
+{% block modal %}
+    {% embed "HeVinciMockupBundle::library/claroline/modal.html.twig" %}
+        {% block title %}Créer une sous-compétence{% endblock %}
+        {% block body %}
+            <form action="#" method="POST">
+                <div id="competence_form">
+                    <div class="form-group row">
+                        <label class="control-label col-md-3 required" for="competence_form_name">
+                            Nom
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text"
+                                   id="competence_form_name" name="competence_form[name]"
+                                   value="Comprendre l'organisation du texte"
+                                   required="required"
+                                   class="form-control"
+                                   onfocus="this.value = this.value;"
+                                   autofocus
+                                    />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

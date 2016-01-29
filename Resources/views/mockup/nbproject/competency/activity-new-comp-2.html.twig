@@ -1,0 +1,51 @@
+{% extends 'HeVinciMockupBundle::mockup/competency/activity-no-comp.html.twig' %}
+
+{% block modal %}
+    {% embed "HeVinciMockupBundle::library/claroline/modal.html.twig" %}
+        {% block title %}Associer une compétence{% endblock %}
+        {% block body %}
+            <style>
+                ul.comp-picker, ul.comp-picker ul {
+                    list-style: none;
+                }
+
+                ul.comp-picker {
+                    cursor: pointer;
+                }
+
+                ul.comp-picker i {
+                    color: rgba(0,0,0,0.6);
+                }
+
+                ul.comp-picker span.selected {
+                    padding: 3px;
+                    color: white;
+                    background-color: #428bca;
+                    border-radius: 3px;
+                }
+            </style>
+            <div>Sélectionnez une compétence :</div>
+            <br>
+            <ul class="comp-picker">
+                <li>
+                    <i class="fa fa-minus-square-o"></i>
+                    Savoir lire
+                    <ul>
+                        <li>
+                            <i class="fa fa-plus-square-o"></i>
+                            <span class="selected">Comprendre l'organisation du texte</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-plus-square-o"></i>
+                            Percevoir la cohérence dans le texte
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <i class="fa fa-plus-square-o"></i>
+                    Savoir écrire
+                </li>
+            </ul>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

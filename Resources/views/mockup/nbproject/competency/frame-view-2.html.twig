@@ -1,0 +1,157 @@
+{% extends 'HeVinciMockupBundle::mockup/competency/frame-tool.html.twig' %}
+
+{% block panelTitle %}Palef{% endblock %}
+
+{% block panelRest %}
+    <style>
+        ul.framework li {
+            list-style: none;
+        }
+
+        ul.framework li i:first-of-type {
+            vertical-align: middle;
+            font-size: 80%;
+            color: rgba(0,0,0,0.70);
+            cursor: pointer;
+        }
+
+        i.invisible {
+            visibility: hidden;
+        }
+    </style>
+
+    <div class="panel-body">
+        <ul class="framework">
+            <li class="dropdown">
+                <i class="fa fa-minus-square-o"></i>
+                <a href="#">
+                    Palef
+                    <span class="caret"></span>
+                </a>
+                <ul>
+                    <li>
+                        <i class="fa fa-minus-square-o"></i>
+                        <a href="#">
+                            Savoir lire
+                            <span class="caret"></span>
+                        </a>
+                        <ul>
+                            <li>
+                                <i class="fa fa-minus-square-o"></i>
+                                <a href="#">
+                                    Comprendre l'organisation du texte
+                                    <span class="caret"></span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <i class="fa fa-minus-square-o"></i>
+                                        <a href="#">
+                                            Reconnaître le genre du message
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul>
+                                            <li>
+                                                <i class="fa fa-minus-square-o invisible"></i>
+                                                <a href="#">
+                                                    Activer ses connaissances à propos des genres
+                                                    <span class="caret"></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-minus-square-o invisible"></i>
+                                                <a href="#">
+                                                    Confronter un texte à différents modèles de schémas
+                                                    <span class="caret"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-minus-square-o"></i>
+                                        <a href="#">
+                                            Relier entre elles les différentes informations
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul>
+                                            <li>
+                                                <i class="fa fa-minus-square-o invisible"></i>
+                                                <a href="#">
+                                                    Identifier la progression d'un texte
+                                                    <span class="caret"></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-minus-square-o invisible"></i>
+                                                <a href="#">
+                                                    Identifier les consignes d'un texte injonctif
+                                                    <span class="caret"></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-minus-square-o invisible"></i>
+                                                <a href="#">
+                                                    Identifier les arguments d'un texte
+                                                    <span class="caret"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <i class="fa fa-plus-square-o"></i>
+                                <a href="#">
+                                    Percevoir la cohérence dans le texte
+                                    <span class="caret"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <i class="fa fa-plus-square-o"></i>
+                                <a href="#">
+                                    Distinguer les unités lexicales
+                                    <span class="caret"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <i class="fa fa-plus-square-o"></i>
+                                <a href="#">
+                                    Distinguer les unités grammaticales
+                                    <span class="caret"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <i class="fa fa-plus-square-o"></i>
+                                <a href="#">
+                                    Saisir la dimension non verbale
+                                    <span class="caret"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <i class="fa fa-plus-square-o"></i>
+                                <a href="#">
+                                    Maîtriser les situations de communication
+                                    <span class="caret"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="fa fa-plus-square-o"></i>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Savoir écrire
+                            <span class="caret"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="panel-footer">
+        <button id="show-add-form" class="btn btn-primary">
+            Changer d'échelle
+        </button>
+        <button id="show-add-form" class="btn btn-danger">
+            Supprimer
+        </button>
+    </div>
+{% endblock %}

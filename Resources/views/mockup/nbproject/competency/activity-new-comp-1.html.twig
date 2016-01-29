@@ -1,0 +1,18 @@
+{% extends 'HeVinciMockupBundle::mockup/competency/activity-no-comp.html.twig' %}
+
+{% block modal %}
+    {% embed "HeVinciMockupBundle::library/claroline/modal.html.twig" %}
+        {% block title %}Associer une compétence{% endblock %}
+        {% block body %}
+            <div>Sélectionnez un référentiel :</div>
+            <br>
+            <ul>
+                <li><a href="#">Mathématiques</a></li>
+                <li><a href="#">Biologie</a></li>
+                <li><a href="#">Géographie</a></li>
+                <li><a href="#">Palef</a></li>
+                <li><a href="#">Cecr</a></li>
+            </ul>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

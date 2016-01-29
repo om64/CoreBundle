@@ -1,0 +1,37 @@
+{% extends 'HeVinciMockupBundle::mockup/competency/learn-obj-view-1.html.twig' %}
+
+{% block modal %}
+    {% embed "HeVinciMockupBundle::library/claroline/modal.html.twig" %}
+        {% block title %}Associer une compétence{% endblock %}
+        {% block body %}
+            <div>Déterminez le niveau de compétence à atteindre :</div>
+            <br>
+            <form action="#" method="POST">
+                <div class="form-group row">
+                    <label class="control-label col-md-3 required" for="competence_form_score">
+                        Niveau attendu
+                    </label>
+                    <div class="col-md-9">
+                        <select class="form-control">
+                            <option>A1a</option>
+                            <option>A1b</option>
+                            <option>A1c</option>
+                            <option>A2a</option>
+                            <option>A2b</option>
+                            <option>A2c</option>
+                            <option selected>B1a</option>
+                            <option>B1b</option>
+                            <option>B1c</option>
+                            <option>B2a</option>
+                            <option>B2b</option>
+                            <option>B2c</option>
+                            <option>C1a</option>
+                            <option>C1b</option>
+                            <option>C1c</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'ClarolineCoreBundle::library/claroline/tool.html.twig' %}
+
+{% set toolName = "Tableau de bord" %}
+{% set toolSection = "Administration" %}
+{% set toolIcon = "arrow-up" %}
+
+{% set activeTab = activeTab is defined ? activeTab : 'objectives' %}
+
+{% block panelRest %}
+    <style>
+        table {
+            font-size: inherit;
+            border-collapse: collapse;
+        }
+
+        table ul {
+            padding-left: 2em;
+            list-style-type: none;
+        }
+
+        table ul li:before {
+            content: "-";
+            position: relative;
+            left: -5px;
+        }
+
+        table ul li {
+            text-indent: -5px;
+        }
+
+        table td i.fa {
+            line-height: inherit;
+        }
+
+        .table-bordered > tbody > tr > td.objective {
+            border-bottom: none;
+            font-weight: bold;
+        }
+
+        .table-bordered > tbody > tr > td.competency,
+        .table-bordered > tbody > tr > td.ability {
+            border-style: dashed;
+        }
+
+        .table-bordered > tbody > tr > td.ability {
+            font-style: italic;
+        }
+
+        .table-bordered > tbody > tr > td.level-1 {
+            padding-left: 30px;
+        }
+
+        .table-bordered > tbody > tr > td.level-2 {
+            padding-left: 60px;
+        }
+
+        .table-bordered > tbody > tr > td.level-3 {
+            padding-left: 90px;
+        }
+
+        .table-bordered > tbody > tr > td.small {
+            font-size: 0.8em;
+            font-style: italic;
+            line-height: inherit;
+            vertical-align: middle;
+        }
+
+        .table-bordered > tbody > tr > td:not(:first-child) {
+            text-align: center;
+        }
+
+        div.progress {
+            min-width: 80px;
+            margin: inherit;
+        }
+    </style>
+    <div class="panel-body">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" {% if activeTab == 'objectives' %}class="active"{% endif %}>
+                <a href="#objectives" aria-controls="objectives" role="tab" data-toggle="tab">
+                    Objectifs
+                </a>
+            </li>
+            <li role="presentation" {% if activeTab == 'users' %}class="active"{% endif %}>
+                <a href="#users" aria-controls="users" role="tab" data-toggle="tab">
+                    Utilisateurs
+                </a>
+            </li>
+            <li role="presentation" {% if activeTab == 'groups' %}class="active"{% endif %}>
+                <a href="#groups" aria-controls="groups" role="tab" data-toggle="tab">
+                    Groupes
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active">
+                {% block activeTab %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        {% block panelFooter %}{% endblock %}
+    </div>
+{% endblock %}

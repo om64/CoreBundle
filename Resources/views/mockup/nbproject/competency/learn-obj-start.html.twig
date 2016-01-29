@@ -1,0 +1,18 @@
+{% extends "HeVinciMockupBundle::mockup/competency/learn-obj-tool.html.twig" %}
+
+{% set activeTab = 'objectives' %}
+
+{% block activeTab %}
+    <br>
+    <div class="alert alert-info" role="alert">
+        <i class="fa fa-info-circle"></i>
+        Il n'y a encore aucun objectif d'apprentissage.
+        Cliquez sur le bouton ci-dessous pour créer un nouvel objectif.
+    </div>
+{% endblock %}
+
+{% block panelFooter %}
+    <button id="show-add-form" class="btn btn-primary">
+        Créer un objectif
+    </button>
+{% endblock %}

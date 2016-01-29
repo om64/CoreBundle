@@ -1,0 +1,44 @@
+{% extends "HeVinciMockupBundle::mockup/competency/frame-no-scale.html.twig" %}
+
+{% block modal %}
+    {% embed "HeVinciMockupBundle::library/claroline/modal.html.twig" %}
+        {% block title %}Créer une échelle{% endblock %}
+        {% block body %}
+            <form action="#" method="POST">
+                <div>
+                    <div class="form-group row">
+                        <label class="control-label col-md-3 required" for="competence_form_name">
+                            Nom
+                        </label>
+                        <div class="col-md-9">
+                            <input type="text"
+                                   value="CECR"
+                                   required="required"
+                                   class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="control-label col-md-3 required" for="competence_form_description">
+                            Degrés
+                        </label>
+                        <div class="col-md-9">
+                            <textarea
+                                    id="competence_form_description"
+                                    name="competence_form[description]"
+                                    required="required"
+                                    class="form-control"
+                                    rows="6"
+                                    >
+A1
+A2
+B1
+B2
+C1
+C2</textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

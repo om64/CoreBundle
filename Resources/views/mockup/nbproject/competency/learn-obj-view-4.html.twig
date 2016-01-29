@@ -1,0 +1,253 @@
+{% extends "HeVinciMockupBundle::mockup/competency/learn-obj-tool.html.twig" %}
+
+{% set activeTab = 'objectives' %}
+
+{% block activeTab %}
+    <br>
+    <table class="table table-bordered table-condensed">
+        <tr>
+            <th>Objectif</th>
+            <th>Référentiel</th>
+            <th>Niveau</th>
+            <th>Statut <i class="fa fa-info-circle" style="cursor: pointer"></i></th>
+            <th colspan="5">Actions</th>
+        </tr>
+        <tr>
+            <td class="objective">Améliorer ses compétences en lecture</td>
+            <td>-</td>
+            <td>-</td>
+            <td>Complet</td>
+            <td><a href="#"><i class="fa fa-search-minus" title="Détails"></i></a></td>
+            <td><a href="#"><i class="fa fa-user" title="Apprenants"></i></a></td>
+            <td><a href="#"><i class="fa fa-plus" title="Ajouter une compétence"></i></a></td>
+            <td><a href="#"><i class="fa fa-pencil" title="Modifier"></i></a></td>
+            <td><a href="#"><i class="fa fa-remove" title="Supprimer"></i></a></td>
+        </tr>
+        <tr>
+            <td class="competency level-1">- Comprendre l'organisation du texte</td>
+            <td>Palef</td>
+            <td>B1a</td>
+            <td>Complet</td>
+            <td><a href="#"><i class="fa fa-search-plus" title="Détails"></i></a></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="#"><i class="fa fa-remove" title="Supprimer"></i></a></td>
+        </tr>
+        <tr>
+            <td class="competency level-1">- Saisir la progression de l'information</td>
+            <td>Palef</td>
+            <td>A2b</td>
+            <td>Complet</td>
+            <td><a href="#"><i class="fa fa-search-minus" title="Détails"></i></a></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><a href="#"><i class="fa fa-remove" title="Supprimer"></i></a></td>
+        </tr>
+        <tr>
+            <td class="competency level-2">- Élaborer des liens entre les phrases</td>
+            <td>-</td>
+            <td>-</td>
+            <td>Complet</td>
+            <td><a href="#"><i class="fa fa-search-plus" title="Détails"></i></a></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="competency level-2">- Interpéter le sens des organisateurs textuels</td>
+            <td>-</td>
+            <td>-</td>
+            <td>Complet</td>
+            <td><a href="#"><i class="fa fa-search-plus" title="Détails"></i></a></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="competency level-2">- Identifier la progression</td>
+            <td>-</td>
+            <td>-</td>
+            <td>Complet</td>
+            <td><a href="#"><i class="fa fa-search-minus" title="Détails"></i></a></td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="ability level-3">- Préciser le nombre de phrases dans un texte</td>
+            <td>-</td>
+            <td class="small">A1a</td>
+            <td>Complet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="ability level-3">- Apparier un élément de ponctuation à un exemple</td>
+            <td>-</td>
+            <td class="small">A1b</td>
+            <td>Complet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="ability level-3">- Poursuivre la ponctuation d'une phrase ou d'un extrait</td>
+            <td>-</td>
+            <td class="small">A1c</td>
+            <td>Complet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="ability level-3">- Identifier les signes de ponctuation</td>
+            <td>-</td>
+            <td class="small">A2a</td>
+            <td>Complet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="ability level-3">- Choisir parmi plusieurs exemples la phrase jugée la plus correcte</td>
+            <td>-</td>
+            <td class="small">A2b</td>
+            <td>Complet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="ability level-3">- Réviser un paragraphe pour identifier un signe de ponctuation intrus ou mal placé</td>
+            <td>-</td>
+            <td class="small">A2c</td>
+            <td>Complet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="ability level-3">- Signaler les majuscules qui correspondent à un début de phrase</td>
+            <td>-</td>
+            <td class="small">B1a</td>
+            <td>Complet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="ability level-3">- Signaler les endroits d'une phrase complexe qui pourraient être remplacés par un point</td>
+            <td>-</td>
+            <td class="small">B1b</td>
+            <td>Complet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="ability level-3">- Choisir le signe de ponctuation adapté dans des lieux du texte identifiés</td>
+            <td>-</td>
+            <td class="small">B1c</td>
+            <td>Complet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="ability level-3">- Séparer une phrase en deux</td>
+            <td>-</td>
+            <td class="small">B2a</td>
+            <td>Complet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="ability level-3">- Repérer des phrases intruses </td>
+            <td>-</td>
+            <td class="small">B2b</td>
+            <td>Complet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="ability level-3">- Replacer correctement une phrase mal placée</td>
+            <td>-</td>
+            <td class="small">B2c</td>
+            <td>Complet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="ability level-3">- Ponctuer un paragraphe dans un nombre déterminé de phrases</td>
+            <td>-</td>
+            <td class="small">C1a</td>
+            <td>Complet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="ability level-3">- Repérer des passages du texte où il manque une phrase</td>
+            <td>-</td>
+            <td class="small">C1b</td>
+            <td>Complet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="ability level-3">- Ponctuer un paragraphe</td>
+            <td>-</td>
+            <td class="small">C1c</td>
+            <td>Complet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+    </table>
+{% endblock %}
+
+{% block panelFooter %}
+    <button id="show-add-form" class="btn btn-primary">
+        Créer un objectif
+    </button>
+{% endblock %}
