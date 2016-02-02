@@ -1,0 +1,105 @@
+{% extends 'ClarolineCoreBundle::mockup/dashboard/dashboard-tool.html.twig' %}
+
+{% block panelTitle %}Création d'une nouvelle vue{% endblock %}
+
+{% block panelRest %}
+
+<div class="panel-body">
+    <div class="container-fluid">
+        <div class="row features">
+            <div class="col-xs-12">
+                <p>Nom de la vue: <input type="text" placeholder=" Nom de la vue"></p>
+            </div>
+            <div class="col-xs-2">
+                <button class="btn btn-success"><i class="fa fa-pencil-square-o" title="Modifier le filtre"> | Util. tous</i></button>
+            </div>
+            <div class="col-xs-2">
+                <div class="form">
+                    <label for="sel3">Filtre sur les ressources:</label>
+                    <select class="form-control" id="sel3">
+                        <option>Espaces d'activités</option>
+                        <option>Forums</option>
+                        <option selected>Exercices</option>
+                        <option>Parcours</option>
+                        <option>Activités</option>
+                        <option>Collecticiels</option>
+                        <option>Pages wikis</option>
+                        <option>Blogs</option>
+                        <option>Annonces</option>
+                        <option>Sondages</option>
+                        <option>Wikis</option>
+                        <option>Chats</option>
+                        <option>etc...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="form">
+                    <label for="sel2">Filtre sur les exercices:</label>
+                    <select multiple class="form-control" id="sel4">
+                        <option selected>Tous les exercices</option>
+                        <option>Les exercices de mes EA</option>
+                        <option>Les exercices d'un EA</option>
+                        <option>Un exercice spécifique</option>
+                        <option>etc...</option>
+                    </select>
+                </div>
+            </div>
+<!--
+            <div class="col-xs-2">
+                <div class="form">
+                    <label for="sel2">Filtre 3 (sélection multiple possible):</label>
+                    <select multiple class="form-control" id="sel2">
+                        <option>Nombre de sujets</option>
+                        <option>Nombre d'étapes réalisées</option>
+                        <option>Scores</option>
+                        <option>Moyenne</option>
+                        <option>Nombre de connexions</option>
+                        <option>Nombre de consultations</option>
+                        <option>Nombre de posts</option>
+                        <option>Nombre de pages</option>
+                        <option>Nombre d'interventions</option>
+                        <option>etc...</option>
+                    </select>
+                </div>
+            </div>
+-->
+        </div>
+    </div>
+</div>
+
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <p><span class="pull-right">
+            <button type="button" class="btn btn-primary">OK</button>
+            <button type="button" class="btn btn-default">Annuler</button>
+            </span></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
+
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.csss"
+      rel="stylesheet"
+/>
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
+>
+</script>
+<script type="text/javascript"
+        src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+>
+</script>
+
+{% endblock %}

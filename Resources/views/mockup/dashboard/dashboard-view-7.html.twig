@@ -1,0 +1,66 @@
+{% extends 'ClarolineCoreBundle::mockup/dashboard/dashboard-tool.html.twig' %}
+
+{% block panelTitle %}Création d'une nouvelle vue{% endblock %}
+
+{% block panelRest %}
+
+<div class="panel-body">
+    <div class="container-fluid">
+        <div class="row features">
+            <div class="col-xs-12">
+                <p>Nom de la vue: <input type="text" placeholder=" Nom de la vue"></p>
+            </div>
+            <div class="col-xs-2">
+                <button class="btn btn-success"><i class="fa fa-pencil-square-o" title="Modifier le filtre"> | Util. tous</i></button>
+                <button class="btn btn-success"><i class="fa fa-pencil-square-o" title="Modifier le filtre"> | Exerc. Tous</i></button>
+            </div>
+            <div class="col-xs-2">
+                <div class="form">
+                    <label for="sel5">Critères exercices:</label>
+                    <select multiple class="form-control" id="sel5">
+                        <option>Nombre d'étapes réalisées</option>
+                        <option>Scores</option>
+                        <option>Moyenne</option>
+                        <option>etc...</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <p><span class="pull-right">
+            <a href="dashboard-view-7.html"><button type="button" class="btn btn-primary">OK</button></a>
+            <button type="button" class="btn btn-default">Annuler</button>
+            </span></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
+
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.csss"
+      rel="stylesheet"
+/>
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
+>
+</script>
+<script type="text/javascript"
+        src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+>
+</script>
+
+{% endblock %}

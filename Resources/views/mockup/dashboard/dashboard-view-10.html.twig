@@ -1,0 +1,97 @@
+{% extends 'ClarolineCoreBundle::mockup/dashboard/dashboard-tool.html.twig' %}
+
+{% block panelTitle %}Tableau de bord{% endblock %}
+
+{% block panelRest %}
+
+    <div class="panel-body">
+        <div class="container-fluid">
+            <div class="row features">
+                <div class="col-xs-3">
+                    <p><button class="btn btn-primary" title="Créer une nouvelle vue"><i class="fa fa-plus-circle"></i> | Créer une nouvelle vue </button></p>
+                    <div class="form-group input-group"><input type="text" class="form-control" placeholder="Recherche"></p>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"><i class="fa fa-search"></i>
+                        </span>
+                            </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row features">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <table class="table" style="width:100%">
+                        <tbody>
+                            <tr class="success">
+                                <td><a href=#" title="Ouvrir cette vue">Exercices</a></td>
+                                <td style="text-align: right"><a href="#"><button type="button" class="btn btn-danger btn-sm" title="Exporter cette vue"><i class="fa fa-trash"></i> | Supprimer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-info btn-sm" title="Exporter cette vue"><i class="fa fa-paper-plane"></i> | Exporter</button></a>
+                                </td>
+                            </tr>
+                            <tr class="danger">
+                                <td><a href=#" title="Ouvrir cette vue">Parcours</a></td>
+                                <td style="text-align: right"><a href="#"><button type="button" class="btn btn-danger btn-sm" title="Exporter cette vue"><i class="fa fa-trash"></i> | Supprimer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-info btn-sm" title="Exporter cette vue"><i class="fa fa-paper-plane"></i> | Exporter</button></a>
+                                </td>
+                            </tr>
+                            <tr class="active">
+                                <td><a href=#" title="Ouvrir cette vue">Fréquentation</a></td>
+                                <td style="text-align: right"><a href="#"><button type="button" class="btn btn-danger btn-sm" title="Exporter cette vue"><i class="fa fa-trash"></i> | Supprimer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-info btn-sm" title="Exporter cette vue"><i class="fa fa-paper-plane"></i> | Exporter</button></a>
+                                </td>
+                            </tr>
+                            <tr class="warning">
+                                <td><a href=#" title="Ouvrir cette vue">Forums</a></td>
+                                <td style="text-align: right"><a href="#"><button type="button" class="btn btn-danger btn-sm" title="Exporter cette vue"><i class="fa fa-trash"></i> | Supprimer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-info btn-sm" title="Exporter cette vue"><i class="fa fa-paper-plane"></i> | Exporter</button></a>
+                                </td>
+                            </tr>
+                            <tr class="success">
+                                <td><a href=#" title="Ouvrir cette vue">Utilisateurs-Tous | Exercices-Tous | Scores | % réalisés | Moyennes</a></td>
+                                <td style="text-align: right"><a href="#"><button type="button" class="btn btn-danger btn-sm" title="Exporter cette vue"><i class="fa fa-trash"></i> | Supprimer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-info btn-sm" title="Exporter cette vue"><i class="fa fa-paper-plane"></i> | Exporter</button></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <p>
+                    <span class="pull-right locale-select label label-default">FR</span>
+                    <span>Développé par <a href="#">Claroline</a></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
+
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.csss"
+          rel="stylesheet"
+    />
+
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+    <script type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
+    >
+    </script>
+    <script type="text/javascript"
+            src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    >
+    </script>
+    
+{% endblock %}

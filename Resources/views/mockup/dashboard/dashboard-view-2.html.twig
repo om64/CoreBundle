@@ -5,60 +5,62 @@
 {% block panelRest %}
 
 <div class="panel-body">
-        <div class="container-fluid">
-            <div class="row features">
-            <div class="container-fluid; col-xs-12">
-                <div class="row features">
-                    <div class="col-xs-2">
-                        <div class="form">
-                            <label for="sel1">Filtre utilisateurs:</label>
-                            <select class="form-control" id="sel1">
-                                <option>Utilisateurs</option>
-                                <option>Ressources</option>
-                                <option>Période</option>
-                                <option>Variables</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-xs-2">
-                        <div class="form">
-                            <label for="sel1">Ressources:</label>
-                            <select class="form-control" id="sel1">
-                                <option>Espaces d'activités</option>
-                                <option>Forums</option>
-                                <option>Exercices</option>
-                                <option>Parcours</option>
-                                <option>Activités</option>
-                                <option>Collecticiels</option>
-                                <option>Pages wikis</option>
-                                <option>Blogs</option>
-                                <option>Annonces</option>
-                                <option>Sondages</option>
-                                <option>Wikis</option>
-                                <option>Chats</option>
-                                <option>etc...</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-xs-2">
-                        <div class="form">
-                            <label for="sel2">Filtre 3 (sélection multiple possible):</label>
-                            <select multiple class="form-control" id="sel2">
-                                <option>Nombre de sujets</option>
-                                <option>Nombre d'étapes réalisées</option>
-                                <option>Scores</option>
-                                <option>Moyenne</option>
-                                <option>Nombre de connexions</option>
-                                <option>Nombre de consultations</option>
-                                <option>Nombre de posts</option>
-                                <option>Nombre de pages</option>
-                                <option>Nombre d'interventions</option>
-                                <option>etc...</option>
-                            </select>
-                        </div>
-                    </div>
+    <div class="container-fluid">
+        <div class="row features">
+            <div class="col-xs-12">
+                <p>Nom de la vue: <input type="text" placeholder=" Nom de la vue"></p>
+            </div>
+            <div class="col-xs-2">
+                <div class="form">
+                    <label for="sel1">Filtre général:</label>
+                    <select class="form-control" id="sel1">
+                        <option>Utilisateurs</option>
+                        <option>Ressources</option>
+                        <option>Période</option>
+                        <option>Variables</option>
+                    </select>
                 </div>
             </div>
+            <!--
+                        <div class="col-xs-2">
+                            <div class="form">
+                                <label for="sel1">Ressources:</label>
+                                <select class="form-control" id="sel1">
+                                    <option>Espaces d'activités</option>
+                                    <option>Forums</option>
+                                    <option>Exercices</option>
+                                    <option>Parcours</option>
+                                    <option>Activités</option>
+                                    <option>Collecticiels</option>
+                                    <option>Pages wikis</option>
+                                    <option>Blogs</option>
+                                    <option>Annonces</option>
+                                    <option>Sondages</option>
+                                    <option>Wi/option>
+                                    <option>Chats</option>
+                                    <option>etc...</option>
+                                </select>
+                            </div>
+                        </div>
+            <!--
+                        <div class="col-xs-2">
+                            <div class="form">
+                                <label for="sel2">Filtre 3 (sélection multiple possible):</label>
+                                <select multiple class="form-control" id="sel2">
+                                    <option>Nombre de sujets</option>
+                                    <option>Nombre d'étapes réalisées</option>
+                                    <option>Scores</option>
+                                    <option>Moyenne</option>
+                                    <option>Nombre de connexions</option>
+                                    <option>Nombre de consultations</option>
+                                    <option>Nombre de posts</option>
+                                    <option>Nombre de pages</option>
+                                    <option>Nombre d'interventions</option>
+                                    <option>etc...</option>
+                                </select>
+                            </div>
+                        </div>
+            -->
         </div>
     </div>
 </div>
@@ -66,10 +68,10 @@
 <div id="footer">
     <div class="container">
         <div class="row">
-                <span class="pull-right">
-                <button type="button" class="btn btn-primary">OK</button>
-                <button type="button" class="btn btn-default">Annuler</button>
-                </span>
+            <p><span class="pull-right">
+            <button type="button" class="btn btn-primary">OK</button>
+            <button type="button" class="btn btn-default">Annuler</button>
+            </span></p>
         </div>
     </div>
 </div>
