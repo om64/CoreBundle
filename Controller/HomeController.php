@@ -118,7 +118,6 @@ class HomeController
             $template = is_null($typeTemplate) ?
                 'ClarolineCoreBundle:Home:home.html.twig' :
                 'ClarolineCoreBundle:Home\templates\custom:' . $typeTemplate;
-		var_dump($template);
             $response = $this->render(
                 $template,
                 array(
@@ -728,7 +727,6 @@ class HomeController
 
         if (isset($layout['content']) and isset($layout['type']) and is_array($layout['content'])) {
             foreach ($layout['content'] as $content) {
-		var_dump($content);
                 $tmp .= $this->render(
                     'ClarolineCoreBundle:Home/types:'.$content['type'].'.html.twig', $content, true
                 )->getContent();
