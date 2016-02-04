@@ -1,9 +1,9 @@
 {% extends 'ClarolineCoreBundle::layout.html.twig' %}
 
 {% if config.getParameter('name') != "" %}
-    {% set pagetitle = config.getParameter('name') %}
+    {% set pagetitle = "home"|trans({}, "platform")~config.getParameter('name') %}
 {% else %}
-    {% set pagetitle = 'Claroline Connect' %}
+    {% set pagetitle = "home"|trans({}, "platform")~' Claroline Connect' %}
 {% endif %}
 
 {% block title %}
