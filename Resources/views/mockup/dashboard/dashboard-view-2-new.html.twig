@@ -1,0 +1,77 @@
+{% extends 'ClarolineCoreBundle::mockup/dashboard/dashboard-tool.html.twig' %}
+
+{% block panelTitle %}Création d'une vue{% endblock %}
+
+{% block panelRest %}
+
+<div class="panel-body">
+    <div id="conteneur" class="container-fluid">
+        <div class="row">
+            <main class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <article>
+                    <p>Nom de la vue: <input type="text" placeholder=" Nom de la vue"></p>
+
+                    <strong>Filtres</strong></br>
+                    <div class="form">
+                        <label for="sel1">Général:</label>
+                        <select class="form-control" id="sel1">
+                            <option>Utilisateurs</option>
+                            <option>Espaces d'activités</option>
+                            <option>Ressources</option>
+                            <option>Période</option>
+                        </select>
+                    </div>
+                    <div class="form">
+                        <label for="sel2">Ressources:</label>
+                        <select class="form-control" id="sel2">
+                            <option>Utilisateurs</option>
+                            <option>Espaces d'activités</option>
+                            <option>Ressources</option>
+                            <option>Période</option>
+                        </select>
+                    </div>
+                </article>
+            </main>
+
+            <aside class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                <h3>Ajouter un filtre</h3>
+            </aside>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row features" style="margin-top: 20px">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="well well-lg" style="font-style: italic">L'utilisateur peut choisir un nom pour la vue qu'il crée. Un premier filtre porte sur les utilisateurs,
+                les espaces d'activités, les ressources ou la période.</br>
+                Dans notre exemple, on imagine que l'utilisateur a choisi "Utilisateurs" comme filtre général.</br></br>
+                <strong>Travailler ici avec un conteneur du type "aside"?</strong>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
+
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.csss"
+      rel="stylesheet"
+/>
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
+>
+</script>
+<script type="text/javascript"
+        src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+>
+</script>
+
+{% endblock %}
