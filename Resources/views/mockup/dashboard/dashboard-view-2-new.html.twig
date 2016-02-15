@@ -10,10 +10,8 @@
             <main class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                 <article>
                     <p>Nom de la vue: <input type="text" placeholder=" Nom de la vue"></p>
-
                     <strong>Filtres</strong></br>
                     <div class="form">
-                        <label for="sel1">Général:</label>
                         <select class="form-control" id="sel1">
                             <option>Utilisateurs</option>
                             <option>Espaces d'activités</option>
@@ -22,18 +20,19 @@
                         </select>
                     </div>
                     <div class="form">
-                        <label for="sel2">Ressources:</label>
+                        <label for="sel2">Options:</label>
                         <select class="form-control" id="sel2">
-                            <option>Utilisateurs</option>
-                            <option>Espaces d'activités</option>
-                            <option>Ressources</option>
-                            <option>Période</option>
+                            <option selected>Tous les utilisateurs</option>
+                            <option>Les utilisateurs de mes EA</option>
+                            <option>Un groupe d'utilisateurs</option>
+                            <option>Les utilisateurs d'un EA</option>
+                            <option>Les utilisateurs d'une ressource</option>
+                            <option>Quelques utilisateurs</option>
+                            <option>etc...</option>
                         </select>
                     </div>
                 </article>
             </main>
-
-
             <aside class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
                 <h3>Ajouter un filtre</h3>
             </aside>
