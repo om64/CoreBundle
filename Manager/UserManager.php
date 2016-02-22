@@ -25,6 +25,7 @@ use Claroline\CoreBundle\Library\Security\PlatformRoles;
 use Claroline\CoreBundle\Library\Workspace\Configuration;
 use Claroline\CoreBundle\Manager\MailManager;
 use Claroline\CoreBundle\Manager\TransfertManager;
+use Claroline\CoreBundle\Manager\FacetManager;
 use Claroline\CoreBundle\Pager\PagerFactory;
 use Claroline\CoreBundle\Persistence\ObjectManager;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -59,6 +60,7 @@ class UserManager
     private $uploadsDirectory;
     private $transfertManager;
     private $container;
+    private $authorization;
 
     /**
      * Constructor.
@@ -220,9 +222,10 @@ class UserManager
      */
     public function deleteUser(User $user)
     {
+        /* When the api will identify a user, please uncomment this
         if ($this->container->get('security.token_storage')->getToken()->getUser()->getId() === $user->getId()) {
             throw new \Exception('A user cannot delete himself');
-        }
+        }*/
         $userRole = $this->roleManager->getUserRoleByUser($user);
 
         //soft delete~
@@ -467,11 +470,12 @@ class UserManager
     }
 
     /**
-     * Serialize a user.
+     * Serialize a user. Use JMS serializer from entities instead
      *
      * @param array $users
      *
      * @return array
+     * @deprecated 
      */
     public function convertUsersToArray(array $users)
     {
@@ -546,39 +550,9 @@ class UserManager
         return $this->pagerFactory->createPager($query, $page, $max);
     }
 
-    /**
-     */
     public function getAll()
     {
         return $this->userRepo->findAll();
-    }
-
-    /**
-     * @param integer $page
-     * @param integer $max
-     * @param string  $orderedBy
-     * @param string  $order
-     *
-     * @return \Pagerfanta\Pagerfanta;
-     */
-    public function getAllUsersExcept($page, $max = 20, $orderedBy = 'id', $order = null, array $users )
-    {
-        $query = $this->userRepo->findAllExcept($users);
-        return $this->pagerFactory->createPagerFromArray($query, $page, $max);
-    }
-
-    /**
-     * @param string  $search
-     * @param integer $page
-     * @param integer $max
-     *
-     * @return \Pagerfanta\Pagerfanta;
-     */
-    public function getAllUsersBySearch($page, $search, $max = 20)
-    {
-        $users = $this->userRepo->findAllUserBySearch($search);
-
-        return $this->pagerFactory->createPagerFromArray($users, $page, $max);
     }
 
     /**
@@ -615,26 +589,6 @@ class UserManager
         $query = $this->userRepo->findByGroup($group, false, $orderedBy, $order);
 
         return $this->pagerFactory->createPager($query, $page, $max);
-    }
-
-    /**
-     * @param \Claroline\CoreBundle\Entity\Group $group
-     *
-     * @return User[]
-     */
-    public function getUsersByGroupWithoutPager(Group $group)
-    {
-        return $this->userRepo->findByGroup($group);
-    }
-
-    /**
-     * @param Workspace $workspace
-     *
-     * @return User[]
-     */
-    public function getByWorkspaceWithUsersFromGroup(Workspace $workspace)
-    {
-        return $this->userRepo->findByWorkspaceWithUsersFromGroup($workspace);
     }
 
     /**
@@ -688,27 +642,6 @@ class UserManager
     }
 
     /**
-     * @param \Claroline\CoreBundle\Entity\Workspace\Workspace[] $workspaces
-     * @param integer                                                    $page
-     * @param string                                                     $search
-     * @param integer                                                    $max
-     *
-     * @return \Pagerfanta\Pagerfanta
-     */
-    public function getUsersByWorkspacesAndSearch(
-        array $workspaces,
-        $page,
-        $search,
-        $max = 20
-    )
-    {
-        $users = $this->userRepo
-            ->findUsersByWorkspacesAndSearch($workspaces, $search);
-
-        return $this->pagerFactory->createPagerFromArray($users, $page, $max);
-    }
-
-    /**
      * @param \Claroline\CoreBundle\Entity\Workspace\Workspace $workspace
      * @param string                                                   $search
      * @param integer                                                  $page
@@ -719,37 +652,6 @@ class UserManager
     public function getAllUsersByWorkspaceAndName(Workspace $workspace, $search, $page, $max = 20)
     {
         $query = $this->userRepo->findAllByWorkspaceAndName($workspace, $search, false);
-
-        return $this->pagerFactory->createPager($query, $page, $max);
-    }
-
-    /**
-     * @param \Claroline\CoreBundle\Entity\Group $group
-     * @param integer                            $page
-     * @param integer                            $max
-     * @param string                             $orderedBy
-     *
-     * @return \Pagerfanta\Pagerfanta
-     */
-    public function getGroupOutsiders(Group $group, $page, $max = 20, $orderedBy = 'id')
-    {
-        $query = $this->userRepo->findGroupOutsiders($group, false, $orderedBy);
-
-        return $this->pagerFactory->createPager($query, $page, $max);
-    }
-
-    /**
-     * @param \Claroline\CoreBundle\Entity\Group $group
-     * @param integer                            $page
-     * @param string                             $search
-     * @param integer                            $max
-     * @param string                             $orderedBy
-     *
-     * @return \Pagerfanta\Pagerfanta
-     */
-    public function getGroupOutsidersByName(Group $group, $page, $search, $max = 20, $orderedBy = 'id')
-    {
-        $query = $this->userRepo->findGroupOutsidersByName($group, $search, false, $orderedBy);
 
         return $this->pagerFactory->createPager($query, $page, $max);
     }
@@ -1505,5 +1407,99 @@ class UserManager
         $user->setHideMailWarning(true);
         $this->objectManager->persist($user);
         $this->objectManager->flush();
+    }
+
+    /**
+     * Big user search method ! hell yeah !
+     */
+    public function searchPartialList($searches, $page, $limit, $count = false)
+    {
+        $baseFieldsName = User::getUserSearchableFields();
+        $facetFields = $this->objectManager->getRepository('ClarolineCoreBundle:Facet\FieldFacet')->findAll();
+        $facetFieldsName = array();
+
+        foreach ($facetFields as $facetField) {
+            $facetFieldsName[] = $facetField->getName();
+        }
+
+        $qb = $this->objectManager->createQueryBuilder();
+        $count ? $qb->select('count(u)'): $qb->select('u');
+        $qb->from('Claroline\CoreBundle\Entity\User', 'u')
+            ->where('u.isEnabled = true');
+
+        foreach ($searches as $key => $search) {
+            foreach ($search as $id => $el) {
+                if (in_array($key, $baseFieldsName)) {
+                    $qb->andWhere("UPPER (u.{$key}) LIKE :{$key}{$id}");
+                    $qb->setParameter($key . $id, '%' . strtoupper($el) . '%');
+                } elseif (in_array($key, $facetFieldsName)) {
+                    $qb->join('u.fieldsFacetValue', "ffv{$id}");
+                    $qb->join("ffv{$id}.fieldFacet", "f{$id}");
+                    $qb->andWhere("UPPER (ffv{$id}.stringValue) LIKE :{$key}{$id}");
+                    $qb->orWhere("ffv{$id}.floatValue = :{$key}{$id}");
+                    $qb->andWhere("f{$id}.name LIKE :facet{$id}");
+                    $qb->setParameter($key . $id, '%' . strtoupper($el) . '%');
+                    $qb->setParameter("facet{$id}", $key);
+                } elseif ($key === 'group_name') {
+                    $qb->join('u.groups', "g{$id}");
+                    $qb->andWhere("UPPER (g{$id}.name) LIKE :{$key}{$id}");
+                    $qb->setParameter($key . $id, '%' . strtoupper($el) . '%');
+                } if ($key === 'group_id') {
+                    $qb->join('u.groups', "g{$id}");
+                    $qb->andWhere("g{$id}.id = :{$key}{$id}");
+                    $qb->setParameter($key . $id, $el);
+                } if ($key === 'organization_name') {
+                    $qb->join('u.organizations', "o{$id}");
+                    $qb->andWhere("UPPER (o{$id}.name) LIKE :{$key}{$id}");
+                    $qb->setParameter($key . $id, '%' . strtoupper($el) . '%');
+                } if ($key === 'organization_id') {
+                    $qb->join('u.organizations', "o{$id}");
+                    $qb->andWhere('o{$id}.id = :id');
+                    $qb->setParameter($key . $id, $el);
+                }
+            }
+        }
+
+        $event = $this->strictEventDispatcher->dispatch(
+            'user_edit_search_event',
+            'UserEditSearch',
+            array($qb)
+        );
+
+        $query = $qb->getQuery();
+        
+        if ($page && $limit && !$count) {
+            $query->setMaxResults($limit);
+            $query->setFirstResult($page * $limit);
+        }
+
+        return $count ? $query->getSingleScalarResult(): $query->getResult();
+    }
+
+    public function getUserSearchableFields()
+    {
+        $fields = $this->container->get('claroline.manager.facet_manager')->getFieldFacets();
+
+        $baseFields = User::getSearchableFields();
+
+        foreach ($fields as $field) {
+            $baseFields[] = $field->getName();
+        }
+
+        $baseFields[] = 'group_name';
+        $baseFields[] = 'organization_name';
+
+        $event = $this->strictEventDispatcher->dispatch(
+            'user_add_filter_event',
+            'UserAddFilter',
+            array($baseFields)
+        );
+
+        return $event->getFilters();
+    }
+
+    public function isGranted($action, User $user)
+    {
+        return $this->container->get('security.authorization_checker')->isGranted($action, $user);
     }
 }

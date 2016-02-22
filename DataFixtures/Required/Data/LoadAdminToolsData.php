@@ -31,13 +31,13 @@ class LoadAdminToolsData implements RequiredFixture
             array('user_management', 'user'),
             array('workspace_management', 'book'),
             array('registration_to_workspace', 'book'),
-            array('platform_packages', 'wrench'),
             array('desktop_and_home', 'home'),
             array('desktop_tools', 'pencil'),
             array('platform_logs', 'bars'),
             array('platform_analytics', 'bar-chart-o'),
             array('roles_management', 'users'),
-            array('widgets_management', 'list-alt')
+            array('widgets_management', 'list-alt'),
+            array('organization_management', 'institution')
         );
 
         foreach ($tools as $tool) {
@@ -48,5 +48,7 @@ class LoadAdminToolsData implements RequiredFixture
         }
 
         $manager->flush();
+
+        $this->container->get('claroline.manager.administration_manager')->addDefaultUserAdminActions();
     }
 }

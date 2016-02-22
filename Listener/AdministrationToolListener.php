@@ -85,19 +85,6 @@ class AdministrationToolListener
     }
 
     /**
-     * @DI\Observe("administration_tool_platform_packages")
-     *
-     * @param OpenAdministrationToolEvent $event
-     */
-    public function onOpenPlatformPackages(OpenAdministrationToolEvent $event)
-    {
-        $params = array();
-        $params['_controller'] = 'ClarolineCoreBundle:Administration\Package:list';
-        $this->redirect($params, $event);
-    }
-
-
-    /**
      * @DI\Observe("administration_tool_desktop_and_home")
      *
      * @param OpenAdministrationToolEvent $event
@@ -170,6 +157,18 @@ class AdministrationToolListener
     {
         $params = array();
         $params['_controller'] = 'ClarolineCoreBundle:Administration\Widget:widgetsManagement';
+        $this->redirect($params, $event);
+    }
+
+    /**
+     * @DI\Observe("administration_tool_organization_management")
+     *
+     * @param OpenAdministrationToolEvent $event
+     */
+    public function onOpenOrganizationManagement(OpenAdministrationToolEvent $event)
+    {
+        $params = array();
+        $params['_controller'] = 'ClarolineCoreBundle:Administration\Organization:index';
         $this->redirect($params, $event);
     }
 

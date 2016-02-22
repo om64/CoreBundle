@@ -69,9 +69,13 @@
      *
      * @param content The content to put inside this modal (this modal does not contain modal-digalog element)
      */
-    modal.create = function (content)
+    modal.create = function (content, classes, styles)
     {
-        return common.createElement('div', 'modal fade')
+        var classes = classes || '';
+        var styles = styles || {};
+
+        return common.createElement('div', 'modal fade ' + classes)
+            .css(styles)
             .html(content)
             .appendTo('body')
             .modal('show')
