@@ -7,27 +7,93 @@
 <div class="panel-body">
     <div id="conteneur" class="container-fluid">
         <div class="row">
-            <main class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                <article>
-                    <p>Nom de la vue: <input type="text" placeholder=" Nom de la vue"></p>
-                    <p><button class="btn btn-success"><i class="fa fa-pencil-square-o"></i> | Utilisateurs de mes EA</button></p>
-                    <p><button class="btn btn-success"><i class="fa fa-pencil-square-o"></i> | Tous les exercices</button></p>
-                 </article>
-            </main>
-            <aside class="col-xs-12 col-sm-12 col-md-6 col-lg-9">
-            </aside>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                <p>Nom de la vue: <input type="text" placeholder=" Nom de la vue"></p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                <button type="button" class="btn btn-primary" title="Ajouter un filtre"><i class="fa fa-plus"> Ajouter un filtre</i></button>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                <button type="button" class="btn btn-default" title="Ajouter une règle"><i class="fa fa-plus"> Ajouter une règle</i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                <strong>Filtres :</strong></br>
+                <div class="form">
+                    <select class="form-control" id="sel1">
+                        <option selected>Utilisateurs</option>
+                    </select>
+                </div>
+                <div class="form">
+                    <label for="sel2">Critères :</label>
+                    <select class="form-control" id="sel2">
+                        <option selected>Les utilisateurs de mes EA</option>
+                        <option>Tous les utilisateurs</option>
+                        <option>Un groupe d'utilisateurs</option>
+                        <option>Les utilisateurs d'un EA</option>
+                        <option>Les utilisateurs d'une ressource</option>
+                        <option>Quelques utilisateurs</option>
+                        <option>etc...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                <label for="sel4">Filtres :</label>
+                <div class="form">
+                    <select class="form-control" id="sel3">
+                        <option selected>Exercices</option>
+                        <option disabled>Utilisateurs</option>
+                        <option>Espaces d'activités</option>
+                        <option>Ressources</option>
+                        <option>Période</option>
+                        <option>Forums</option>
+                        <option>Parcours</option>
+                        <option>Activités</option>
+                        <option>Collecticiels</option>
+                        <option>Pages wikis</option>
+                        <option>Blogs</option>
+                        <option>Annonces</option>
+                        <option>Sondages</option>
+                        <option>Wikis</option>
+                        <option>Chats</option>
+                        <option>etc...</option>
+                    </select>
+                </div>
+                <div class="form">
+                    <label for="sel4">Critères :</label>
+                    <select class="form-control" id="sel4">
+                        <option selected>Tous les exercices</option>
+                        <option>Les exercices de mes EA</option>
+                        <option>Les exercices d'un EA</option>
+                        <option>Un exercice spécifique</option>
+                        <option>etc...</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pull-right">
+        <div class="form">
+            <p>Choisissez un type de vue:</p>
+            <img src="{{ asset('bundles/clarolinecore/images/mockup/chart_om.png') }}" title="Vue histogramme" height="48px" width="48px">
+            <img src="{{ asset('bundles/clarolinecore/images/mockup/chart.png') }}" title="Vue bâtonnets" height="48px">
+            <img src="{{ asset('bundles/clarolinecore/images/mockup/chart-line.png') }}" title="Vue graphique" height="48px">
+            <img src="{{ asset('bundles/clarolinecore/images/mockup/chart-pie.png') }}" title="Vue en camembert" height="48px"</p>
         </div>
     </div>
 </div>
-<div class="panel-footer" style="text-align: left">
-    <button type="button" class="btn btn-primary" title="Ajouter un filtre"><i class="fa fa-plus"> Ajouter un filtre</i></button>
-    <button type="button" class="btn btn-info" title="Ajouter des variables"><i class="fa fa-plus"> Ajouter des variables</i></button>
+    <div class="panel-footer" style="text-align: right">
+    <button type="button" class="btn btn-default" title="Annuler la création de vue">Annuler</i></button>
+    <button type="button" class="btn btn-primary" title="OK pour créer la vue">OK</i></button>
 </div>
-
 <div class="container">
     <div class="row features" style="margin-top: 20px">
         <div class="col-md-offset-1 col-md-10">
-            <div class="well well-lg" style="font-style: italic">Au bout de sa sélection de filtres et de critères, l'utilisateur n'a plus qu'à choisir des variables.</br>
+            <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">Dans notre scénario, on imagine que l'utilisateur sélectionne tous les
+                exercices de ses espaces d'activités.</br>
+                Dans la partie droite de la page, il peut encore "Ajouter un filtre" ou définir lui-même des règles à appliquer
+                sur les données.</br>
             </div>
         </div>
     </div>
