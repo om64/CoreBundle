@@ -1,67 +1,72 @@
 {% extends 'ClarolineCoreBundle::mockup/dashboard/dashboard-tool.html.twig' %}
 
-{% block panelTitle %}Sélection de filtres{% endblock %}
+{% block panelTitle %}Edition d'une vue{% endblock %}
 
 {% block panelRest %}
 
 <div class="panel-body">
-    <div class="container-fluid">
-        <div class="row features">
+    <div id="conteneur" class="container-fluid">
+        <div class="row">
             <div class="col-xs-12">
                 <p>Nom de la vue: <input type="text" placeholder=" Nom de la vue"></p>
             </div>
-            <div class="col-xs-2">
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3" style="text-align: center">
+                    <button type="button" class="btn btn-primary" title="Ajouter un filtre"><i class="fa fa-plus"> Ajouter un filtre</i></button>
+                </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3" style="text-align: center">
+                    <button type="button" class="btn btn-primary" title="Ajouter un critère"><i class="fa fa-plus"> Ajouter un critère</i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
                 <div class="form">
-                    <label for="sel1">Filtre général:</label>
+                    <label for="sel1">Filtres :</label>
                     <select class="form-control" id="sel1">
-                        <option selected>Utilisateurs</option>
-                        <option>Ressources</option>
-                        <option>Période</option>
-                        <option>Variables</option>
+                            <option selected>Utilisateurs</option>
                     </select>
                 </div>
             </div>
-
-            <div class="col-xs-2">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
                 <div class="form">
-                    <label for="sel2">Filtre utilisateurs:</label>
+                    <label for="sel2">Critères :</label>
                     <select class="form-control" id="sel2">
                         <option selected>Tous les utilisateurs</option>
                         <option>Les utilisateurs de mes EA</option>
                         <option>Un groupe d'utilisateurs</option>
                         <option>Les utilisateurs d'un EA</option>
                         <option>Les utilisateurs d'une ressource</option>
+                        <option>Quelques utilisateurs</option>
                         <option>etc...</option>
                     </select>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-<div id="footer">
-    <div class="container">
-        <div class="row">
-            <p><span class="pull-right">
-            <button type="button" class="btn btn-primary">OK</button>
-            <button type="button" class="btn btn-default">Annuler</button>
-            </span></p>
+        <div class="row" style="padding: 25px 0 20px 0">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                <button type="button" class="btn btn-success" title="Cliquez pour ajouter une règle"><i class="fa fa-plus"> Ajouter une règle</i></button>
         </div>
     </div>
 </div>
-
-
+<div class="panel-footer" style="text-align: right">
+    <button type="button" class="btn btn-default" title="Cliquez pour annuler la création de vue">Annuler</i></button>
+    <button type="button" class="btn btn-primary" title="Cliquez pour créer la vue">OK</i></button>
+</div>
 <div class="container">
     <div class="row features" style="margin-top: 20px">
         <div class="col-md-offset-1 col-md-10">
-            <div class="well well-lg" style="font-style: italic">Un deuxième filtre apparaît automatiquement pour affiner le choix d'utilisateurs.</br>
-                Par défaut, le choix porte sur l'ensemble des utilisateurs.
+            <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">
+                Par défaut, tous les utilisateurs sont sélectionnés.</br>
+                Si l'utilisateur ne veut pas sélectionner tous les utilisateurs, il peut affiner son choix via le menu
+                déroulant des critères. Dans notre scénario, on imagine qu'il veut sélectionner les utilisateurs de ses
+                espaces d'activités.</br>
+                Il peut "Ajouter un filtre" ou "Ajouter un critère".</br>
+                A tout moment, il peut définir lui-même des règles en cliquant sur "Ajouter une règle" en bas de page</br>
             </div>
         </div>
     </div>
 </div>
-
-
 {% endblock %}
 
 {% block stylesheets %}
