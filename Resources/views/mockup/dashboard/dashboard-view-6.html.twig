@@ -4,6 +4,60 @@
 
 {% block panelRest %}
 
+    <style type="text/css">
+        /* Style the list */
+        ul.tab {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        /* Float the list items side by side */
+        ul.tab li {float: left;}
+
+        /* Style the links inside the list items */
+        ul.tab li a {
+            display: inline-block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        /* Change background color of links on hover */
+        ul.tab li a:hover {background-color: #ddd;}
+
+        /* Create an active/current tablink class */
+        ul.tab li a:focus, .active {background-color: #ccc;}
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        .tabcontent {
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s; /* Fading effect takes 1 second */
+        }
+
+        @-webkit-keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    </style>
+
 <div class="panel-body">
     <div id="conteneur" class="container-fluid">
         <div class="row">
@@ -81,25 +135,58 @@
             </div>
         </div>
         <div class="row" style="padding: 25px 0 20px 0">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                <button type="button" class="btn btn-success" title="Cliquez pour ajouter une règle"><i class="fa fa-plus"> Ajouter une règle</i></button>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <ul class="tab">
+                    <li><a href="" class="tablinks" onclick="openCity(event, 'Règle')"><i class="fa fa-plus"> Ajouter une règle</i></a></li>
+                </ul>
             </div>
-        </div>
-        <div class="row" style="padding: 25px 0 20px 0">
-            <ul class="tab">
-                <li><a href="#" class="tablinks" onclick="openCity(event, 'Règle')">Ajouter une règle</a></li>
-            </ul>
-            <div id="Règle" class="tabcontent">
-                <h3>Règle 1</h3>
-                <p>Blabla</p>
-            </div>
-            Create a list that contain li
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                <p>Règle 1</p>
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9" style="border: 1px solid #ccc; background-color: #f1f1f1">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4>Détails de la règle</h4>
+                    </div>
+                    <div class="col-xs-12">
+                    <p>La règle porte sur:</p>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-control" id="sel3">
+                            <option selected>Exercices</option>
+                            <option>Utilisateurs</option>
+                            <option>Espaces d'activités</option>
+                            <option>Ressources</option>
+                            <option>Période</option>
+                            <option>Forums</option>
+                            <option>Parcours</option>
+                            <option>Activités</option>
+                            <option>Collecticiels</option>
+                            <option>Pages wikis</option>
+                            <option>Blogs</option>
+                            <option>Annonces</option>
+                            <option>Sondages</option>
+                            <option>Wikis</option>
+                            <option>Chats</option>
+                            <option>etc...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding-top: 25px">
+                    <p>Le résultat est </p>
+                </div>
+                <div class="col-md-3" style="padding-top: 25px">
+                    <select class="form-control" id="sel3">
+                        <option>> ou =</option>
+                        <option>=</option>
+                        <option></option>
+                        <option>etc...</option>
+                    </select>
+
+                </div>
+
             </div>
         </div>
     </div>
 </div>
+
 <div class="panel-footer" style="text-align: right">
     <button type="button" class="btn btn-default" title="Cliquez pour annuler la création de vue">Annuler</i></button>
     <button type="button" class="btn btn-primary" title="Cliquez pour créer la vue">OK</i></button>
@@ -137,6 +224,28 @@
 <script type="text/javascript"
         src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
 >
+</script>
+<script type="text/javascript">
+    function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tabcontent.length; i++) {
+    tablinks[i].classList.remove("active");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+    }
 </script>
 
 {% endblock %}

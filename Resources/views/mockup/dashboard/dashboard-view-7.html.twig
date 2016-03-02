@@ -1,27 +1,173 @@
 {% extends 'ClarolineCoreBundle::mockup/dashboard/dashboard-tool.html.twig' %}
 
-{% block panelTitle %}Création d'une nouvelle vue{% endblock %}
+{% block panelTitle %}Edition d'une vue{% endblock %}
 
 {% block panelRest %}
 
+    <style type="text/css">
+        /* Style the list */
+        ul.tab {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        /* Float the list items side by side */
+        ul.tab li {float: left;}
+
+        /* Style the links inside the list items */
+        ul.tab li a {
+            display: inline-block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        /* Change background color of links on hover */
+        ul.tab li a:hover {background-color: #ddd;}
+
+        /* Create an active/current tablink class */
+        ul.tab li a:focus, .active {background-color: #ccc;}
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        .tabcontent {
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s; /* Fading effect takes 1 second */
+        }
+
+        @-webkit-keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    </style>
+
 <div class="panel-body">
-    <div class="container-fluid">
-        <div class="row features">
+    <div id="conteneur" class="container-fluid">
+        <div class="row">
             <div class="col-xs-12">
                 <p>Nom de la vue: <input type="text" placeholder=" Nom de la vue"></p>
             </div>
-            <div class="col-xs-2">
-                <button class="btn btn-success"><i class="fa fa-pencil-square-o" title="Modifier le filtre"> | Util. tous</i></button>
-                <button class="btn btn-success"><i class="fa fa-pencil-square-o" title="Modifier le filtre"> | Exerc. Tous</i></button>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3" style="text-align: center">
+                    <button type="button" class="btn btn-primary" title="Ajouter un filtre"><i class="fa fa-plus"> Ajouter un filtre</i></button>
+                </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3" style="text-align: center">
+                    <button type="button" class="btn btn-primary" title="Ajouter un critère"><i class="fa fa-plus"> Ajouter un critère</i></button>
             </div>
-            <div class="col-xs-2">
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
                 <div class="form">
-                    <label for="sel5">Critères exercices:</label>
-                    <select multiple class="form-control" id="sel5">
-                        <option>Nombre d'étapes réalisées</option>
-                        <option>Scores</option>
+                    <label for="sel1">Filtres :</label>
+                    <select class="form-control" id="sel1">
+                            <option selected>Utilisateurs</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                <div class="form">
+                    <label for="sel2">Critères :</label>
+                    <select class="form-control" id="sel2">
+                        <option selected>Les utilisateurs de mes EA</option>
+                        <option>Tous les utilisateurs</option>
+                        <option>Un groupe d'utilisateurs</option>
+                        <option>Les utilisateurs d'un EA</option>
+                        <option>Les utilisateurs d'une ressource</option>
+                        <option>Quelques utilisateurs</option>
+                        <option>etc...</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding: 25px 0 20px 0">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                <div class="form">
+                    <label for="sel3">Filtres :</label>
+                        <select class="form-control" id="sel3">
+                            <option selected>Exercices</option>
+                            <option disabled>Utilisateurs</option>
+                            <option>Espaces d'activités</option>
+                            <option>Ressources</option>
+                            <option>Période</option>
+                            <option>Forums</option>
+                            <option>Parcours</option>
+                            <option>Activités</option>
+                            <option>Collecticiels</option>
+                            <option>Pages wikis</option>
+                            <option>Blogs</option>
+                            <option>Annonces</option>
+                            <option>Sondages</option>
+                            <option>Wikis</option>
+                            <option>Chats</option>
+                            <option>etc...</option>
+                        </select>
+                    </div>
+                </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                <div class="form">
+                    <label for="sel4">Critères :</label>
+                    <select class="form-control" id="sel4">
+                        <option selected>Tous les exercices</option>
+                        <option>Les exercices de mes EA</option>
+                        <option>Les exercices d'un EA</option>
+                        <option>Un exercice spécifique</option>
+                        <option>etc...</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding: 25px 0 20px 0">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <ul class="tab">
+                    <li><a href="" class="tablinks" onclick="openCity(event, 'Règle')"><i class="fa fa-plus"> Ajouter une règle</i></a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9" style="border: 1px solid #ccc; background-color: #f1f1f1">
+                <h4>Détails de la règle</h4>
+                <p>La règle porte sur:</p>
+                <div class="col-md-3">
+                    <select class="form-control" id="sel3">
+                        <option selected>Exercices</option>
+                        <option>Utilisateurs</option>
+                        <option>Espaces d'activités</option>
+                        <option>Ressources</option>
+                        <option>Période</option>
+                        <option>Forums</option>
+                        <option>Parcours</option>
+                        <option>Activités</option>
+                        <option>Collecticiels</option>
+                        <option>Pages wikis</option>
+                        <option>Blogs</option>
+                        <option>Annonces</option>
+                        <option>Sondages</option>
+                        <option>Wikis</option>
+                        <option>Chats</option>
+                        <option>etc...</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-control" id="sel3">
                         <option>Moyenne</option>
-                        <option>Temps passé</option>
+                        <option>% terminés</option>
+                        <option>Période</option>
                         <option>etc...</option>
                     </select>
                 </div>
@@ -30,17 +176,22 @@
     </div>
 </div>
 
-<div id="footer">
-    <div class="container">
-        <div class="row">
-            <p><span class="pull-right">
-            <a href="dashboard-view-7.html"><button type="button" class="btn btn-primary">OK</button></a>
-            <button type="button" class="btn btn-default">Annuler</button>
-            </span></p>
+<div class="panel-footer" style="text-align: right">
+    <button type="button" class="btn btn-default" title="Cliquez pour annuler la création de vue">Annuler</i></button>
+    <button type="button" class="btn btn-primary" title="Cliquez pour créer la vue">OK</i></button>
+</div>
+<div class="container">
+    <div class="row features" style="margin-top: 20px">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">
+                Par défaut, tous les exercices sont sélectionnés.</br>
+                Dans notre scénario, on imagine que l'utilisateur garde ce choix.</br>
+                A tout moment, il peut définir lui-même des règles en cliquant sur "Ajouter une règle" (voir effet à la
+                page suivante).</br>
+            </div>
         </div>
     </div>
 </div>
-
 {% endblock %}
 
 {% block stylesheets %}
@@ -62,6 +213,28 @@
 <script type="text/javascript"
         src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
 >
+</script>
+<script type="text/javascript">
+    function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tabcontent.length; i++) {
+    tablinks[i].classList.remove("active");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+    }
 </script>
 
 {% endblock %}
