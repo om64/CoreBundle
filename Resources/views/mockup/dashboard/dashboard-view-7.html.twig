@@ -141,35 +141,61 @@
                 </ul>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9" style="border: 1px solid #ccc; background-color: #f1f1f1">
-                <h4>Détails de la règle</h4>
-                <p>La règle porte sur:</p>
-                <div class="col-md-3">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4>Détails de la règle</h4>
+                    </div>
+                    <div class="col-xs-12">
+                    <p>La règle porte sur:</p>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-control" id="sel3">
+                            <option selected>Exercices</option>
+                            <option>Utilisateurs</option>
+                            <option>Espaces d'activités</option>
+                            <option>Ressources</option>
+                            <option>Période</option>
+                            <option>Forums</option>
+                            <option>Parcours</option>
+                            <option>Activités</option>
+                            <option>Collecticiels</option>
+                            <option>Pages wikis</option>
+                            <option>Blogs</option>
+                            <option>Annonces</option>
+                            <option>Sondages</option>
+                            <option>Wikis</option>
+                            <option>Chats</option>
+                            <option>etc...</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-control" id="sel3">
+                            <option>Nombre exercices terminés</option>
+                            <option>Score</option>
+                            <option>Moyenne</option>
+                            <option>Nombre exercices créés</option>
+                            <option>% terminés</option>
+                            <option>etc...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2" style="padding-top: 25px">
+                    <p>Le résultat est </p>
+                </div>
+                <div class="col-md-3" style="padding-top: 25px">
                     <select class="form-control" id="sel3">
-                        <option selected>Exercices</option>
-                        <option>Utilisateurs</option>
-                        <option>Espaces d'activités</option>
-                        <option>Ressources</option>
-                        <option>Période</option>
-                        <option>Forums</option>
-                        <option>Parcours</option>
-                        <option>Activités</option>
-                        <option>Collecticiels</option>
-                        <option>Pages wikis</option>
-                        <option>Blogs</option>
-                        <option>Annonces</option>
-                        <option>Sondages</option>
-                        <option>Wikis</option>
-                        <option>Chats</option>
+                        <option>> ou =</option>
+                        <option>=</option>
+                        <option>< ou =</option>
+                        <option><</option>
                         <option>etc...</option>
                     </select>
                 </div>
-                <div class="col-md-3">
-                    <select class="form-control" id="sel3">
-                        <option>Moyenne</option>
-                        <option>% terminés</option>
-                        <option>Période</option>
-                        <option>etc...</option>
-                    </select>
+                <div class="col-md-1" style="padding-top: 25px">
+                    <p> à </p>
+                </div>
+                <div class="col-md-3" style="padding-top: 25px">
+                    <input type="text" placeholder="Tapez un chiffre">
                 </div>
             </div>
         </div>
