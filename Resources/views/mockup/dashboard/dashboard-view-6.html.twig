@@ -6,30 +6,37 @@
 
 <div class="panel-body">
     <div id="conteneur" class="container">
-        <h2>Utilisateurs</h2>
-        <table class="table table-condensed table-hover table-bordered table-responsive">
-            <thead>
-                <tr>
-                    <th>Affichage</th>
-                    <th>Données</th>
-                    <th>Règles</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="checkbox" checked></td>
-                    <td>Nombre de connexions</td>
-                    <td><button class="btn btn-default" title="Cliquez ici pour ajouter une règle">
-                            <i class="fa fa-plus"></i> Règle </button></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" checked></td>
-                    <td>Durée de connexion</td>
-                    <td><button class="btn btn-default" title="Cliquez ici pour ajouter une règle">
-                            <i class="fa fa-plus"></i> Règle </button></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="row" style="margin-top: 20px">
+            <div class="col-md-6" style="background-color: lightgrey; margin-bottom: 10px">
+                <h3>2. Définir les données</h3>
+            </div>
+        </div>
+        <div class="row" style="padding: 20px 0 20px 0">
+            <h2>Utilisateurs</h2>
+            <table class="table table-condensed table-hover table-bordered table-responsive">
+                <thead>
+                    <tr>
+                        <th>Affichage</th>
+                        <th>Données</th>
+                        <th>Règles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Nombre de connexions</td>
+                        <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
+                                <i class="fa fa-plus"></i> Règle </button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td>Durée de connexion</td>
+                        <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
+                                <i class="fa fa-plus"></i> Règle </button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <div id="conteneur" class="container">
         <h2>Exercices</h2>
@@ -45,70 +52,19 @@
                 <tr>
                     <td><input type="checkbox" checked></td>
                     <td>Tentatives</td>
-                    <td><a href="dashboard-view-7.html"><button class="btn btn-default" title="Cliquez ici pour ajouter une règle">
+                    <td><a href="dashboard-view-7.html"><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
                             <i class="fa fa-plus"></i> Règle </button></a></td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" checked></td>
                     <td>Score</td>
-                    <td><button class="btn btn-default" title="Cliquez ici pour ajouter une règle">
+                    <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
                             <i class="fa fa-plus"></i> Règle </button></td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
-<!--
-            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9" style="border: 1px solid #ccc; background-color: #f1f1f1">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h4>Détails de la règle</h4>
-                    </div>
-                    <div class="col-xs-12">
-                    <p>La règle porte sur:</p>
-                    </div>
-                    <div class="col-md-3">
-                        <select class="form-control" id="sel3">
-                            <option selected>Exercices</option>
-                            <option>Utilisateurs</option>
-                            <option>Espaces d'activités</option>
-                            <option>Ressources</option>
-                            <option>Période</option>
-                            <option>Forums</option>
-                            <option>Parcours</option>
-                            <option>Activités</option>
-                            <option>Collecticiels</option>
-                            <option>Pages wikis</option>
-                            <option>Blogs</option>
-                            <option>Annonces</option>
-                            <option>Sondages</option>
-                            <option>Wikis</option>
-                            <option>Chats</option>
-                            <option>etc...</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-2" style="padding-top: 25px">
-                    <p>Le résultat est </p>
-                </div>
-                <div class="col-md-3" style="padding-top: 25px">
-                    <select class="form-control" id="sel3">
-                        <option>> ou =</option>
-                        <option>=</option>
-                        <option></option>
-                        <option>etc...</option>
-                    </select>
-                </div>
-                <div class="col-md-1" style="padding-top: 25px">
-                    <p> à </p>
-                </div>
-                <div class="col-md-3" style="padding-top: 25px">
-                    <input type="text" placeholder="Taper un chiffre">
-                </div>
-            </div>
-        </div>
-    </div>
--->
 <div class="panel-footer" style="text-align: right">
     <button type="button" class="btn btn-default" title="Cliquez pour annuler les actions sur les données.">Annuler</i></button>
     <button type="button" class="btn btn-primary" title="Cliquez pour valider les actions sur les données.">OK</i></button>
