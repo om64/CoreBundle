@@ -5,59 +5,8 @@
 {% block panelRest %}
 
     <style type="text/css">
-        /* Style the list */
-        ul.tab {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            border: 1px solid #ccc;
-            background-color: #f1f1f1;
-        }
 
-        /* Float the list items side by side */
-        ul.tab li {float: left;}
-
-        /* Style the links inside the list items */
-        ul.tab li a {
-            display: inline-block;
-            color: black;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            transition: 0.3s;
-            font-size: 17px;
-        }
-
-        /* Change background color of links on hover */
-        ul.tab li a:hover {background-color: #ddd;}
-
-        /* Create an active/current tablink class */
-        ul.tab li a:focus, .active {background-color: #ccc;}
-
-        /* Style the tab content */
-        .tabcontent {
-            display: none;
-            padding: 6px 12px;
-            border: 1px solid #ccc;
-            border-top: none;
-        }
-        .tabcontent {
-            -webkit-animation: fadeEffect 1s;
-            animation: fadeEffect 1s; /* Fading effect takes 1 second */
-        }
-
-        @-webkit-keyframes fadeEffect {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-
-        @keyframes fadeEffect {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-
-    /* For the modals */
+    /* For the modal */
 
       .modal-header, h4, .close {
           background-color: #5cb85c;
@@ -135,7 +84,7 @@
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
-                <div class="modal-header" style="padding:35px 50px">
+                <div class="modal-header" style="padding:20px 50px">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4>Confirmation </h4>
                 </div>
@@ -143,12 +92,10 @@
                     <p>Etes-vous sûr de bien avoir ajouté tous vos filtres ?</p>
                 </div>
                 <div class="modal-footer" style="text-align: right">
-                    <button type="submit" class="btn btn-danger btn-default" data-dismiss="modal">Non</button>
+                    <button type="submit" class="btn btn-default" data-dismiss="modal">Non</button>
                     <a href="dashboard-view-4.html"><button class="btn btn-success">Oui</button></a>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
@@ -184,28 +131,6 @@
 <script type="text/javascript"
         src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
 >
-</script>
-<script type="text/javascript">
-    function openCity(evt, cityName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
-
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-    }
-
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tabcontent.length; i++) {
-    tablinks[i].classList.remove("active");
-    }
-
-    // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.classList.add("active");
-    }
 </script>
 
 {% endblock %}
