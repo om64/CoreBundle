@@ -17,7 +17,6 @@
         .modal-footer {
             background-color: #f9f9f9;
         }
-
     </style>
 
     <div class="panel-body">
@@ -32,102 +31,115 @@
     <div class="panel-footer" style="text-align: right">
         <a href="dashboard-view-1.html"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Cliquez pour annuler la création de vue">Annuler</i></button></a>
         <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Etape suivante</button>
-        <!-- The Modal -->
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-            <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Contexte</h4>
-            </div>
-            <div class="modal-body">
-                <div class="col-md-4">
-                    <p>Utilisateurs</p>
-                    <div class="form">
-                        <label hidden for="sel2">Filtres :</label>
-                        <select class="form-control" id="sel2">
-                            <option>Les utilisateurs de mes EA</option>
-                            <option selected>Tous les utilisateurs</option>
-                            <option>Un groupe d'utilisateurs</option>
-                            <option>Les utilisateurs d'un EA</option>
-                            <option>Les utilisateurs d'une ressource</option>
-                            <option>Quelques utilisateurs</option>
-                            <option>etc...</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-            </div>
-        </div>
-    </div>
 
-<!--
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header" style="padding:20px 50px">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4>Contexte</h4>
-                </div>
-                <div class="modal-body" style="padding:40px 50px">
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3" style="padding-top: 25px">
-                        <div class="form">
-                            <label hidden for="sel2">Filtres :</label>
-                            <select class="form-control" id="sel2">
-                                <option>Les utilisateurs de mes EA</option>
-                                <option selected>Tous les utilisateurs</option>
-                                <option>Un groupe d'utilisateurs</option>
-                                <option>Les utilisateurs d'un EA</option>
-                                <option>Les utilisateurs d'une ressource</option>
-                                <option>Quelques utilisateurs</option>
-                                <option>etc...</option>
-                            </select>
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" title="Cliquez pour passer à l'étape suivante">Etape suivante</button>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content modal-lg">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Etape 2 - Définir le contexte</h4>
+              </div>
+              <div class="modal-body" style="text-align: left">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form">
+                                    <label for="sel1">Espace d'activités :</label>
+                                    <select class="form-control" id="sel1">
+                                        <option selected disabled>Choisir espace d'activités</option>
+                                        <option>Tous les EA</option>
+                                        <option>Tous mes EA</option>
+                                        <option value="one_workspace">Un espace d'activités</option>
+                                        <option value="workspaces">Plusieurs espaces d'activités</option>
+                                        <option>etc...</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form">
+                                    <label for="sel2">Utilisateurs :</label>
+                                    <select class="form-control" id="sel2">
+                                        <option selected disabled>Choisir utilisateurs</option>
+                                        <option>Les utilisateurs de mes EA</option>
+                                        <option>Tous les utilisateurs</option>
+                                        <option>Un groupe d'utilisateurs</option>
+                                        <option>Les utilisateurs d'un EA</option>
+                                        <option>Les utilisateurs d'une ressource</option>
+                                        <option>Quelques utilisateurs</option>
+                                        <option>etc...</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form">
+                                    <label for="sel3">Ressources :</label>
+                                    <select class="form-control" id="sel3">
+                                        <option selected disabled>Choisir ressources</option>
+                                        <option>Toutes les ressources</option>
+                                        <option>Exercices</option>
+                                        <option>Espaces d'activités</option>
+                                        <option>Ressources</option>
+                                        <option>Période</option>
+                                        <option>Forums</option>
+                                        <option>Parcours</option>
+                                        <option>Activités</option>
+                                        <option>Collecticiels</option>
+                                        <option>Pages wikis</option>
+                                        <option>Blogs</option>
+                                        <option>Annonces</option>
+                                        <option>Sondages</option>
+                                        <option>Wikis</option>
+                                        <option>Chats</option>
+                                        <option>etc...</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="div-select-workspaces" class="row" style="display:none; margin-top: 10px;">
+                            <p>Several workspaces : prévoir un tableau avec pagination.</p>
+                        </div>
+                        <div id="div-select-one_workspace" class="row" style="display:none; margin-top: 10px">
+                            <p>One Workspace : prévoir un tableau avec pagination.</p>
+                            <div class="panel panel-default">
+                                <div class="panel panel-body">
+                                    Blabla
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                    <div class="modal-footer" style="text-align: right">
-                        <button type="submit" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                        <a href="dashboard-view-3.html"><button class="btn btn-primary">Suivant</button></a>
-                    </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" title="Cliquer ici pour annuler">Annuler</button>
+                <a href="dashboard-view-3.html"><button type="button" class="btn btn-primary" data-dismiss="modal" title="Cliquez ici pour valider">OK</button></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row features" style="margin-top: 20px">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">
+                    <p>L'utilisateur passe par la première étape. Un premier filtre s'offre à lui.</p>
                 </div>
             </div>
         </div>
     </div>
--->
-</div>
-<div class="container">
-    <div class="row features" style="margin-top: 20px">
-        <div class="col-md-offset-1 col-md-10">
-            <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">
-                <p>L'utilisateur passe par la première étape. Un premier filtre s'offre à lui.</p>
-            </div>
-        </div>
-    </div>
-</div>
-{% endblock %}
 
-{% block stylesheets %}
-{{ parent() }}
-{% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
-
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-      rel="stylesheet"
-/>
-
-{% endblock %}
-
-{% block javascripts %}
-{{ parent() }}
-<script type="text/javascript"
-        src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
->
+<script type="text/javascript">
+    $(document).on('change','#sel1',function(event) {
+        var val = $(this).find("option:selected").attr('value');
+        (val === 'workspaces') ? $('#div-select-workspaces').show(): $('#div-select-workspaces').hide();
+        (val === 'one_workspace') ? $('#div-select-one_workspace').show(): $('#div-select-one_workspace').hide();
+    });
 </script>
-<script type="text/javascript"
-        src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
->
-</script>
-
 {% endblock %}
