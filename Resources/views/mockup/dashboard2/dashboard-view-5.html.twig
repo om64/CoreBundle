@@ -4,6 +4,7 @@
 
 {% block panelRest %}
 
+
 <div class="panel-body">
     <div id="conteneur" class="container-fluid">
         <div class="row">
@@ -16,16 +17,14 @@
                 <h3>1. Définir le(s) filtre(s)</h3>
             </div>
         </div>
-<!--
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3" style="text-align: center; background-color: lightgrey; padding-top: 15px">
                 <p><strong>Filtre(s)</strong></p>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3" style="text-align: center; background-color: lightgrey; padding-top: 15px">
-                <p><strong>Critère(s)</strong></p>
+                <p><strong>Affiner</strong></p>
             </div>
         </div>
--->
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3" style="padding-top: 25px">
                 <div class="form">
@@ -50,11 +49,6 @@
                     </select>
                 </div>
             </div>
-<!--
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3" style="padding-top: 25px">
-                <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Cliquez pour affiner le filtre">Affiner</button>
-            </div>
--->
         </div>
         <div class="row" style="padding: 20px 0 20px 0">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
@@ -79,30 +73,25 @@
                         </select>
                     </div>
                 </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                <div class="form">
+                    <select class="form-control" id="sel4">
+                        <option selected>Tous les exercices</option>
+                        <option>Les exercices de mes EA</option>
+                        <option>Les exercices d'un EA</option>
+                        <option>Un exercice spécifique</option>
+                        <option>etc...</option>
+                    </select>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Ajouter un filtre"><i class="fa fa-plus"> Filtre</i></button>
+                <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Cliquez pour ajouter un filtre"><i class="fa fa-plus"> Filtre</i></button>
             </div>
         </div>
-<!--
-        <div class="row" style="margin-top: 20px">
-            <div class="col-md-6" style="background-color: lightgrey; margin-bottom: 10px">
-                <h3>2. Définir les données</h3>
-            </div>
-        </div>
-        <div class="row" style="padding: 20px 0 20px 0">
-            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                <ul class="tab">
-                    <li><a href="dashboard-view-6.html" class="tablinks" onclick="openCity(event, 'Règle')">Ajouter des données</i></a></li>
-                </ul>
-            </div>
-        </div>
--->
     </div>
 </div>
-
 <div class="panel-footer" style="text-align: right">
     <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Cliquez pour annuler la création de vue">Annuler</i></button>
     <a href="dashboard-view-6.html"><button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Cliquez pour passer à l'étape suivante">Suivant</i></button></a>
