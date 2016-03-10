@@ -105,13 +105,45 @@
                             <p>Several workspaces : prévoir un tableau avec pagination.</p>
                         </div>
                         <div id="div-select-one_workspace" class="row" style="display:none; margin-top: 10px">
-                            <p>One Workspace : prévoir un tableau avec pagination.</p>
-                            <div class="panel panel-default">
+                            <div class="panel panel-primary">
+                                <div class="panel panel-header">
+                                    Liste des espaces d'activités
+                                </div>
                                 <div class="panel panel-body">
-                                    Blabla
+                                    <input type="text" class="form-control" placeholder="Recherche"></p>
+                                    <span class="input-group-btn"><button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button> </span>
+
+                                    <table class="table table-condensed table-hover table-bordered table-responsive">
+                                        <thead>
+                                        <tr>
+                                            <th><input type="checkbox"></th>
+                                            <th>Espaces d'activités</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>Français langue étrangère</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" checked></td>
+                                            <td>Special needs</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="panel panel-footer">
+                                    <div class="container">
+                                        <ul class="pagination">
+                                            <li><a href="#">1</a></li>
+                                            <li class="active"><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
               </div>
