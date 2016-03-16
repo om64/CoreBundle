@@ -1,128 +1,203 @@
 {% extends 'ClarolineCoreBundle::mockup/dashboard/dashboard-tool.html.twig' %}
 
-{% block panelTitle %}Edition de la vue "View Name"{% endblock %}
+{% block panelTitle %}Création d'une nouvelle vue{% endblock %}
 
 {% block panelRest %}
 
-    <style type="text/css">
+    <style type="text/css" xmlns="http://www.w3.org/1999/html">
 
-    /* For the modal */
+        /* For the modal */
 
-      .modal-header, h4, .close {
-          background-color: #5cb85c;
-          color:white !important;
-          text-align: center;
-          font-size: 24px;
-      }
-      .modal-footer {
-          background-color: #f9f9f9;
-      }
-
+        .modal-header, h4, .close {
+            background-color: #5cb85c;
+            color:white !important;
+            text-align: center;
+            font-size: 20px;
+        }
+        .modal-footer {
+            background-color: #f9f9f9;
+        }
     </style>
 
-<div class="panel-body">
+    <div class="panel-body">
     <div id="conteneur" class="container-fluid">
-        <div class="row">
+     <div class="row">
             <div class="col-xs-12">
-                <p>Nom : <input type="text" placeholder=" 2016-03-05-1"></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6" style="background-color: lightgrey; margin-bottom: 10px">
-                <h3>1. Définir le(s) filtre(s)</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3" style="padding-top: 25px">
-                <div class="form">
-                    <select class="form-control" id="sel1">
-                            <option selected>Utilisateurs</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3" style="padding-top: 25px">
-                <div class="form">
-
-                    <label hidden for="sel2">Filtres :</label>
-
-                    <select class="form-control" id="sel2">
-                        <option>Les utilisateurs de mes EA</option>
-                        <option selected>Tous les utilisateurs</option>
-                        <option>Un groupe d'utilisateurs</option>
-                        <option>Les utilisateurs d'un EA</option>
-                        <option>Les utilisateurs d'une ressource</option>
-                        <option>Quelques utilisateurs</option>
-                        <option>etc...</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="padding: 20px 0 20px 0">
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                <a href="dashboard-view-4.html"><button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Ajouter un filtre"><i class="fa fa-plus"> Filtre</i></button></a>
+                <p><strong>Nom de la vue:</strong> 2016-03-05-1</p>
+                <p><strong>Contexte:</strong> Introduction aux sciences du langage - PSY11 - Forums</p>
             </div>
         </div>
     </div>
-</div>
 
-<div class="panel-footer" style="text-align: right">
-    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Cliquez pour annuler la création de vue">Annuler</i></button>
-    <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Suivant</button>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
+    <div class="panel-footer" style="text-align: right">
+        <a href="dashboard-view-1.html"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Cliquez pour annuler la création de vue">Annuler</i></button></a>
+        <!-- Trigger the modal with a button -->
+
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" title="Cliquez pour passer à l'étape suivante">Etape suivante</button>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
             <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header" style="padding:20px 50px">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4>Confirmation </h4>
-                </div>
-                <div class="modal-body" style="padding:40px 50px">
-                    <p>Etes-vous sûr de bien avoir ajouté tous vos filtres ?</p>
-                </div>
-                <div class="modal-footer" style="text-align: right">
-                    <button type="submit" class="btn btn-default" data-dismiss="modal">Non</button>
-                    <a href="dashboard-view-4.html"><button class="btn btn-success">Oui</button></a>
+            <div class="modal-content modal-lg">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Etape 3 - Actions sur les données</h4>
+              </div>
+              <div class="modal-body" style="text-align: left">
+                  <div id="conteneur" class="container-fluid">
+                      <h2>Etudiants PSY 11</h2>
+                      <table class="table table-condensed table-hover table-bordered table-responsive">
+                          <thead>
+                          <tr>
+                              <th>Affichage</th>
+                              <th>Nom et prénom</th>
+                              <th>Règles</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <td><input type="checkbox"></td>
+                              <td>Jean-Jacques</td>
+                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
+                                      <i class="fa fa-plus"></i> Règle </button></td>
+                          </tr>
+                          <tr>
+                              <td><input type="checkbox"></td>
+                              <td>David</td>
+                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
+                                      <i class="fa fa-plus"></i> Règle </button></td>
+                          </tr>
+                          <tr>
+                              <td><input type="checkbox"></td>
+                              <td>Philippe</td>
+                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
+                                      <i class="fa fa-plus"></i> Règle </button></td>
+                          </tr>
+                          <tr>
+                              <td><input type="checkbox"></td>
+                              <td>Nathalie</td>
+                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
+                                      <i class="fa fa-plus"></i> Règle </button></td>
+                          </tr>
+                          <tr>
+                              <td><input type="checkbox"></td>
+                              <td>Chahira</td>
+                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
+                                      <i class="fa fa-plus"></i> Règle </button></td>
+                          </tr>
+                          <tr>
+                              <td><input type="checkbox"></td>
+                              <td>Christophe</td>
+                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
+                                      <i class="fa fa-plus"></i> Règle </button></td>
+                          </tr>
+                          </tbody>
+                      </table>
+                  </div>
+                  <div id="conteneur" class="container-fluid">
+                      <h2>Forums</h2>
+                      <table class="table table-hover table-bordered">
+                          <thead>
+                          <tr>
+                              <th>Affichage</th>
+                              <th>Données</th>
+                              <th>Règles</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <td><input type="checkbox"></td>
+                              <td>Messages publiés</td>
+                              <td><input type="button" class="btn btn-default" title="Cliquez pour ajouter une règle" id="BtnSend" value="+ Règle" onClick="showHide();" /></td>
+                          </tr>
+                          <tr>
+                              <td><input type="checkbox"></td>
+                              <td>Messages consultés</td>
+                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez pour ajouter une règle">
+                                      <i class="fa fa-plus"></i> Règle </button></td>
+                          </tr>
+                          <tr>
+                              <td><input type="checkbox"></td>
+                              <td>Messages modifiés</td>
+                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez pour ajouter une règle">
+                                      <i class="fa fa-plus"></i> Règle </button></td>
+                          </tr>
+                          <tr>
+                              <td><input type="checkbox"></td>
+                              <td>Messages supprimés</td>
+                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez pour ajouter une règle">
+                                      <i class="fa fa-plus"></i> Règle </button></td>
+                          </tr>
+                          </tbody>
+                      </table>
+                  </div>
+
+                  <div id="loading" style="display:none;" runat="server" visible="false">
+                      <div class="container-fluid"style="background-color: aqua">
+                          <div class="row">
+                              <div class="col-xs-12" style="background-color: lightgrey">
+                                  <h5>Règle</h5>
+                              </div>
+                              <div class="col-xs-12">
+                                  <p>La règle porte sur:</p>
+                              </div>
+                              <div class="col-md-6">
+                                  <select class="form-control" id="sel3">
+                                      <option>Nombre de messages</option>
+                                      <option>Nombre de messages publiés</option>
+                                      <option>Nombre de messages modifiés</option>
+                                      <option>Nombre de messages supprimés</option>
+                                      <option>Nombre de messages consultés</option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="col-md-2" style="padding-top: 25px">
+                              <p>Le résultat est </p>
+                          </div>
+                          <div class="col-md-3" style="padding-top: 25px">
+                              <select class="form-control" id="sel3">
+                                  <option>> ou =</option>
+                                  <option>=</option>
+                                  <option></option>
+                                  <option>etc...</option>
+                              </select>
+                          </div>
+                          <div class="col-md-1" style="padding-top: 25px">
+                              <p> à </p>
+                          </div>
+                          <div class="col-md-3" style="padding-top: 25px">
+                              <input type="text" placeholder="Taper un chiffre">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" title="Cliquer ici pour annuler">Annuler</button>
+                <a href="dashboard-view-4.html"><button type="button" class="btn btn-primary" title="Cliquez ici pour valider">OK</button></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row features" style="margin-top: 20px">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">
+                    <p>L'utilisateur passe à l'étape suivante: des actions sur les données.</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="row features" style="margin-top: 20px">
-        <div class="col-md-offset-1 col-md-10">
-            <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">
-                <p>Par défaut, tous les exercices sont sélectionnés.</br>
-                Dans notre scénario, on imagine que l'utilisateur garde ce choix.</p>
-                <p>Cliquer sur "Suivant" ouvre la page de définition des données.</p>
-            </div>
-        </div>
-    </div>
-</div>
-{% endblock %}
 
-{% block stylesheets %}
-{{ parent() }}
-{% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
-
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-      rel="stylesheet"
-/>
-
-{% endblock %}
-
-{% block javascripts %}
-{{ parent() }}
-<script type="text/javascript"
-        src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
->
-</script>
-<script type="text/javascript"
-        src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
->
-</script>
-
+<script type="text/javascript">
+    $(document).ready(function (e) {
+        $('#BtnSend').click(function () {
+            $('#loading').slideToggle("slow");
+        });
+    });</script>
 {% endblock %}

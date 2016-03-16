@@ -1,126 +1,107 @@
 {% extends 'ClarolineCoreBundle::mockup/dashboard/dashboard-tool.html.twig' %}
 
-{% block panelTitle %}Données et règles{% endblock %}
+{% block panelTitle %}Tableau de bord{% endblock %}
 
 {% block panelRest %}
 
-<div class="panel-body">
-    <div id="conteneur" class="container">
-        <div class="row" style="margin-top: 20px">
-            <div class="col-md-6" style="background-color: lightgrey; margin-bottom: 10px">
-                <h3>2. Définir les données</h3>
+    <div class="panel-body">
+        <div class="container-fluid">
+            <div class="row features">
+                <div class="col-xs-3">
+                    <p><a href="dashboard-view-2.html"><button class="btn btn-primary" title="Créer une vue"><i class="fa fa-plus"></i> Créer une vue </button></a></p>
+                    <div class="form-group input-group">
+                        <input type="text" class="form-control" placeholder="Recherche"></p>
+                        <span class="input-group-btn"><button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button> </span>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row" style="padding: 20px 0 20px 0">
-            <h2>Utilisateurs</h2>
-            <table class="table table-condensed table-hover table-bordered table-responsive">
-                <thead>
-                    <tr>
-                        <th>Affichage</th>
-                        <th>Données</th>
-                        <th>Règles</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="checkbox" checked></td>
-                        <td>Nombre de connexions</td>
-                        <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
-                                <i class="fa fa-plus"></i> Règle </button></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" checked></td>
-                        <td>Durée de connexion</td>
-                        <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
-                                <i class="fa fa-plus"></i> Règle </button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div id="conteneur" class="container">
-        <h2>Exercices</h2>
-        <table class="table table-hover table-bordered">
-            <thead>
-                <tr>
-                    <th>Affichage</th>
-                    <th>Données</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="checkbox" checked></td>
-                    <td>Tentatives</td>
-                    <td><a href="dashboard-view-7.html"><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
-                            <i class="fa fa-plus"></i> Règle </button></a></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" checked></td>
-                    <td>Score</td>
-                    <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
-                            <i class="fa fa-plus"></i> Règle </button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-<div class="panel-footer" style="text-align: right">
-    <button type="button" class="btn btn-default" title="Cliquez pour annuler les actions sur les données.">Annuler</i></button>
-    <button type="button" class="btn btn-primary" title="Cliquez pour valider les actions sur les données.">OK</i></button>
-</div>
-<div class="container">
-    <div class="row features" style="margin-top: 20px">
-        <div class="col-md-offset-1 col-md-10">
-            <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">
-                <p>Description des possibilités.</p>
+        <div class="container-fluid">
+            <div class="row features">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <table class="table table-striped table-hover" style="width:100%">
+                        <tbody>
+                            <tr>
+                                <td><a href="#" title="Ouvrir cette vue">Exercices</a></td>
+                                <td style="text-align: right">
+                                    <a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" title="Ouvrir cette vue">Parcours</a></td>
+                                <td style="text-align: right">
+                                    <a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" title="Ouvrir cette vue">Fréquentation</a></td>
+                                <td style="text-align: right">
+                                    <a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" title="Ouvrir cette vue">Forums</a></td>
+                                <td style="text-align: right">
+                                    <a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><a href="dashboard-view-4.html" title="Ouvrir cette vue">Introduction aux sciences du langage | PSY 11 | Forums | Messages publiés</a></td>
+                                <td style="text-align: right">
+                                    <a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <div class="container">
+        <div class="row features" style="margin-top: 20px">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow"><p>La vue créée et enregistrée est reprise sous la liste des vues
+                        préconfigurées. On peut aussi l'éditer, la supprimer ou la partager.</p>
+                    <p><strong>Reste à faire: </strong>déterminer à quel endroit on choisit le type de vue (histogramme,
+                        bâtonnets, camemberts, etc.)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
 
 {% block stylesheets %}
-{{ parent() }}
-{% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
+    {{ parent() }}
+    {% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
 
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.csss"
-      rel="stylesheet"
-/>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          rel="stylesheet"
+          type="text/css"
+    />
 
 {% endblock %}
 
 {% block javascripts %}
-{{ parent() }}
-<script type="text/javascript"
-        src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
->
-</script>
-<script type="text/javascript"
-        src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
->
-</script>
-<script type="text/javascript">
-    function openCity(evt, cityName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
-
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-    }
-
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tabcontent.length; i++) {
-    tablinks[i].classList.remove("active");
-    }
-
-    // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.classList.add("active");
-    }
-</script>
-
+	{{ parent() }}
+    <script type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
+    >
+    </script>
+    <script type="text/javascript"
+            src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    >
+    </script>
+    
 {% endblock %}
