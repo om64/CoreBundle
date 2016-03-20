@@ -71,6 +71,7 @@
                             <td style="text-align: center"><i class="fa fa-search"></i></td>
                             <td>34</td>
                         </tr>
+<!--
                         <tr>
                             <td></td>
                             <td style="text-align: right">Projet de recherche en logopédie</td>
@@ -101,6 +102,7 @@
                             <td></td>
                             <td>0</td>
                         </tr>
+-->
                         <tr>
                             <td><input type="checkbox"></td>
                             <td>Philippe</td>
@@ -133,15 +135,28 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12">
-                <button type="button" class="btn btn-default" id="BtnSend" title="Cliquez pour obtenir une vue en bâtonnets" onClick="showHide();"><i class="fa fa-bar-chart fa-2x"></i></button>
-                <div id="loading" style="width: 100%" runat="server" visible="false">
-                    <div id="chartContainer1"></div>
+                <button type="button" class="btn btn-default" id="BtnSend1" title="Cliquez pour obtenir une vue en bâtonnets" onClick="showHide();"><i class="fa fa-bar-chart fa-2x"></i></button>
+                <button type="button" class="btn btn-default" id="BtnSend2" title="Cliquez pour obtenir une vue linéaire" onClick="showHide();"><i class="fa fa-line-chart fa-2x"></i></button>
+                <button type="button" class="btn btn-default" id="BtnSend3" title="Cliquez pour obtenir une vue en aire" onClick="showHide();"><i class="fa fa-area-chart fa-2x"></i></button>
+                <button type="button" class="btn btn-default" id="BtnSend4" title="Cliquez pour obtenir une vue en camembert" onClick="showHide();"><i class="fa fa-pie-chart fa-2x"></i></button>
+                <div id="loading1" runat="server" visible="false">
+                    <div id="chartContainer1" style="height: 300px"></div>
                 </div>
+                <div id="loading2" runat="server" visible="false">
+                    <div id="chartContainer2"></div>
+                </div>
+                <div id="loading3" runat="server" visible="false">
+                    <div id="chartContainer3"></div>
+                </div>
+                <div id="loading4" runat="server" visible="false">
+                    <div id="chartContainer4"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <div class="panel-footer" style="text-align: right">
-    
+    <p>Développé avec Claroline Connect</p>
 </div>
 
     <!-- JQuery -->
@@ -151,16 +166,17 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="http://mdbootstrap.com/mdbcdn/mdb.min.js"></script>
     <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
     <script type="text/javascript">
 
         window.onload = function () {
             var chart1 = new CanvasJS.Chart("chartContainer1", {
                 title:{
-                    text: "Nombre de messages publiés"
+                    fontSize: 22,
+                    text: "Nombre de messages publiés sur les forums"
                 },
                 data: [
                     {
-                        // Change type to "doughnut", "line", "splineArea", etc.
                         type: "bar",
                         dataPoints: [
                             { label: "Christophe",  y: 23  },
@@ -173,15 +189,85 @@
                     }
                 ]
             });
+            var chart2 = new CanvasJS.Chart("chartContainer2", {
+                title:{
+                    fontSize: 22,
+                    text: "Nombre de messages publiés sur les forums"
+                },
+                data: [
+                    {
+                        type: "line",
+                        dataPoints: [
+                            { label: "Christophe",  y: 23  },
+                            { label: "Chahira",  y: 19  },
+                            { label: "Nathalie", y: 21  },
+                            { label: "Philippe", y: 31  },
+                            { label: "David",  y: 34  },
+                            { label: "Jean-Jacques",  y: 15  }
+                        ]
+                    }
+                ]
+            });
+            var chart3 = new CanvasJS.Chart("chartContainer3", {
+                title:{
+                    fontSize: 22,
+                    text: "Nombre de messages publiés sur les forums"
+                },
+                data: [
+                    {
+                        type: "area",
+                        dataPoints: [
+                            { label: "Christophe",  y: 23  },
+                            { label: "Chahira",  y: 19  },
+                            { label: "Nathalie", y: 21  },
+                            { label: "Philippe", y: 31  },
+                            { label: "David",  y: 34  },
+                            { label: "Jean-Jacques",  y: 15  }
+                        ]
+                    }
+                ]
+            });
+            var chart4 = new CanvasJS.Chart("chartContainer4", {
+                title:{
+                    fontSize: 22,
+                    text: "Nombre de messages publiés sur les forums"
+                },
+                data: [
+                    {
+                        type: "pie",
+                        dataPoints: [
+                            { label: "Christophe",  y: 23  },
+                            { label: "Chahira",  y: 19  },
+                            { label: "Nathalie", y: 21  },
+                            { label: "Philippe", y: 31  },
+                            { label: "David",  y: 34  },
+                            { label: "Jean-Jacques",  y: 15  }
+                        ]
+                    }
+                ]
+            });
             chart1.render();
+            chart2.render();
+            chart3.render();
+            chart4.render();
         }
     </script>
 
     <script type="text/javascript">
         $(document).ready(function (e) {
-            $('#BtnSend').click(function () {
-                $('#loading').slideToggle("slow");
+            $('#BtnSend1').click(function () {
+                $('#loading1').slideToggle("slow");
             });
-        });</script>
+            $('#BtnSend2').click(function () {
+                $('#loading2').slideToggle("slow");
+            });
+            $('#BtnSend3').click(function () {
+                $('#loading3').slideToggle("slow");
+            });
+            $('#BtnSend4').click(function () {
+                $('#loading4').slideToggle("slow");
+            });
+        });
+    </script>
 
 {% endblock %}
