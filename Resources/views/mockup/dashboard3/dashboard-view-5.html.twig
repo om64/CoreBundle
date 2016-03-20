@@ -1,6 +1,6 @@
 {% extends 'ClarolineCoreBundle::mockup/dashboard/dashboard-tool.html.twig' %}
 
-{% block panelTitle %}Les utilisateurs de mes EA - Tous les exercices{% endblock %}
+{% block panelTitle %}Introduction aux sciences du langage | PSY 11 | Forums{% endblock %}
 
 {% block panelRest %}
 
@@ -71,38 +71,6 @@
                             <td style="text-align: center"><i class="fa fa-search"></i></td>
                             <td>34</td>
                         </tr>
-<!--
-                        <tr>
-                            <td></td>
-                            <td style="text-align: right">Projet de recherche en logopédie</td>
-                            <td></td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td style="text-align: right">Rapport d'observation de stage</td>
-                            <td></td>
-                            <td>7</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td style="text-align: right">Session d'examens de juin 2016</td>
-                            <td></td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td style="text-align: right">Analyse critique de cas cliniques</td>
-                            <td></td>
-                            <td>22</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td style="text-align: right">Nouveau master en logopédie</td>
-                            <td></td>
-                            <td>0</td>
-                        </tr>
--->
                         <tr>
                             <td><input type="checkbox"></td>
                             <td>Philippe</td>
@@ -143,13 +111,13 @@
                     <div id="chartContainer1" style="height: 300px"></div>
                 </div>
                 <div id="loading2" runat="server" visible="false">
-                    <div id="chartContainer2"></div>
+                    <div id="chartContainer2" style="height: 300px"></div>
                 </div>
                 <div id="loading3" runat="server" visible="false">
-                    <div id="chartContainer3"></div>
+                    <div id="chartContainer3" style="height: 300px"></div>
                 </div>
                 <div id="loading4" runat="server" visible="false">
-                    <div id="chartContainer4"></div>
+                    <div id="chartContainer4" style="height: 300px"></div>
                 </div>
             </div>
         </div>
@@ -173,6 +141,9 @@
             var chart1 = new CanvasJS.Chart("chartContainer1", {
                 title:{
                     fontSize: 22,
+                    padding: 10,
+                    fontColor: "#008B8B",
+                    fontFamily: "tahoma",
                     text: "Nombre de messages publiés sur les forums"
                 },
                 data: [
