@@ -4,6 +4,29 @@
 
 {% block panelRest %}
 
+<style>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://mdbootstrap.com/mdbcdn/mdb.min.css" rel="stylesheet">
+    <!-- Material Design Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet">
+
+    .panel-group .panel {
+        border-radius: 0;
+        border-width: 0;
+        border-color: transparent !important;
+    }
+    .panel-default {
+        background-color: white;
+        color: #808284;
+        min-height: 40px;
+        padding: 0;
+    }
+
+</style>
+
 <div class="panel-body">
     <div class="container-fluid">
         <div class="row features">
@@ -25,15 +48,8 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row features">
-<!--                <div class="col-xs-1">
-                <p><img src="{{ asset('bundles/clarolinecore/images/mockup/chart_om.png') }}" title="Vue histogramme" height="48px" width="48px"></p>
-                <p><img src="{{ asset('bundles/clarolinecore/images/mockup/chart.png') }}" title="Vue bâtonnets" height="48px"></p>
-                <p><img src="{{ asset('bundles/clarolinecore/images/mockup/chart-line.png') }}" title="Vue graphique" height="48px"></p>
-                <p><img src="{{ asset('bundles/clarolinecore/images/mockup/chart-pie.png') }}" title="Vue en camembert" height="48px"</p>
-            </div>
--->
             <div class="col-xs-12">
                 <div class="table-responsive">
                     <table class="table table-bordered table-condensed table-responsive table-striped table-hover">
@@ -114,36 +130,58 @@
             </div>
         </div>
     </div>
-</div>
-<div id="footer">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <p>
-            </p>
+            <div class="col-xs-12">
+                <button type="button" class="btn btn-default" id="BtnSend" title="Cliquez pour obtenir une vue en bâtonnets" onClick="showHide();"><i class="fa fa-bar-chart fa-2x"></i></button>
+                <div id="loading" style="width: 100%" runat="server" visible="false">
+                    <div id="chartContainer1"></div>
+                </div>
         </div>
     </div>
 </div>
+<div class="panel-footer" style="text-align: right">
+    
+</div>
 
-{% endblock %}
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="http://mdbootstrap.com/mdbcdn/mdb.min.js"></script>
+    <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script type="text/javascript">
 
-{% block stylesheets %}
-    {{ parent() }}
-    {% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
-
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
-          rel="stylesheet"
-    />
-
-{% endblock %}
-
-{% block javascripts %}
-    <script type="text/javascript"
-            src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
-    >
+        window.onload = function () {
+            var chart1 = new CanvasJS.Chart("chartContainer1", {
+                title:{
+                    text: "Nombre de messages publiés"
+                },
+                data: [
+                    {
+                        // Change type to "doughnut", "line", "splineArea", etc.
+                        type: "bar",
+                        dataPoints: [
+                            { label: "Christophe",  y: 23  },
+                            { label: "Chahira",  y: 19  },
+                            { label: "Nathalie", y: 21  },
+                            { label: "Philippe", y: 31  },
+                            { label: "David",  y: 34  },
+                            { label: "Jean-Jacques",  y: 15  }
+                        ]
+                    }
+                ]
+            });
+            chart1.render();
+        }
     </script>
-    <script type="text/javascript"
-            src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"
-    >
-    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            $('#BtnSend').click(function () {
+                $('#loading').slideToggle("slow");
+            });
+        });</script>
 
 {% endblock %}
