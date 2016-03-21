@@ -102,24 +102,22 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-12">
-                <button type="button" class="btn btn-default" id="BtnSend1" title="Cliquez pour obtenir une vue en bâtonnets" onClick="showHide();"><i class="fa fa-bar-chart fa-2x"></i></button>
-                <button type="button" class="btn btn-default" id="BtnSend2" title="Cliquez pour obtenir une vue linéaire" onClick="showHide();"><i class="fa fa-line-chart fa-2x"></i></button>
-                <button type="button" class="btn btn-default" id="BtnSend3" title="Cliquez pour obtenir une vue en aire" onClick="showHide();"><i class="fa fa-area-chart fa-2x"></i></button>
-                <button type="button" class="btn btn-default" id="BtnSend4" title="Cliquez pour obtenir une vue en camembert" onClick="showHide();"><i class="fa fa-pie-chart fa-2x"></i></button>
-                <div id="loading1" runat="server" visible="false">
-                    <div id="chartContainer1" style="height: 300px"></div>
-                </div>
-                <div id="loading2" runat="server" visible="false">
-                    <div id="chartContainer2" style="height: 300px"></div>
-                </div>
-                <div id="loading3" runat="server" visible="false">
-                    <div id="chartContainer3" style="height: 300px"></div>
-                </div>
-                <div id="loading4" runat="server" visible="false">
-                    <div id="chartContainer4" style="height: 300px"></div>
-                </div>
-            </div>
+            <button type="button" class="btn btn-default" id="chart1" title="Cliquez pour obtenir une vue en bâtonnets"><i class="fa fa-bar-chart fa-2x"></i></button>
+            <button type="button" class="btn btn-default" id="BtnSend2" title="Cliquez pour obtenir une vue linéaire" onClick="showHide();"><i class="fa fa-line-chart fa-2x"></i></button>
+            <button type="button" class="btn btn-default" id="BtnSend3" title="Cliquez pour obtenir une vue en aire" onClick="showHide();"><i class="fa fa-area-chart fa-2x"></i></button>
+            <button type="button" class="btn btn-default" id="BtnSend4" title="Cliquez pour obtenir une vue en camembert" onClick="showHide();"><i class="fa fa-pie-chart fa-2x"></i></button>
+        </div>
+        <div id="loading1" class="loading" style="height: 400px; width: 100%; margin-top: 25px">
+            <div id="chartContainer1" width="400" height="400"></div>
+        </div>
+        <div id="loading2" class="loading" style="height: 400px; width: 100%; margin-top: 25px">
+            <div id="chartContainer2"></div>
+        </div>
+        <div id="loading3" class="loading" style="height: 400px; width: 100%; margin-top: 25px">
+            <div id="chartContainer3"></div>
+        </div>
+        <div id="loading4" class="loading" style="height: 400px; width: 100%; margin-top: 25px">
+            <div id="chartContainer4"></div>
         </div>
     </div>
 </div>
@@ -162,6 +160,9 @@
             });
             var chart2 = new CanvasJS.Chart("chartContainer2", {
                 title:{
+                    padding: 10,
+                    fontColor: "#008B8B",
+                    fontFamily: "tahoma",
                     fontSize: 22,
                     text: "Nombre de messages publiés sur les forums"
                 },
@@ -182,6 +183,9 @@
             var chart3 = new CanvasJS.Chart("chartContainer3", {
                 title:{
                     fontSize: 22,
+                    padding: 10,
+                    fontColor: "#008B8B",
+                    fontFamily: "tahoma",
                     text: "Nombre de messages publiés sur les forums"
                 },
                 data: [
@@ -201,6 +205,9 @@
             var chart4 = new CanvasJS.Chart("chartContainer4", {
                 title:{
                     fontSize: 22,
+                    padding: 10,
+                    fontColor: "#008B8B",
+                    fontFamily: "tahoma",
                     text: "Nombre de messages publiés sur les forums"
                 },
                 data: [
@@ -225,17 +232,24 @@
     </script>
 
     <script type="text/javascript">
+
+        $(".loading").hide();
+
         $(document).ready(function (e) {
-            $('#BtnSend1').click(function () {
+            $('#chart1').click(function () {
+                $(".loading").hide();
                 $('#loading1').slideToggle("slow");
             });
             $('#BtnSend2').click(function () {
+                $(".loading").hide();
                 $('#loading2').slideToggle("slow");
             });
             $('#BtnSend3').click(function () {
+                $(".loading").hide();
                 $('#loading3').slideToggle("slow");
             });
             $('#BtnSend4').click(function () {
+                $(".loading").hide();
                 $('#loading4').slideToggle("slow");
             });
         });

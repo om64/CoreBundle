@@ -1,0 +1,188 @@
+{% extends 'ClarolineCoreBundle::mockup/dashboard/dashboard-tool.html.twig' %}
+
+{% block panelTitle %}Introduction aux sciences du langage | PSY 11 | Forums{% endblock %}
+
+{% block panelRest %}
+
+    <div class="panel-body">
+        <div class="container-fluid">
+            <div class="row features">
+                <div class="col-xs-7 col-sm-7 col-md-8 col-lg-11">
+                    <p><a href="dashboard-view-6.html"><button class="btn btn-primary" title="Cliquez pour retourner à l'accueil des vues"><i class="fa fa-chevron-left"> </i> Mes vues</button></a>
+                        <a href="#"><button class="btn btn-primary" title="Cliquez pour enregistrer la vue"><i class="fa fa-floppy-o"> </i> Enregistrer</button></a></p>
+                    <p><strong>Introduction aux sciences du langage | PSY 11 | Forums | Messages publiés</p>
+                </div>
+                <div class="col-xs-5 col-md-4 col-lg-1">
+                    <a class="btn btn-xs btn-primary" role="button" href="#" data-toggle="dropdown">
+                        Actions
+                        <span class="fa fa-gear fa-2x" title="Menu d'actions"></span><i class="caret"></i>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>Envoyer un message</li>
+                        <li>Exporter vers Excel</li>
+                        <li>Imprimer en PDF</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row features">
+                <div class="col-xs-12">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed table-responsive table-striped table-hover">
+                            <tr>
+                                <td></td>
+                                <td>Utilisateur</td>
+                                <td></td>
+                                <td>Messages publiés</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Jean-Jacques</td>
+                                <td style="text-align: center"><i class="fa fa-search" title="Voir détails"></i></td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>David</td>
+                                <td style="text-align: center"><i class="fa fa-search"></i></td>
+                                <td>34</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Philippe</td>
+                                <td style="text-align: center"><i class="fa fa-search"></i></td>
+                                <td>31</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Nathalie</td>
+                                <td style="text-align: center"><i class="fa fa-search"></i></td>
+                                <td>21</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Chahira</td>
+                                <td style="text-align: center"><i class="fa fa-search"></i></td>
+                                <td>19</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Christophe</td>
+                                <td style="text-align: center"><i class="fa fa-search"></i></td>
+                                <td>23</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    <button type="button" class="btn btn-success" id="chart1" title="Cliquez pour obtenir une vue en bâtonnets"><i class="fa fa-bar-chart fa-2x"></i></button>
+                    <button type="button" class="btn btn-success" id="chart2" title="Cliquez pour obtenir une vue linéaire" onClick="showHide();"><i class="fa fa-line-chart fa-2x"></i></button>
+                    <button type="button" class="btn btn-success" id="chart3" title="Cliquez pour obtenir une vue en aire" onClick="showHide();"><i class="fa fa-area-chart fa-2x"></i></button>
+                    <button type="button" class="btn btn-success" id="chart4" title="Cliquez pour obtenir une vue en camembert" onClick="showHide();"><i class="fa fa-pie-chart fa-2x"></i></button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ChartJS -->
+    <script type="text/javascript" src="{{ asset('uploads/custom/js/Chart.min.js') }}"></script>
+
+    <script>
+        var canvas_html = '<canvas id="canvas" height="100px"></canvas>';
+
+        $(document).ready(function(){
+
+            // draw stanza at launch
+//            drawChart1(generateChartData());
+
+            $("#chart1").click(function() {
+                // redraw chart with stanza data
+                drawChart1(generateChartData());
+
+            });
+
+            $("#chart2").click(function(){
+                // redraw chart with settimanale data
+                drawChart2(generateChartData());
+            });
+
+            $("#chart3").click(function(){
+                // redraw chart with mensile data
+                drawChart3(generateChartData());
+            });
+
+            $("#chart4").click(function(){
+                // redraw chart with annuo data
+                drawChart4(generateChartData());
+            });
+        });
+
+        var drawChart1 = function(data) {
+            // reinit canvas
+            $('#canvas_container').html(canvas_html);
+
+            // redraw chart
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myBar = new Chart(ctx).Bar(data, {
+                responsive : true
+            });
+        };
+        var drawChart2 = function(data) {
+            // reinit canvas
+            $('#canvas_container').html(canvas_html);
+
+            // redraw chart
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myBar = new Chart(ctx).Line(data, {
+                responsive : true
+            });
+        };
+        var drawChart3 = function(data) {
+            // reinit canvas
+            $('#canvas_container').html(canvas_html);
+
+            // redraw chart
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myBar = new Chart(ctx).PolarArea(data, {
+                responsive : true
+            });
+        };
+        var drawChart4 = function(data) {
+            // reinit canvas
+            $('#canvas_container').html(canvas_html);
+
+            // redraw chart
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myBar = new Chart(ctx).Pie(data, {
+                responsive : true
+            });
+        };
+    </script>
+    <div>
+        <!-- will be filled in JS -->
+        <div id="canvas_container" style="padding: 20px 30px 10px 30px"></div>
+    </div>
+
+
+    <script>
+        var generateChartData = function () { return {
+            labels : ["JJ","David","Phil","Nath","Cha","Chris"],
+            datasets : [
+                {
+                    fillColor : "#5cb85c",
+                    strokeColor : "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)",
+                    data : [15,34,31,21,19,23]
+                },
+            ]
+
+        };
+        };
+
+    </script>
+
+{% endblock %}
