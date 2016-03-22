@@ -5,54 +5,27 @@
 {% block panelRest %}
 
     <style type="text/css" xmlns="http://www.w3.org/1999/html">
-
-        /* For the modal */
-
         .modal-header, h4, .close {
             background-color: #5cb85c;
             color:white !important;
-            text-align: center;
+            text-align: left;
             font-size: 20px;
+            padding: 15px;
         }
         .modal-footer {
             background-color: #f9f9f9;
         }
-
     </style>
 
     <div class="panel-body">
         <div class="container-fluid">
             <div class="row features">
                 <div class="col-xs-3">
-                    <!-- Trigger the modal with a button -->
-                    <a href="dashboard-view-2.html"><button type="button" class="btn btn-primary" title="Cliquez pour créer une vue"><i class="fa fa-plus"></i> Créer une vue</button></a>
-                    {#<!-- Modal -->#}
-                    {#<div class="modal fade" id="myModal" role="dialog">#}
-                        {#<div class="modal-dialog">#}
-                            {#<!-- Modal content-->#}
-                            {#<div class="modal-content">#}
-                                {#<div class="modal-header" style="padding:20px 50px">#}
-                                    {#<button type="button" class="close" data-dismiss="modal">&times;</button>#}
-                                    {#<h4>Etape 1 - Donner un nom à la vue</h4>#}
-                                {#</div>#}
-                                {#<div class="modal-body" style="padding:40px 50px">#}
-                                    {#<p>Nom : <input type="text" placeholder=" 2016-03-05-1"></p>#}
-                                    {#<input type="checkbox" name="visible" value="visible"> Visible<br>                                </div>#}
-                                {#<div class="modal-footer" style="text-align: right">#}
-                                    {#<button type="submit" class="btn btn-default" data-dismiss="modal">Annuler</button>#}
-                                    {#<a href="dashboard-view-2.html"><button class="btn btn-primary">OK</button></a>#}
-                                {#</div>#}
-                            {#</div>#}
-                        {#</div>#}
-                    {#</div>#}
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid" style="margin-top: 20px">
-            <div class="row features">
-                <div class="col-md-6 col-lg-3 form-group input-group">
-                    <input type="text" class="form-control" placeholder="Recherche"></p>
-                    <span class="input-group-btn"><button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button> </span>
+                    <p><a href="dashboard-view-2.html"><button class="btn btn-primary" title="Créer une vue"><i class="fa fa-plus"></i> Créer une vue </button></a></p>
+                    <div class="form-group input-group">
+                        <input type="text" class="form-control" placeholder="Recherche"></p>
+                        <span class="input-group-btn"><button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button> </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -93,28 +66,28 @@
                                     <a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>
                                 </td>
                             </tr>
+                            <tr>
+                                <td><a href="dashboard-view-4.html" title="Ouvrir cette vue">Introduction aux sciences du langage | PSY 11 | Forums | Messages publiés</a></td>
+                                <td style="text-align: right">
+                                    <a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>
+                                    <a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-    <div class="panel-footer" style="text-align: right">
-    </div>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row features" style="margin-top: 20px">
             <div class="col-md-offset-1 col-md-10">
-                <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow"><p>La page
-                    d'accueil de la création de vues reprend une liste de vues préconfigurées que l'on peut éditer,
-                    supprimer ou partager. C'est ici que viendront s'ajouter les vues créées.</p>
-                    Ces vues sont dynamiques; elles se mettent à jour dès qu'on les ouvre.</p>
-                    <p><strong>Il reste à déterminer quelles vues on propose par défaut.</strong></p>
-                    <p>En cliquant sur "Créer une vue", l'utilisateur est invité à passer par <strong>différentes
-                    étapes</strong>.</p>
-                    <p>Nous imaginons ici que nous cherchons à voir quels étudiants du groupe PSY11 ont
-                    posté plus de trois messages sur les forums de l'espace d'activités "Introduction aux sciences
-                    du langage.</p>
+                <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow"><p>La vue créée et enregistrée est reprise sous la liste des vues
+                        préconfigurées. On peut aussi l'éditer, la supprimer ou la partager.</p>
+                    <p><strong>Reste à faire: </strong>déterminer à quel endroit on choisit le type de vue (histogramme,
+                        bâtonnets, camemberts, etc.)</p>
                 </div>
             </div>
         </div>

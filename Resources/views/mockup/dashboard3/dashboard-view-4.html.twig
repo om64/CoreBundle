@@ -4,117 +4,91 @@
 
 {% block panelRest %}
 
-<div class="panel-body">
-    <div class="container-fluid">
-        <div class="row features">
-            <div class="col-xs-7 col-sm-7 col-md-8 col-lg-11">
-                <p><a href="dashboard-view-1.html"><button class="btn btn-primary" title="Cliquez pour retourner à l'accueil des vues"><i class="fa fa-chevron-left"> </i> Mes vues</button></a>
-                <a href="#"><button class="btn btn-primary" title="Cliquez pour enregistrer la vue"><i class="fa fa-floppy-o"> </i> Enregistrer</button></a></p>
-                <p><strong>Introduction aux sciences du langage | PSY 11 | Forums | Messages publiés</p>
+    <style type="text/css" xmlns="http://www.w3.org/1999/html">
+
+        /* For the modal */
+
+        .modal-header, h4, .close {
+            background-color: #5cb85c;
+            color:white !important;
+            text-align: left;
+            font-size: 20px;
+            padding: 15px;
+        }
+        .modal-footer {
+            background-color: #f9f9f9;
+        }
+    </style>
+
+    <div class="panel-body">
+        <div id="conteneur" class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Nom : <input type="text" placeholder=" 2016-03-05-1"></p>
+                </div>
             </div>
-            <div class="col-xs-5 col-md-4 col-lg-1">
-                <a class="btn btn-xs btn-primary" role="button" href="#" data-toggle="dropdown">
-                    Actions
-                    <span class="fa fa-gear fa-2x" title="Menu d'actions"></span><i class="caret"></i>
-                </a>
-                <ul class="dropdown-menu" role="menu">
-                    <li>Envoyer un message</li>
-                    <li>Exporter vers Excel</li>
-                    <li>Imprimer en PDF</li>
-                </ul>
+            <div class="row">
+                <div class="col-md-6" style="margin-bottom: 10px">
+                    <h4>3. Sur quoi porte la vue ?</h4>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row features">
-<!--                <div class="col-xs-1">
-                <p><img src="{{ asset('bundles/clarolinecore/images/mockup/chart_om.png') }}" title="Vue histogramme" height="48px" width="48px"></p>
-                <p><img src="{{ asset('bundles/clarolinecore/images/mockup/chart.png') }}" title="Vue bâtonnets" height="48px"></p>
-                <p><img src="{{ asset('bundles/clarolinecore/images/mockup/chart-line.png') }}" title="Vue graphique" height="48px"></p>
-                <p><img src="{{ asset('bundles/clarolinecore/images/mockup/chart-pie.png') }}" title="Vue en camembert" height="48px"</p>
-            </div>
--->
-            <div class="col-xs-12">
-                <div class="table-responsive">
-                    <table class="table table-bordered table-condensed table-responsive table-striped table-hover">
-                        <tr>
-                            <td></td>
-                            <td>Utilisateur</td>
-                            <td></td>
-                            <td>Nombre de messages publiés</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>Jean-Jacques</td>
-                            <td style="text-align: center"><i class="fa fa-search" title="Voir détails"></i></td>
-                            <td>15</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>David</td>
-                            <td style="text-align: center"><a href="dashboard-view-5.html"><i class="fa fa-search"></i></a></td>
-                            <td>34</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>Philippe</td>
-                            <td style="text-align: center"><i class="fa fa-search"></i></td>
-                            <td>17</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>Nathalie</td>
-                            <td style="text-align: center"><i class="fa fa-search"></i></td>
-                            <td>21</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>Chahira</td>
-                            <td style="text-align: center"><i class="fa fa-search"></i></td>
-                            <td>19</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>Christophe</td>
-                            <td style="text-align: center"><i class="fa fa-search"></i></td>
-                            <td>23</td>
-                        </tr>
-                    </table>
+            <div class="row" style="padding: 20px 0 20px 0">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="form">
+                        <select class="form-control" id="sel3">
+                            <option>Choisir un objet</option>
+                            <option selected>Exercices</option>
+                            <option>Espaces d'activités</option>
+                            <option>Ressources</option>
+                            <option>Forums</option>
+                            <option>Parcours</option>
+                            <option>Activités</option>
+                            <option>Collecticiels</option>
+                            <option>Pages wikis</option>
+                            <option>Blogs</option>
+                            <option>Annonces</option>
+                            <option>Sondages</option>
+                            <option>Wikis</option>
+                            <option>Chats</option>
+                            <option>etc...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="form">
+                        <select class="form-control" id="sel1">
+                            <option selected>Pays et capitales</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div id="footer">
+    <div class="panel-footer" style="text-align: right">
+        <a href="dashboard-view-3.html"><button type="button" class="btn btn-default" title="Cliquez pour revenir à l'étape précédente">Etape précédente</button></a>
+        <a href="dashboard-view-1.html"><button type="button" class="btn btn-default" title="Cliquez pour annuler la création de vue">Annuler</i></button></a>
+        <a href="dashboard-view-5.html"><button type="button" class="btn btn-primary" title="Cliquez pour passer à l'étape suivante">Etape suivante</button></a>
+    </div>
     <div class="container">
-        <div class="row">
-            <p>
-                <span>Développé par <a href="http://www.claroline.net" target="blank">Claroline</a></span>
-            </p>
+        <div class="row features" style="margin-top: 20px">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">
+
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
-{% endblock %}
-
-{% block stylesheets %}
-    {{ parent() }}
-    {% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
-
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
-          rel="stylesheet"
-    />
-
-{% endblock %}
-
-{% block javascripts %}
-    <script type="text/javascript"
-            src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
-    >
-    </script>
-    <script type="text/javascript"
-            src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"
-    >
-    </script>
-
+    <div id="push"></div>
+    <div id="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <p>
+                    <span class="pull-right locale-select label label-default">FR</span>
+                                <span>
+                    Développé par <a href="#">Claroline</a>
+                </span>
+                </p>
+            </div>
+        </div>
+    </div>
 {% endblock %}

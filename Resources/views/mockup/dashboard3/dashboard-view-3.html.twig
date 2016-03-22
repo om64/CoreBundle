@@ -11,8 +11,9 @@
         .modal-header, h4, .close {
             background-color: #5cb85c;
             color:white !important;
-            text-align: center;
+            text-align: left;
             font-size: 20px;
+            padding: 15px;
         }
         .modal-footer {
             background-color: #f9f9f9;
@@ -20,184 +21,63 @@
     </style>
 
     <div class="panel-body">
-    <div id="conteneur" class="container-fluid">
-     <div class="row">
-            <div class="col-xs-12">
-                <p><strong>Nom de la vue:</strong> 2016-03-05-1</p>
-                <p><strong>Contexte:</strong> Introduction aux sciences du langage - PSY11 - Forums</p>
+        <div id="conteneur" class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Nom : <input type="text" placeholder=" 2016-03-05-1"></p>
+                </div>
             </div>
-        </div>
-    </div>
-
-    <div class="panel-footer" style="text-align: right">
-        <a href="dashboard-view-1.html"><button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Cliquez pour annuler la création de vue">Annuler</i></button></a>
-        <!-- Trigger the modal with a button -->
-
-        <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" title="Cliquez pour passer à l'étape suivante">Etape suivante</button>
-
-        <!-- Modal -->
-        <div id="myModal" class="modal fade" role="dialog">
-          <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content modal-lg">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Etape 3 - Actions sur les données</h4>
-              </div>
-              <div class="modal-body" style="text-align: left">
-                  <div id="conteneur" class="container-fluid">
-                      <h2>Etudiants PSY 11</h2>
-                      <table class="table table-condensed table-hover table-bordered table-responsive">
-                          <thead>
-                          <tr>
-                              <th>Affichage</th>
-                              <th>Nom et prénom</th>
-                              <th>Règles</th>
-                          </tr>
-                          </thead>
-                          <tbody>
-                          <tr>
-                              <td><input type="checkbox"></td>
-                              <td>Jean-Jacques</td>
-                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
-                                      <i class="fa fa-plus"></i> Règle </button></td>
-                          </tr>
-                          <tr>
-                              <td><input type="checkbox"></td>
-                              <td>David</td>
-                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
-                                      <i class="fa fa-plus"></i> Règle </button></td>
-                          </tr>
-                          <tr>
-                              <td><input type="checkbox"></td>
-                              <td>Philippe</td>
-                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
-                                      <i class="fa fa-plus"></i> Règle </button></td>
-                          </tr>
-                          <tr>
-                              <td><input type="checkbox"></td>
-                              <td>Nathalie</td>
-                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
-                                      <i class="fa fa-plus"></i> Règle </button></td>
-                          </tr>
-                          <tr>
-                              <td><input type="checkbox"></td>
-                              <td>Chahira</td>
-                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
-                                      <i class="fa fa-plus"></i> Règle </button></td>
-                          </tr>
-                          <tr>
-                              <td><input type="checkbox"></td>
-                              <td>Christophe</td>
-                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
-                                      <i class="fa fa-plus"></i> Règle </button></td>
-                          </tr>
-                          </tbody>
-                      </table>
-                  </div>
-                  <div id="conteneur" class="container-fluid">
-                      <h2>Forums</h2>
-                      <table class="table table-hover table-bordered">
-                          <thead>
-                          <tr>
-                              <th>Affichage</th>
-                              <th>Données</th>
-                              <th>Règles</th>
-                          </tr>
-                          </thead>
-                          <tbody>
-                          <tr>
-                              <td><input type="checkbox"></td>
-                              <td>Messages publiés</td>
-                              <td><input type="button" class="btn btn-default" title="Cliquez pour ajouter une règle" id="BtnSend" value="+ Règle" onClick="showHide();" /></td>
-                          </tr>
-                          <tr>
-                              <td><input type="checkbox"></td>
-                              <td>Messages consultés</td>
-                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez pour ajouter une règle">
-                                      <i class="fa fa-plus"></i> Règle </button></td>
-                          </tr>
-                          <tr>
-                              <td><input type="checkbox"></td>
-                              <td>Messages modifiés</td>
-                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez pour ajouter une règle">
-                                      <i class="fa fa-plus"></i> Règle </button></td>
-                          </tr>
-                          <tr>
-                              <td><input type="checkbox"></td>
-                              <td>Messages supprimés</td>
-                              <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez pour ajouter une règle">
-                                      <i class="fa fa-plus"></i> Règle </button></td>
-                          </tr>
-                          </tbody>
-                      </table>
-                  </div>
-
-                  <div id="loading" style="display:none;" runat="server" visible="false">
-                      <div class="container-fluid"style="background-color: aqua">
-                          <div class="row">
-                              <div class="col-xs-12" style="background-color: lightgrey">
-                                  <h5>Règle</h5>
-                              </div>
-                              <div class="col-xs-12">
-                                  <p>La règle porte sur:</p>
-                              </div>
-                              <div class="col-md-6">
-                                  <select class="form-control" id="sel3">
-                                      <option>Nombre de messages</option>
-                                      <option>Nombre de messages publiés</option>
-                                      <option>Nombre de messages modifiés</option>
-                                      <option>Nombre de messages supprimés</option>
-                                      <option>Nombre de messages consultés</option>
-                                  </select>
-                              </div>
-                          </div>
-                          <div class="col-md-2" style="padding-top: 25px">
-                              <p>Le résultat est </p>
-                          </div>
-                          <div class="col-md-3" style="padding-top: 25px">
-                              <select class="form-control" id="sel3">
-                                  <option>> ou =</option>
-                                  <option>=</option>
-                                  <option></option>
-                                  <option>etc...</option>
-                              </select>
-                          </div>
-                          <div class="col-md-1" style="padding-top: 25px">
-                              <p> à </p>
-                          </div>
-                          <div class="col-md-3" style="padding-top: 25px">
-                              <input type="text" placeholder="Taper un chiffre">
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" title="Cliquer ici pour annuler">Annuler</button>
-                <a href="dashboard-view-4.html"><button type="button" class="btn btn-primary" title="Cliquez ici pour valider">OK</button></a>
-              </div>
+            <div class="row">
+                <div class="col-md-6" style="margin-bottom: 10px">
+                    <h4>2. Sur qui porte la vue ?</h4>
+                </div>
             </div>
-
-          </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row features" style="margin-top: 20px">
-            <div class="col-md-offset-1 col-md-10">
-                <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">
-                    <p>L'utilisateur passe à l'étape suivante: des actions sur les données.</p>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="form">
+                        <select class="form-control" id="sel2">
+                            <option>Les utilisateurs de mes EA</option>
+                            <option>Tous les utilisateurs</option>
+                            <option>Un groupe d'utilisateurs</option>
+                            <option>Les utilisateurs d'un EA</option>
+                            <option>Les utilisateurs d'une ressource</option>
+                            <option  selected>Quelques utilisateurs</option>
+                            <option>etc...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <p>Pierre Durand</p>
+                    <p>Paul Dupond</p>
+                    <p>Jacques Martin</p>
                 </div>
             </div>
         </div>
     </div>
+    <div class="panel-footer" style="text-align: right">
+        <a href="dashboard-view-2.html"><button type="button" class="btn btn-default" title="Cliquez pour revenir à l'étape précédente">Etape précédente</button></a>
+        <a href="dashboard-view-1.html"><button type="button" class="btn btn-default" title="Cliquez pour annuler la création de vue">Annuler</i></button></a>
+        <a href="dashboard-view-4.html"><button type="button" class="btn btn-primary" title="Cliquez pour passer à l'étape suivante">Etape suivante</button></a>
+    </div>
+    <div class="container">
+        <div class="row features" style="margin-top: 20px">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">
 
-<script type="text/javascript">
-    $(document).ready(function (e) {
-        $('#BtnSend').click(function () {
-            $('#loading').slideToggle("slow");
-        });
-    });</script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <p>
+                    <span class="pull-right locale-select label label-default">FR</span>
+                                <span>
+                    Développé par <a href="#">Claroline</a>
+                </span>
+                </p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
