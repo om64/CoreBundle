@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row features">
                 <div class="col-xs-12" style="padding: 12px">
                     <p><img src="{{ asset('uploads/custom/images/arrow.png') }}" height="24px" width="24px"></img><a href="#"> Exporter</a> | <a href="#">Imprimer en PDF</a> | <a href="#">Ajouter une tâche</a></p>
@@ -40,9 +40,9 @@
                                 <td style="background-color: lightgrey; font-weight: bold"><input type="checkbox"></td>
                                 <td style="background-color: lightgrey; font-weight: bold">Utilisateurs</td>
                                 <td style="background-color: lightgrey; font-weight: bold"></td>
-                                <td style="background-color: lightgrey; font-weight: bold">Score <a href="dashboard-view-9c.html"><button type="button" class="btn btn-default">
-                                            <i class="fa fa-bar-chart fa-2x"></i></button></a></td>
-                                <td style="background-color: lightgrey; font-weight: bold">Durée totale de connexion <a href="dashboard-view-9e.html"><button type="button" class="btn btn-default"><i class="fa fa-bar-chart fa-2x"></i></button></a>
+                                <td style="background-color: lightgrey; font-weight: bold">Score <button type="button" class="btn btn-default; pull-right">
+                                            <i class="fa fa-bar-chart fa-2x"></i></button></td>
+                                <td style="background-color: lightgrey; font-weight: bold">Durée totale de connexion <a href="dashboard-view-9e.html"><button type="button" class="btn btn-default; pull-right"><i class="fa fa-line-chart fa-2x"></i></button></a>
                                 </td>
                             </tr>
                             <tr>
@@ -55,7 +55,7 @@
                             <tr>
                                 <td><input type="checkbox"></td>
                                 <td>David</td>
-                                <td style="text-align: center"><a href="dashboard-view-9b.html"><i class="fa fa-caret-down"
+                                <td style="text-align: center"><a href="dashboard-view-10.html"><i class="fa fa-caret-down"
                                     title="Voir détails"></i></a></td>
                                 <td>18/25</td>
                                 <td>1h 25'</td>
@@ -93,7 +93,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-xs-12">
                     <p>
@@ -106,10 +106,23 @@
                 </div>
             </div>
         </div>
-        <div>
-            <!-- line chart canvas element -->
-            <canvas id="buyers" width="600" height="400"></canvas>
-
+        <div class="container">
+            <div>
+                <!-- bar chart canvas element -->
+                <canvas id="buyers" width="800" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <p>
+                    <span class="pull-right locale-select label label-default">FR</span>
+                            <span>
+                Développé par <a href="#">Claroline</a>
+            </span>
+                </p>
+            </div>
         </div>
     </div>
 

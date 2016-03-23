@@ -42,7 +42,7 @@
                                 <td style="background-color: lightgrey; font-weight: bold"></td>
                                 <td style="background-color: lightgrey; font-weight: bold">Score <a href="dashboard-view-9c.html"><button type="button" class="btn btn-default; pull-right">
                                             <i class="fa fa-bar-chart fa-2x"></i></button></a></td>
-                                <td style="background-color: lightgrey; font-weight: bold">Durée totale de connexion <a href="dashboard-view-9e.html"><button type="button" class="btn btn-default; pull-right"><i class="fa fa-bar-chart fa-2x"></i></button></a>
+                                <td style="background-color: lightgrey; font-weight: bold">Durée totale de connexion <button type="button" class="btn btn-default; pull-right" title="Cliquez pour obtenir une vue linéaire"><i class="fa fa-line-chart fa-2x"></i></button>
                                 </td>
                             </tr>
                             <tr>
@@ -50,7 +50,7 @@
                                 <td>Jean-Jacques</td>
                                 <td style="text-align: center"><i class="fa fa-caret-down"></i></td>
                                 <td>15/25</td>
-                                <td>1h 08'</td>
+                                <td>78'</td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
@@ -58,35 +58,35 @@
                                 <td style="text-align: center"><a href="dashboard-view-10.html"><i class="fa fa-caret-down"
                                     title="Voir détails"></i></a></td>
                                 <td>18/25</td>
-                                <td>1h 25'</td>
+                                <td>85'</td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
                                 <td>Philippe</td>
                                 <td style="text-align: center"><i class="fa fa-caret-down"></i></td>
                                 <td>17/25</td>
-                                <td>2h 32'</td>
+                                <td>152'</td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
                                 <td>Nathalie</td>
                                 <td style="text-align: center"><i class="fa fa-caret-down"></i></td>
                                 <td>21/25</td>
-                                <td>1h 14'</td>
+                                <td>74'</td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
                                 <td>Chahira</td>
                                 <td style="text-align: center"><i class="fa fa-caret-down"></i></td>
                                 <td>19/25</td>
-                                <td>2h 51'</td>
+                                <td>171'</td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
                                 <td>Christophe</td>
                                 <td style="text-align: center"><i class="fa fa-caret-down"></i></td>
                                 <td>23/25</td>
-                                <td>1h 38'</td>
+                                <td>98'</td>
                             </tr>
                         </table>
                     </div>
@@ -97,8 +97,8 @@
             <div class="row">
                 <div class="col-xs-12">
                     <p>
-                        <a href="dashboard-view-9c.html"><button type="button" class="btn btn-default" title="Cliquez pour obtenir une vue en bâtonnets"><i class="fa fa-bar-chart fa-2x"></i></button></a>
-                        <a href="dashboard-view-9d.html"><button type="button" class="btn btn-default" title="Cliquez pour obtenir une vue linéaire"><i class="fa fa-line-chart fa-2x"></i></button></a>
+                        <a href="dashboard-view-9e.html"><button type="button" class="btn btn-default" title="Cliquez pour obtenir une vue en bâtonnets"><i class="fa fa-bar-chart fa-2x"></i></button></a>
+                        <a href="dashboard-view-9f.html"><button type="button" class="btn btn-default" title="Cliquez pour obtenir une vue linéaire"><i class="fa fa-line-chart fa-2x"></i></button></a>
                         {#<button type="button" class="btn btn-default" id="chart3" title="Cliquez pour obtenir une vue en aire" onClick="showHide();"><i class="fa fa-area-chart fa-2x"></i></button>#}
                         {#<button type="button" class="btn btn-default" id="chart4" title="Cliquez pour obtenir une vue en camembert" onClick="showHide();"><i class="fa fa-pie-chart fa-2x"></i></button>#}
                         {#<button type="button" class="btn btn-default" id="chart5" title="Cliquez pour obtenir une vue en doughnut" onClick="showHide();"><img src="{{ asset('uploads/custom/images/graphic.png') }}" height="28px" width="28px"></img></button>#}
@@ -108,7 +108,6 @@
         </div>
         <div class="container">
             <div>
-                <!-- bar chart canvas element -->
                 <canvas id="buyers" width="800" height="300"></canvas>
             </div>
         </div>
@@ -118,7 +117,9 @@
             <div class="row">
                 <p>
                     <span class="pull-right locale-select label label-default">FR</span>
-                    <span>Développé par <a href="#">Claroline</a></span>
+                            <span>
+                Développé par <a href="#">Claroline</a>
+            </span>
                 </p>
             </div>
         </div>
@@ -137,14 +138,14 @@
                     strokeColor : "#48A4D1",
                     pointColor : "#fff",
                     pointStrokeColor : "#9DB86D",
-                    data : [15,18,17,21,19,23]
+                    data : [78,85,152,74,171,98]
                 }
             ]
         }
         // get line chart canvas
         var buyers = document.getElementById('buyers').getContext('2d');
         // draw line chart
-        new Chart(buyers).Bar(buyerData);
+        new Chart(buyers).Line(buyerData);
         // pie chart data
         var pieData = [
             {
