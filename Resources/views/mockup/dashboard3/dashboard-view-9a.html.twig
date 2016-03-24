@@ -24,7 +24,7 @@
                 <div class="col-xs-7 col-sm-7 col-md-8 col-lg-11">
                     <p><a href="dashboard-view-11.html"><button class="btn btn-primary" title="Cliquez pour retourner à l'accueil des vues"><i class="fa fa-chevron-left"> </i> Mes vues</button></a>
                         <a href="#"><button class="btn btn-primary" title="Cliquez pour enregistrer la vue"><i class="fa fa-floppy-o"> </i> Enregistrer</button></a></p>
-                    <p><strong>SELECTION :</strong> Utilisateurs de mes EA | Tous les exercices | Score | Durée de connexion</p>
+                    <p><strong>SELECTION :</strong> Géographie | Exercices | Pays et capitales</p>
                 </div>
             </div>
         </div>
@@ -39,61 +39,88 @@
                             <tr>
                                 <td style="background-color: lightgrey; font-weight: bold"><input type="checkbox"></td>
                                 <td style="background-color: lightgrey; font-weight: bold">Utilisateurs</td>
-                                <td style="background-color: lightgrey; font-weight: bold"></td>
                                 <td style="background-color: lightgrey; font-weight: bold">Score <a href="dashboard-view-9c.html"><button type="button" class="btn btn-default; pull-right">
-                                    <i class="fa fa-bar-chart fa-2x"></i></button></a></td>
-                                <td style="background-color: lightgrey; font-weight: bold">Durée de connexion <a href="dashboard-view-9e.html"><button type="button" class="btn btn-default; pull-right"><i class="fa fa-bar-chart fa-2x"></i></button></a></td>
+                                    <i class="fa fa-bar-chart"></i></button></a></td>
+                                <td style="background-color: lightgrey; font-weight: bold">Durée de connexion <a href="dashboard-view-9e.html"><button type="button" class="btn btn-default; pull-right"><i class="fa fa-bar-chart fa"></i></button></a></td>
                                 <td style="background-color: lightgrey; font-weight: bold">Actions</td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
                                 <td>Jean-Jacques</td>
-                                <td style="text-align: center"><i class="fa fa-caret-down"></i></td>
                                 <td>15/25</td>
                                 <td>1h 08'</td>
-                                <td><button type="button" class="btn btn-default; pull-right">
-                                        <i class="fa fa-bar-chart fa-2x"></i></button></td>
+                                <td><button type="button" class="btn btn-default" title="Voir détails"><i class="fa fa-info"></i></button>
+                                    <button type="button" class="btn btn-default" title="Ajouter une tâche"><i class="fa fa-tasks"></i></button>
+                                    <button type="button" class="btn btn-default" title="Envoyer un courriel"><i class="fa fa-envelope-o"></i></button>
+                                    <button type="button" class="btn btn-default" title="Chatter"><i class="fa fa-comment"></i></button>
+                                    <button type="button" class="btn btn-default" title="Accéder au portfolio"><i class="fa fa-file-text-o"></i></button>
+                                    <button type="button" class="btn btn-default" title="Voir mur"><i class="fa fa-share-square-o"></i></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
                                 <td>David</td>
-                                <td style="text-align: center">
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" title="Voir détails"><i class="fa fa-caret-down"></i></button>
                                 <td>18/25</td>
                                 <td>1h 25'</td>
-                                <td>Boutons</td>
+                                <td><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" title="Voir détails"><i class="fa fa-info"></i></button>
+                                    <button type="button" class="btn btn-default" title="Ajouter une tâche"><i class="fa fa-tasks"></i></button>
+                                    <button type="button" class="btn btn-default" title="Envoyer un courriel"><i class="fa fa-envelope-o"></i></button>
+                                    <button type="button" class="btn btn-default" title="Chatter"><i class="fa fa-comment"></i></button>
+                                    <button type="button" class="btn btn-default" title="Accéder au portfolio"><i class="fa fa-file-text-o"></i></button>
+                                    <button type="button" class="btn btn-default" title="Voir mur"><i class="fa fa-share-square-o"></i></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
                                 <td>Philippe</td>
-                                <td style="text-align: center"><i class="fa fa-caret-down"></i></td>
                                 <td>17/25</td>
                                 <td>2h 32'</td>
-                                <td>Boutons</td>
+                                <td><button type="button" class="btn btn-default" title="Voir détails"><i class="fa fa-info"></i></button>
+                                    <button type="button" class="btn btn-default" title="Ajouter une tâche"><i class="fa fa-tasks"></i></button>
+                                    <button type="button" class="btn btn-default" title="Envoyer un courriel"><i class="fa fa-envelope-o"></i></button>
+                                    <button type="button" class="btn btn-default" title="Chatter"><i class="fa fa-comment"></i></button>
+                                    <button type="button" class="btn btn-default" title="Accéder au portfolio"><i class="fa fa-file-text-o"></i></button>
+                                    <button type="button" class="btn btn-default" title="Voir mur"><i class="fa fa-share-square-o"></i></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
                                 <td>Nathalie</td>
-                                <td style="text-align: center"><i class="fa fa-caret-down"></i></td>
                                 <td>21/25</td>
                                 <td>1h 14'</td>
-                                <td>Boutons</td>
+                                <td><button type="button" class="btn btn-default" title="Voir détails"><i class="fa fa-info"></i></button>
+                                    <button type="button" class="btn btn-default" title="Ajouter une tâche"><i class="fa fa-tasks"></i></button>
+                                    <button type="button" class="btn btn-default" title="Envoyer un courriel"><i class="fa fa-envelope-o"></i></button>
+                                    <button type="button" class="btn btn-default" title="Chatter"><i class="fa fa-comment"></i></button>
+                                    <button type="button" class="btn btn-default" title="Accéder au portfolio"><i class="fa fa-file-text-o"></i></button>
+                                    <button type="button" class="btn btn-default" title="Voir mur"><i class="fa fa-share-square-o"></i></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
                                 <td>Chahira</td>
-                                <td style="text-align: center"><i class="fa fa-caret-down"></i></td>
                                 <td>19/25</td>
                                 <td>2h 51'</td>
-                                <td>Boutons</td>
+                                <td><button type="button" class="btn btn-default" title="Voir détails"><i class="fa fa-info"></i></button>
+                                    <button type="button" class="btn btn-default" title="Ajouter une tâche"><i class="fa fa-tasks"></i></button>
+                                    <button type="button" class="btn btn-default" title="Envoyer un courriel"><i class="fa fa-envelope-o"></i></button>
+                                    <button type="button" class="btn btn-default" title="Chatter"><i class="fa fa-comment"></i></button>
+                                    <button type="button" class="btn btn-default" title="Accéder au portfolio"><i class="fa fa-file-text-o"></i></button>
+                                    <button type="button" class="btn btn-default" title="Voir mur"><i class="fa fa-share-square-o"></i></button>
+                                </td>
                             </tr>
                             <tr>
                                 <td><input type="checkbox"></td>
                                 <td>Christophe</td>
-                                <td style="text-align: center"><i class="fa fa-caret-down"></i></td>
                                 <td>23/25</td>
                                 <td>1h 38'</td>
-                                <td>Boutons</td>
+                                <td><button type="button" class="btn btn-default" title="Voir détails"><i class="fa fa-info"></i></button>
+                                    <button type="button" class="btn btn-default" title="Ajouter une tâche"><i class="fa fa-tasks"></i></button>
+                                    <button type="button" class="btn btn-default" title="Envoyer un courriel"><i class="fa fa-envelope-o"></i></button>
+                                    <button type="button" class="btn btn-default" title="Chatter"><i class="fa fa-comment"></i></button>
+                                    <button type="button" class="btn btn-default" title="Accéder au portfolio"><i class="fa fa-file-text-o"></i></button>
+                                    <button type="button" class="btn btn-default" title="Voir mur"><i class="fa fa-share-square-o"></i></button>
+                                </td>
                             </tr>
                         </table>
                     </div>
@@ -101,7 +128,16 @@
             </div>
         </div>
     </div>
-
+    <div id="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <p>
+                    <span class="pull-right locale-select label label-default">FR</span>
+                    <span>Développé par <a href="#">Claroline</a></span>
+                </p>
+            </div>
+        </div>
+    </div>
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
@@ -182,6 +218,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
             {#<div class="container-fluid">#}
                 {#<div class="row">#}
@@ -198,238 +235,226 @@
             {#</div>#}
         {#</div>#}
 
-        <!-- ChartJS -->
-        <script type="text/javascript" src="{{ asset('uploads/custom/js/Chart.min.js') }}"></script>
+    <!-- ChartJS -->
+    <script type="text/javascript" src="{{ asset('uploads/custom/js/Chart.min.js') }}"></script>
 
-        <script>
-            var canvas_html = '<canvas id="canvas" height="50px" width="300px"></canvas>';
+    <script>
+        var canvas_html = '<canvas id="canvas" height="50px" width="300px"></canvas>';
 
-            $(document).ready(function(){
+        $(document).ready(function(){
 
-                $("#chart1").click(function() {
-                    drawChart1(generateChartData());
-                });
-                $("#chart2").click(function(){
-                    drawChart2(generateChartData());
-                });
-                $("#chart3").click(function(){
-                    drawChart3(generateChartData());
-                });
-                $("#chart4").click(function(){
-                    drawChart4(generateChartData());
-                });
-                $("#chart5").click(function(){
-                    drawChart5(generateChartData());
-                });
+            $("#chart1").click(function() {
+                drawChart1(generateChartData());
             });
+            $("#chart2").click(function(){
+                drawChart2(generateChartData());
+            });
+            $("#chart3").click(function(){
+                drawChart3(generateChartData());
+            });
+            $("#chart4").click(function(){
+                drawChart4(generateChartData());
+            });
+            $("#chart5").click(function(){
+                drawChart5(generateChartData());
+            });
+        });
 
-            var drawChart1 = function(data) {
+        var drawChart1 = function(data) {
 
-                $('#canvas_container').html(canvas_html);
+            $('#canvas_container').html(canvas_html);
 
-                var ctx = document.getElementById("canvas").getContext("2d");
-                window.myBar = new Chart(ctx).Bar(data, {
-                    responsive : true,
-                });
-            };
-            var drawChart2 = function(data) {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myBar = new Chart(ctx).Bar(data, {
+                responsive : true,
+            });
+        };
+        var drawChart2 = function(data) {
 
-                $('#canvas_container').html(canvas_html);
+            $('#canvas_container').html(canvas_html);
 
-                var ctx = document.getElementById("canvas").getContext("2d");
-                window.myBar = new Chart(ctx).Line(data, {
-                    responsive : true
-                });
-            };
-            var drawChart3 = function(data) {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myBar = new Chart(ctx).Line(data, {
+                responsive : true
+            });
+        };
+        var drawChart3 = function(data) {
 
-                $('#canvas_container').html(canvas_html);
+            $('#canvas_container').html(canvas_html);
 
-                var ctx = document.getElementById("canvas").getContext("2d");
-                var data = [
-                    {
-                        value: 15,
-                        color:"#F7464A",
-                        highlight: "#FF5A5E",
-                        label: "Jean-Jacques"
-                    },
-                    {
-                        value: 18,
-                        color: "#46BFBD",
-                        highlight: "#5AD3D1",
-                        label: "David"
-                    },
-                    {
-                        value: 17,
-                        color: "#FDB45C",
-                        highlight: "#FFC870",
-                        label: "Philippe"
-                    },
-                    {
-                        value: 21,
-                        color:"#F7464A",
-                        highlight: "#FF5A5E",
-                        label: "Nathalie"
-                    },
-                    {
-                        value: 19,
-                        color: "#46BFBD",
-                        highlight: "#5AD3D1",
-                        label: "Chahira"
-                    },
-                    {
-                        value: 23,
-                        color: "#FDB45C",
-                        highlight: "#FFC870",
-                        label: "Christophe"
-                    }
-                ]
+            var ctx = document.getElementById("canvas").getContext("2d");
+            var data = [
+                {
+                    value: 15,
+                    color:"#F7464A",
+                    highlight: "#FF5A5E",
+                    label: "Jean-Jacques"
+                },
+                {
+                    value: 18,
+                    color: "#46BFBD",
+                    highlight: "#5AD3D1",
+                    label: "David"
+                },
+                {
+                    value: 17,
+                    color: "#FDB45C",
+                    highlight: "#FFC870",
+                    label: "Philippe"
+                },
+                {
+                    value: 21,
+                    color:"#F7464A",
+                    highlight: "#FF5A5E",
+                    label: "Nathalie"
+                },
+                {
+                    value: 19,
+                    color: "#46BFBD",
+                    highlight: "#5AD3D1",
+                    label: "Chahira"
+                },
+                {
+                    value: 23,
+                    color: "#FDB45C",
+                    highlight: "#FFC870",
+                    label: "Christophe"
+                }
+            ]
 
-                window.myBar = new Chart(ctx).PolarArea(data, {
-                    responsive : true
-                });
-            };
-            var drawChart4 = function(data) {
-                // reinit canvas
-                $('#canvas_container').html(canvas_html);
+            window.myBar = new Chart(ctx).PolarArea(data, {
+                responsive : true
+            });
+        };
+        var drawChart4 = function(data) {
+            // reinit canvas
+            $('#canvas_container').html(canvas_html);
 
-                // redraw chart
-                var ctx = document.getElementById("canvas").getContext("2d");
-                var data = [
-                    {
-                        value: 15,
-                        color:"#F7464A",
-                        highlight: "#FF5A5E",
-                        label: "Jean-Jacques"
-                    },
-                    {
-                        value: 18,
-                        color: "#46BFBD",
-                        highlight: "#5AD3D1",
-                        label: "David"
-                    },
-                    {
-                        value: 17,
-                        color: "#FDB45C",
-                        highlight: "#FFC870",
-                        label: "Philippe"
-                    },
-                    {
-                        value: 21,
-                        color:"#F7464A",
-                        highlight: "#FF5A5E",
-                        label: "Nathalie"
-                    },
-                    {
-                        value: 19,
-                        color: "#46BFBD",
-                        highlight: "#5AD3D1",
-                        label: "Chahira"
-                    },
-                    {
-                        value: 23,
-                        color: "#FDB45C",
-                        highlight: "#FFC870",
-                        label: "Christophe"
-                    }
-                ]
+            // redraw chart
+            var ctx = document.getElementById("canvas").getContext("2d");
+            var data = [
+                {
+                    value: 15,
+                    color:"#F7464A",
+                    highlight: "#FF5A5E",
+                    label: "Jean-Jacques"
+                },
+                {
+                    value: 18,
+                    color: "#46BFBD",
+                    highlight: "#5AD3D1",
+                    label: "David"
+                },
+                {
+                    value: 17,
+                    color: "#FDB45C",
+                    highlight: "#FFC870",
+                    label: "Philippe"
+                },
+                {
+                    value: 21,
+                    color:"#F7464A",
+                    highlight: "#FF5A5E",
+                    label: "Nathalie"
+                },
+                {
+                    value: 19,
+                    color: "#46BFBD",
+                    highlight: "#5AD3D1",
+                    label: "Chahira"
+                },
+                {
+                    value: 23,
+                    color: "#FDB45C",
+                    highlight: "#FFC870",
+                    label: "Christophe"
+                }
+            ]
 
-                window.myBar = new Chart(ctx).Pie(data, {
-                    responsive : true,
-                    animateScale: true
-                });
-            };
+            window.myBar = new Chart(ctx).Pie(data, {
+                responsive : true,
+                animateScale: true
+            });
+        };
 
-            var drawChart5 = function(data) {
-                // reinit canvas
-                $('#canvas_container').html(canvas_html);
+        var drawChart5 = function(data) {
+            // reinit canvas
+            $('#canvas_container').html(canvas_html);
 
-                // redraw chart
-                var ctx = document.getElementById("canvas").getContext("2d");
-                var data = [
-                    {
-                        value: 15,
-                        color:"#F7464A",
-                        highlight: "#FF5A5E",
-                        label: "Jean-Jacques"
-                    },
-                    {
-                        value: 18,
-                        color: "#46BFBD",
-                        highlight: "#5AD3D1",
-                        label: "David"
-                    },
-                    {
-                        value: 17,
-                        color: "#FDB45C",
-                        highlight: "#FFC870",
-                        label: "Philippe"
-                    },
-                    {
-                        value: 21,
-                        color:"green",
-                        highlight: "lightgreen",
-                        label: "Nathalie"
-                    },
-                    {
-                        value: 19,
-                        color: "grey",
-                        highlight: "ligthgray",
-                        label: "Chahira"
-                    },
-                    {
-                        value: 23,
-                        color: "yellow",
-                        highlight: "lightgoldenrodyellow",
-                        label: "Christophe"
-                    }
-                ]
+            // redraw chart
+            var ctx = document.getElementById("canvas").getContext("2d");
+            var data = [
+                {
+                    value: 15,
+                    color:"#F7464A",
+                    highlight: "#FF5A5E",
+                    label: "Jean-Jacques"
+                },
+                {
+                    value: 18,
+                    color: "#46BFBD",
+                    highlight: "#5AD3D1",
+                    label: "David"
+                },
+                {
+                    value: 17,
+                    color: "#FDB45C",
+                    highlight: "#FFC870",
+                    label: "Philippe"
+                },
+                {
+                    value: 21,
+                    color:"green",
+                    highlight: "lightgreen",
+                    label: "Nathalie"
+                },
+                {
+                    value: 19,
+                    color: "grey",
+                    highlight: "ligthgray",
+                    label: "Chahira"
+                },
+                {
+                    value: 23,
+                    color: "yellow",
+                    highlight: "lightgoldenrodyellow",
+                    label: "Christophe"
+                }
+            ]
 
-                window.myBar = new Chart(ctx).Doughnut(data, {
-                    responsive : true,
-                    animateScale: false
-                });
-            };
-        </script>
-        <div>
-            <div id="canvas_container" style="padding: 20px 30px 10px 30px"></div>
-        </div>
-
-        <script>
-            var generateChartData = function () { return {
-                labels : ["Jean-Jacques","David","Philippe","Nathalie","Chahira","Christophe"],
-                datasets : [
-                    {
-                        label: "Score",
-                        fillColor: "rgba(220,220,220,0.5)",
-                        strokeColor: "rgba(220,220,220,0.8)",
-                        highlightFill: "rgba(220,220,220,0.75)",
-                        highlightStroke: "rgba(220,220,220,1)",
-                        data : [15,18,17,21,19,23]
-                    },
-                    {
-                        label: "Durée de connexion",
-                        fillColor: "rgba(151,187,205,0.5)",
-                        strokeColor: "rgba(151,187,205,0.8)",
-                        highlightFill: "rgba(151,187,205,0.75)",
-                        highlightStroke: "rgba(151,187,205,1)",
-                        data : [68,85,152,74,171,98]
-                    }
-                ]
-            };
-            };
-        </script>
+            window.myBar = new Chart(ctx).Doughnut(data, {
+                responsive : true,
+                animateScale: false
+            });
+        };
+    </script>
+    <div>
+        <div id="canvas_container" style="padding: 20px 30px 10px 30px"></div>
     </div>
-    <div id="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <p>
-                    <span class="pull-right locale-select label label-default">FR</span>
-                                <span>
-                    Développé par <a href="#">Claroline</a>
-                </span>
-                </p>
-            </div>
-        </div>
-    </div>
+
+    <script>
+        var generateChartData = function () { return {
+            labels : ["Jean-Jacques","David","Philippe","Nathalie","Chahira","Christophe"],
+            datasets : [
+                {
+                    label: "Score",
+                    fillColor: "rgba(220,220,220,0.5)",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)",
+                    data : [15,18,17,21,19,23]
+                },
+                {
+                    label: "Durée de connexion",
+                    fillColor: "rgba(151,187,205,0.5)",
+                    strokeColor: "rgba(151,187,205,0.8)",
+                    highlightFill: "rgba(151,187,205,0.75)",
+                    highlightStroke: "rgba(151,187,205,1)",
+                    data : [68,85,152,74,171,98]
+                }
+            ]
+        };
+        };
+    </script>
+
 {% endblock %}
