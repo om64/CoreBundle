@@ -1,6 +1,6 @@
 {% extends 'ClarolineCoreBundle::mockup/dashboard/dashboard-tool.html.twig' %}
 
-{% block panelTitle %}Création d'une nouvelle vue{% endblock %}
+{% block panelTitle %}Les utilisateurs de mes EA - Tous les exercices{% endblock %}
 
 {% block panelRest %}
 
@@ -20,8 +20,8 @@
         }
     </style>
 
-    <div class="panel-body">
-        <div id="conteneur" class="container-fluid">
+    <div class="container-fluid">
+        <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12">
                     <p>Nom : <input type="text" placeholder=" 2016-03-05-1"></p>
@@ -29,38 +29,33 @@
             </div>
             <div class="row">
                 <div class="col-md-6" style="margin-bottom: 10px">
-                    <h4>1. Sur quels espaces d'activités porte la vue ?</h4>
+                    <h4>4. Sur quelle période ?</h4>
                 </div>
             </div>
             <div class="row" style="padding: 20px 0 20px 0">
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
                     <div class="form">
                         <select class="form-control" id="sel3">
-                            <option selected>Choisir les espaces d'activités</option>
-                            <option>Mes  espaces</option>
-                            <option>Un espace d'activités</option>
-                            <option>Plusieurs espaces d'activités</option>
-                            <option>Tous les espaces d'activités</option>
+                            <option>Choisir la période</option>
+                            <option>Du Au</option>
+                            <option selected>Au cours du dernier mois</option>
+                            <option>Au cours de la dernière semaine</option>
+
                         </select>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <p>Géographie</p>
-                </div>
             </div>
         </div>
-    <div>
-    <div class="panel-footer" style="text-align: right">
-        <div id="conteneur" class="container-fluid">
+        <div class="panel-footer" style="text-align: right">
+            <a href="dashboard-view-4.html"><button type="button" class="btn btn-default" title="Cliquez pour revenir à l'étape précédente">Etape précédente</button></a>
             <a href="dashboard-view-1.html"><button type="button" class="btn btn-default" title="Cliquez pour annuler la création de vue">Annuler</i></button></a>
-            <a href="dashboard-view-3.html"><button type="button" class="btn btn-primary" title="Cliquez pour passer à l'étape suivante">Etape suivante</button></a>
+            <a href="dashboard-view-6.html"><button type="button" class="btn btn-primary" title="Cliquez pour passer à l'étape suivante">Etape suivante</button></a>
         </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row features" style="margin-top: 20px">
-            <div class="col-md-offset-1 col-md-10">
-                <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">
-                    <p>A la première étape, l'utilisateur fait le choix d'un ou de plusieurs espaces d'activités.</p>
+        <div class="container-fluid">
+            <div class="row features" style="margin-top: 20px">
+                <div class="col-md-offset-1 col-md-10">
+                    <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">
+                    </div>
                 </div>
             </div>
         </div>
@@ -70,9 +65,9 @@
             <div class="row">
                 <p>
                     <span class="pull-right locale-select label label-default">FR</span>
-                            <span>
-                Développé par <a href="#">Claroline</a>
-            </span>
+                                <span>
+                    Développé par <a href="#">Claroline</a>
+                </span>
                 </p>
             </div>
         </div>

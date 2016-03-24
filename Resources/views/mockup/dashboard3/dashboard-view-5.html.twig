@@ -20,42 +20,102 @@
         }
     </style>
 
-    <div class="container-fluid">
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-xs-12">
-                    <p>Nom : <input type="text" placeholder=" 2016-03-05-1"></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6" style="margin-bottom: 10px">
-                    <h4>4. Sur quelle période ?</h4>
-                </div>
-            </div>
-            <div class="row" style="padding: 20px 0 20px 0">
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                    <div class="form">
+    <div class="panel-body">
+        <div class="container-fluid">
+            <p><strong>SELECTION :</strong> Géographie | Exercices | Pays et capitales</p>
+        </div>
+        <div id="conteneur" class="container">
+            <h2>Exercices</h2>
+            <table class="table table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>Affichage</th>
+                    <th>Données</th>
+                    <th>Ordre</th>
+                    <th>Règles</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>Tentatives</td>
+                    <td><button class="btn btn-default"><i class="fa fa-arrow-up"></i></button> <button class="btn btn-default"><i class="fa fa-arrow-down"></i></button></td>
+                    <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
+                            <i class="fa fa-plus"></i> Règle </button></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" checked></td>
+                    <td>Score</td>
+                    <td><button class="btn btn-default"><i class="fa fa-arrow-up"></i></button> <button class="btn btn-default"><i class="fa fa-arrow-down"></i></button></td>
+                    <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
+                            <i class="fa fa-plus"></i> Règle </button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" style="border: 1px solid #ccc; background-color: #f1f1f1">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4>Règle</h4>
+                    </div>
+                    <div class="col-xs-12">
+                        <p>La règle porte sur:</p>
+                    </div>
+                    <div class="col-md-3">
                         <select class="form-control" id="sel3">
-                            <option>Choisir la période</option>
-                            <option>Du Au</option>
-                            <option selected>Au cours du dernier mois</option>
-                            <option>Au cours de la dernière semaine</option>
-
+                            <option>Nombre de tentatives</option>
+                            <option>Nombre de tentatives achevées</option>
+                            <option>Nombre de tentatives inachevées</option>
+                            <option>etc...</option>
                         </select>
                     </div>
                 </div>
+                <div class="col-md-2" style="padding-top: 25px">
+                    <p>Le résultat est </p>
+                </div>
+                <div class="col-md-3" style="padding-top: 25px">
+                    <select class="form-control" id="sel3">
+                        <option>> ou =</option>
+                        <option>=</option>
+                        <option>< ou =</option>
+                        <option>etc...</option>
+                    </select>
+                </div>
+                <div class="col-md-1" style="padding-top: 25px">
+                    <p> à </p>
+                </div>
+                <div class="col-md-3" style="padding-top: 25px">
+                    <input type="text" placeholder="Taper un chiffre">
+                </div>
             </div>
         </div>
-        <div class="panel-footer" style="text-align: right">
-            <a href="dashboard-view-4.html"><button type="button" class="btn btn-default" title="Cliquez pour revenir à l'étape précédente">Etape précédente</button></a>
-            <a href="dashboard-view-1.html"><button type="button" class="btn btn-default" title="Cliquez pour annuler la création de vue">Annuler</i></button></a>
-            <a href="dashboard-view-6.html"><button type="button" class="btn btn-primary" title="Cliquez pour passer à l'étape suivante">Etape suivante</button></a>
+        <div class="col-xs-12" style="margin-top: 15px">
+            <p>Définir la période:</p>
         </div>
-        <div class="container-fluid">
-            <div class="row features" style="margin-top: 20px">
-                <div class="col-md-offset-1 col-md-10">
-                    <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">
-                    </div>
+        <div class="col-md-3">
+            <div class="form">
+                <select class="form-control" id="sel3">
+                    <option selected>Choisir la période</option>
+                    <option>Au cours de la dernière semaine</option>
+                    <option>Au cours du dernier mois</option>
+                    <option>Au cours de la dernière année</option>
+                    <option>Du ... au</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer" style="text-align: right">
+        <a href="dashboard-view-4.html"><button type="button" class="btn btn-default" title="Cliquez pour revenir à l'étape précédente">Etape précédente</button></a>
+        <a href="dashboard-view-1.html"><button type="button" class="btn btn-default" title="Cliquez pour annuler la création de vue">Annuler</i></button></a>
+        <a href="dashboard-view-6.html"><button type="button" class="btn btn-primary" title="Cliquez pour passer à l'étape suivante">Etape suivante</button></a>
+    </div>
+    <div class="container">
+        <div class="row features" style="margin-top: 20px">
+            <div class="col-md-offset-1 col-md-10">
+                <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">
+                    <p>C'est ici que l'utilisateur définit des règles à appliquer sur les données.</p>
+                    <p>C'est ici aussi qu'il peut déterminer la période sur laquelle porte sa règle.</p>
                 </div>
             </div>
         </div>

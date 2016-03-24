@@ -1,6 +1,6 @@
 {% extends 'ClarolineCoreBundle::mockup/dashboard/dashboard-tool.html.twig' %}
 
-{% block panelTitle %}Les utilisateurs de mes EA - Tous les exercices{% endblock %}
+{% block panelTitle %}Création d'une nouvelle vue{% endblock %}
 
 {% block panelRest %}
 
@@ -21,82 +21,49 @@
     </style>
 
     <div class="panel-body">
-
-        <div id="conteneur" class="container">
-            <h2>Exercices</h2>
-            <table class="table table-hover table-bordered">
-                <thead>
-                <tr>
-                    <th>Affichage</th>
-                    <th>Données</th>
-                    <th>Ordre</th>
-                    <th>Règles</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>Tentatives</td>
-                    <td><button class="btn btn-default"><i class="fa fa-arrow-up"></i></button> <button class="btn btn-default"><i class="fa fa-arrow-down"></i></button></td>
-                    <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
-                            <i class="fa fa-plus"></i> Règle </button></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" checked></td>
-                    <td>Score</td>
-                    <td><button class="btn btn-default"><i class="fa fa-arrow-up"></i></button> <button class="btn btn-default"><i class="fa fa-arrow-down"></i></button></td>
-                    <td><button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cliquez ici pour ajouter une règle">
-                            <i class="fa fa-plus"></i> Règle </button></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="col-xs-12" style="border: 1px solid #ccc; background-color: #f1f1f1">
-        <div class="row">
-            <div class="col-xs-12">
-                <h4>Règle</h4>
+        <div id="conteneur" class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Nom : <input type="text" placeholder=" 2016-03-05-1"></p>
+                </div>
             </div>
-            <div class="col-xs-12">
-                <p>La règle porte sur:</p>
+            <div class="row">
+                <div class="col-md-6" style="margin-bottom: 10px">
+                    <h4>4. Sur qui porte la vue ?</h4>
+                </div>
             </div>
-            <div class="col-md-3">
-                <select class="form-control" id="sel3">
-                    <option>Nombre de tentatives</option>
-                    <option>Nombre de tentatives achevées</option>
-                    <option>Nombre de tentatives inachevées</option>
-                    <option>etc...</option>
-                </select>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="form">
+                        <select class="form-control" id="sel2">
+                            <option>Les utilisateurs de mes EA</option>
+                            <option>Tous les utilisateurs</option>
+                            <option>Un groupe d'utilisateurs</option>
+                            <option>Les utilisateurs d'un EA</option>
+                            <option>Les utilisateurs d'une ressource</option>
+                            <option  selected>Quelques utilisateurs</option>
+                            <option>etc...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <p>Pierre Durand</p>
+                    <p>Paul Dupond</p>
+                    <p>Jacques Martin</p>
+                </div>
             </div>
-        </div>
-        <div class="col-md-2" style="padding-top: 25px">
-            <p>Le résultat est </p>
-        </div>
-        <div class="col-md-3" style="padding-top: 25px">
-            <select class="form-control" id="sel3">
-                <option>> ou =</option>
-                <option>=</option>
-                <option>< ou =</option>
-                <option>etc...</option>
-            </select>
-        </div>
-        <div class="col-md-1" style="padding-top: 25px">
-            <p> à </p>
-        </div>
-        <div class="col-md-3" style="padding-top: 25px">
-            <input type="text" placeholder="Taper un chiffre">
         </div>
     </div>
     <div class="panel-footer" style="text-align: right">
         <a href="dashboard-view-6.html"><button type="button" class="btn btn-default" title="Cliquez pour revenir à l'étape précédente">Etape précédente</button></a>
         <a href="dashboard-view-1.html"><button type="button" class="btn btn-default" title="Cliquez pour annuler la création de vue">Annuler</i></button></a>
-        <a href="dashboard-view-8.html"><button type="button" class="btn btn-primary" title="Cliquez pour passer à l'étape suivante">Etape suivante</button></a>
+        <a href="dashboard-view-9a.html"><button type="button" class="btn btn-primary" title="Cliquez pour passer à l'étape suivante">Etape suivante</button></a>
     </div>
     <div class="container">
         <div class="row features" style="margin-top: 20px">
             <div class="col-md-offset-1 col-md-10">
                 <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">
-                    <p>Description des possibilités.</p>
+
                 </div>
             </div>
         </div>
@@ -113,5 +80,4 @@
             </div>
         </div>
     </div>
-
 {% endblock %}

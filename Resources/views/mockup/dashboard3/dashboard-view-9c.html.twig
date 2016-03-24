@@ -42,7 +42,7 @@
                                 <td style="background-color: lightgrey; font-weight: bold"></td>
                                 <td style="background-color: lightgrey; font-weight: bold">Score <a href="dashboard-view-9c.html"><button type="button" class="btn btn-default; pull-right">
                                             <i class="fa fa-bar-chart fa-2x"></i></button></a></td>
-                                <td style="background-color: lightgrey; font-weight: bold">Durée totale de connexion <a href="dashboard-view-9e.html"><button type="button" class="btn btn-default; pull-right"><i class="fa fa-bar-chart fa-2x"></i></button></a>
+                                <td style="background-color: lightgrey; font-weight: bold">Durée de connexion <a href="dashboard-view-9e.html"><button type="button" class="btn btn-default; pull-right"><i class="fa fa-bar-chart fa-2x"></i></button></a>
                                 </td>
                             </tr>
                             <tr>
@@ -55,8 +55,8 @@
                             <tr>
                                 <td><input type="checkbox"></td>
                                 <td>David</td>
-                                <td style="text-align: center"><a href="dashboard-view-10.html"><i class="fa fa-caret-down"
-                                    title="Voir détails"></i></a></td>
+                                <td style="text-align: center"><i class="fa fa-caret-down"
+                                    title="Voir détails"></i></td>
                                 <td>18/25</td>
                                 <td>1h 25'</td>
                             </tr>
@@ -99,17 +99,17 @@
                     <p>
                         <a href="dashboard-view-9c.html"><button type="button" class="btn btn-default" title="Cliquez pour obtenir une vue en bâtonnets"><i class="fa fa-bar-chart fa-2x"></i></button></a>
                         <a href="dashboard-view-9d.html"><button type="button" class="btn btn-default" title="Cliquez pour obtenir une vue linéaire"><i class="fa fa-line-chart fa-2x"></i></button></a>
-                        {#<button type="button" class="btn btn-default" id="chart3" title="Cliquez pour obtenir une vue en aire" onClick="showHide();"><i class="fa fa-area-chart fa-2x"></i></button>#}
-                        {#<button type="button" class="btn btn-default" id="chart4" title="Cliquez pour obtenir une vue en camembert" onClick="showHide();"><i class="fa fa-pie-chart fa-2x"></i></button>#}
-                        {#<button type="button" class="btn btn-default" id="chart5" title="Cliquez pour obtenir une vue en doughnut" onClick="showHide();"><img src="{{ asset('uploads/custom/images/graphic.png') }}" height="28px" width="28px"></img></button>#}
+                        {#<button type="button" class="btn btn-default" id="chart3" title="Cliquez pour obtenir une vue en aire"><i class="fa fa-area-chart fa-2x"></i></button>#}
+                        {#<button type="button" class="btn btn-default" id="chart4" title="Cliquez pour obtenir une vue en camembert"><i class="fa fa-pie-chart fa-2x"></i></button>#}
+                        {#<button type="button" class="btn btn-default" id="chart5" title="Cliquez pour obtenir une vue en doughnut"><img src="{{ asset('uploads/custom/images/graphic.png') }}" height="28px" width="28px"></img></button>#}
                     </p>
                 </div>
             </div>
         </div>
         <div class="container">
             <div>
-                <!-- bar chart canvas element -->
-                <canvas id="buyers" width="800" height="300"></canvas>
+                <p style="font-weight: bold">Scores</p>
+                <canvas id="scores" width="800" height="300"></canvas>
             </div>
         </div>
     </div>
@@ -128,79 +128,21 @@
     <script type="text/javascript" src="{{ asset('uploads/custom/js/Chart.min.js') }}"></script>
 
     <script>
-        // line chart data
-        var buyerData = {
+        var scoresData = {
             labels : ["Jean-Jacques","David","Philippe","Nathalie","Chahira","Christophe"],
             datasets : [
                 {
+                    label: "Scores",
                     fillColor : "#48A497",
-                    strokeColor : "#48A4D1",
+                    strokeColor : "#48A497",
                     pointColor : "#fff",
                     pointStrokeColor : "#9DB86D",
                     data : [15,18,17,21,19,23]
                 }
             ]
         }
-        // get line chart canvas
-        var buyers = document.getElementById('buyers').getContext('2d');
-        // draw line chart
-        new Chart(buyers).Bar(buyerData);
-        // pie chart data
-        var pieData = [
-            {
-                value: 15,
-                color:"#878BB6"
-            },
-            {
-                value : 18,
-                color : "#4ACAB4"
-            },
-            {
-                value : 17,
-                color : "#FF8153"
-            },
-            {
-                value : 21,
-                color : "#FFEA88"
-            },
-            {
-                value : 17,
-                color : "#48A497"
-            },
-            {
-                value : 21,
-                color : "#9DB86D"
-            }
-        ];
-        // pie chart options
-        var pieOptions = {
-            segmentShowStroke : true,
-            animateScale : true
-        }
-        // get pie chart canvas
-        var countries= document.getElementById("countries").getContext("2d");
-        // draw pie chart
-        new Chart(countries).Pie(pieData, pieOptions);
-        // bar chart data
-        var barData = {
-            labels : ["Jean-Jacques","David","Philippe","Nathalie","Chahira","Christophe"],
-            datasets : [
-                {
-                    fillColor : "#48A497",
-                    strokeColor : "#48A4D1",
-                    data : [15,18,17,21,19,23]
-                },
-//                {
-//                    fillColor : "rgba(73,188,170,0.4)",
-//                    strokeColor : "rgba(72,174,209,0.4)",
-//                    data : [364,504,605,400,345,320]
-//                }
-            ]
-        }
-        // get bar chart canvas
-        var income = document.getElementById("income").getContext("2d");
-        // draw bar chart
-        new Chart(income).Bar(barData);
+        var scores = document.getElementById('scores').getContext('2d');
+        new Chart(scores).Bar(scoresData);
     </script>
 
 {% endblock %}
