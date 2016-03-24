@@ -51,7 +51,7 @@
                                 <td style="background-color: lightgrey; font-weight: bold">Nombre de consultations <a href="dashboard-view-9g.html"><button type="button" class="btn btn-default; pull-right">
                                             <i class="fa fa-bar-chart"></i></button></a></td>
                                 <td style="background-color: lightgrey; font-weight: bold">Nombre de messages <a href="dashboard-view-9i.html"><button type="button" class="btn btn-default; pull-right">
-                                            <i class="fa fa-bar-chart"></i></button></a></td>
+                                            <i class="fa fa-line-chart"></i></button></a></td>
                                 <td style="background-color: lightgrey; font-weight: bold">Actions</td>
                             </tr>
                             <tr>
@@ -150,18 +150,35 @@
             </div>
         </div>
     </div>
-    <div class="panel panel-footer">
-        <div class="container-fluid">
-            <ul class="pagination">
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="dashboard-view-9b.html">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-            </ul>
+    <div class="container-fluid">
+        <ul class="pagination">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+        </ul>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>
+                    <a href="dashboard-view-9i.html"><button type="button" class="btn btn-default" title="Cliquez pour obtenir une vue en bâtonnets"><i class="fa fa-bar-chart fa-2x"></i></button></a>
+                    <a href="dashboard-view-9j.html"><button type="button" class="btn btn-default" title="Cliquez pour obtenir une vue linéaire"><i class="fa fa-line-chart fa-2x"></i></button></a>
+                    {#<button type="button" class="btn btn-default" id="chart3" title="Cliquez pour obtenir une vue en aire"><i class="fa fa-area-chart fa-2x"></i></button>#}
+                    {#<button type="button" class="btn btn-default" id="chart4" title="Cliquez pour obtenir une vue en camembert"><i class="fa fa-pie-chart fa-2x"></i></button>#}
+                    {#<button type="button" class="btn btn-default" id="chart5" title="Cliquez pour obtenir une vue en doughnut"><img src="{{ asset('uploads/custom/images/graphic.png') }}" height="28px" width="28px"></img></button>#}
+                </p>
+            </div>
         </div>
     </div>
-
+    <div class="container-fluid">
+        <div>
+            <p style="font-weight: bold">Nombre de messages publiés sur le forum</p>
+            <canvas id="scores" width="800" height="300"></canvas>
+        </div>
+    </div>
+    </div>
     <div id="footer">
         <div class="container-fluid">
             <div class="row">
@@ -172,6 +189,7 @@
             </div>
         </div>
     </div>
+
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
@@ -254,241 +272,25 @@
         </div>
     </div>
 
-            {#<div class="container-fluid">#}
-                {#<div class="row">#}
-                    {#<div class="col-xs-12">#}
-                        {#<p>#}
-                            {#<button type="button" class="btn btn-default" id="chart1" title="Cliquez pour obtenir une vue en bâtonnets" onClick="showHide();"><i class="fa fa-bar-chart fa-2x"></i></button>#}
-                            {#<button type="button" class="btn btn-default" id="chart2" title="Cliquez pour obtenir une vue linéaire" onClick="showHide();"><i class="fa fa-line-chart fa-2x"></i></button>#}
-                            {#<button type="button" class="btn btn-default" id="chart3" title="Cliquez pour obtenir une vue en aire" onClick="showHide();"><i class="fa fa-area-chart fa-2x"></i></button>#}
-                            {#<button type="button" class="btn btn-default" id="chart4" title="Cliquez pour obtenir une vue en camembert" onClick="showHide();"><i class="fa fa-pie-chart fa-2x"></i></button>#}
-                            {#<button type="button" class="btn btn-default" id="chart5" title="Cliquez pour obtenir une vue en doughnut" onClick="showHide();"><img src="{{ asset('uploads/custom/images/graphic.png') }}" height="28px" width="28px"></img></button>#}
-                        {#</p>#}
-                    {#</div>#}
-                {#</div>#}
-            {#</div>#}
-        {#</div>#}
-
     <!-- ChartJS -->
     <script type="text/javascript" src="{{ asset('uploads/custom/js/Chart.min.js') }}"></script>
 
     <script>
-        var canvas_html = '<canvas id="canvas" height="50px" width="300px"></canvas>';
-
-        $(document).ready(function(){
-
-            $("#chart1").click(function() {
-                drawChart1(generateChartData());
-            });
-            $("#chart2").click(function(){
-                drawChart2(generateChartData());
-            });
-            $("#chart3").click(function(){
-                drawChart3(generateChartData());
-            });
-            $("#chart4").click(function(){
-                drawChart4(generateChartData());
-            });
-            $("#chart5").click(function(){
-                drawChart5(generateChartData());
-            });
-        });
-
-        var drawChart1 = function(data) {
-
-            $('#canvas_container').html(canvas_html);
-
-            var ctx = document.getElementById("canvas").getContext("2d");
-            window.myBar = new Chart(ctx).Bar(data, {
-                responsive : true,
-            });
-        };
-        var drawChart2 = function(data) {
-
-            $('#canvas_container').html(canvas_html);
-
-            var ctx = document.getElementById("canvas").getContext("2d");
-            window.myBar = new Chart(ctx).Line(data, {
-                responsive : true
-            });
-        };
-        var drawChart3 = function(data) {
-
-            $('#canvas_container').html(canvas_html);
-
-            var ctx = document.getElementById("canvas").getContext("2d");
-            var data = [
-                {
-                    value: 15,
-                    color:"#F7464A",
-                    highlight: "#FF5A5E",
-                    label: "Jean-Jacques"
-                },
-                {
-                    value: 18,
-                    color: "#46BFBD",
-                    highlight: "#5AD3D1",
-                    label: "David"
-                },
-                {
-                    value: 17,
-                    color: "#FDB45C",
-                    highlight: "#FFC870",
-                    label: "Philippe"
-                },
-                {
-                    value: 21,
-                    color:"#F7464A",
-                    highlight: "#FF5A5E",
-                    label: "Nathalie"
-                },
-                {
-                    value: 19,
-                    color: "#46BFBD",
-                    highlight: "#5AD3D1",
-                    label: "Chahira"
-                },
-                {
-                    value: 23,
-                    color: "#FDB45C",
-                    highlight: "#FFC870",
-                    label: "Christophe"
-                }
-            ]
-
-            window.myBar = new Chart(ctx).PolarArea(data, {
-                responsive : true
-            });
-        };
-        var drawChart4 = function(data) {
-            // reinit canvas
-            $('#canvas_container').html(canvas_html);
-
-            // redraw chart
-            var ctx = document.getElementById("canvas").getContext("2d");
-            var data = [
-                {
-                    value: 15,
-                    color:"#F7464A",
-                    highlight: "#FF5A5E",
-                    label: "Jean-Jacques"
-                },
-                {
-                    value: 18,
-                    color: "#46BFBD",
-                    highlight: "#5AD3D1",
-                    label: "David"
-                },
-                {
-                    value: 17,
-                    color: "#FDB45C",
-                    highlight: "#FFC870",
-                    label: "Philippe"
-                },
-                {
-                    value: 21,
-                    color:"#F7464A",
-                    highlight: "#FF5A5E",
-                    label: "Nathalie"
-                },
-                {
-                    value: 19,
-                    color: "#46BFBD",
-                    highlight: "#5AD3D1",
-                    label: "Chahira"
-                },
-                {
-                    value: 23,
-                    color: "#FDB45C",
-                    highlight: "#FFC870",
-                    label: "Christophe"
-                }
-            ]
-
-            window.myBar = new Chart(ctx).Pie(data, {
-                responsive : true,
-                animateScale: true
-            });
-        };
-
-        var drawChart5 = function(data) {
-            // reinit canvas
-            $('#canvas_container').html(canvas_html);
-
-            // redraw chart
-            var ctx = document.getElementById("canvas").getContext("2d");
-            var data = [
-                {
-                    value: 15,
-                    color:"#F7464A",
-                    highlight: "#FF5A5E",
-                    label: "Jean-Jacques"
-                },
-                {
-                    value: 18,
-                    color: "#46BFBD",
-                    highlight: "#5AD3D1",
-                    label: "David"
-                },
-                {
-                    value: 17,
-                    color: "#FDB45C",
-                    highlight: "#FFC870",
-                    label: "Philippe"
-                },
-                {
-                    value: 21,
-                    color:"green",
-                    highlight: "lightgreen",
-                    label: "Nathalie"
-                },
-                {
-                    value: 19,
-                    color: "grey",
-                    highlight: "ligthgray",
-                    label: "Chahira"
-                },
-                {
-                    value: 23,
-                    color: "yellow",
-                    highlight: "lightgoldenrodyellow",
-                    label: "Christophe"
-                }
-            ]
-
-            window.myBar = new Chart(ctx).Doughnut(data, {
-                responsive : true,
-                animateScale: false
-            });
-        };
-    </script>
-    <div>
-        <div id="canvas_container" style="padding: 20px 30px 10px 30px"></div>
-    </div>
-
-    <script>
-        var generateChartData = function () { return {
-            labels : ["Jean-Jacques","David","Philippe","Nathalie","Chahira","Christophe"],
+        var scoresData = {
+            labels : ["Jean-Jacques","David","Philippe","Nathalie","Chahira","Christophe","Laurent","Virginie","Thomas","Amélie","Charlotte","Stéphanie"],
             datasets : [
                 {
-                    label: "Score",
-                    fillColor: "rgba(220,220,220,0.5)",
-                    strokeColor: "rgba(220,220,220,0.8)",
-                    highlightFill: "rgba(220,220,220,0.75)",
-                    highlightStroke: "rgba(220,220,220,1)",
-                    data : [15,18,17,21,19,23]
-                },
-                {
-                    label: "Durée de connexion",
-                    fillColor: "rgba(151,187,205,0.5)",
-                    strokeColor: "rgba(151,187,205,0.8)",
-                    highlightFill: "rgba(151,187,205,0.75)",
-                    highlightStroke: "rgba(151,187,205,1)",
-                    data : [68,85,152,74,171,98]
+                    label: "Scores",
+                    fillColor : "#5cb85c",
+                    strokeColor : "#5cb85c",
+                    pointColor : "#fff",
+                    pointStrokeColor : "#9DB86D",
+                    data : [10,12,11,14,13,15,12,11,13,14,7,15]
                 }
             ]
-        };
-        };
+        }
+        var scores = document.getElementById('scores').getContext('2d');
+        new Chart(scores).Line(scoresData);
     </script>
 
 {% endblock %}
