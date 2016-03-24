@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec0e75d0-170f-4d32-ba62-faab946d001f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard3/dashboard-view-10.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard3/dashboard-view-9z.html.twig" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboard3/dashboard-view-9b.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard3/dashboard-view-11.html.twig" afterPath="$PROJECT_DIR$/dashboard3/dashboard-view-11.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard3/dashboard-view-5.html.twig" afterPath="$PROJECT_DIR$/dashboard3/dashboard-view-5.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard3/dashboard-view-9a.html.twig" afterPath="$PROJECT_DIR$/dashboard3/dashboard-view-9a.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard3/dashboard-view-9c.html.twig" afterPath="$PROJECT_DIR$/dashboard3/dashboard-view-9c.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard3/dashboard-view-9d.html.twig" afterPath="$PROJECT_DIR$/dashboard3/dashboard-view-9d.html.twig" />
@@ -37,17 +35,27 @@
         <entry file="file://$PROJECT_DIR$/map.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+              <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard-view-9e.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dashboard-view-9e.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard3/dashboard-view-9e.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.33333334">
-              <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+            <state vertical-scroll-proportion="-12.064516">
+              <caret line="263" column="0" selection-start-line="255" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard-view-9f.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dashboard3/dashboard-view-9f.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.73333335">
+              <caret line="269" column="60" selection-start-line="269" selection-start-column="60" selection-end-line="269" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -92,7 +100,6 @@
         <option value="$PROJECT_DIR$/dashboard3/dashboard-view-12.html.twig" />
         <option value="$PROJECT_DIR$/dashboard3/dashboard-view-9.html.twig" />
         <option value="$PROJECT_DIR$/dashboard3/dashboard-view-10.html.twig" />
-        <option value="$PROJECT_DIR$/dashboard3/dashboard-view-9b.html.twig" />
         <option value="$PROJECT_DIR$/dashboard3/dashboard-view-9z.html.twig" />
         <option value="$PROJECT_DIR$/dashboard3/dashboard-view-8.html.twig" />
         <option value="$PROJECT_DIR$/dashboard3/dashboard-view-7-new.html.twig" />
@@ -103,11 +110,12 @@
         <option value="$PROJECT_DIR$/dashboard3/dashboard-view-6.html.twig" />
         <option value="$PROJECT_DIR$/dashboard3/dashboard-view-7.html.twig" />
         <option value="$PROJECT_DIR$/map.yml" />
-        <option value="$PROJECT_DIR$/dashboard3/dashboard-view-11.html.twig" />
         <option value="$PROJECT_DIR$/dashboard3/dashboard-view-5.html.twig" />
+        <option value="$PROJECT_DIR$/dashboard3/dashboard-view-11.html.twig" />
         <option value="$PROJECT_DIR$/dashboard3/dashboard-view-9a.html.twig" />
-        <option value="$PROJECT_DIR$/dashboard3/dashboard-view-9c.html.twig" />
+        <option value="$PROJECT_DIR$/dashboard3/dashboard-view-9b.html.twig" />
         <option value="$PROJECT_DIR$/dashboard3/dashboard-view-9d.html.twig" />
+        <option value="$PROJECT_DIR$/dashboard3/dashboard-view-9c.html.twig" />
         <option value="$PROJECT_DIR$/dashboard3/dashboard-view-9e.html.twig" />
         <option value="$PROJECT_DIR$/dashboard3/dashboard-view-9f.html.twig" />
       </list>
@@ -198,14 +206,14 @@
     <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/.nvm/versions/node/v5.6.0/bin/node" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/dashboard3" />
-      <recent name="$PROJECT_DIR$/dashboard2" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/dashboard3" />
       <recent name="$PROJECT_DIR$/dashboard2" />
       <recent name="$PROJECT_DIR$/dashboard" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dashboard3" />
+      <recent name="$PROJECT_DIR$/dashboard2" />
     </key>
   </component>
   <component name="RunManager">
@@ -252,7 +260,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="24" width="1920" height="1056" extended-state="6" />
+    <frame x="1920" y="24" width="1920" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29139784" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -283,7 +291,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2204301" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29139784" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -536,13 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard2/dashboard-view-2.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.2439613">
-          <caret line="294" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard3/dashboard-view-1.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.76848483">
@@ -601,22 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard3/dashboard-view-11.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.32258">
-          <caret line="72" column="58" selection-start-line="72" selection-start-column="58" selection-end-line="72" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard3/dashboard-view-5.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.645162">
@@ -625,42 +610,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard3/dashboard-view-9a.html.twig">
+    <entry file="file://$PROJECT_DIR$/dashboard3/dashboard-view-11.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.612903">
-          <caret line="124" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+        <state vertical-scroll-proportion="-10.290322">
+          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard3/dashboard-view-9c.html.twig">
+    <entry file="file://$PROJECT_DIR$/dashboard2/dashboard-view-2.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.129032">
-          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+        <state vertical-scroll-proportion="-4.2545457">
+          <caret line="174" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard3/dashboard-view-9b.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.612904">
+          <caret line="133" column="51" selection-start-line="133" selection-start-column="51" selection-end-line="133" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard3/dashboard-view-9a.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.612904">
+          <caret line="141" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard3/dashboard-view-9d.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.967742">
-          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+        <state vertical-scroll-proportion="-11.354838">
+          <caret line="138" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard3/dashboard-view-9f.html.twig">
+    <entry file="file://$PROJECT_DIR$/map.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76">
-          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard3/dashboard-view-9c.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.064516">
+          <caret line="257" column="0" selection-start-line="257" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard3/dashboard-view-9e.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.33333334">
-          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+        <state vertical-scroll-proportion="-12.064516">
+          <caret line="263" column="0" selection-start-line="255" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard3/dashboard-view-9f.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73333335">
+          <caret line="269" column="60" selection-start-line="269" selection-start-column="60" selection-end-line="269" selection-end-column="60" />
           <folding />
         </state>
       </provider>

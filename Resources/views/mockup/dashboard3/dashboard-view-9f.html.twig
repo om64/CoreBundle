@@ -129,6 +129,15 @@
             </div>
         </div>
         <div class="container">
+            <ul class="pagination">
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+            </ul>
+        </div>
+        <div class="container">
             <div class="row">
                 <div class="col-xs-12">
                     <p>
@@ -144,7 +153,7 @@
         <div class="container">
             <div>
                 <p style="font-weight: bold">Durée de connexion (en minutes)</p>
-                <canvas id="buyers" width="800" height="300"></canvas>
+                <canvas id="connexions" width="800" height="300"></canvas>
             </div>
         </div>
     </div>
@@ -153,9 +162,7 @@
             <div class="row">
                 <p>
                     <span class="pull-right locale-select label label-default">FR</span>
-                            <span>
-                Développé par <a href="#">Claroline</a>
-            </span>
+                    <span>Développé par <a href="#">Claroline</a></span>
                 </p>
             </div>
         </div>
@@ -248,78 +255,20 @@
 
     <script>
         // line chart data
-        var buyerData = {
-            labels : ["Jean-Jacques","David","Philippe","Nathalie","Chahira","Christophe"],
+        var connexionsData = {
+            labels : ["Jean-Jacques","David","Philippe","Nathalie","Chahira","Christophe","Laurent","Virginie","Thomas","Amélie","Charlotte","Stéphanie"],
             datasets : [
                 {
-                    fillColor : "#48A497",
-                    strokeColor : "#48A4D1",
+                    fillColor : "#5cb85c",
+                    strokeColor : "#5cb85c",
                     pointColor : "#fff",
                     pointStrokeColor : "#9DB86D",
-                    data : [78,85,152,74,171,98]
+                    data : [78,85,152,74,171,98,66,95,172,102,147,116]
                 }
             ]
         }
-        // get line chart canvas
-        var buyers = document.getElementById('buyers').getContext('2d');
-        // draw line chart
-        new Chart(buyers).Line(buyerData);
-        // pie chart data
-        var pieData = [
-            {
-                value: 15,
-                color:"#878BB6"
-            },
-            {
-                value : 18,
-                color : "#4ACAB4"
-            },
-            {
-                value : 17,
-                color : "#FF8153"
-            },
-            {
-                value : 21,
-                color : "#FFEA88"
-            },
-            {
-                value : 17,
-                color : "#48A497"
-            },
-            {
-                value : 21,
-                color : "#9DB86D"
-            }
-        ];
-        // pie chart options
-        var pieOptions = {
-            segmentShowStroke : true,
-            animateScale : true
-        }
-        // get pie chart canvas
-        var countries= document.getElementById("countries").getContext("2d");
-        // draw pie chart
-        new Chart(countries).Pie(pieData, pieOptions);
-        // bar chart data
-        var barData = {
-            labels : ["Jean-Jacques","David","Philippe","Nathalie","Chahira","Christophe"],
-            datasets : [
-                {
-                    fillColor : "#48A497",
-                    strokeColor : "#48A4D1",
-                    data : [15,18,17,21,19,23]
-                },
-//                {
-//                    fillColor : "rgba(73,188,170,0.4)",
-//                    strokeColor : "rgba(72,174,209,0.4)",
-//                    data : [364,504,605,400,345,320]
-//                }
-            ]
-        }
-        // get bar chart canvas
-        var income = document.getElementById("income").getContext("2d");
-        // draw bar chart
-        new Chart(income).Bar(barData);
+        var connexions = document.getElementById('connexions').getContext('2d');
+        new Chart(connexions).Line(connexionsData);
     </script>
 
 {% endblock %}
