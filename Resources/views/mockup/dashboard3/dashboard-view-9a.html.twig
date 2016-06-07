@@ -254,23 +254,9 @@
         </div>
     </div>
 
-            {#<div class="container-fluid">#}
-                {#<div class="row">#}
-                    {#<div class="col-xs-12">#}
-                        {#<p>#}
-                            {#<button type="button" class="btn btn-default" id="chart1" title="Cliquez pour obtenir une vue en bâtonnets" onClick="showHide();"><i class="fa fa-bar-chart fa-2x"></i></button>#}
-                            {#<button type="button" class="btn btn-default" id="chart2" title="Cliquez pour obtenir une vue linéaire" onClick="showHide();"><i class="fa fa-line-chart fa-2x"></i></button>#}
-                            {#<button type="button" class="btn btn-default" id="chart3" title="Cliquez pour obtenir une vue en aire" onClick="showHide();"><i class="fa fa-area-chart fa-2x"></i></button>#}
-                            {#<button type="button" class="btn btn-default" id="chart4" title="Cliquez pour obtenir une vue en camembert" onClick="showHide();"><i class="fa fa-pie-chart fa-2x"></i></button>#}
-                            {#<button type="button" class="btn btn-default" id="chart5" title="Cliquez pour obtenir une vue en doughnut" onClick="showHide();"><img src="{{ asset('uploads/custom/images/graphic.png') }}" height="28px" width="28px"></img></button>#}
-                        {#</p>#}
-                    {#</div>#}
-                {#</div>#}
-            {#</div>#}
-        {#</div>#}
-
     <!-- ChartJS -->
     <script type="text/javascript" src="{{ asset('uploads/custom/js/Chart.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('uploads/custom/js/modaal.min.js') }}"></script>
 
     <script>
         var canvas_html = '<canvas id="canvas" height="50px" width="300px"></canvas>';
@@ -490,5 +476,14 @@
         };
         };
     </script>
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
+    <link href="{{ asset('uploads/custom/css/modaal.css') }}"
+          rel="stylesheet"
+          type="text/css"
+    />
+{% endblock %}
 
 {% endblock %}
