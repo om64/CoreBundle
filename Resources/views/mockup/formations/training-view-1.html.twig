@@ -1,12 +1,10 @@
 {% extends 'ClarolineCoreBundle::mockup/formations/training-tool.html.twig' %}
 
-{% block panelTitle %}[Cours] Configuration de la plateforme Claroline Connect{% endblock %}
-
 {% block panelRest %}
 
-    <style type="text/css" xmlns="http://www.w3.org/1999/html">
+    <style type="text/css" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
-        /* For the modal */
+        /* For possible modals on this page */
 
         .modal-header, h4, .close {
             background-color: #5cb85c;
@@ -17,109 +15,283 @@
         .modal-footer {
             background-color: #f9f9f9;
         }
+        table.table.table-hover {
+            width:100%;
+        }
 
     </style>
 
-    <div class="panel-body">
-        {#<div class="container-fluid">#}
-            {#<div class="row features">#}
-                {#<div class="col-xs-3">#}
-                    {#<!-- Trigger the modal with a button -->#}
-                    {#<a href="dashboard-view-2.html"><button type="button" class="btn btn-primary" title="Cliquez pour créer une vue"><i class="fa fa-plus"></i> Créer une vue</button></a>#}
-                    {#<!-- Modal -->#}
-                    {#<div class="modal fade" id="myModal" role="dialog">#}
-                    {#<div class="modal-dialog">#}
-                    {#<!-- Modal content-->#}
-                    {#<div class="modal-content">#}
-                    {#<div class="modal-header" style="padding:20px 50px">#}
-                    {#<button type="button" class="close" data-dismiss="modal">&times;</button>#}
-                    {#<h4>Etape 1 - Donner un nom à la vue</h4>#}
-                    {#</div>#}
-                    {#<div class="modal-body" style="padding:40px 50px">#}
-                    {#<p>Nom : <input type="text" placeholder=" 2016-03-05-1"></p>#}
-                    {#<input type="checkbox" name="visible" value="visible"> Visible<br>                                </div>#}
-                    {#<div class="modal-footer" style="text-align: right">#}
-                    {#<button type="submit" class="btn btn-default" data-dismiss="modal">Annuler</button>#}
-                    {#<a href="dashboard-view-2.html"><button class="btn btn-primary">OK</button></a>#}
-                    {#</div>#}
-                    {#</div>#}
-                    {#</div>#}
-                    {#</div>#}
-                {#</div>#}
-            {#</div>#}
-        {#</div>#}
-        <div class="container-fluid" style="margin-top: 20px">
-            <div class="row features">
-                <div class="col-md-6 col-lg-3 form-group input-group">
-                    <input type="text" class="form-control" placeholder="Recherche"></p>
-                    <span class="input-group-btn"><button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button> </span>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">[Cours] Configuration de la plateforme CC</h3>
+        </div>
+        <div class="panel-body">
+            <div>
+                <h3>Configuration de la plateforme CC&nbsp;<small><a href="#"><i class="fa fa-pencil pointer-hand"></i></a></small></h3>
+                <br>
+                <div class="panel panel-info">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <h3><small><i class="fa fa-circle" aria-hidden="true"></i></small> Configuration de la plateforme CC <small> 16/11/2015 13:29 </small></h3>
+                                </td>
+                                <td>
+                                    <h3>
+                                        <i class="btn btn-default fa fa-graduation-cap" data-toggle="tooltip" data-placement="top" title="Générer les certifications"></i>
+                                        <i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" data-toggle="tooltip" data-placement="top" title="Envoyer un courriel à tous les apprenants de la session"></i>
+                                        <i class="btn btn-default fa fa-plus-square" data-toggle="tooltip" data-placement="top" title="Inviter des apprenants à la session"></i>
+                                    </h3>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="table table-hover">
+                            <th class="text-center">Apprenants&nbsp;
+                                <i data-original-title="Inscrire des apprenants à la session" class="fa fa-user pointer-hand" id="register-learners-btn" data-toggle="tooltip" data-placement="top">
+                                </i>
+                                &nbsp;
+                                <i data-original-title="Inscrire des groupes à la session" class="fa fa-users pointer-hand" id="register-groups-btn" data-toggle="tooltip" data-placement="top">
+                                </i>
+                            </th>
+                            <tr>
+                                <td>
+                                    Tom
+                                    Tom
+                                    <small>(TomAdmin)</small>
+                                    &nbsp;
+                                    <span id="row-queued-user-management-1">
+                                        <span class="label label-default">En attente</span>
+                                        <span class="label label-success pointer-hand accept-registration-btn" data-queue-id="1"><i class="fa fa-check"></i></span>
+                                        <span class="label label-danger pointer-hand decline-registration-btn" data-queue-id="1"><i class="fa fa-times"></i></span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Oli
+                                    Oli
+                                    <small>(PapyAdmin)</small>
+                                    &nbsp;
+                                    <span id="row-queued-user-management-1">
+                                        <span class="label label-default">En attente</span>
+                                        <span class="label label-success pointer-hand accept-registration-btn" data-queue-id="1"><i class="fa fa-check"></i></span>
+                                        <span class="label label-danger pointer-hand decline-registration-btn" data-queue-id="1"><i class="fa fa-times"></i></span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <th class="text-center">Tuteurs&nbsp;
+                                <i data-original-title="Inscrire des tuteurs à la session" class="fa fa-user pointer-hand" id="register-tutors-btn" data-toggle="tooltip" data-placement="top"></i>
+                            </th>
+                            <tr>
+                                <td>Jane Doe&nbsp;
+                                    <span id="row-queued-user-management-1">
+                                        <span class="label label-default">En attente</span>
+                                        <span class="label label-success pointer-hand accept-registration-btn" data-queue-id="1"><i class="fa fa-check"></i></span>
+                                        <span class="label label-danger pointer-hand decline-registration-btn" data-queue-id="1"><i class="fa fa-times"></i></span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <th class="text-center">Séances&nbsp;
+                                <i data-original-title="Ajouter des séances" class="fa fa-plus-circle pointer-hand" id="register-tutors-btn" data-toggle="tooltip" data-placement="top"></i>
+                            </th>
+                            <tr>
+                                <td>
+                                    Vendredi 10 juin 2016
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row features">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <table class="table table-striped table-hover" style="width:100%">
-                        <tbody>
-                        {#<tr>#}
-                            {#<td><a href="#" title="Ouvrir cette vue">Exercices</a></td>#}
-                            {#<td style="text-align: right">#}
-                                {#<a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>#}
-                                {#<a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>#}
-                                {#<a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>#}
-                            {#</td>#}
-                        {#</tr>#}
-                        {#<tr>#}
-                            {#<td><a href="#" title="Ouvrir cette vue">Parcours</a></td>#}
-                            {#<td style="text-align: right">#}
-                                {#<a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>#}
-                                {#<a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>#}
-                                {#<a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>#}
-                            {#</td>#}
-                        {#</tr>#}
-                        {#<tr>#}
-                            {#<td><a href="#" title="Ouvrir cette vue">Fréquentation</a></td>#}
-                            {#<td style="text-align: right">#}
-                                {#<a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>#}
-                                {#<a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>#}
-                                {#<a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>#}
-                            {#</td>#}
-                        {#</tr>#}
-                        {#<tr>#}
-                            {#<td><a href="#" title="Ouvrir cette vue">Forums</a></td>#}
-                            {#<td style="text-align: right">#}
-                                {#<a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>#}
-                                {#<a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>#}
-                                {#<a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>#}
-                            {#</td>#}
-                        {#</tr>#}
-                        </tbody>
-                    </table>
+                <div id="users-box" class="hidden">
+                    <div id="users-area" class="well" style="background-color: rgba(255,255,255,0.4);">
+                    </div>
+                    <br>
                 </div>
-            </div>
-        </div>
-    </div>
-    </div>
+                    <h4 style="text-align: left; color: white">Sessions&nbsp;
+                        <i class="fa fa-chevron-right pointer-hand" data-toggle="collapse" data-target="#sessions-tab"></i>
+                    </h4>
+                    <div class="table-responsive collapse in" id="sessions-tab">
+                        <br>
+                            <table class="table">
+                                <tr>
+                                    <th>
+                                        Nom
+                                    </th>
+                                    <th>
+                                        Date de création
+                                    </th>
+                                    <th class="text-center">
+                                        Espace d&#039;activités
+                                    </th>
+                                    <th class="text-center">
+                                        Statut
+                                    </th>
+                                    <th class="text-center">
+                                        Session par défaut
+                                    </th>
+                                    <th class="text-center">
+                                        Actions
+                                    </th>
+                                </tr>
+                                <tr id="row-session-70">
+                                        <td>
+                                            <a class="show-users-btn pointer-hand" data-session-id="70">Configuration de la plateforme CC</a>
+                                        </td>
+                                        <td>
+                                            16/11/2015 13:29
+                                        </td>
+                                        <td class="text-center"> - </td>
+                                        <td class="text-center">
+                                            <i class="fa fa-circle" data-toggle="tooltip" data-placement="top" title="Non commencé" style="color: #706c6c"></i>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="default-session-btn pointer-hand" data-session-id="70">
 
-    <div class="container">
-        <div class="row features" style="margin-top: 20px">
-            <div class="col-md-offset-1 col-md-10">
-                <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow"><p>Blabla</p>
+                                                                                                <i class="fa fa-check-circle" style="color: #5CB85C"></i>
+                                                                                        </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               title="Envoyer un mail de confirmation à tous les apprenants de la session"
+                                               data-session-id="70"
+                                            >
+                                            </i>
+                                            <i class="btn btn-default fa fa-edit edit-session-btn"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               title="Modifier la session"
+                                               data-session-id="70"
+                                            >
+                                            </i>
+                                            <i class="btn btn-danger fa fa-trash delete-session-btn"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               title="Supprimer la session"
+                                               data-session-id="70"
+                                               data-session-name="Configuration de la plate-forme CC"
+                                            >
+                                            </i>
+                                        </td>
+                                    </tr>
+
+
+                                                        </table>
+                                            <span id="course-session-create-btn"
+                              class="btn btn-default pointer-hand"
+                              data-course-id="22"
+                        >
+                            <i class="fa fa-plus-circle"></i>
+                            Créer une session
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <div id="view-registration-box" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <h3 id="view-registration-header" class="modal-header">
+                </h3>
+                <div id="view-registration-body" class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Fermer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="delete-session-box" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h3>
+                        Suppression de la session
+                        <small>
+                            [<span id="delete-session-name-header"></span>]
+                        </small>
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    Êtes-vous sûr de vouloir supprimer cette session ?
+                    <br>
+                    <br>
+                    <div class="checkbox">
+                        <label>
+                            <input id="with-workspace-chk" type="checkbox">
+                            <b>
+                                Supprimer également l&#039;espace d&#039;activités associé
+                            </b>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <span class="pull-right">
+                    <span class="btn btn-default pointer-hand"
+                          data-dismiss="modal"
+                    >
+                        Annuler
+                    </span>
+                    <span id="confirm-session-deletion-btn"
+                          class="btn btn-primary pointer-hand"
+                    >
+                        Ok
+                    </span>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="registration-error-box" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h3>
+                        L&#039;inscription a échouée
+                    </h3>
+                </div>
+                <div class="modal-body" id="registration-error-box-body">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default pull-right" data-dismiss="modal">
+                        Fermer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="view-registration-box" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <h3 id="view-registration-header" class="modal-header">
+                </h3>
+                <div id="view-registration-body" class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <input type="button"
+                           class="btn btn-default"
+                           data-dismiss="modal"
+                           value="Fermer"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
-
 {% block stylesheets %}
     {{ parent() }}
     {% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
 
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          rel="stylesheet"
-          type="text/css"
-    />
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
 {% endblock %}
 
