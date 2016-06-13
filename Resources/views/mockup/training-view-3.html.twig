@@ -1,4 +1,4 @@
-{% extends 'ClarolineCoreBundle::mockup/training-tool1.html.twig' %}
+{% extends 'ClarolineCoreBundle::mockup/training-tool3.html.twig' %}
 
 {% block panelTitle %}Gestion des sessions{% endblock %}
 
@@ -17,74 +17,206 @@
         .modal-footer {
             background-color: #f9f9f9;
         }
+
+        /* To give full width to tables */
+
         table.table.table-hover {
             width:100%;
         }
+
+        /* To change the backgroud color of the top bar */
+
+        .navbar-inverse {
+            background-color: #5cb85c;
+            border-color: #5cb85c;
+        }
+        .navbar.navbar-inverse.navbar-fixed-top {
+            border-bottom: 2px solid #5cb85c;
+        }
+        #top_bar li:not(:last-child) > a, .top-bar li:not(:last-child) > a {
+            color: white;
+            border-right: 1px solid #5cb85c !important;
+        }
     </style>
-    <div class="btn-group">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-cog"></i> <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-            <li><a class="ng-binding" href="#" ng-click="uc.clickDelete()"> Supprimer </a></li>
 
-            <li role="separator" class="divider"></li>
-            <li><a class="ng-binding" href="/admin/users/new"> Nouvelle séance </a></li>
-            <li><a href="#/users/groups" class="ng-binding" ui-sref="users.groups.list"> Gérer les séances </a></li>
+    <div class="container-fluid" style="padding-top: 10px">
+        <div class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-cog"></i> <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="ng-binding" href="#"> Supprimer des sessions</a></li>
 
+                <li role="separator" class="divider"></li>
+                <li><a href="#" class="ng-binding"> Créer une session </a></li>
+                <li><a href="#" class="ng-binding"> Gérer les sessions </a></li>
 
-            <li role="separator" class="divider"></li>
-            <li><a class="ng-binding" href="/api/users/page/0/limit/9999/search.xls"> Export Calendrier </a></li>
-        </ul>
+                <li role="separator" class="divider"></li>
+                <li><a class="ng-binding" href="#"> Exporter vers calendrier </a></li>
+            </ul>
+        </div>
+
+    <div class="action-bar" align="right">
+        <div class="panel-body">
+            <div class="row">
+                <form>
+                    <input type="text" name="search" style="min-width: 30pc">
+                    <button type="button" class="btn btn-success"><span class="fa fa-search"></span> Search </button>
+                </form>
+            </div>
+            <div class="row" style="text-align: left; color: white; background-color: #5cb85c; padding-left: 15px">
+                <div class="col-xs-6">
+                    <h3> Français : Session 1&nbsp;
+                        <i class="fa fa-chevron-right pointer-hand" data-toggle="collapse" data-target="#session1-tab"></i>
+                    </h3>
+                </div>
+                <div class="col-xs-6">
+                     <h3>
+                        <i class="btn btn-default fa fa-envelope-o" data-toggle="tooltip" data-placement="top" title="Envoyer un courriel à tous les apprenants de la session"></i>
+                        <i class="btn btn-default fa fa-plus-square" data-toggle="tooltip" data-placement="top" title="Inviter des apprenants à la session"></i>
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="table-responsive collapse" id="session1-tab">
+                    <br>
+                    <table class="table">
+                        <tr>
+                            <td>
+                                Séance 1
+                            </td>
+                            <td>
+                                Lundi 30 mai 2016 9h00
+                            </td>
+                            <td>
+                                Mardi 31 mai 2016 15h20
+                            </td>
+                            <td>
+                                Local 222
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                TP
+                            </td>
+                            <td>
+                                Jeudi 1 septembre 2016 10h00
+                            </td>
+                            <td>
+                                Vendredi 2 septembre 2016 18h00
+                            </td>
+                            <td>
+                                Rue de Sotriamont, n° 1</br>
+                                1400 Nivelles</br>
+                                Local 120
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row" style="text-align: left; color: white; background-color: #5cb85c; padding-left: 15px; margin-top: 15px">
+                <div class="col-xs-6">
+                    <a href="training-view-2.html" style="color: white"><h3> Français : Session 2&nbsp;</a>
+                        <i class="fa fa-chevron-right pointer-hand" data-toggle="collapse" data-target="#session2-tab"></i>
+                    </h3>
+                </div>
+                <div class="col-xs-6">
+                     <h3>
+                        <i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" data-toggle="tooltip" data-placement="top" title="Envoyer un courriel à tous les apprenants de la session"></i>
+                        <i class="btn btn-default fa fa-plus-square" data-toggle="tooltip" data-placement="top" title="Inviter des apprenants à la session"></i>
+                    </h3>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="table-responsive collapse" id="session2-tab">
+                    <br>
+                    <table class="table">
+                        <tr>
+                            <td>
+                                Séance 2
+                            </td>
+                            <td>
+                                Lundi 5 juin 2016 14h00
+                            </td>
+                            <td>
+                                Lundi 5 juin 2016 16h00
+                            </td>
+                            <td>
+                                Local 25
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                TP
+                            </td>
+                            <td>
+                                Jeudi 1 septembre 2016 10h00
+                            </td>
+                            <td>
+                                Vendredi 2 septembre 2016 18h00
+                            </td>
+                            <td>
+                                Rue de la pierre, n° 28</br>
+                                1800 Labas</br>
+                                Local b.451
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row" style="text-align: left; color: white; background-color: #5cb85c; padding-left: 15px; margin-top: 15px">
+                <div class="col-xs-6">
+                    <h3> Mathématiques : Session 1&nbsp;
+                        <i class="fa fa-chevron-right pointer-hand" data-toggle="collapse" data-target="#session3-tab"></i>
+                    </h3>
+                </div>
+                <div class="col-xs-6">
+                     <h3>
+                        <i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" data-toggle="tooltip" data-placement="top" title="Envoyer un courriel à tous les apprenants de la session"></i>
+                        <i class="btn btn-default fa fa-plus-square" data-toggle="tooltip" data-placement="top" title="Inviter des apprenants à la session"></i>
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="table-responsive collapse" id="session3-tab">
+                    <br>
+                    <table class="table">
+                        <tr>
+                            <td>
+                                Séance 2
+                            </td>
+                            <td>
+                                Lundi 5 juin 2016 14h00
+                            </td>
+                            <td>
+                                Lundi 5 juin 2016 16h00
+                            </td>
+                            <td>
+                                Local 25
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                TP
+                            </td>
+                            <td>
+                                Jeudi 1 septembre 2016 10h00
+                            </td>
+                            <td>
+                                Vendredi 2 septembre 2016 18h00
+                            </td>
+                            <td>
+                                Rue de la pierre, n° 28</br>
+                                1800 Labas</br>
+                                Local b.451
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-    <span class="input-group-btn">
-        <button id="search-button" class="filter btn btn-default" type="button" ng-click="cs.search()" id="search-button"><i class="fa fa-search"></i></button>
-    <div id="search-el"></div>
-
-
-    </span>
-    <span class="ui-select-match"></span><input style="width: 1403px;" autocomplete="false" autocorrect="off" autocapitalize="off" spellcheck="false" class="ui-select-search input-xs ng-pristine ng-valid ng-touched" placeholder="" ng-disabled="$select.disabled" ng-hide="$select.disabled" ng-click="$select.activate()" ng-model="$select.search" role="combobox" aria-label="Select box" ondrop="return false;" type="text">
-
-    <h3 style="text-align: left; background-color: lightgrey">Français : Session 2&nbsp;
-        <i class="fa fa-chevron-right pointer-hand" data-toggle="collapse" data-target="#session2-tab"></i>
-    </h3>
-    <div class="table-responsive collapse" id="session2-tab">
-        <br>
-        <table class="table">
-            <tr>
-                <td>
-                    Séance 2
-                </td>
-                <td>
-                    Lundi 5 juin 2016 14h00
-                </td>
-                <td>
-                    Lundi 5 juin 2016 16h00
-                </td>
-                <td>
-                    Local 25
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    TP
-                </td>
-                <td>
-                    Jeudi 1 septembre 2016 10h00
-                </td>
-                <td>
-                    Vendredi 2 septembre 2016 18h00
-                </td>
-                <td>
-                    Rue de la pierre, n° 28</br>
-                    1800 Labas</br>
-                    Local b.451
-                </td>
-            </tr>
-        </table>
-    </div>
-
-
 
     <div id="push"></div>
     <div id="footer">
@@ -97,6 +229,7 @@
             </div>
         </div>
     </div>
+
 {% endblock %}
 {% block stylesheets %}
     {{ parent() }}
