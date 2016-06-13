@@ -326,23 +326,43 @@
                                     <table class="table table-responsive">
                                         <tr>
                                             <td>Nom</td>
-                                            <td></td>
+                                            <td>
+                                                <form>
+                                                    <input type="text" name="name" style="min-width: 30pc" placeholder="Votre nom">
+                                                </form>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Date de début</td>
-                                            <td></td>
+                                            <td>
+                                                <form>
+                                                    <input type="text" name="start-date" style="min-width: 30pc" placeholder="jj/mm/aaaa">
+                                                </form>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Heure de début</td>
-                                            <td></td>
+                                            <td>
+                                                <form>
+                                                    <input type="text" name="start-hour" style="min-width: 30pc" placeholder="hh:mm">
+                                                </form>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Date de fin</td>
-                                            <td></td>
+                                            <td>
+                                                <form>
+                                                    <input type="text" name="end-date" style="min-width: 30pc" placeholder="jj/mm/aaaa">
+                                                </form>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Heure de fin</td>
-                                            <td></td>
+                                            <td>
+                                                <form>
+                                                    <input type="text" name="start-hour" style="min-width: 30pc" placeholder="hh:mm">
+                                                </form>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Statut</td>
@@ -369,23 +389,21 @@
                                         <tr>
                                             <td>Lieu par défaut</td>
                                             <td>
-                                                <i class="fa fa-square-o"></i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td> Interne</td>
-                                            <td>
+                                                <p><i class="fa fa-square-o"></i></br></br>
+                                                Interne
                                                 <select class="form-control" id="sel1">
                                                     <option selected>Local 1</option>
                                                     <option>Local 2</option>
                                                     <option>Local 3</option>
                                                     <option>Etc.</option>
                                                 </select>
+                                                </p>
+                                                <p>Externe
+                                                    <form>
+                                                        <input type="text" name="ext-room" style="min-width: 30pc" placeholder="Adresse et nom du local">
+                                                    </form>
+                                                </p>
                                             </td>
-                                        </tr>
-                                        <tr>
-                                            <td> Externe</td>
-                                            <td></td>
                                         </tr>
                                         <tr>
                                             <td>Inscription publique</td>
@@ -395,7 +413,9 @@
                                         </tr>
                                         <tr>
                                             <td>Désinscription publique</td>
-                                            <td></td>
+                                            <td>
+                                                <i class="fa fa-check-square" style="color: #5CB85C"></i>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Cursus</td>
@@ -430,19 +450,15 @@
     {{ parent() }}
     {% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
 
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
 
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-    <script type="text/javascript"
-            src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
-    >
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
     </script>
-    <script type="text/javascript"
-            src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-    >
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
     </script>
 
 {% endblock %}
