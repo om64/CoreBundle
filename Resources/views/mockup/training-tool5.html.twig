@@ -1,0 +1,13 @@
+{% extends 'HeVinciMockupBundle::library/claroline/tool.html.twig' %}
+
+{% set toolName = "Gestion des cursus" %}
+{% set toolSection = "Administration" %}
+{% set toolPage = ['Cours', 'Modification du cours [Alerter les interlocuteurs concernés par les dysfonctionnements et les risques constatés]'] %}
+{% set toolIcon = "arrow-up" %}
+
+{% block panelRest %}
+    <div class="panel-footer">
+        {% block panelFooter %}
+        {% endblock %}
+    </div>
+{% endblock %}

@@ -1,0 +1,286 @@
+{% extends 'ClarolineCoreBundle::mockup/training-tool4.html.twig' %}
+
+{% block panelTitle %}Gestion des cours{% endblock %}
+
+{% block panelRest %}
+
+    <style type="text/css" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+        /* For possible modals on this page */
+
+        .modal-header, h4, .close {
+            background-color: #5cb85c;
+            color:white !important;
+            text-align: center;
+            font-size: 20px;
+        }
+        .modal-footer {
+            background-color: #f9f9f9;
+        }
+
+        /* To give full width to tables */
+
+        table.table.table-hover {
+            width:100%;
+        }
+
+        /* To change the backgroud color of the top bar */
+
+        .navbar-inverse {
+            background-color: #5cb85c;
+            border-color: #5cb85c;
+        }
+        .navbar.navbar-inverse.navbar-fixed-top {
+            border-bottom: 2px solid #5cb85c;
+        }
+        #top_bar li:not(:last-child) > a, .top-bar li:not(:last-child) > a {
+            color: white;
+            border-right: 1px solid #5cb85c !important;
+        }
+        .panel-default > .panel-heading {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #ddd;
+        }
+    </style>
+    <div class="container-fluid">
+        <div class="btn-group margin-top-sm" role="group">
+            <a class="btn btn-primary" href="#">
+                <i class="fa fa-plus-circle"></i>
+                Créer un cours
+            </a>
+            <span id="import-courses-btn" class="btn btn-default">
+            <i class="fa fa-sign-in"></i>
+            Importer
+            </span>
+        <a class="btn btn-default" href="#">
+            <i class="fa fa-sign-out"></i>
+            Exporter
+        </a>
+        </div>
+
+        <div class="input-group col-md-6 pull-right margin-top-sm">
+            <input id="search-course-input" class="form-control search-course" type="text" data-max="50" data-order="ASC" data-ordered-by="title" value="" placeholder="Rechercher">
+            <span class="input-group-btn">
+            <button id="search-course-btn" class="filter btn btn-primary search-course-btn" data-max="50" data-order="ASC" data-ordered-by="title" type="button">
+                <i class="fa fa-search"></i>
+            </button>
+            </span>
+        </div>
+        <br>
+        <br>
+        <div class="pagination">
+            <ul>
+                <li class="prev disabled">
+                    <span>← Précédent</span>
+                </li>
+                <li class="active">
+                    <span>1</span>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">4</a>
+                </li>
+                <li class="next">
+                    <a href="#">Suivant →</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>
+                        <a href="#"> Titre </a>
+                        </th>
+                        <th>
+                        <a href="#"> Code </a>
+                        </th>
+                        <th class="text-center">
+                        <a href="#"> Description </a>
+                        </th>
+                        <th class="text-center">
+                        <a href="#">
+                        <i class="fa fa-sign-in" title="Inscription publique" data-placement="top" data-toggle="tooltip"> </i>
+                        </a>
+                        </th>
+                        <th class="text-center">
+                        <a href="#">
+                        <i class="fa fa-sign-out" title="Désinscription publique" data-placement="top" data-toggle="tooltip"> </i>
+                        </a>
+                        </th>
+                        <th class="text-center">
+                        <a href="#">
+                        <i class="fa fa-check-square-o" title="Validation de l'inscription" data-placement="top" data-toggle="tooltip"> </i>
+                        </a>
+                        </th>
+                        <th class="text-center"> Actions </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#"> Adopter les gestes et postures adaptés aux différentes situations afin d'éviter les douleurs et ménager son corps </a>
+                        </td>
+                        <td> M5N2F </td>
+                        <td class="text-center"> - </td>
+                        <td class="text-center">
+                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
+                        </td>
+                        <td class="text-center">
+                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
+                        </td>
+                        <td class="text-center">
+                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-default btn-sm" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier le cours">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <span class="btn btn-danger btn-sm delete-course-btn" title="Supprimer le cours" data-target="#delete-course-box" data-placement="top" data-toggle="modal">
+                            <i class="fa fa-trash"></i>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#"> Alerter les interlocuteurs concernés par les dysfonctionnements et les risques constatés </a>
+                        </td>
+                        <td> M4N2D </td>
+                        <td class="text-center"> - </td>
+                        <td class="text-center">
+                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
+                        </td>
+                        <td class="text-center">
+                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
+                        </td>
+                        <td class="text-center">
+                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-default btn-sm" title="Modifier le cours" data-placement="top" data-toggle="tooltip" href="training-view-5.html">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <span class="btn btn-danger btn-sm delete-course-btn" title="Supprimer le cours" data-target="#delete-course-box" data-placement="top" data-toggle="modal">
+                            <i class="fa fa-trash"></i>
+                            </span>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div id="view-registration-box" class="modal fade" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <h3 id="view-registration-header" class="modal-header">
+                    </h3>
+                    <div id="view-registration-body" class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button"
+                               class="btn btn-default"
+                               data-dismiss="modal"
+                               value="Fermer"></div>
+                </div>
+            </div>
+        </div>
+
+            {#<div id="myModal" class="modal fade" role="dialog">#}
+
+
+
+        <div id="delete-course-box" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h3>
+                            Suppression du cours
+                        </h3>
+                    </div>
+                    <div class="modal-body">
+                        Êtes-vous sûr de vouloir supprimer ce cours ?
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                    <span class="pull-right">
+                        <span class="btn btn-default pointer-hand"
+                              data-dismiss="modal"
+                        >
+                            Annuler
+                        </span>
+                        <span id="confirm-session-deletion-btn"
+                              class="btn btn-primary pointer-hand"
+                        >
+                            Ok
+                        </span>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {#<div id="registration-error-box" class="modal fade" role="dialog" aria-hidden="true">#}
+            {#<div class="modal-dialog">#}
+                {#<div class="modal-content">#}
+                    {#<div class="modal-header">#}
+                        {#<button type="button" class="close" data-dismiss="modal" aria-hidden="true">#}
+                            {#&times;#}
+                        {#</button>#}
+                        {#<h3>#}
+                            {#L&#039;inscription a échoué#}
+                        {#</h3>#}
+                    {#</div>#}
+                    {#<div class="modal-body" id="registration-error-box-body">#}
+                    {#</div>#}
+                    {#<div class="modal-footer">#}
+                        {#<button class="btn btn-default pull-right" data-dismiss="modal">#}
+                            {#Fermer#}
+                        {#</button>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+    </div>
+
+    {#<div id="push"></div>#}
+        <div id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <p>
+                        <span class="pull-right locale-select label label-default">FR</span>
+                        <span>Développé par <a href="http://www.claroline.net" target="_blank">Claroline</a> Release 16.05</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
+    
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" property="">
+    
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
+    >
+    </script>
+    <script type="text/javascript"
+            src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    >
+    </script>
+{% endblock %}
