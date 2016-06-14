@@ -1,6 +1,13 @@
 {% extends 'ClarolineCoreBundle::mockup/training-tool4.html.twig' %}
 
-{% block panelTitle %}Gestion des cours{% endblock %}
+{% block panelTitle %}
+
+    Gestion des cours
+    <a class="pull-right" title="" data-placement="left" data-toggle="tooltip" href="#" data-original-title="Exporter">
+    <i class="fa fa-sign-out"></i>
+    </a>
+
+{% endblock %}
 
 {% block panelRest %}
 
@@ -96,35 +103,37 @@
             <table class="table">
                 <tbody>
                     <tr>
-                        <th>
-                        <a href="#"> Titre </a>
+                        <th style="background-color: #337ab7">
+                            <a href="#" style="color: #fff"> Titre </a>
                         </th>
-                        <th>
-                        <a href="#"> Code </a>
+                        <th style="background-color: #337ab7">
+                            <a href="#" style="color: #fff"> Code </a>
                         </th>
-                        <th class="text-center">
-                        <a href="#"> Description </a>
+                        <th class="text-center" style="background-color: #337ab7">
+                            <a href="#" style="color: #fff"> Description </a>
                         </th>
-                        <th class="text-center">
-                        <a href="#">
-                        <i class="fa fa-sign-in" title="Inscription publique" data-placement="top" data-toggle="tooltip"> </i>
-                        </a>
+                        <th class="text-center" style="background-color: #337ab7">
+                            <a href="#" style="color: #fff">
+                                <i class="fa fa-sign-in" title="Inscription publique" data-placement="top" data-toggle="tooltip"> </i>
+                            </a>
                         </th>
-                        <th class="text-center">
-                        <a href="#">
-                        <i class="fa fa-sign-out" title="Désinscription publique" data-placement="top" data-toggle="tooltip"> </i>
-                        </a>
+                        <th class="text-center" style="background-color: #337ab7">
+                            <a href="#" style="color: #fff">
+                                <i class="fa fa-sign-out" title="Désinscription publique" data-placement="top" data-toggle="tooltip"> </i>
+                            </a>
                         </th>
-                        <th class="text-center">
-                        <a href="#">
-                        <i class="fa fa-check-square-o" title="Validation de l'inscription" data-placement="top" data-toggle="tooltip"> </i>
-                        </a>
+                        <th class="text-center" style="background-color: #337ab7">
+                            <a href="#" style="color: #fff">
+                                <i class="fa fa-check-square-o" title="Validation de l'inscription" data-placement="top" data-toggle="tooltip"> </i>
+                            </a>
                         </th>
-                        <th class="text-center"> Actions </th>
+                        <th class="text-center" style="background-color: #337ab7">
+                            <a href="#" style="color: #fff"> Actions </a>
                     </tr>
                     <tr>
                         <td>
                             <a href="#"> Adopter les gestes et postures adaptés aux différentes situations afin d'éviter les douleurs et ménager son corps </a>
+                            <i class="fa fa-chevron-circle-right pull-right pointer-hand" data-toggle="collapse" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
                         </td>
                         <td> M5N2F </td>
                         <td class="text-center"> - </td>
@@ -149,6 +158,49 @@
                     <tr>
                         <td>
                             <a href="#"> Alerter les interlocuteurs concernés par les dysfonctionnements et les risques constatés </a>
+                            <i data-placement="top" data-toggle="collapse" class="fa fa-chevron-circle-right pull-right pointer-hand" data-target="#sessions-tab" style="color: #337ab7" title="Détails des sessions"></i>
+                            <div class="container-fluid>">
+                                <div id="sessions-tab" class="table-responsive collapse" aria-expanded="true" style="">
+                                    <br>
+                                    <table class="table">
+                                        <tbody>
+                                        <tr>
+                                            <th> Nom </th>
+                                            <th> Date de création </th>
+                                            <th class="text-center"> Espace d'activités </th>
+                                            <th class="text-center"> Statut </th>
+                                            <th class="text-center"> Session par défaut </th>
+                                            <th class="text-center"> Actions </th>
+                                        </tr>
+                                        <tr>
+                                            <p><h5><strong>Détails des sessions</strong></h5></p>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="training-view-6.html" class="show-users-btn pointer-hand"> Test Sessions </a>
+                                            </td>
+                                            <td> 21/08/2015 12:37 </td>
+                                            <td class="text-center">
+                                                <a class="fa fa-book" title="Alerter les interlocuteurs concernés par les dysfonctionnements et les risques constatés [Test Sessions] (M4N2D_1)" data-placement="top" data-toggle="tooltip" href="/workspaces/88/open"> </a>
+                                            </td>
+                                            <td class="text-center">
+                                                <i class="fa fa-circle" style="color: #706c6c" title="Non commencé" data-placement="top" data-toggle="tooltip"> </i>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="default-session-btn pointer-hand" data-session-id="63">
+                                                <i class="fa fa-times-circle" style="color: #D9534F"></i>
+                                                </span>
+                                            </td>
+                                            <td class="text-center">
+                                                <i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" title="Envoyer un mail de confirmation à tous les apprenants de la session" data-placement="top" data-toggle="tooltip"> </i>
+                                                <i class="btn btn-default fa fa-edit edit-session-btn" title="Modifier la session" data-placement="top" data-toggle="tooltip"> </i>
+                                                <i class="btn btn-danger fa fa-trash delete-session-btn" title="Supprimer la session" data-placement="top" data-toggle="tooltip"> </i>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </td>
                         <td> M4N2D </td>
                         <td class="text-center"> - </td>
@@ -170,10 +222,108 @@
                             </span>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <a href="#"> Alerter sa hiérarchie en cas de non-application de la procédure </a>
+                            <i class="fa fa-chevron-circle-right pull-right pointer-hand" data-toggle="collapse" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
+                        </td>
+                        <td> M4N3C </td>
+                        <td class="text-center"> - </td>
+                        <td class="text-center">
+                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
+                        </td>
+                        <td class="text-center">
+                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
+                        </td>
+                        <td class="text-center">
+                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-default btn-sm" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier le cours">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <span class="btn btn-danger btn-sm delete-course-btn" title="Supprimer le cours" data-target="#delete-course-box" data-placement="top" data-toggle="modal">
+                            <i class="fa fa-trash"></i>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#"> Aller chercher des informations, consulter des personnes ressources </a>
+                            <i class="fa fa-chevron-circle-right pull-right pointer-hand" data-toggle="collapse" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
+                        </td>
+                        <td> M6N1C </td>
+                        <td class="text-center"> - </td>
+                        <td class="text-center">
+                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
+                        </td>
+                        <td class="text-center">
+                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
+                        </td>
+                        <td class="text-center">
+                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-default btn-sm" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier le cours">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <span class="btn btn-danger btn-sm delete-course-btn" title="Supprimer le cours" data-target="#delete-course-box" data-placement="top" data-toggle="modal">
+                            <i class="fa fa-trash"></i>
+                            </span>
+                        </td>
+                    </tr>
 
                 </tbody>
             </table>
         </div>
+
+        {#<div id="sessions-box">#}
+            {#<h4>#}
+                {#Sessions#}
+                {#<i class="fa fa-chevron-right pointer-hand" data-target="#sessions-tab" data-toggle="collapse" aria-expanded="true"> </i>#}
+            {#</h4>#}
+            {#<div id="sessions-tab" class="table-responsive collapse" aria-expanded="true" style="">#}
+                {#<br>#}
+                {#<table class="table">#}
+                    {#<tbody>#}
+                    {#<tr>#}
+                        {#<th> Nom </th>#}
+                        {#<th> Date de création </th>#}
+                        {#<th class="text-center"> Espace d'activités </th>#}
+                        {#<th class="text-center"> Statut </th>#}
+                        {#<th class="text-center"> Session par défaut </th>#}
+                        {#<th class="text-center"> Actions </th>#}
+                    {#</tr>#}
+                    {#<tr id="row-session-63">#}
+                        {#<td>#}
+                            {#<a class="show-users-btn pointer-hand" data-session-id="63"> Test Sessions </a>#}
+                        {#</td>#}
+                        {#<td> 21/08/2015 12:37 </td>#}
+                        {#<td class="text-center">#}
+                            {#<a class="fa fa-book" title="Alerter les interlocuteurs concernés par les dysfonctionnements et les risques constatés [Test Sessions] (M4N2D_1)" data-placement="top" data-toggle="tooltip" href="/workspaces/88/open"> </a>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-circle" style="color: #706c6c" title="Non commencé" data-placement="top" data-toggle="tooltip"> </i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<span class="default-session-btn pointer-hand" data-session-id="63">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                            {#</span>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" data-session-id="63" title="Envoyer un mail de confirmation à tous les apprenants de la session" data-placement="top" data-toggle="tooltip"> </i>#}
+                            {#<i class="btn btn-default fa fa-edit edit-session-btn" data-session-id="63" title="Modifier la session" data-placement="top" data-toggle="tooltip"> </i>#}
+                            {#<i class="btn btn-danger fa fa-trash delete-session-btn" data-session-name="Test Sessions" data-session-id="63" title="Supprimer la session" data-placement="top" data-toggle="tooltip"> </i>#}
+                        {#</td>#}
+                    {#</tr>#}
+                    {#</tbody>#}
+                {#</table>#}
+                    {#<span id="course-session-create-btn" class="btn btn-default pointer-hand" data-course-id="86">#}
+                    {#<i class="fa fa-plus-circle"></i>#}
+                    {#Créer une session#}
+                    {#</span>#}
+            {#</div>#}
+        {#</div>#}
 
         <div id="view-registration-box" class="modal fade" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
