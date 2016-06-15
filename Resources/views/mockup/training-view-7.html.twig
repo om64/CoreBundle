@@ -1,0 +1,392 @@
+{% extends 'ClarolineCoreBundle::mockup/training-tool-7.html.twig' %}
+
+{% block panelTitle %}
+
+    Gestion des sessions
+
+{% endblock %}
+
+{% block panelRest %}
+
+    <style type="text/css" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+        /* For possible modals on this page */
+
+        .modal-header, h4, .close {
+            background-color: #5cb85c;
+            color:white !important;
+            text-align: center;
+            font-size: 20px;
+        }
+        .modal-footer {
+            background-color: #f9f9f9;
+        }
+
+        /* To give full width to tables */
+
+        table.table.table-hover {
+            width:100%;
+        }
+
+        /* To change the backgroud color of the top bar */
+
+        .navbar-inverse {
+            background-color: #5cb85c;
+            border-color: #5cb85c;
+        }
+        .navbar.navbar-inverse.navbar-fixed-top {
+            border-bottom: 2px solid #5cb85c;
+        }
+        #top_bar li:not(:last-child) > a, .top-bar li:not(:last-child) > a {
+            color: white;
+            border-right: 1px solid #5cb85c !important;
+        }
+        .panel-default > .panel-heading {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #ddd;
+        }
+    </style>
+    <div class="container-fluid">
+        <div class="btn-group margin-top-sm" role="group">
+            <a class="btn btn-primary" href="#">
+                <i class="fa fa-plus-circle"></i>
+                Créer une sqession
+            </a>
+            <span id="import-courses-btn" class="btn btn-default">
+            <i class="fa fa-sign-in"></i>
+            Importer
+            </span>
+        <a class="btn btn-default" href="#">
+            <i class="fa fa-sign-out"></i>
+            Exporter
+        </a>
+        </div>
+
+        <div class="input-group col-md-6 pull-right margin-top-sm">
+            <input id="search-course-input" class="form-control search-course" type="text" data-max="50" data-order="ASC" data-ordered-by="title" value="" placeholder="Rechercher">
+            <span class="input-group-btn">
+            <button id="search-course-btn" class="filter btn btn-primary search-course-btn" data-max="50" data-order="ASC" data-ordered-by="title" type="button">
+                <i class="fa fa-search"></i>
+            </button>
+            </span>
+        </div>
+        <br>
+        <br>
+        <div class="pagination">
+            <ul>
+                <li class="prev disabled">
+                    <span>← Précédent</span>
+                </li>
+                <li class="active">
+                    <span>1</span>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">4</a>
+                </li>
+                <li class="next">
+                    <a href="#">Suivant →</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th style="background-color: #337ab7">
+                            <a href="#" style="color: #fff"> Date </a>
+                        </th>
+                        <th style="background-color: #337ab7">
+                            <a href="#" style="color: #fff"> Titre </a>
+                        </th>
+                        <th style="background-color: #337ab7">
+                            <a href="#" style="color: #fff"> Cours </a>
+                        </th>
+                        <th style="background-color: #337ab7">
+                            <a href="#" style="color: #fff"> Code </a>
+                        </th>
+                        {#<th class="text-center" style="background-color: #337ab7">#}
+                            {#<a href="#" style="color: #fff"> Description </a>#}
+                        {#</th>#}
+                        {#<th class="text-center" style="background-color: #337ab7">#}
+                            {#<a href="#" style="color: #fff">#}
+                                {#<i class="fa fa-sign-in" title="Inscription publique" data-placement="top" data-toggle="tooltip"> </i>#}
+                            {#</a>#}
+                        {#</th>#}
+                        {#<th class="text-center" style="background-color: #337ab7">#}
+                            {#<a href="#" style="color: #fff">#}
+                                {#<i class="fa fa-sign-out" title="Désinscription publique" data-placement="top" data-toggle="tooltip"> </i>#}
+                            {#</a>#}
+                        {#</th>#}
+                        {#<th class="text-center" style="background-color: #337ab7">#}
+                            {#<a href="#" style="color: #fff">#}
+                                {#<i class="fa fa-check-square-o" title="Validation de l'inscription" data-placement="top" data-toggle="tooltip"> </i>#}
+                            {#</a>#}
+                        {#</th>#}
+                        <th class="text-center" style="background-color: #337ab7">
+                            <a href="#" style="color: #fff"> Actions </a>
+                    </tr>
+                    <tr>
+                        <td>
+                            Mercredi 15 juin 2016
+                        </td>
+                        <td>
+                            Paramètres utilisateurs
+                            <span data-placement="top" data-toggle="tooltip" title="Voir les séances" class="pull-right" ><i data-toggle="collapse" class="fa fa-chevron-circle-right pointer-hand" data-target="#session-events-tab" style="color: #337ab7"></i></span>
+                            <div class="container-fluid>">
+                                <div id="session-events-tab" class="table-responsive collapse" aria-expanded="true" style="">
+                                    <br>
+                                    <table class="table">
+                                        <tbody>
+                                        <tr>
+                                            <th> Nom </th>
+                                            <th> Date de la séance </th>
+                                            <th class="text-center"> Espace d'activités </th>
+                                            {#<th class="text-center"> Statut </th>#}
+                                            {#<th class="text-center"> Session par défaut </th>#}
+                                            <th class="text-center"> Actions </th>
+                                        </tr>
+                                        <tr>
+                                            <p><h5><strong>Détails des séances</strong></h5></p>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="training-view-6.html" class="show-users-btn pointer-hand"> Test Sessions </a>
+                                            </td>
+                                            <td> 21/08/2015 12:37 </td>
+                                            <td class="text-center">
+                                                <a class="fa fa-book" title="Alerter les interlocuteurs concernés par les dysfonctionnements et les risques constatés [Test Sessions] (M4N2D_1)" data-placement="top" data-toggle="tooltip" href="#"> </a>
+                                            </td>
+                                            {#<td class="text-center">#}
+                                                {#<i class="fa fa-circle" style="color: #706c6c" title="Non commencé" data-placement="top" data-toggle="tooltip"> </i>#}
+                                            {#</td>#}
+                                            {#<td class="text-center">#}
+                                                {#<span class="default-session-btn pointer-hand">#}
+                                                {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                                                {#</span>#}
+                                            {#</td>#}
+                                            <td class="text-center">
+                                                <i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" title="Envoyer un courriel à tous les apprenants de la séance" data-placement="top" data-toggle="tooltip"> </i>
+                                                <i class="btn btn-default fa fa-edit edit-session-btn" title="Modifier la séance" data-placement="top" data-toggle="tooltip"> </i>
+                                                <i class="btn btn-danger fa fa-trash delete-session-btn" title="Supprimer la séance" data-placement="top" data-toggle="tooltip"> </i>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <a href="training-view-2.html"> Configuration de la plateforme CC  </a>
+                        </td>
+                        <td> FL-CL-A-cp </td>
+                        <td class="text-center">
+                            <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la séance">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <span data-placement="top" data-toggle="tooltip" title="Supprimer la séance" class="pull-right"><i class="fa fa-trash btn btn-danger btn-sm delete-course-btn"  data-target="#delete-event-session-box" data-toggle="modal"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Jeudi 16 juin 2016
+                        </td>
+                        <td>Session 1
+                        <span data-placement="top" data-toggle="tooltip" title="Voir les séances" class="pull-right" ><i data-toggle="collapse" class="fa fa-chevron-circle-right pointer-hand" data-target="#sessions-tab" style="color: #337ab7"></i></span>
+                        </td>
+                        <td>
+                            <a href="#"> Alerter les interlocuteurs concernés par les dysfonctionnements et les risques constatés </a>
+                        </td>
+                        <td> M4N2D </td>
+                        <td class="text-center">
+                            <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la séance">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <span data-placement="top" data-toggle="tooltip" title="Supprimer la séance" class="pull-right"><i class="fa fa-trash btn btn-danger btn-sm delete-course-btn"  data-target="#delete-event-session-box" data-toggle="modal"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Vendredi 17 juin 2016
+                        </td>
+                        <td>
+                            Session 2
+                            <i class="fa fa-chevron-circle-right pull-right pointer-hand" data-toggle="collapse" data-placement="top" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
+                        </td>
+                        <td>
+                            <a href="#"> Alerter sa hiérarchie en cas de non-application de la procédure </a>
+                        </td>
+                        <td> M4N3C </td>
+                        {#<td class="text-center"> - </td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
+                        <td class="text-center">
+                            <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la séance">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <span data-placement="top" data-toggle="tooltip" title="Supprimer la séance" class="pull-right"><i class="fa fa-trash btn btn-danger btn-sm delete-course-btn"  data-target="#delete-event-session-box" data-toggle="modal"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Lundi 20 juin 2016
+                        </td>
+                        <td>
+                            Session 3
+                            <i class="fa fa-chevron-circle-right pull-right pointer-hand" data-toggle="collapse" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
+                        </td>
+                        <td>
+                            <a href="#"> Aller chercher des informations, consulter des personnes ressources </a>
+                        </td>
+                        <td> M6N1C </td>
+                        {#<td class="text-center"> - </td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
+                        <td class="text-center">
+                            <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la séance">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <span data-placement="top" data-toggle="tooltip" title="Supprimer la séance" class="pull-right"><i class="fa fa-trash btn btn-danger btn-sm delete-course-btn"  data-target="#delete-event-session-box" data-toggle="modal"></i></span>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div id="view-registration-box" class="modal fade" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <h3 id="view-registration-header" class="modal-header">
+                    </h3>
+                    <div id="view-registration-body" class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button"
+                               class="btn btn-default"
+                               data-dismiss="modal"
+                               value="Fermer"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="delete-session-box" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h3>
+                            Suppression du cours
+                        </h3>
+                    </div>
+                    <div class="modal-body">
+                        Êtes-vous sûr de vouloir supprimer ce cours ?
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                    <span class="pull-right">
+                        <span class="btn btn-default pointer-hand"
+                              data-dismiss="modal"
+                        >
+                            Annuler
+                        </span>
+                        <span id="confirm-session-deletion-btn"
+                              class="btn btn-primary pointer-hand"
+                        >
+                            Ok
+                        </span>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="delete-event-session-box" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h3>
+                            Suppression de la séance
+                        </h3>
+                    </div>
+                    <div class="modal-body">
+                        Êtes-vous sûr de vouloir supprimer cette séance ?
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                    <span class="pull-right">
+                        <span class="btn btn-default pointer-hand"
+                              data-dismiss="modal"
+                        >
+                            Annuler
+                        </span>
+                        <span id="confirm-session-deletion-btn"
+                              class="btn btn-primary pointer-hand"
+                        >
+                            Ok
+                        </span>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {#<div id="push"></div>#}
+        <div id="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <p>
+                        <span class="pull-right locale-select label label-default">FR</span>
+                        <span>Développé par <a href="http://www.claroline.net" target="_blank">Claroline</a> Release 16.05</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
+    
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" property="">
+    
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
+    >
+    </script>
+    <script type="text/javascript"
+            src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    >
+    </script>
+{% endblock %}
