@@ -48,54 +48,60 @@
         }
     </style>
     <div class="container-fluid">
-        <div class="btn-group margin-top-sm" role="group">
-            <a class="btn btn-primary" href="#">
-                <i class="fa fa-plus-circle"></i>
-                Créer une sqession
-            </a>
+        <div class="row" style="padding-left: 15px; padding-right: 15px">
+            <div class="btn-group margin-top-sm" role="group">
+                <a class="btn btn-primary" href="#">
+                    <i class="fa fa-plus-circle"></i>
+                    Créer une session
+                </a>
             <span id="import-courses-btn" class="btn btn-default">
             <i class="fa fa-sign-in"></i>
             Importer
             </span>
-        <a class="btn btn-default" href="#">
-            <i class="fa fa-sign-out"></i>
-            Exporter
-        </a>
-        </div>
+                <a class="btn btn-default" href="#">
+                    <i class="fa fa-sign-out"></i>
+                    Exporter
+                </a>
+            </div>
 
-        <div class="input-group col-md-6 pull-right margin-top-sm">
-            <input id="search-course-input" class="form-control search-course" type="text" data-max="50" data-order="ASC" data-ordered-by="title" value="" placeholder="Rechercher">
+            <div class="input-group col-md-6 pull-right margin-top-sm">
+                <input id="search-course-input" class="form-control search-course" type="text" data-max="50" data-order="ASC" data-ordered-by="title" value="" placeholder="Rechercher">
             <span class="input-group-btn">
             <button id="search-course-btn" class="filter btn btn-primary search-course-btn" data-max="50" data-order="ASC" data-ordered-by="title" type="button">
                 <i class="fa fa-search"></i>
             </button>
             </span>
+            </div>
         </div>
-        <br>
-        <br>
-        <div class="pagination">
-            <ul>
-                <li class="prev disabled">
-                    <span>← Précédent</span>
-                </li>
-                <li class="active">
-                    <span>1</span>
-                </li>
-                <li>
-                    <a href="#">2</a>
-                </li>
-                <li>
-                    <a href="#">3</a>
-                </li>
-                <li>
-                    <a href="#">4</a>
-                </li>
-                <li class="next">
-                    <a href="#">Suivant →</a>
-                </li>
-            </ul>
+        <div class="row " style="padding-top: 15px; padding-bottom: 15px">
+            <div class="col-xs-hidden col-sm-3 col-md-4">
+                <img src="{{ asset('uploads/custom/images/sessions.jpg') }}" style="max-height: 120px">
+            </div>
+            <div class="col-xs-12 col-sm-9 col-md-8">
+                <div class="pagination">
+                    <ul>
+                        <li class="prev disabled">
+                            <span>← Précédent</span>
+                        </li>
+                        <li class="active">
+                            <span>1</span>
+                        </li>
+                        <li>
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">4</a>
+                        </li>
+                        <li class="next">
+                            <a href="#">Suivant →</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
         <div class="table-responsive">
             <table class="table">
                 <tbody>
@@ -120,7 +126,7 @@
                             Mercredi 15 juin 2016
                         </td>
                         <td>
-                            2016-2017
+                            Juin 2016
                             <span data-placement="top" data-toggle="tooltip" title="Voir les séances" class="pull-right" ><i data-toggle="collapse" class="fa fa-chevron-circle-right pointer-hand" data-target="#session-events-tab" style="color: #337ab7"></i></span>
                             <div class="container-fluid>">
                                 <div id="session-events-tab" class="table-responsive collapse" aria-expanded="true" style="">
@@ -178,10 +184,10 @@
                         </td>
                         <td> FL-CL-A-cp </td>
                         <td class="text-center">
-                            <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la séance">
+                            <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la session">
                                 <i class="fa fa-edit"></i>
                             </a>
-                            <span data-placement="top" data-toggle="tooltip" title="Supprimer la séance" class="pull-right"><i class="fa fa-trash btn btn-danger btn-sm delete-course-btn"  data-target="#delete-event-session-box" data-toggle="modal"></i></span>
+                            <span data-placement="top" data-toggle="tooltip" title="Supprimer la session" class="pull-right"><i class="fa fa-trash btn btn-danger btn-sm"  data-target="#delete-session-box" data-toggle="modal"></i></span>
                         </td>
                     </tr>
                     <tr>
@@ -269,11 +275,11 @@
                             &times;
                         </button>
                         <h3>
-                            Suppression du cours
+                            Suppression de la session
                         </h3>
                     </div>
                     <div class="modal-body">
-                        Êtes-vous sûr de vouloir supprimer ce cours ?
+                        Êtes-vous sûr de vouloir supprimer cette session ?
                         <br>
                     </div>
                     <div class="modal-footer">

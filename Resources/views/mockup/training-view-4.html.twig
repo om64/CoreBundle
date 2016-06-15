@@ -2,10 +2,7 @@
 
 {% block panelTitle %}
 
-    Gestion des cours
-    <a class="pull-right" title="" data-placement="left" data-toggle="tooltip" href="#" data-original-title="Exporter">
-    <i class="fa fa-sign-out"></i>
-    </a>
+    Gestion des formations
 
 {% endblock %}
 
@@ -51,54 +48,59 @@
         }
     </style>
     <div class="container-fluid">
-        <div class="btn-group margin-top-sm" role="group">
-            <a class="btn btn-primary" href="#">
-                <i class="fa fa-plus-circle"></i>
-                Créer un cours
+        <div class="row" style="padding-left: 15px; padding-right: 15px">
+            <div class="btn-group margin-top-sm" role="group">
+                <a class="btn btn-primary" href="#">
+                    <i class="fa fa-plus-circle"></i>
+                    Créer une formation
+                </a>
+                <span id="import-courses-btn" class="btn btn-default">
+                <i class="fa fa-sign-in"></i>
+                Importer
+                </span>
+            <a class="btn btn-default" href="#">
+                <i class="fa fa-sign-out"></i>
+                Exporter
             </a>
-            <span id="import-courses-btn" class="btn btn-default">
-            <i class="fa fa-sign-in"></i>
-            Importer
-            </span>
-        <a class="btn btn-default" href="#">
-            <i class="fa fa-sign-out"></i>
-            Exporter
-        </a>
+            </div>
+            <div class="input-group col-md-6 pull-right margin-top-sm">
+                <input id="search-course-input" class="form-control search-course" type="text" data-max="50" data-order="ASC" data-ordered-by="title" value="" placeholder="Rechercher">
+                <span class="input-group-btn">
+                <button id="search-course-btn" class="filter btn btn-primary search-course-btn" data-max="50" data-order="ASC" data-ordered-by="title" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+                </span>
+            </div>
         </div>
-
-        <div class="input-group col-md-6 pull-right margin-top-sm">
-            <input id="search-course-input" class="form-control search-course" type="text" data-max="50" data-order="ASC" data-ordered-by="title" value="" placeholder="Rechercher">
-            <span class="input-group-btn">
-            <button id="search-course-btn" class="filter btn btn-primary search-course-btn" data-max="50" data-order="ASC" data-ordered-by="title" type="button">
-                <i class="fa fa-search"></i>
-            </button>
-            </span>
+        <div class="row" style="padding-top: 15px; padding-bottom: 15px">
+            <div class="col-xs-hidden col-sm-3 col-md-4">
+                <img src="{{ asset('uploads/custom/images/lessons.png') }}" style="max-height: 120px">
+            </div>
+            <div class="col-xs-12 col-sm-9 col-md-8">
+                <div class="pagination">
+                    <ul>
+                        <li class="prev disabled">
+                            <span>← Précédent</span>
+                        </li>
+                        <li class="active">
+                            <span>1</span>
+                        </li>
+                        <li>
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">4</a>
+                        </li>
+                        <li class="next">
+                            <a href="#">Suivant →</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <br>
-        <br>
-        <div class="pagination">
-            <ul>
-                <li class="prev disabled">
-                    <span>← Précédent</span>
-                </li>
-                <li class="active">
-                    <span>1</span>
-                </li>
-                <li>
-                    <a href="#">2</a>
-                </li>
-                <li>
-                    <a href="#">3</a>
-                </li>
-                <li>
-                    <a href="#">4</a>
-                </li>
-                <li class="next">
-                    <a href="#">Suivant →</a>
-                </li>
-            </ul>
-        </div>
-
         <div class="table-responsive">
             <table class="table">
                 <tbody>
@@ -147,11 +149,11 @@
                             <i class="fa fa-times-circle" style="color: #D9534F"></i>
                         </td>
                         <td class="text-center">
-                            <a class="btn btn-default btn-sm" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier le cours">
+                            <a class="btn btn-default btn-sm" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la formation">
                                 <i class="fa fa-edit"></i>
                             </a>
-                            <span class="btn btn-danger btn-sm delete-course-btn" title="Supprimer le cours" data-target="#delete-course-box" data-placement="top" data-toggle="modal">
-                            <i class="fa fa-trash"></i>
+                            <span data-placement="top" data-toggle="tooltip" title="Supprimer la formation" class="btn btn-danger btn-sm delete-course-btn">
+                                <i data-toggle="modal" class="fa fa-trash pointer-hand" data-target="#delete-course-box"></i>
                             </span>
                         </td>
                     </tr>
@@ -214,11 +216,11 @@
                             <i class="fa fa-times-circle" style="color: #D9534F"></i>
                         </td>
                         <td class="text-center">
-                            <a class="btn btn-default btn-sm" title="Modifier le cours" data-placement="top" data-toggle="tooltip" href="training-view-5.html">
+                            <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="training-view-5.html" data-original-title="Modifier la formation">
                                 <i class="fa fa-edit"></i>
                             </a>
-                            <span class="btn btn-danger btn-sm delete-course-btn" title="Supprimer le cours" data-target="#delete-course-box" data-placement="top" data-toggle="modal">
-                            <i class="fa fa-trash"></i>
+                            <span data-placement="top" data-toggle="tooltip" title="Supprimer la formation" class="btn btn-danger btn-sm delete-course-btn">
+                                <i data-toggle="modal" class="fa fa-trash pointer-hand" data-target="#delete-course-box"></i>
                             </span>
                         </td>
                     </tr>
@@ -239,11 +241,11 @@
                             <i class="fa fa-times-circle" style="color: #D9534F"></i>
                         </td>
                         <td class="text-center">
-                            <a class="btn btn-default btn-sm" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier le cours">
+                            <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la formation">
                                 <i class="fa fa-edit"></i>
                             </a>
-                            <span class="btn btn-danger btn-sm delete-course-btn" title="Supprimer le cours" data-target="#delete-course-box" data-placement="top" data-toggle="modal">
-                            <i class="fa fa-trash"></i>
+                            <span data-placement="top" data-toggle="tooltip" title="Supprimer la formation" class="btn btn-danger btn-sm delete-course-btn">
+                                <i data-toggle="modal" class="fa fa-trash pointer-hand" data-target="#delete-course-box"></i>
                             </span>
                         </td>
                     </tr>
@@ -264,66 +266,42 @@
                             <i class="fa fa-times-circle" style="color: #D9534F"></i>
                         </td>
                         <td class="text-center">
-                            <a class="btn btn-default btn-sm" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier le cours">
+                            <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la formation">
                                 <i class="fa fa-edit"></i>
                             </a>
-                            <span class="btn btn-danger btn-sm delete-course-btn" title="Supprimer le cours" data-target="#delete-course-box" data-placement="top" data-toggle="modal">
-                            <i class="fa fa-trash"></i>
+                            <span data-placement="top" data-toggle="tooltip" title="Supprimer la formation" class="btn btn-danger btn-sm delete-course-btn">
+                                <i data-toggle="modal" class="fa fa-trash pointer-hand" data-target="#delete-course-box"></i>
                             </span>
                         </td>
                     </tr>
-
+                    <tr>
+                        <td>
+                            <a href="training-view-2.html"> Configuration de la plateforme CC </a>
+                            <i class="fa fa-chevron-circle-right pull-right pointer-hand" data-toggle="collapse" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
+                        </td>
+                        <td> FL-CL-A-cp </td>
+                        <td class="text-center"> - </td>
+                        <td class="text-center">
+                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
+                        </td>
+                        <td class="text-center">
+                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
+                        </td>
+                        <td class="text-center">
+                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la formation">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <span data-placement="top" data-toggle="tooltip" title="Supprimer la formation" class="btn btn-danger btn-sm delete-course-btn">
+                                <i data-toggle="modal" class="fa fa-trash pointer-hand" data-target="#delete-course-box"></i>
+                            </span>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
-
-        {#<div id="sessions-box">#}
-            {#<h4>#}
-                {#Sessions#}
-                {#<i class="fa fa-chevron-right pointer-hand" data-target="#sessions-tab" data-toggle="collapse" aria-expanded="true"> </i>#}
-            {#</h4>#}
-            {#<div id="sessions-tab" class="table-responsive collapse" aria-expanded="true" style="">#}
-                {#<br>#}
-                {#<table class="table">#}
-                    {#<tbody>#}
-                    {#<tr>#}
-                        {#<th> Nom </th>#}
-                        {#<th> Date de création </th>#}
-                        {#<th class="text-center"> Espace d'activités </th>#}
-                        {#<th class="text-center"> Statut </th>#}
-                        {#<th class="text-center"> Session par défaut </th>#}
-                        {#<th class="text-center"> Actions </th>#}
-                    {#</tr>#}
-                    {#<tr id="row-session-63">#}
-                        {#<td>#}
-                            {#<a class="show-users-btn pointer-hand" data-session-id="63"> Test Sessions </a>#}
-                        {#</td>#}
-                        {#<td> 21/08/2015 12:37 </td>#}
-                        {#<td class="text-center">#}
-                            {#<a class="fa fa-book" title="Alerter les interlocuteurs concernés par les dysfonctionnements et les risques constatés [Test Sessions] (M4N2D_1)" data-placement="top" data-toggle="tooltip" href="/workspaces/88/open"> </a>#}
-                        {#</td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="fa fa-circle" style="color: #706c6c" title="Non commencé" data-placement="top" data-toggle="tooltip"> </i>#}
-                        {#</td>#}
-                        {#<td class="text-center">#}
-                            {#<span class="default-session-btn pointer-hand" data-session-id="63">#}
-                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
-                            {#</span>#}
-                        {#</td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" data-session-id="63" title="Envoyer un mail de confirmation à tous les apprenants de la session" data-placement="top" data-toggle="tooltip"> </i>#}
-                            {#<i class="btn btn-default fa fa-edit edit-session-btn" data-session-id="63" title="Modifier la session" data-placement="top" data-toggle="tooltip"> </i>#}
-                            {#<i class="btn btn-danger fa fa-trash delete-session-btn" data-session-name="Test Sessions" data-session-id="63" title="Supprimer la session" data-placement="top" data-toggle="tooltip"> </i>#}
-                        {#</td>#}
-                    {#</tr>#}
-                    {#</tbody>#}
-                {#</table>#}
-                    {#<span id="course-session-create-btn" class="btn btn-default pointer-hand" data-course-id="86">#}
-                    {#<i class="fa fa-plus-circle"></i>#}
-                    {#Créer une session#}
-                    {#</span>#}
-            {#</div>#}
-        {#</div>#}
 
         <div id="view-registration-box" class="modal fade" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
@@ -341,10 +319,6 @@
             </div>
         </div>
 
-            {#<div id="myModal" class="modal fade" role="dialog">#}
-
-
-
         <div id="delete-course-box" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -353,11 +327,11 @@
                             &times;
                         </button>
                         <h3>
-                            Suppression du cours
+                            Suppression de la formation
                         </h3>
                     </div>
                     <div class="modal-body">
-                        Êtes-vous sûr de vouloir supprimer ce cours ?
+                        Êtes-vous sûr de vouloir supprimer cette formation ?
                         <br>
                     </div>
                     <div class="modal-footer">
@@ -377,28 +351,6 @@
                 </div>
             </div>
         </div>
-
-        {#<div id="registration-error-box" class="modal fade" role="dialog" aria-hidden="true">#}
-            {#<div class="modal-dialog">#}
-                {#<div class="modal-content">#}
-                    {#<div class="modal-header">#}
-                        {#<button type="button" class="close" data-dismiss="modal" aria-hidden="true">#}
-                            {#&times;#}
-                        {#</button>#}
-                        {#<h3>#}
-                            {#L&#039;inscription a échoué#}
-                        {#</h3>#}
-                    {#</div>#}
-                    {#<div class="modal-body" id="registration-error-box-body">#}
-                    {#</div>#}
-                    {#<div class="modal-footer">#}
-                        {#<button class="btn btn-default pull-right" data-dismiss="modal">#}
-                            {#Fermer#}
-                        {#</button>#}
-                    {#</div>#}
-                {#</div>#}
-            {#</div>#}
-        {#</div>#}
     </div>
 
     {#<div id="push"></div>#}
