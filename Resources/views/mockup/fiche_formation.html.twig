@@ -56,12 +56,12 @@
             <div class="container-fluid" id="accordion">
                 <div class="panel-group">
                     <div class="panel panel-default">
-                        <div class="panel-heading text-center" style="background-color: orangered">
+                        <div class="panel-heading text-center" style="background-color: #5bc0de">
                             <h3 class="panel-title">
                                 <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse1" aria-expanded="false">Description de la formation</a>
                             </h3>
                         </div>
-                        <div id="collapse1" class="panel-collapse collapse">
+                        <div id="collapse1" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 Fuerit toto in consulatu sine provincia, cui fuerit, antequam designatus est, decreta provincia. Sortietur an non? Nam et non sortiri absurdum est, et, quod sortitus sis, non habere.
                             Proficiscetur paludatus? Quo? Quo pervenire ante certam diem non licebit. ianuario, Februario, provinciam non habebit; Kalendis ei denique Martiis nascetur repente provincia
@@ -81,7 +81,7 @@
             <div class="container-fluid" id="accordion">
                 <div class="panel-group">
                     <div class="panel panel-default">
-                        <div class="panel-heading" style="background-color: orangered">
+                        <div class="panel-heading" style="background-color: #5bc0de">
                             <h3 class="panel-title text-center">
                                 <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse2" aria-expanded="true">Sessions</a>&nbsp;
                                 <i data-original-title="Ajouter une session" class="fa fa-calendar pointer-hand" data-toggle="tooltip" data-placement="top"></i>
@@ -197,75 +197,75 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid" id="accordion">
-                <div class="panel-group">
-                    <div class="panel panel-default">
-                        <div class="panel-heading" style="background-color: orangered">
-                            <h3 class="panel-title text-center">
-                                <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse3" aria-expanded="false">Apprenants</a>&nbsp;
-                                    <i data-original-title="Inscrire des apprenants à la session" class="fa fa-user pointer-hand" id="register-learners-btn" data-toggle="tooltip" data-placement="top">
-                                    </i>
-                                    &nbsp;
-                                    <i data-original-title="Inscrire des groupes à la session" class="fa fa-users pointer-hand" id="register-groups-btn" data-toggle="tooltip" data-placement="top">
-                                    </i>
-                            </h3>
-                        </div>
-                        <div id="collapse3" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <table class="table table-hover">
-                                    <tr>
-                                        <td>
-                                            Tom
-                                            Tom
-                                            <small>(TomAdmin)</small>
-                                            &nbsp;
-                                            <span id="row-queued-user-management-1">
-                                                <span class="label label-default">En attente</span>
-                                                <span class="label label-success pointer-hand accept-registration-btn" data-queue-id="1"><i class="fa fa-check"></i></span>
-                                                <span class="label label-danger pointer-hand decline-registration-btn" data-queue-id="1"><i class="fa fa-times"></i></span>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Oli
-                                            Oli
-                                            <small>(PapyAdmin)</small>
-                                            &nbsp;
-                                            <span id="row-queued-user-management-1">
-                                                <span class="label label-default">En attente</span>
-                                                <span class="label label-success pointer-hand accept-registration-btn" data-queue-id="1"><i class="fa fa-check"></i></span>
-                                                <span class="label label-danger pointer-hand decline-registration-btn" data-queue-id="1"><i class="fa fa-times"></i></span>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <div class="container-fluid" id="accordion">
-                <div class="panel-group">
-                    <div class="panel panel-default">
-                        <div class="panel-heading" style="background-color: orangered">
-                            <h3 class="panel-title text-center">
-                                <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse4" aria-expanded="false">Tuteurs</a>&nbsp;
-                                <i data-original-title="Inscrire des tuteurs à la session" class="fa fa-user pointer-hand" id="register-tutors-btn" data-toggle="tooltip" data-placement="top"></i>
-                            </h3>
-                        </div>
-                       <div id="collapse4" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <table class="table table-hover">
-                                    <tr>
-                                        <td>Jane Doe&nbsp;
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            {#<div class="container-fluid" id="accordion">#}
+                {#<div class="panel-group">#}
+                    {#<div class="panel panel-default">#}
+                        {#<div class="panel-heading" style="background-color: orangered">#}
+                            {#<h3 class="panel-title text-center">#}
+                                {#<a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse3" aria-expanded="false">Apprenants</a>&nbsp;#}
+                                    {#<i data-original-title="Inscrire des apprenants à la session" class="fa fa-user pointer-hand" id="register-learners-btn" data-toggle="tooltip" data-placement="top">#}
+                                    {#</i>#}
+                                    {#&nbsp;#}
+                                    {#<i data-original-title="Inscrire des groupes à la session" class="fa fa-users pointer-hand" id="register-groups-btn" data-toggle="tooltip" data-placement="top">#}
+                                    {#</i>#}
+                            {#</h3>#}
+                        {#</div>#}
+                        {#<div id="collapse3" class="panel-collapse collapse">#}
+                            {#<div class="panel-body">#}
+                                {#<table class="table table-hover">#}
+                                    {#<tr>#}
+                                        {#<td>#}
+                                            {#Tom#}
+                                            {#Tom#}
+                                            {#<small>(TomAdmin)</small>#}
+                                            {#&nbsp;#}
+                                            {#<span id="row-queued-user-management-1">#}
+                                                {#<span class="label label-default">En attente</span>#}
+                                                {#<span class="label label-success pointer-hand accept-registration-btn" data-queue-id="1"><i class="fa fa-check"></i></span>#}
+                                                {#<span class="label label-danger pointer-hand decline-registration-btn" data-queue-id="1"><i class="fa fa-times"></i></span>#}
+                                            {#</span>#}
+                                        {#</td>#}
+                                    {#</tr>#}
+                                    {#<tr>#}
+                                        {#<td>#}
+                                            {#Oli#}
+                                            {#Oli#}
+                                            {#<small>(PapyAdmin)</small>#}
+                                            {#&nbsp;#}
+                                            {#<span id="row-queued-user-management-1">#}
+                                                {#<span class="label label-default">En attente</span>#}
+                                                {#<span class="label label-success pointer-hand accept-registration-btn" data-queue-id="1"><i class="fa fa-check"></i></span>#}
+                                                {#<span class="label label-danger pointer-hand decline-registration-btn" data-queue-id="1"><i class="fa fa-times"></i></span>#}
+                                            {#</span>#}
+                                        {#</td>#}
+                                    {#</tr>#}
+                                {#</table>#}
+                            {#</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+             {#<div class="container-fluid" id="accordion">#}
+                {#<div class="panel-group">#}
+                    {#<div class="panel panel-default">#}
+                        {#<div class="panel-heading" style="background-color: orangered">#}
+                            {#<h3 class="panel-title text-center">#}
+                                {#<a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse4" aria-expanded="false">Tuteurs</a>&nbsp;#}
+                                {#<i data-original-title="Inscrire des tuteurs à la session" class="fa fa-user pointer-hand" id="register-tutors-btn" data-toggle="tooltip" data-placement="top"></i>#}
+                            {#</h3>#}
+                        {#</div>#}
+                       {#<div id="collapse4" class="panel-collapse collapse">#}
+                            {#<div class="panel-body">#}
+                                {#<table class="table table-hover">#}
+                                    {#<tr>#}
+                                        {#<td>Jane Doe&nbsp;#}
+                                        {#</td>#}
+                                    {#</tr>#}
+                                {#</table>#}
+                            {#</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
 
 
                 {#<table class="table table-hover">#}
