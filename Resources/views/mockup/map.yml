@@ -1,8 +1,9 @@
 - training-view-1.html.twig
 - training-view-2.html.twig
+- fiche_formation.html.twig
 - training-view-4.html.twig
 - training-view-5.html.twig
 - training-view-6.html.twig
 - training-view-7.html.twig
 - training-view-8.html.twig
-- fiche_formation.html.twig
+- users_list.html.twig
