@@ -107,7 +107,7 @@
                 <tbody>
                     <tr>
                         <th style="background-color: #337ab7">
-                            <a href="#" style="color: #fff"> Date </a>
+                            <a href="#" style="color: #fff"> Date de début </a>
                         </th>
                         <th style="background-color: #337ab7">
                             <a href="#" style="color: #fff"> Titre </a>
@@ -127,7 +127,9 @@
                         </td>
                         <td>
                             Juin 2016
-                            <span data-placement="top" data-toggle="tooltip" title="Voir les séances" class="pull-right" ><i data-toggle="collapse" class="fa fa-chevron-circle-right pointer-hand" data-target="#session-events-tab" style="color: #337ab7"></i></span>
+                            <span data-placement="top" data-toggle="tooltip" title="Voir les séances" class="pull-right" >
+                                <i data-toggle="collapse" class="fa fa-chevron-circle-right pointer-hand" data-target="#session-events-tab" style="color: #337ab7"></i>
+                            </span>
                             <div class="container-fluid>">
                                 <div id="session-events-tab" class="table-responsive collapse" aria-expanded="true" style="">
                                     <br>
@@ -137,12 +139,11 @@
                                             <tr>
                                                 <th> Nom </th>
                                                 <th> Date de la séance </th>
-                                                <th class="text-center"> Espace d'activités </th>
                                                 <th class="text-center"> Actions </th>
                                             </tr>
                                             <tr>
                                                 <h5 style="padding: 5px"><strong>Détails des séances</strong>
-                                                <span data-placement="top" data-toggle="tooltip" title="Ajouter une séance" class="pull-right"><i class="fa fa-plus btn btn-primary btn-sm delete-course-btn"  data-target="#"></i></span>
+                                                <span data-placement="top" data-toggle="tooltip" title="Ajouter une séance" class="pull-right"><i class="fa fa-calendar btn btn-primary btn-sm delete-course-btn"  data-target="#"></i></span>
                                                 </h5>
                                             </tr>
                                             <tr>
@@ -150,9 +151,9 @@
                                                     <a href="#" class="show-users-btn pointer-hand"> Paramétrer le bureau </a>
                                                 </td>
                                                 <td> 20/06/2016 </td>
-                                                <td class="text-center">
-                                                    <a class="fa fa-book" title="Configuration de la plateforme CC [Paramétrer le bureau] (FL-CL-A-cp)" data-placement="top" data-toggle="tooltip" href="#"> </a>
-                                                </td>
+                                                {#<td class="text-center">#}
+                                                    {#<a class="fa fa-book" title="Configuration de la plateforme CC [Paramétrer le bureau] (FL-CL-A-cp)" data-placement="top" data-toggle="tooltip" href="#"> </a>#}
+                                                {#</td>#}
                                                 <td class="text-center">
                                                     <i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" title="Envoyer un courriel à tous les apprenants de la séance" data-placement="top" data-toggle="tooltip"> </i>
                                                     <i class="btn btn-default fa fa-edit edit-session-btn" title="Modifier la séance" data-placement="top" data-toggle="tooltip"> </i>
@@ -164,9 +165,6 @@
                                                     <a href="#" class="show-users-btn pointer-hand"> Paramétrer les droits utilisateurs </a>
                                                 </td>
                                                 <td> 23/06/2016 </td>
-                                                <td class="text-center">
-                                                    <a class="fa fa-book" title="Configuration de la plateforme CC [Paramétrer les droits utilisateurs] (FL-CL-A-cp)" data-placement="top" data-toggle="tooltip" href="#"> </a>
-                                                </td>
                                                 <td class="text-center">
                                                     <i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" title="Envoyer un courriel à tous les apprenants de la séance" data-placement="top" data-toggle="tooltip"> </i>
                                                     <i class="btn btn-default fa fa-edit edit-session-btn" title="Modifier la séance" data-placement="top" data-toggle="tooltip"> </i>
@@ -180,14 +178,19 @@
                             </div>
                         </td>
                         <td>
-                            <a href="training-view-2.html"> Configuration de la plateforme CC  </a>
+                            <a href="fiche_formation.html"> Configuration de la plateforme CC  </a>
                         </td>
                         <td> FL-CL-A-cp </td>
                         <td class="text-center">
-                            <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la session">
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
+                                <i class="fa fa-calendar pointer-hand"></i>
+                            </a>
+                            <a href="training-view-8.html" class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la session">
                                 <i class="fa fa-edit"></i>
                             </a>
-                            <span data-placement="top" data-toggle="tooltip" title="Supprimer la session" class="pull-right"><i class="fa fa-trash btn btn-danger btn-sm"  data-target="#delete-session-box" data-toggle="modal"></i></span>
+                            <span data-placement="top" data-toggle="tooltip" title="Supprimer la session" class="pull-right">
+                                <i class="fa fa-trash btn btn-danger btn-sm" data-target="#delete-session-box" data-toggle="modal"></i>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -202,7 +205,10 @@
                         </td>
                         <td> M4N2D </td>
                         <td class="text-center">
-                            <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la séance">
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
+                                <i class="fa fa-calendar pointer-hand"></i>
+                            </a>
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la session">
                                 <i class="fa fa-edit"></i>
                             </a>
                             <span data-placement="top" data-toggle="tooltip" title="Supprimer la séance" class="pull-right"><i class="fa fa-trash btn btn-danger btn-sm delete-course-btn"  data-target="#delete-event-session-box" data-toggle="modal"></i></span>
@@ -221,7 +227,10 @@
                         </td>
                         <td> M4N3C </td>
                         <td class="text-center">
-                            <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la séance">
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
+                                <i class="fa fa-calendar pointer-hand"></i>
+                            </a>
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la session">
                                 <i class="fa fa-edit"></i>
                             </a>
                             <span data-placement="top" data-toggle="tooltip" title="Supprimer la séance" class="pull-right"><i class="fa fa-trash btn btn-danger btn-sm delete-course-btn"  data-target="#delete-event-session-box" data-toggle="modal"></i></span>
@@ -240,13 +249,15 @@
                         </td>
                         <td> M6N1C </td>
                         <td class="text-center">
-                            <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la séance">
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
+                                <i class="fa fa-calendar pointer-hand"></i>
+                            </a>
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la session">
                                 <i class="fa fa-edit"></i>
                             </a>
                             <span data-placement="top" data-toggle="tooltip" title="Supprimer la séance" class="pull-right"><i class="fa fa-trash btn btn-danger btn-sm delete-course-btn"  data-target="#delete-event-session-box" data-toggle="modal"></i></span>
                         </td>
                     </tr>
-
                 </tbody>
             </table>
         </div>

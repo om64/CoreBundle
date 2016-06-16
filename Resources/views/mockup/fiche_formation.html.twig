@@ -1,0 +1,661 @@
+{% extends 'ClarolineCoreBundle::mockup/training-tool2.html.twig' %}
+
+{% block panelTitle %}[Formation] Configuration de la plateforme CC{% endblock %}
+
+{% block panelRest %}
+
+    <style type="text/css" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+           xmlns:background-color="http://www.w3.org/1999/xhtml">
+
+        /* For possible modals on this page */
+
+        .modal-header, h4, .close {
+            background-color: #5cb85c;
+            color:white !important;
+            text-align: center;
+            font-size: 20px;
+        }
+        .modal-footer {
+            background-color: #f9f9f9;
+        }
+
+        /* To give full width to tables */
+
+        table.table.table-hover {
+            width:100%;
+        }
+
+        /* To change the backgroud color of the top bar */
+
+        .navbar-inverse {
+            background-color: #5cb85c;
+            border-color: #5cb85c;
+        }
+        .navbar.navbar-inverse.navbar-fixed-top {
+            border-bottom: 2px solid #5cb85c;
+        }
+        #top_bar li:not(:last-child) > a, .top-bar li:not(:last-child) > a {
+            color: white;
+            border-right: 1px solid #5cb85c !important;
+        }
+        .panel-default > .panel-heading {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #ddd;
+        }
+    </style>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div>
+                <h3>Configuration de la plateforme CC&nbsp;<small>
+                <a href="training-view-8.html" title="Modifier la formation"><i class="fa fa-pencil pointer-hand"></i></a>
+                </small></h3>
+                <br>
+            </div>
+            <div class="container-fluid" id="accordion">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading text-center" style="background-color: orangered">
+                            <h3 class="panel-title">
+                                <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse1" aria-expanded="false">Description de la formation</a>
+                            </h3>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Fuerit toto in consulatu sine provincia, cui fuerit, antequam designatus est, decreta provincia. Sortietur an non? Nam et non sortiri absurdum est, et, quod sortitus sis, non habere.
+                            Proficiscetur paludatus? Quo? Quo pervenire ante certam diem non licebit. ianuario, Februario, provinciam non habebit; Kalendis ei denique Martiis nascetur repente provincia
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                {#<table class="table table-hover">#}
+                    {#<th class="text-center" style="color: white; background-color: orangered">Description de la formation&nbsp;#}
+                    {#</th>#}
+                    {#<tr>#}
+                        {#<td>Fuerit toto in consulatu sine provincia, cui fuerit, antequam designatus est, decreta provincia. Sortietur an non? Nam et non sortiri absurdum est, et, quod sortitus sis, non habere.#}
+                            {#Proficiscetur paludatus? Quo? Quo pervenire ante certam diem non licebit. ianuario, Februario, provinciam non habebit; Kalendis ei denique Martiis nascetur repente provincia.</td>#}
+                    {#</tr>#}
+                {#</table>#}
+            <div class="container-fluid" id="accordion">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="background-color: orangered">
+                            <h3 class="panel-title text-center">
+                                <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse2" aria-expanded="true">Sessions</a>&nbsp;
+                                <i data-original-title="Ajouter une session" class="fa fa-calendar pointer-hand" data-toggle="tooltip" data-placement="top"></i>
+                            </h3>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <table class="table table-hover">
+                                    {#<th class="text-center" style="color: white; background-color: orangered">Sessions&nbsp;#}
+                                        {#<i data-original-title="Ajouter une session" class="fa fa-calendar pointer-hand" aria-hidden="true" id="register-tutors-btn" data-toggle="tooltip" data-placement="top"></i>#}
+                                    {#</th>#}
+                                </table>
+                                <table class="table table-hover">
+                                    <th style="background-color: #337ab7">
+                                        <a href="#" style="color: #fff"> Nom </a>
+                                    </th>
+                                    <th style="background-color: #337ab7">
+                                        <a href="#" style="color: #fff"> Date de début </a>
+                                    </th>
+                                    <th class="text-center" style="background-color: #337ab7">
+                                        <a href="#" style="color: #fff"> Espace d'activités </a>
+                                    </th>
+                                    <th class="text-center" style="background-color: #337ab7">
+                                        <a href="#" style="color: #fff"> Statut </a>
+                                    </th>
+                                    <th class="text-center" style="background-color: #337ab7">
+                                        <a href="#" style="color: #fff"> Session par défaut </a>
+                                    </th>
+                                    <th class="text-center" style="background-color: #337ab7; color: #fff">
+                                        Actions
+                                    </th>
+                                    <tr>
+                                        <td>
+                                            <a class="show-users-btn pointer-hand" data-session-id="70">Gestion des droits utilisateurs</a>
+                                        </td>
+                                        <td>
+                                            20/06/2016 08:20
+                                        </td>
+                                        <td class="text-center"> - </td>
+                                        <td class="text-center">
+                                            <i class="fa fa-circle" data-toggle="tooltip" data-placement="top" title="Non commencé" style="color: #706c6c"></i>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="default-session-btn pointer-hand">
+                                                <i class="fa fa-check-circle" style="color: #5CB85C"></i>
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <i class="btn btn-default fa fa-edit" data-toggle="tooltip" data-placement="top" title="Modifier la session"></i>
+                                            <i class="btn btn-danger fa fa-trash-o" data-toggle="tooltip" data-placement="top" title="Supprimer la session"></i>
+                                            <i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" data-toggle="tooltip" data-placement="top" title="Envoyer un courriel à tous les apprenants de la session"></i>
+                                            {#<i class="btn btn-default fa fa-check-square" style="color: #5CB85C" data-toggle="tooltip" data-placement="top" title="Consulter les présences"></i>#}
+                                            <i class="btn btn-default fa fa-graduation-cap" data-toggle="tooltip" data-placement="top" title="Générer les certifications"></i>
+                                            <i class="btn btn-default fa fa-plus-square" data-toggle="tooltip" data-placement="top" title="Inviter des apprenants à la session"></i>
+                                            <i class="btn btn-default fa fa-calendar" data-toggle="tooltip" data-placement="top" title="Ajouter une séance"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a class="show-users-btn pointer-hand" data-session-id="70">Paramétrage du bureau</a>
+                                        </td>
+                                        <td>
+                                            27/06/2016 08:20
+                                        </td>
+                                        <td class="text-center"> - </td>
+                                        <td class="text-center">
+                                            <i class="fa fa-circle" data-toggle="tooltip" data-placement="top" title="Non commencé" style="color: #706c6c"></i>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="default-session-btn pointer-hand">
+                                                <i class="fa fa-check-circle" style="color: #5CB85C"></i>
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <i class="btn btn-default fa fa-edit" data-toggle="tooltip" data-placement="top" title="Modifier la session"></i>
+                                            <i class="btn btn-danger fa fa-trash-o" data-toggle="tooltip" data-placement="top" title="Supprimer la session"></i>
+                                            <i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" data-toggle="tooltip" data-placement="top" title="Envoyer un courriel à tous les apprenants de la session"></i>
+                                            {#<i class="btn btn-default fa fa-check-square" style="color: #5CB85C" data-toggle="tooltip" data-placement="top" title="Consulter les présences"></i>#}
+                                            <i class="btn btn-default fa fa-graduation-cap" data-toggle="tooltip" data-placement="top" title="Générer les certifications"></i>
+                                            <i class="btn btn-default fa fa-plus-square" data-toggle="tooltip" data-placement="top" title="Inviter des apprenants à la session"></i>
+                                            <i class="btn btn-default fa fa-calendar" data-toggle="tooltip" data-placement="top" title="Ajouter une séance"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a class="show-users-btn pointer-hand" data-session-id="70">Gestion des utilisateurs</a>
+                                        </td>
+                                        <td>
+                                            12/09/2016 08:20
+                                        </td>
+                                        <td class="text-center"> - </td>
+                                        <td class="text-center">
+                                            <i class="fa fa-circle" data-toggle="tooltip" data-placement="top" title="Non commencé" style="color: #706c6c"></i>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="default-session-btn pointer-hand">
+                                                <i class="fa fa-check-circle" style="color: #5CB85C"></i>
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <i class="btn btn-default fa fa-edit" data-toggle="tooltip" data-placement="top" title="Modifier la session"></i>
+                                            <i class="btn btn-danger fa fa-trash-o" data-toggle="tooltip" data-placement="top" title="Supprimer la session"></i>
+                                            <i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" data-toggle="tooltip" data-placement="top" title="Envoyer un courriel à tous les apprenants de la session"></i>
+                                            {#<i class="btn btn-default fa fa-check-square" style="color: #5CB85C" data-toggle="tooltip" data-placement="top" title="Consulter les présences"></i>#}
+                                            <i class="btn btn-default fa fa-graduation-cap" data-toggle="tooltip" data-placement="top" title="Générer les certifications"></i>
+                                            <i class="btn btn-default fa fa-plus-square" data-toggle="tooltip" data-placement="top" title="Inviter des apprenants à la session"></i>
+                                            <i class="btn btn-default fa fa-calendar" data-toggle="tooltip" data-placement="top" title="Ajouter une séance"></i>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid" id="accordion">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="background-color: orangered">
+                            <h3 class="panel-title text-center">
+                                <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse3" aria-expanded="false">Apprenants</a>&nbsp;
+                                    <i data-original-title="Inscrire des apprenants à la session" class="fa fa-user pointer-hand" id="register-learners-btn" data-toggle="tooltip" data-placement="top">
+                                    </i>
+                                    &nbsp;
+                                    <i data-original-title="Inscrire des groupes à la session" class="fa fa-users pointer-hand" id="register-groups-btn" data-toggle="tooltip" data-placement="top">
+                                    </i>
+                            </h3>
+                        </div>
+                        <div id="collapse3" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <table class="table table-hover">
+                                    <tr>
+                                        <td>
+                                            Tom
+                                            Tom
+                                            <small>(TomAdmin)</small>
+                                            &nbsp;
+                                            <span id="row-queued-user-management-1">
+                                                <span class="label label-default">En attente</span>
+                                                <span class="label label-success pointer-hand accept-registration-btn" data-queue-id="1"><i class="fa fa-check"></i></span>
+                                                <span class="label label-danger pointer-hand decline-registration-btn" data-queue-id="1"><i class="fa fa-times"></i></span>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Oli
+                                            Oli
+                                            <small>(PapyAdmin)</small>
+                                            &nbsp;
+                                            <span id="row-queued-user-management-1">
+                                                <span class="label label-default">En attente</span>
+                                                <span class="label label-success pointer-hand accept-registration-btn" data-queue-id="1"><i class="fa fa-check"></i></span>
+                                                <span class="label label-danger pointer-hand decline-registration-btn" data-queue-id="1"><i class="fa fa-times"></i></span>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="container-fluid" id="accordion">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="background-color: orangered">
+                            <h3 class="panel-title text-center">
+                                <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse4" aria-expanded="false">Tuteurs</a>&nbsp;
+                                <i data-original-title="Inscrire des tuteurs à la session" class="fa fa-user pointer-hand" id="register-tutors-btn" data-toggle="tooltip" data-placement="top"></i>
+                            </h3>
+                        </div>
+                       <div id="collapse4" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <table class="table table-hover">
+                                    <tr>
+                                        <td>Jane Doe&nbsp;
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                {#<table class="table table-hover">#}
+                    {#<th class="text-center" style="color: white; background-color: orangered">Sessions&nbsp;#}
+                        {#<i data-original-title="Ajouter une session" class="fa fa-calendar pointer-hand" aria-hidden="true" id="register-tutors-btn" data-toggle="tooltip" data-placement="top"></i>#}
+                    {#</th>#}
+                {#</table>#}
+                {#<table class="table table-hover">#}
+                    {#<th style="background-color: #337ab7">#}
+                        {#<a href="#" style="color: #fff"> Nom </a>#}
+                    {#</th>#}
+                    {#<th style="background-color: #337ab7">#}
+                        {#<a href="#" style="color: #fff"> Date de début </a>#}
+                    {#</th>#}
+                    {#<th class="text-center" style="background-color: #337ab7">#}
+                        {#<a href="#" style="color: #fff"> Espace d'activités </a>#}
+                    {#</th>#}
+                    {#<th class="text-center" style="background-color: #337ab7">#}
+                        {#<a href="#" style="color: #fff"> Statut </a>#}
+                    {#</th>#}
+                    {#<th class="text-center" style="background-color: #337ab7">#}
+                        {#<a href="#" style="color: #fff"> Session par défaut </a>#}
+                    {#</th>#}
+                    {#<th class="text-center" style="background-color: #337ab7; color: #fff">#}
+                         {#Actions#}
+                    {#</th>#}
+                    {#<tr>#}
+                        {#<td>#}
+                            {#<a class="show-users-btn pointer-hand" data-session-id="70">Gestion des droits utilisateurs</a>#}
+                        {#</td>#}
+                        {#<td>#}
+                            {#20/06/2016 08:20#}
+                        {#</td>#}
+                        {#<td class="text-center"> - </td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-circle" data-toggle="tooltip" data-placement="top" title="Non commencé" style="color: #706c6c"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<span class="default-session-btn pointer-hand">#}
+                                {#<i class="fa fa-check-circle" style="color: #5CB85C"></i>#}
+                            {#</span>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="btn btn-default fa fa-edit" data-toggle="tooltip" data-placement="top" title="Modifier la session"></i>#}
+                            {#<i class="btn btn-danger fa fa-trash-o" data-toggle="tooltip" data-placement="top" title="Supprimer la session"></i>#}
+                            {#<i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" data-toggle="tooltip" data-placement="top" title="Envoyer un courriel à tous les apprenants de la session"></i>#}
+                            {#<i class="btn btn-default fa fa-check-square" style="color: #5CB85C" data-toggle="tooltip" data-placement="top" title="Consulter les présences"></i>#}
+                            {#<i class="btn btn-default fa fa-graduation-cap" data-toggle="tooltip" data-placement="top" title="Générer les certifications"></i>#}
+                            {#<i class="btn btn-default fa fa-plus-square" data-toggle="tooltip" data-placement="top" title="Inviter des apprenants à la session"></i>#}
+                            {#<i class="btn btn-default fa fa-calendar" data-toggle="tooltip" data-placement="top" title="Ajouter une séance"></i>#}
+                        {#</td>#}
+                    {#</tr>#}
+                    {#<tr>#}
+                        {#<td>#}
+                            {#<a class="show-users-btn pointer-hand" data-session-id="70">Paramétrage du bureau</a>#}
+                        {#</td>#}
+                        {#<td>#}
+                            {#27/06/2016 08:20#}
+                        {#</td>#}
+                        {#<td class="text-center"> - </td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-circle" data-toggle="tooltip" data-placement="top" title="Non commencé" style="color: #706c6c"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<span class="default-session-btn pointer-hand">#}
+                                {#<i class="fa fa-check-circle" style="color: #5CB85C"></i>#}
+                            {#</span>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="btn btn-default fa fa-edit" data-toggle="tooltip" data-placement="top" title="Modifier la session"></i>#}
+                            {#<i class="btn btn-danger fa fa-trash-o" data-toggle="tooltip" data-placement="top" title="Supprimer la session"></i>#}
+                            {#<i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" data-toggle="tooltip" data-placement="top" title="Envoyer un courriel à tous les apprenants de la session"></i>#}
+                            {#<i class="btn btn-default fa fa-check-square" style="color: #5CB85C" data-toggle="tooltip" data-placement="top" title="Consulter les présences"></i>#}
+                            {#<i class="btn btn-default fa fa-graduation-cap" data-toggle="tooltip" data-placement="top" title="Générer les certifications"></i>#}
+                            {#<i class="btn btn-default fa fa-plus-square" data-toggle="tooltip" data-placement="top" title="Inviter des apprenants à la session"></i>#}
+                            {#<i class="btn btn-default fa fa-calendar" data-toggle="tooltip" data-placement="top" title="Ajouter une séance"></i>#}
+                        {#</td>#}
+                    {#</tr>#}
+                    {#<tr>#}
+                        {#<td>#}
+                            {#<a class="show-users-btn pointer-hand" data-session-id="70">Gestion des utilisateurs</a>#}
+                        {#</td>#}
+                        {#<td>#}
+                            {#12/09/2016 08:20#}
+                        {#</td>#}
+                        {#<td class="text-center"> - </td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-circle" data-toggle="tooltip" data-placement="top" title="Non commencé" style="color: #706c6c"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<span class="default-session-btn pointer-hand">#}
+                                {#<i class="fa fa-check-circle" style="color: #5CB85C"></i>#}
+                            {#</span>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="btn btn-default fa fa-edit" data-toggle="tooltip" data-placement="top" title="Modifier la session"></i>#}
+                            {#<i class="btn btn-danger fa fa-trash-o" data-toggle="tooltip" data-placement="top" title="Supprimer la session"></i>#}
+                            {#<i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" data-toggle="tooltip" data-placement="top" title="Envoyer un courriel à tous les apprenants de la session"></i>#}
+                            {#<i class="btn btn-default fa fa-check-square" style="color: #5CB85C" data-toggle="tooltip" data-placement="top" title="Consulter les présences"></i>#}
+                            {#<i class="btn btn-default fa fa-graduation-cap" data-toggle="tooltip" data-placement="top" title="Générer les certifications"></i>#}
+                            {#<i class="btn btn-default fa fa-plus-square" data-toggle="tooltip" data-placement="top" title="Inviter des apprenants à la session"></i>#}
+                            {#<i class="btn btn-default fa fa-calendar" data-toggle="tooltip" data-placement="top" title="Ajouter une séance"></i>#}
+                        {#</td>#}
+                    {#</tr>#}
+                {#</table>#}
+                {#<table class="table table-hover">#}
+                    {#<th class="text-center" style="color: white; background-color: orangered">Apprenants&nbsp;#}
+                        {#<i data-original-title="Inscrire des apprenants à la session" class="fa fa-user pointer-hand" id="register-learners-btn" data-toggle="tooltip" data-placement="top">#}
+                        {#</i>#}
+                        {#&nbsp;#}
+                        {#<i data-original-title="Inscrire des groupes à la session" class="fa fa-users pointer-hand" id="register-groups-btn" data-toggle="tooltip" data-placement="top">#}
+                        {#</i>#}
+                    {#</th>#}
+                    {#<tr>#}
+                        {#<td>#}
+                            {#Tom#}
+                            {#Tom#}
+                            {#<small>(TomAdmin)</small>#}
+                            {#&nbsp;#}
+                            {#<span id="row-queued-user-management-1">#}
+                                {#<span class="label label-default">En attente</span>#}
+                                {#<span class="label label-success pointer-hand accept-registration-btn" data-queue-id="1"><i class="fa fa-check"></i></span>#}
+                                {#<span class="label label-danger pointer-hand decline-registration-btn" data-queue-id="1"><i class="fa fa-times"></i></span>#}
+                            {#</span>#}
+                        {#</td>#}
+                    {#</tr>#}
+                    {#<tr>#}
+                        {#<td>#}
+                            {#Oli#}
+                            {#Oli#}
+                            {#<small>(PapyAdmin)</small>#}
+                            {#&nbsp;#}
+                            {#<span id="row-queued-user-management-1">#}
+                                {#<span class="label label-default">En attente</span>#}
+                                {#<span class="label label-success pointer-hand accept-registration-btn" data-queue-id="1"><i class="fa fa-check"></i></span>#}
+                                {#<span class="label label-danger pointer-hand decline-registration-btn" data-queue-id="1"><i class="fa fa-times"></i></span>#}
+                            {#</span>#}
+                        {#</td>#}
+                    {#</tr>#}
+                    {#<th class="text-center" style="color: white; background-color: orangered">Tuteurs&nbsp;#}
+                        {#<i data-original-title="Inscrire des tuteurs à la session" class="fa fa-user pointer-hand" id="register-tutors-btn" data-toggle="tooltip" data-placement="top"></i>#}
+                    {#</th>#}
+                        {#<tr>#}
+                            {#<td>Jane Doe&nbsp;#}
+                            {#</td>#}
+                        {#</tr>#}
+                {#</table>#}
+            </div>
+        </div>
+    </div>
+    <div id="delete-session-box" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h3>
+                        Suppression de la session
+                        <small>
+                            [<span id="delete-session-name-header"></span>]
+                        </small>
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    Êtes-vous sûr de vouloir supprimer cette session ?
+                    <br>
+                    <br>
+                    <div class="checkbox">
+                        <label>
+                            <input id="with-workspace-chk" type="checkbox">
+                            <b>
+                                Supprimer également l&#039;espace d&#039;activités associé
+                            </b>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <span class="pull-right">
+                    <span class="btn btn-default pointer-hand"
+                          data-dismiss="modal"
+                    >
+                        Annuler
+                    </span>
+                    <span id="confirm-session-deletion-btn"
+                          class="btn btn-primary pointer-hand">
+                        Ok
+                    </span>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="registration-error-box" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h3>
+                        L&#039;inscription a échoué
+                    </h3>
+                </div>
+                <div class="modal-body" id="registration-error-box-body">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default pull-right" data-dismiss="modal">
+                        Fermer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="view-registration-box" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <h3 id="view-registration-header" class="modal-header">
+                </h3>
+                <div id="view-registration-body" class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <input type="button"
+                           class="btn btn-default"
+                           data-dismiss="modal"
+                           value="Fermer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content modal-lg">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modification de la session</h4>
+                </div>
+                <div class="modal-body" style="text-align: left">
+                    <div class="container-fluid">
+                        <div class="row" style="margin-top: 10px">
+                            <div class="panel panel-default">
+                                <div class="panel panel-body">
+                                    <table class="table table-responsive">
+                                        <tr>
+                                            <td>Nom</td>
+                                            <td>
+                                                <form>
+                                                    <input type="text" name="name" style="min-width: 30pc" placeholder="Nom de la session">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date de début</td>
+                                            <td>
+                                                <form>
+                                                    <input type="text" name="start-date" style="min-width: 30pc" placeholder="jj/mm/aaaa">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Heure de début</td>
+                                            <td>
+                                                <form>
+                                                    <input type="text" name="start-hour" style="min-width: 30pc" placeholder="hh:mm">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date de fin</td>
+                                            <td>
+                                                <form>
+                                                    <input type="text" name="end-date" style="min-width: 30pc" placeholder="jj/mm/aaaa">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Heure de fin</td>
+                                            <td>
+                                                <form>
+                                                    <input type="text" name="start-hour" style="min-width: 30pc" placeholder="hh:mm">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Statut</td>
+                                            <td>
+                                                <select class="form-control" id="sel1">
+                                                    <option selected>Non commencé</option>
+                                                    <option>En cours</option>
+                                                    <option>Terminé</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Uniquement à distance</td>
+                                            <td>
+                                                <i class="fa fa-square-o"></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Définir comme session par défaut</td>
+                                            <td>
+                                                <i class="fa fa-check-square" style="color: #5CB85C"></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lieu par défaut</td>
+                                            <td>
+                                                <p><i class="fa fa-square-o"></i></br></br>
+                                                Interne
+                                                <select class="form-control" id="sel1">
+                                                    <option selected>Local 1</option>
+                                                    <option>Local 2</option>
+                                                    <option>Local 3</option>
+                                                    <option>Etc.</option>
+                                                </select>
+                                                </p>
+                                                <p>Externe
+                                                    <form>
+                                                        <input type="text" name="ext-room" style="min-width: 30pc" placeholder="Adresse et nom du local">
+                                                    </form>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Inscription publique</td>
+                                            <td>
+                                                <i class="fa fa-check-square" style="color: #5CB85C"></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Désinscription publique</td>
+                                            <td>
+                                                <i class="fa fa-check-square" style="color: #5CB85C"></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cursus</td>
+                                            <td>
+                                                <i class="fa fa-check-square" style="color: #5CB85C"></i>
+                                                Expert pédagogique de Claroline Connect</br>
+                                                <i class="fa fa-check-square" style="color: #5CB85C"></i>
+                                                Expert technicien de Claroline Connect</br>
+                                                <i class="fa fa-square-o"></i>
+                                                S2CP</br>
+                                                <i class="fa fa-square-o"></i>
+                                                TEST</br>
+                                                <i class="fa fa-square-o"></i>
+                                                TEST Virginie
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" title="Cliquez ici pour valider">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {#<div id="push"></div>#}
+    <div id="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <p>
+                    <span class="pull-right locale-select label label-default">FR</span>
+                    <span>Développé par <a href="http://www.claroline.net" target="_blank">Claroline</a> Release 16.05</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
+
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+    </script>
+
+{% endblock %}
