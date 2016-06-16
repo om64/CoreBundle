@@ -45,14 +45,14 @@
         }
     </style>
 
-<div id="users-panel" class="panel panel-default ng-scope" ng-app="UsersManager">
-    <div class="panel panel-body ng-scope" ui-view="">
-        <ol class="breadcrumb ng-scope ng-isolate-scope" ncy-breadcrumb="">
-            <li class="ng-scope active" ng-switch="$last || !!step.abstract" ng-class="{active: $last}" ng-repeat="step in steps">
-                <span class="ng-binding ng-scope" ng-switch-when="true">Liste des sessions</span>
+<div id="users-panel" class="panel panel-default ng-scope">
+    <div class="panel panel-body ng-scope">
+        <ol class="breadcrumb ng-scope ng-isolate-scope">
+            <li class="ng-scope active">
+                <span class="ng-binding ng-scope">Liste des sessions</span>
             </li>
         </ol>
-        <div class="ng-scope" ui-view="users">
+        <div class="ng-scope">
             <div class="ng-scope">
                 <div>
                     <div class="btn-group">
@@ -62,14 +62,14 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="ng-binding" ng-click="uc.clickDelete()" href="#"> Supprimer </a>
+                                <a class="ng-binding" href="#"> Supprimer </a>
                             </li>
                             <li class="divider" role="separator"></li>
                             <li>
                                 <a class="ng-binding" href="#"> Nouvelle session </a>
                             </li>
                             <li>
-                                <a class="ng-binding" ng-click="uc.csvRemove()" href="#"> csv_delete </a>
+                                <a class="ng-binding" href="#"> csv_delete </a>
                             </li>
                             <li>
                                 <a class="ng-binding" href="#"> Importer </a>
@@ -89,19 +89,18 @@
                         <div>
                             <div class="input-group form-control">
                                     <span>
-                                        <input type="text" placeholder="Rechercher une session" spellcheck="false" autocapitalize="off" autocorrect="off"
-                                               autocomplete="false" style="width: 1710px;">
+                                        <input type="text" placeholder="Rechercher une session" spellcheck="false" autocomplete="false" style="width: 1710px;">
                                     </span>
-                                    <ul class="ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu ng-scope ng-hide" ng-show="$select.items.length > 0" role="listbox" refresh-delay="0" refresh="cs.refreshOptions($select)" repeat="dataitem in (cs.options)" style="opacity: 1;">
+                                    <ul class="ui-select-choices ui-select-choices-content ui-select-dropdown dropdown-menu ng-scope ng-hide" role="listbox" style="opacity: 1;">
                                         <li id="ui-select-choices-0" class="ui-select-choices-group">
-                                            <div class="divider ng-hide" ng-show="$select.isGrouped && $index > 0"></div>
-                                            <div class="ui-select-choices-group-label dropdown-header ng-binding ng-hide" ng-bind="$group.name" ng-show="$select.isGrouped"></div>
+                                            <div class="divider ng-hide"></div>
+                                            <div class="ui-select-choices-group-label dropdown-header ng-binding ng-hide"></div>
                                         </li>
                                     </ul>
                                     {#<ui-select-multiple></ui-select-multiple>#}
                                 <div id="search-el"></div>
                                     <span class="input-group-btn">
-                                        <button id="search-button" class="filter btn btn-primary" ng-click="cs.search()" type="button">
+                                        <button id="search-button" class="filter btn btn-primary" type="button">
                                             <i class="fa fa-search"></i>
                                         </button>
                                     </span>
@@ -122,32 +121,94 @@
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="col-md-8 dropdown ng-scope" options="dt.options" ng-if="dt.options.availableColumns">
-                                    <button id="dropdown-column" class="btn btn-default dropdown-toggle" aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" type="button">
-                                    <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" style="z-index:25;" aria-labelledby="column">
-                                    <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
-                                    <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
-                                    <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
-                                    <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
-                                    </ul>
+                                    <div class="col-md-8 dropdown ng-scope">
+                                        <button id="dropdown-column" class="btn btn-default dropdown-toggle" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button">
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" style="z-index:25;" aria-labelledby="column">
+                                            <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
+                                                <label class="dt-checkbox ng-binding">
+                                                    <input type="checkbox" ng-checked="columnSelector.isChecked(column)" ng-click="columnSelector.onClick(column)" checked="checked">
+                                                    Prénom
+                                                </label>
+                                            </li>
+                                            <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
+                                                <label class="dt-checkbox ng-binding">
+                                                    <input type="checkbox" ng-checked="columnSelector.isChecked(column)" ng-click="columnSelector.onClick(column)" checked="checked">
+                                                    Nom
+                                                </label>
+                                            </li>
+                                            <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
+                                                <label class="dt-checkbox ng-binding">
+                                                    <input type="checkbox" ng-checked="columnSelector.isChecked(column)" ng-click="columnSelector.onClick(column)" checked="checked">
+                                                    Courriel
+                                                </label>
+                                            </li>
+                                            <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
+                                                <label class="dt-checkbox ng-binding">
+                                                    <input type="checkbox" ng-checked="columnSelector.isChecked(column)" ng-click="columnSelector.onClick(column)" checked="checked">
+                                                    Actions
+                                                </label>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
 
-
-
-
+                            <div class="dt-header ng-scope" style="width: 1802px; height: 50px;">
+                                <div class="dt-header-inner" style="width: 1790px;">
+                                    {#<div  class="dt-row-center ng-isolate-scope" style="width: 1790px; transform: translate3d(0px, 0px, 0px); backface-visibility: hidden;">#}
+                                        <div title="Identifiant" draggable="true" class="dt-header-cell ng-scope sortable resizable" style="width: 358px; min-width: 100px;">
+                                            <div class="ng-isolate-scope resizable">
+                                                <label class="dt-checkbox ng-scope">
+                                                    <input type="checkbox" >
+                                                </label>
+                                                <span class="dt-header-cell-label">Identifiant</span>
+                                                <span class="sort-btn"></span>
+                                                <span title="Resize" class="dt-resize-handle"></span></div>
+                                    {#</div>#}
+                                </div>
+                                        <div title="Prénom" draggable="true" class="dt-header-cell ng-scope sortable resizable" style="width: 358px; min-width: 100px;">
+                                        <div max-width="hcell.column.maxWidth" min-width="hcell.column.minWidth" on-resize="hcell.onResized(width, hcell.column)" resizable="hcell.column.resizable" class="ng-isolate-scope resizable">
+                                            <!-- ngIf: hcell.column.isCheckboxColumn && hcell.column.headerCheckbox -->
+                                            <span class="dt-header-cell-label">Prénom</span>
+                                            <span ng-class="hcell.sortClass()" class="sort-btn"></span>
+                                            <span title="Resize" class="dt-resize-handle"></span></div>
+                                </div>
+                            </div>
+                                    {#</div><!-- end ngRepeat: column in header.columns['center'] track by column.$id --><div title="Nom" ng-style="hcell.styles()" data-id="5762e6a93a9f2a3d0bf81308" draggable="true" class="dt-header-cell ng-scope sortable resizable" ng-class="hcell.cellClass()" column="column" options="header.options" on-resize="header.onResized(column, width)" selected="selected" sort-type="header.options.sortType" on-sort="header.onSorted(column)" on-checkbox-change="header.onCheckboxChanged()" ng-repeat="column in header.columns['center'] track by column.$id" style="width: 358px; min-width: 100px;">#}
+                                                {#<div max-width="hcell.column.maxWidth" min-width="hcell.column.minWidth" on-resize="hcell.onResized(width, hcell.column)" resizable="hcell.column.resizable" class="ng-isolate-scope resizable">#}
+                                                    {#<!-- ngIf: hcell.column.isCheckboxColumn && hcell.column.headerCheckbox -->#}
+                                                    {#<span ng-click="hcell.onSorted()" class="dt-header-cell-label">Nom</span>#}
+                                                    {#<span ng-class="hcell.sortClass()" class="sort-btn"></span>#}
+                                                    {#<span title="Resize" class="dt-resize-handle"></span></div>#}
+                                            {#</div><!-- end ngRepeat: column in header.columns['center'] track by column.$id --><div title="Courriel" ng-style="hcell.styles()" data-id="5762e6a9b0644689480fdfe7" draggable="true" class="dt-header-cell ng-scope sortable resizable" ng-class="hcell.cellClass()" column="column" options="header.options" on-resize="header.onResized(column, width)" selected="selected" sort-type="header.options.sortType" on-sort="header.onSorted(column)" on-checkbox-change="header.onCheckboxChanged()" ng-repeat="column in header.columns['center'] track by column.$id" style="width: 358px; min-width: 100px;">#}
+                                                {#<div max-width="hcell.column.maxWidth" min-width="hcell.column.minWidth" on-resize="hcell.onResized(width, hcell.column)" resizable="hcell.column.resizable" class="ng-isolate-scope resizable">#}
+                                                    {#<!-- ngIf: hcell.column.isCheckboxColumn && hcell.column.headerCheckbox -->#}
+                                                    {#<span ng-click="hcell.onSorted()" class="dt-header-cell-label">Courriel</span>#}
+                                                    {#<span ng-class="hcell.sortClass()" class="sort-btn"></span>#}
+                                                    {#<span title="Resize" class="dt-resize-handle"></span></div>#}
+                                            {#</div><!-- end ngRepeat: column in header.columns['center'] track by column.$id --><div title="Actions" ng-style="hcell.styles()" data-id="5762e6a94b56f7fe5f3eb3f4" draggable="true" class="dt-header-cell ng-scope sortable resizable" ng-class="hcell.cellClass()" column="column" options="header.options" on-resize="header.onResized(column, width)" selected="selected" sort-type="header.options.sortType" on-sort="header.onSorted(column)" on-checkbox-change="header.onCheckboxChanged()" ng-repeat="column in header.columns['center'] track by column.$id" style="width: 358px; min-width: 100px;">#}
+                                                {#<div max-width="hcell.column.maxWidth" min-width="hcell.column.minWidth" on-resize="hcell.onResized(width, hcell.column)" resizable="hcell.column.resizable" class="ng-isolate-scope resizable">#}
+                                                    {#<!-- ngIf: hcell.column.isCheckboxColumn && hcell.column.headerCheckbox -->#}
+                                                    {#<span ng-click="hcell.onSorted()" class="dt-header-cell-label">Actions</span>#}
+                                                    {#<span ng-class="hcell.sortClass()" class="sort-btn"></span>#}
+                                                    {#<span title="Resize" class="dt-resize-handle"></span></div>#}
+                                            {#</div><!-- end ngRepeat: column in header.columns['center'] track by column.$id -->#}
+                                        {#</div>#}
 
 
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
+
+        </div>
         </div>
     </div>
-</div>
 
 
 {% endblock %}
