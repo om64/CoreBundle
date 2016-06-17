@@ -48,7 +48,7 @@
         }
     </style>
     <div class="container-fluid">
-        <div class="row" style="padding-left: 15px; padding-right: 15px">
+        <div class="row" style="padding: 0 15px 0 15px">
             <div class="btn-group margin-top-sm" role="group">
                 <a class="btn btn-primary" href="#">
                     <i class="fa fa-plus-circle"></i>
@@ -63,14 +63,38 @@
                     Exporter
                 </a>
             </div>
-
+        </div>
+        <div class="row btn-group" style="padding: 15px 15px 0 15px">
+            <button class="btn btn-default dropdown-toggle" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button">
+                <i class="fa fa-cog"></i>
+                <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                    <a class="ng-binding" href="#"> Supprimer </a>
+                    </li>
+                    <li class="divider" role="separator"></li>
+                    <li>
+                    <a class="ng-binding" href="#"> Nouvelle session </a>
+                    </li>
+                    <li class="divider" role="separator"></li>
+                    <li>
+                    <a class="ng-binding" href="#"> Export excel </a>
+                    </li>
+                    <li>
+                    <a class="ng-binding" href="#"> Export csv </a>
+                    </li>
+                </ul>
+        </div>
+        <div class="row" style="padding: 12px">
             <div class="input-group col-md-6 pull-right margin-top-sm">
-                <input id="search-course-input" class="form-control search-course" type="text" data-max="50" data-order="ASC" data-ordered-by="title" value="" placeholder="Rechercher">
-            <span class="input-group-btn">
-            <button id="search-course-btn" class="filter btn btn-primary search-course-btn" data-max="50" data-order="ASC" data-ordered-by="title" type="button">
-                <i class="fa fa-search"></i>
-            </button>
-            </span>
+                <input type="text" ondrop="return false;" aria-label="Select box" role="combobox" placeholder="Rechercher une session" class="ui-select-search input-xs ng-pristine ng-valid ng-touched"
+                    spellcheck="false" style="width: 1722px;">
+                <span class="input-group-btn">
+                    <button id="search-course-btn" class="filter btn btn-primary search-course-btn" data-max="50" data-order="ASC" data-ordered-by="title" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
             </div>
         </div>
         <div class="row " style="padding-top: 15px; padding-bottom: 15px">
@@ -102,16 +126,78 @@
                 </div>
             </div>
         </div>
+        <div class="row" style="margin: 0 0 10px 10px">
+            <span style="font-weight: bold">Afficher les sessions du : &nbsp;</span>
+                <input id="from-date" type="text" placeholder="jj/mm/aaaa">
+                <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Choisir date">
+                    <i class="fa fa-calendar pointer-hand"></i>
+                </a>
+            <span style="font-weight: bold">&nbsp; au &nbsp;</span>
+                <input id="to-date" type="text" placeholder="jj/mm/aaaa">
+                <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Choisir date">
+                    <i class="fa fa-calendar pointer-hand"></i>
+                </a>
+        </div>
+        <div class="row" style="margin-bottom: 10px">
+            <div class="col-md-2">
+                <select class="form-control col-md-2 ng-pristine ng-valid ng-scope ng-touched">
+                    <option label="10" value="number:10">10</option>
+                    <option label="20" value="number:20">20</option>
+                    <option label="50" value="number:50">50</option>
+                    <option label="100" value="number:100">100</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-8 dropdown ng-scope" options="dt.options" ng-if="dt.options.availableColumns">
+                    <button id="dropdown-column" class="btn btn-default dropdown-toggle" aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" type="button">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" style="z-index:25;" aria-labelledby="column">
+                        <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
+                        <label class="dt-checkbox ng-binding">
+                        <input type="checkbox" ng-checked="columnSelector.isChecked(column)" ng-click="columnSelector.onClick(column)" checked="checked">
+                        Date de début
+                        </label>
+                        </li>
+                        <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
+                        <label class="dt-checkbox ng-binding">
+                        <input type="checkbox" ng-checked="columnSelector.isChecked(column)" ng-click="columnSelector.onClick(column)" checked="checked">
+                        Titre
+                        </label>
+                        </li>
+                        <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
+                        <label class="dt-checkbox ng-binding">
+                        <input type="checkbox" ng-checked="columnSelector.isChecked(column)" ng-click="columnSelector.onClick(column)" checked="checked">
+                        Formation
+                        </label>
+                        </li>
+                        <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
+                        <label class="dt-checkbox ng-binding">
+                        <input type="checkbox" ng-checked="columnSelector.isChecked(column)" ng-click="columnSelector.onClick(column)" checked="checked">
+                        Code formation
+                        </label>
+                        </li>
+                        <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
+                        <label class="dt-checkbox ng-binding">
+                        <input type="checkbox" ng-checked="columnSelector.isChecked(column)" ng-click="columnSelector.onClick(column)" checked="checked">
+                        Actions
+                        </label>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+
+        </div>
+        <div ng-class="row">
         <div class="table-responsive">
             <table class="table">
-                <thead>
-                    <span style="font-weight: bold">Afficher les sessions du : &nbsp;</span>
-                        <input id="from-date" type="text">
-                    <span style="font-weight: bold">&nbsp; au &nbsp;</span>
-                        <input id="to-date" type="text">
-                </thead>
                 <tbody>
                     <tr>
+                        <th style="background-color: #337ab7">
+                            <label class="dt-checkbox ng-scope" ng-if="hcell.column.isCheckboxColumn && hcell.column.headerCheckbox">
+                            <input type="checkbox" ng-click="hcell.onCheckboxChange()" ng-checked="hcell.selected">
+                            </label>
+                        </th>
                         <th style="background-color: #337ab7">
                             <a href="#" style="color: #fff"> Date de début </a>
                         </th>
@@ -128,6 +214,11 @@
                             <a href="#" style="color: #fff"> Actions </a>
                     </tr>
                     <tr>
+                        <td>
+                            <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                                <input type="checkbox" ng-click="cell.onCheckboxChanged($event)" ng-checked="cell.selected">
+                            </label>
+                        </td>
                         <td>
                             Mercredi 15 juin 2016
                         </td>
@@ -200,7 +291,12 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                         <td>
+                            <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                                <input type="checkbox" ng-click="cell.onCheckboxChanged($event)" ng-checked="cell.selected">
+                            </label>
+                        </td>
+                       <td>
                             Jeudi 16 juin 2016
                         </td>
                         <td>Session 1
@@ -221,6 +317,11 @@
                         </td>
                     </tr>
                     <tr>
+                        <td>
+                            <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                                <input type="checkbox" ng-click="cell.onCheckboxChanged($event)" ng-checked="cell.selected">
+                            </label>
+                        </td>
                         <td>
                             Vendredi 17 juin 2016
                         </td>
@@ -243,7 +344,12 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                         <td>
+                            <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                                <input type="checkbox" ng-click="cell.onCheckboxChanged($event)" ng-checked="cell.selected">
+                            </label>
+                        </td>
+                       <td>
                             Lundi 20 juin 2016
                         </td>
                         <td>
