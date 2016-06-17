@@ -4,13 +4,13 @@
 
     Gestion des formations
     {#<span class="pull-left">#}
-        <button class="btn btn-default pull-right" title="Gestion des cursus" style="color: white; background-color: #5cb85c">
+        <button class="btn btn-success pull-right" title="Gestion des cursus">
             <i class="fa fa-book"></i>
         </button>
     {#</span>#}
-        <button class="btn btn-default pull-right" title="Gestion des sessions" style="color: white; background-color: #5cb85c">
+        <a class="btn btn-success pull-right" title="Gestion des sessions" href="session_management.html" data-toggle="tooltip" data-placement="top">
             <i class="fa fa-calendar" aria-hidden="true"></i>
-        </button>
+        </a>
 
 {% endblock %}
 
@@ -78,10 +78,10 @@
                 </li>
                 <li class="divider" role="separator"></li>
                 <li>
-                    <a class="ng-binding" href="#"> Export excel </a>
+                    <a class="ng-binding" href="#"> Importer </a>
                 </li>
                 <li>
-                    <a class="ng-binding" href="#"> Export csv </a>
+                    <a class="ng-binding" href="#"> Exporter </a>
                 </li>
             </ul>
         </div>
@@ -379,7 +379,7 @@
                             <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
                         </td>
                         <td>
-                            <a href="fiche_formation.html">&nbsp; Configuration de la plateforme CC </a>
+                            <a href="fiche_configuration_CC.html">&nbsp; Configuration de la plateforme CC </a>
                             <i class="fa fa-chevron-circle-right pull-left pointer-hand" data-toggle="collapse" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
                         </td>
                         <td> FL-CL-A-cp </td>
@@ -492,16 +492,16 @@
     </div>
 
     {#<div id="push"></div>#}
-        <div id="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <p>
-                        <span class="pull-left locale-select label label-default">FR</span>
-                        <span>Développé par <a href="http://www.claroline.net" target="_blank">Claroline</a> Release 16.05</span>
-                    </p>
-                </div>
-            </div>
-        </div>
+        {#<div id="footer">#}
+            {#<div class="container-fluid">#}
+                {#<div class="row">#}
+                    {#<p>#}
+                        {#<span class="pull-left locale-select label label-default">FR</span>#}
+                        {#<span>Développé par <a href="http://www.claroline.net" target="_blank">Claroline</a> Release 16.05</span>#}
+                    {#</p>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
 
 {% endblock %}
 
