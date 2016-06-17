@@ -1,0 +1,550 @@
+{% extends 'ClarolineCoreBundle::mockup/Training_sessions/training-tool-7.html.twig' %}
+
+{% block panelTitle %}
+
+    Gestion des sessions
+
+{% endblock %}
+
+{% block panelRest %}
+
+<style type="text/css" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+    /* For possible modals on this page */
+
+    .modal-header, h4, .close {
+        background-color: #5cb85c;
+        color:white !important;
+        text-align: center;
+        font-size: 20px;
+    }
+    .modal-footer {
+        background-color: #f9f9f9;
+    }
+
+    /* To give full width to tables */
+
+    table.table.table-hover {
+        width:100%;
+    }
+
+    /* To change the backgroud color of the top bar */
+
+    .navbar-inverse {
+        background-color: #5cb85c;
+        border-color: #5cb85c;
+    }
+    .navbar.navbar-inverse.navbar-fixed-top {
+        border-bottom: 2px solid #5cb85c;
+    }
+    #top_bar li:not(:last-child) > a, .top-bar li:not(:last-child) > a {
+        color: white;
+        border-right: 1px solid #5cb85c !important;
+    }
+    .panel-default > .panel-heading {
+        color: #fff;
+        background-color: #5cb85c;
+        border-color: #ddd;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-hidden col-sm-3 col-md-4">
+        <img src="{{ asset('uploads/custom/images/sessions.jpg') }}" style="max-height: 120px">
+        </div>
+    </div>
+    {#<div class="row" style="padding: 0 15px 0 15px">#}
+        {#<div class="btn-group margin-top-sm" role="group">#}
+            {#<a class="btn btn-primary" href="#">#}
+                {#<i class="fa fa-plus-circle"></i>#}
+                {#Créer une session#}
+            {#</a>#}
+        {#<span id="import-courses-btn" class="btn btn-default">#}
+        {#<i class="fa fa-sign-in"></i>#}
+        {#Importer#}
+        {#</span>#}
+            {#<a class="btn btn-default" href="#">#}
+                {#<i class="fa fa-sign-out"></i>#}
+                {#Exporter#}
+            {#</a>#}
+        {#</div>#}
+    {#</div>#}
+    <div class="row btn-group" style="padding: 15px 15px 0 15px">
+        <button class="btn btn-primary dropdown-toggle" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button">
+            <i class="fa fa-cog"></i>
+            <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="ng-binding" href="#"> Supprimer session </a>
+                </li>
+                <li class="divider" role="separator"></li>
+                <li>
+                    <a class="ng-binding" href="#"> Nouvelle session </a>
+                </li>
+                <li class="divider" role="separator"></li>
+                <li>
+                    <a class="ng-binding" href="#"> Exporter session <i class="fa fa-sign-out"></i></a>
+                </li>
+                <li>
+                    <a class="ng-binding" href="#"> Importer session <i class="fa fa-sign-in"></i></a>
+                </li>
+            </ul>
+    </div>
+    {#<div class="row" style="padding: 12px">#}
+        {#<div class="input-group col-md-6 pull-left margin-top-sm">#}
+            {#<input type="text" ondrop="return false;" aria-label="Select box" role="combobox" placeholder="Rechercher une session" class="ui-select-search input-xs ng-pristine ng-valid ng-touched"#}
+                {#spellcheck="false" style="width: 1722px;">#}
+            {#<span class="input-group-btn">#}
+                {#<button id="search-course-btn" class="filter btn btn-primary search-course-btn" data-max="50" data-order="ASC" data-ordered-by="title" type="button">#}
+                    {#<i class="fa fa-search"></i>#}
+                {#</button>#}
+            {#</span>#}
+        {#</div>#}
+    {#</div>#}
+    <div class="row" style="margin: 10px">
+        <span style="font-weight: bold">Afficher les sessions du : &nbsp;</span>
+            <input id="from-date" type="text" placeholder="jj/mm/aaaa">
+            <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Choisir date">
+                <i class="fa fa-calendar pointer-hand"></i>
+            </a>
+        <span style="font-weight: bold">&nbsp; au &nbsp;</span>
+            <input id="to-date" type="text" placeholder="jj/mm/aaaa">
+            <a class="btn btn-default btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Choisir date">
+                <i class="fa fa-calendar pointer-hand"></i>
+            </a>
+    </div>
+    <div class="row" style="margin-bottom: 10px">
+        <div class="col-md-2">
+            <select class="form-control col-md-2 ng-pristine ng-valid ng-scope ng-touched">
+                <option label="10" value="number:10">10</option>
+                <option label="20" value="number:20">20</option>
+                <option label="50" value="number:50">50</option>
+                <option label="100" value="number:100">100</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-8 dropdown ng-scope" options="dt.options" ng-if="dt.options.availableColumns">
+                <button id="dropdown-column" class="btn btn-default dropdown-toggle" aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" type="button">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" style="z-index:25;" aria-labelledby="column">
+                    <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
+                        <label class="dt-checkbox ng-binding">
+                            <input type="checkbox" ng-checked="columnSelector.isChecked(column)" ng-click="columnSelector.onClick(column)" checked="checked">
+                        Date de début
+                        </label>
+                    </li>
+                    <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
+                        <label class="dt-checkbox ng-binding">
+                            <input type="checkbox" ng-checked="columnSelector.isChecked(column)" ng-click="columnSelector.onClick(column)" checked="checked">
+                        Titre de la session
+                        </label>
+                    </li>
+                    <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
+                        <label class="dt-checkbox ng-binding">
+                            <input type="checkbox" ng-checked="columnSelector.isChecked(column)" ng-click="columnSelector.onClick(column)" checked="checked">
+                        Formation
+                        </label>
+                    </li>
+                    <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
+                        <label class="dt-checkbox ng-binding">
+                            <input type="checkbox" ng-checked="columnSelector.isChecked(column)" ng-click="columnSelector.onClick(column)" checked="checked">
+                        Code formation
+                        </label>
+                    </li>
+                    <li class="ng-scope" ng-repeat="column in columnSelector.options.availableColumns">
+                        <label class="dt-checkbox ng-binding">
+                            <input type="checkbox" ng-checked="columnSelector.isChecked(column)" ng-click="columnSelector.onClick(column)" checked="checked">
+                        Actions
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            </div>
+
+    </div>
+    <div ng-class="row">
+    <div class="table-responsive">
+        <table class="table" border="0">
+            <tbody>
+                <tr>
+                    <th style="background-color: #337ab7">
+                        <label class="dt-checkbox ng-scope" ng-if="hcell.column.isCheckboxColumn && hcell.column.headerCheckbox">
+                        <input type="checkbox" ng-click="hcell.onCheckboxChange()" ng-checked="hcell.selected">
+                        </label>
+                    </th>
+                    <th style="background-color: #337ab7">
+                        <a href="#" style="color: #fff"> Date de début </a>
+                    </th>
+                    <th style="background-color: #337ab7">
+                        <a href="#" style="color: #fff"> Titre </a>
+                    </th>
+                    <th style="background-color: #337ab7">
+                        <a href="#" style="color: #fff"> Formation </a>
+                    </th>
+                    <th style="background-color: #337ab7">
+                        <a href="#" style="color: #fff"> Code formation </a>
+                    </th>
+                    <th class="text-center" style="color: white; background-color: #337ab7">
+                        Actions
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="text" placeholder="Date de début" class="input-filter form-control ng-pristine ng-valid ng-scope ng-touched" ng-model="params.filter()[name]" ng-disabled="$filterRow.disabled" name="training">
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Titre de la session" class="input-filter form-control ng-pristine ng-valid ng-scope ng-touched" ng-model="params.filter()[name]" ng-disabled="$filterRow.disabled" name="training-code">
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Titre de la formation" class="input-filter form-control ng-pristine ng-valid ng-scope ng-touched" ng-model="params.filter()[name]" ng-disabled="$filterRow.disabled" name="training">
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Code de la formation" class="input-filter form-control ng-pristine ng-valid ng-scope ng-touched" ng-model="params.filter()[name]" ng-disabled="$filterRow.disabled" name="training-code">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                            <input type="checkbox" ng-click="cell.onCheckboxChanged($event)" ng-checked="cell.selected">
+                        </label>
+                    </td>
+                    <td>
+                        Mercredi 15 juin 2016
+                    </td>
+                    <td>
+                        &nbsp;
+                        Juin 2016
+                        <span data-placement="top" data-toggle="tooltip" title="Voir les séances" class="pull-left" >
+                            <i data-toggle="collapse" class="fa fa-chevron-circle-right pointer-hand" data-target="#session-event-1" style="color: #337ab7"></i>
+                        </span>
+                    </td>
+                    <td>
+                        <a href="fiche_formation.html"> Configuration de la plateforme CC  </a>
+                    </td>
+                    <td> FL-CL-A-cp </td>
+                    <td class="text-center">
+                        <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
+                            <i class="fa fa-calendar pointer-hand"></i>
+                        </a>
+                        <a href="training-view-8.html" class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la session">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Envoyer un courriel aux participants de la session">
+                            <i class="fa fa-envelope-o pointer-hand"></i>
+                        </a>
+                        <span data-placement="top" data-toggle="tooltip" title="Supprimer la session">
+                            <i class="fa fa-trash btn btn-danger btn-sm" data-target="#delete-session-box" data-toggle="modal"></i>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="5">
+                        <div class="container-fluid>">
+                            <div id="session-event-1" class="table-responsive collapse" aria-expanded="true" style="">
+                                <br>
+                                <div class="table-responsive">
+                                    <table class="table" border="0">
+                                        <tbody>
+                                            <tr>
+                                                <th style="background-color: #5bc0de; color: white"> Nom </th>
+                                                <th style="background-color: #5bc0de; color: white"> Date de début </th>
+                                                <th style="background-color: #5bc0de; color: white"> Date de fin </th>
+                                                <th style="background-color: #5bc0de; color: white"> Lieu </th>
+                                            </tr>
+                                            <tr>
+                                                <h5 style="padding: 5px"><strong>Détails des séances</strong></h5>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Paramétrer le bureau
+                                                </td>
+                                                <td> 20/06/2016 </td>
+                                                <td> 21/06/2016 </td>
+                                                <td> Local 230 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Paramétrer les droits utilisateurs
+                                                </td>
+                                                <td> 23/06/2016 </td>
+                                                <td> 24/06/2016 </td>
+                                                <td> Rue de Sotriamont, 1</br>
+                                                     1400 Nivelles (B)</br>
+                                                     Local 12
+                                                 </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                     <td>
+                        <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                            <input type="checkbox" ng-click="cell.onCheckboxChanged($event)" ng-checked="cell.selected">
+                        </label>
+                    </td>
+                    <td>
+                        &nbsp;
+                        Jeudi 16 juin 2016
+                    </td>
+                    <td>Session 1
+                    <span data-placement="top" data-toggle="tooltip" title="Voir les séances" class="pull-left" ><i data-toggle="collapse" class="fa fa-chevron-circle-right pointer-hand" data-target="#sessions-tab" style="color: #337ab7"></i></span>
+                    </td>
+                    <td>
+                        <a href="#"> Alerter les interlocuteurs concernés par les dysfonctionnements et les risques constatés </a>
+                    </td>
+                    <td> M4N2D </td>
+                    <td class="text-center">
+                        <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
+                            <i class="fa fa-calendar pointer-hand"></i>
+                        </a>
+                        <a href="training-view-5.html" class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la session">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Envoyer un courriel aux participants de la session">
+                            <i class="fa fa-envelope-o pointer-hand"></i>
+                        </a>
+                        <span data-placement="top" data-toggle="tooltip" title="Supprimer la session">
+                            <i class="fa fa-trash btn btn-danger btn-sm" data-target="#delete-session-box" data-toggle="modal"></i>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                            <input type="checkbox" ng-click="cell.onCheckboxChanged($event)" ng-checked="cell.selected">
+                        </label>
+                    </td>
+                    <td>
+                        &nbsp;
+                        Vendredi 17 juin 2016
+                    </td>
+                    <td>
+                        Session 2
+                        <i class="fa fa-chevron-circle-right pull-left pointer-hand" data-toggle="collapse" data-placement="top" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
+                    </td>
+                    <td>
+                        <a href="#"> Alerter sa hiérarchie en cas de non-application de la procédure </a>
+                    </td>
+                    <td> M4N3C </td>
+                    <td class="text-center">
+                        <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
+                            <i class="fa fa-calendar pointer-hand"></i>
+                        </a>
+                        <a href="#" class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la session">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Envoyer un courriel aux participants de la session">
+                            <i class="fa fa-envelope-o pointer-hand"></i>
+                        </a>
+                        <span data-placement="top" data-toggle="tooltip" title="Supprimer la session">
+                            <i class="fa fa-trash btn btn-danger btn-sm" data-target="#delete-session-box" data-toggle="modal"></i>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                     <td>
+                        <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                            <input type="checkbox" ng-click="cell.onCheckboxChanged($event)" ng-checked="cell.selected">
+                        </label>
+                    </td>
+                    <td>
+                        &nbsp;
+                        Lundi 20 juin 2016
+                    </td>
+                    <td>
+                        Session 3
+                        <i class="fa fa-chevron-circle-right pull-left pointer-hand" data-toggle="collapse" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
+                    </td>
+                    <td>
+                        <a href="#"> Aller chercher des informations, consulter des personnes ressources </a>
+                    </td>
+                    <td> M6N1C </td>
+                    <td class="text-center">
+                        <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
+                            <i class="fa fa-calendar pointer-hand"></i>
+                        </a>
+                        <a href="#training-view-5.html" class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la session">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Envoyer un courriel aux participants de la session">
+                            <i class="fa fa-envelope-o pointer-hand"></i>
+                        </a>
+                        <span data-placement="top" data-toggle="tooltip" title="Supprimer la session">
+                            <i class="fa fa-trash btn btn-danger btn-sm" data-target="#delete-session-box" data-toggle="modal"></i>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row " style="padding-top: 15px; padding-bottom: 15px">
+        {#<div class="col-xs-hidden col-sm-3 col-md-4">#}
+            {#<img src="{{ asset('uploads/custom/images/sessions.jpg') }}" style="max-height: 120px">#}
+        {#</div>#}
+        <div class="col-xs-12 col-sm-9 col-md-8">
+            <div class="pagination">
+                <ul>
+                    <li class="prev disabled">
+                        <span>← Précédent</span>
+                    </li>
+                    <li class="active">
+                        <span>1</span>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Suivant →</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-4">
+            <div class="ng-table-counts btn-group pull-right ng-scope" ng-if="params.settings().counts.length">
+                <button class="btn btn-default ng-scope active" ng-click="params.count(count)" ng-class="{'active':params.count()==count}" type="button" ng-repeat="count in params.settings().counts">
+                    <span class="ng-binding" ng-bind="count">5</span>
+                </button>
+                <button class="btn btn-default ng-scope" ng-click="params.count(count)" ng-class="{'active':params.count()==count}" type="button" ng-repeat="count in params.settings().counts">
+                    <span class="ng-binding" ng-bind="count">10</span>
+                </button>
+                <button class="btn btn-default ng-scope" ng-click="params.count(count)" ng-class="{'active':params.count()==count}" type="button" ng-repeat="count in params.settings().counts">
+                    <span class="ng-binding" ng-bind="count">25</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="view-registration-box" class="modal fade" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <h3 id="view-registration-header" class="modal-header">
+            </h3>
+            <div id="view-registration-body" class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <input type="button"
+                       class="btn btn-default"
+                       data-dismiss="modal"
+                       value="Fermer"></div>
+        </div>
+    </div>
+</div>
+
+<div id="delete-session-box" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h3>
+                    Suppression de la session
+                </h3>
+            </div>
+            <div class="modal-body">
+                Êtes-vous sûr de vouloir supprimer cette session ?
+                <br>
+            </div>
+            <div class="modal-footer">
+            <span class="pull-right">
+                <span class="btn btn-default pointer-hand"
+                      data-dismiss="modal"
+                >
+                    Annuler
+                </span>
+                <span id="confirm-session-deletion-btn"
+                      class="btn btn-primary pointer-hand"
+                >
+                    Ok
+                </span>
+            </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="delete-event-session-box" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h3>
+                    Suppression de la séance
+                </h3>
+            </div>
+            <div class="modal-body">
+                Êtes-vous sûr de vouloir supprimer cette séance ?
+                <br>
+            </div>
+            <div class="modal-footer">
+            <span class="pull-right">
+                <span class="btn btn-default pointer-hand"
+                      data-dismiss="modal"
+                >
+                    Annuler
+                </span>
+                <span id="confirm-session-deletion-btn"
+                      class="btn btn-primary pointer-hand"
+                >
+                    Ok
+                </span>
+            </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+{#<div id="footer">#}
+    {#<div class="container-fluid">#}
+        {#<div class="row">#}
+            {#<p>#}
+                {#<span class="pull-right locale-select label label-default">FR</span>#}
+                {#<span>Développé par <a href="http://www.claroline.net" target="_blank">Claroline</a> Release 16.05</span>#}
+            {#</p>#}
+        {#</div>#}
+    {#</div>#}
+{#</div>#}
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
+    
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" property="">
+    
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
+    >
+    </script>
+    <script type="text/javascript"
+            src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    >
+    </script>
+
+{% endblock %}

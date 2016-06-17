@@ -1,6 +1,6 @@
-- training-1.html.twig
-- fiche_formation.html.twig
-- training-view-5.html.twig
-- training-view-6.html.twig
-- training-view-7.html.twig
-- training-view-8.html.twig
+- Training_sessions/training-1.html.twig
+- Training_sessions/session_management.html.twig
+- Training_sessions/fiche_formation.html.twig
+- Training_sessions/training-view-5.html.twig
+- Training_sessions/training-view-6.html.twig
+- Training_sessions/training-view-8.html.twig

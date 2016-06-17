@@ -1,16 +1,30 @@
-{% extends 'ClarolineCoreBundle::mockup/training-tool4.html.twig' %}
+{% extends 'ClarolineCoreBundle::mockup/Training_sessions/training-tool4.html.twig' %}
 
 {% block panelTitle %}
 
     Gestion des formations
+    {#<span class="pull-left">#}
+        <button class="btn btn-default pull-right" title="Gestion des cursus" style="color: white; background-color: #5cb85c">
+            <i class="fa fa-book"></i>
+        </button>
+    {#</span>#}
+        <button class="btn btn-default pull-right" title="Gestion des sessions" style="color: white; background-color: #5cb85c">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+        </button>
 
 {% endblock %}
 
 {% block panelRest %}
 
+    {#<script>#}
+        {#$(document).ready(function(){#}
+            {#$(".dropdown-toggle").dropdown();#}
+        {#});#}
+    {#</script>#}
+
     <style type="text/css" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
-        /* For possible modals on this page */
+              /* For possible modals on this page */
 
         .modal-header, h4, .close {
             background-color: #5cb85c;
@@ -47,31 +61,65 @@
             border-color: #ddd;
         }
     </style>
+
     <div class="container-fluid">
-        <div class="row" style="padding-left: 15px; padding-right: 15px">
-            <div class="btn-group margin-top-sm" role="group">
-                <a class="btn btn-primary" href="#">
-                    <i class="fa fa-plus-circle"></i>
-                    Créer une formation
-                </a>
-                <span id="import-courses-btn" class="btn btn-default">
-                <i class="fa fa-sign-in"></i>
-                Importer
-                </span>
-            <a class="btn btn-default" href="#">
-                <i class="fa fa-sign-out"></i>
-                Exporter
-            </a>
-            </div>
-            <div class="input-group col-md-6 pull-right margin-top-sm">
-                <input id="search-course-input" class="form-control search-course" type="text" data-max="50" data-order="ASC" data-ordered-by="title" value="" placeholder="Rechercher">
-                <span class="input-group-btn">
-                <button id="search-course-btn" class="filter btn btn-primary search-course-btn" data-max="50" data-order="ASC" data-ordered-by="title" type="button">
-                    <i class="fa fa-search"></i>
-                </button>
-                </span>
-            </div>
+        <div class="row btn-group" style="padding: 15px 15px 0 15px">
+            <button class="btn btn-primary dropdown-toggle" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button">
+                <i class="fa fa-cog"></i>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="ng-binding" href="#"> Supprimer </a>
+                </li>
+                <li class="divider" role="separator"></li>
+                <li>
+                    <a class="ng-binding" href="#"> Nouvelle formation </a>
+                </li>
+                <li class="divider" role="separator"></li>
+                <li>
+                    <a class="ng-binding" href="#"> Export excel </a>
+                </li>
+                <li>
+                    <a class="ng-binding" href="#"> Export csv </a>
+                </li>
+            </ul>
         </div>
+        {#<div class="row" style="padding-left: 15px; padding-right: 15px">#}
+            {#<div class="btn-group margin-top-sm" role="group">#}
+                {#<a class="btn btn-primary" href="#">#}
+                    {#<i class="fa fa-plus-circle"></i>#}
+                    {#Créer une formation#}
+                {#</a>#}
+                {#<span id="import-courses-btn" class="btn btn-default">#}
+                {#<i class="fa fa-sign-in"></i>#}
+                {#Importer#}
+                {#</span>#}
+            {#<a class="btn btn-default" href="#">#}
+                {#<i class="fa fa-sign-out"></i>#}
+                {#Exporter#}
+            {#</a>#}
+            {#</div>#}
+            {#<div class="input-group col-md-6 pull-left margin-top-sm">#}
+                {#<input id="search-course-input" class="form-control search-course" type="text" data-max="50" data-order="ASC" data-ordered-by="title" value="" placeholder="Rechercher">#}
+                {#<span class="input-group-btn">#}
+                {#<button id="search-course-btn" class="filter btn btn-primary search-course-btn" data-max="50" data-order="ASC" data-ordered-by="title" type="button">#}
+                    {#<i class="fa fa-search"></i>#}
+                {#</button>#}
+                {#</span>#}
+            {#</div>#}
+        {#</div>#}
+        {#<div class="row" style="padding: 12px">#}
+            {#<div class="input-group col-md-6 pull-left margin-top-sm">#}
+                {#<input type="text" ondrop="return false;" aria-label="Select box" role="combobox" placeholder="Rechercher une formation" class="ui-select-search input-xs ng-pristine ng-valid ng-touched"#}
+                    {#spellcheck="false" style="width: 1722px;">#}
+                {#<span class="input-group-btn">#}
+                    {#<button id="search-course-btn" class="filter btn btn-primary search-course-btn" data-max="50" data-order="ASC" data-ordered-by="title" type="button">#}
+                        {#<i class="fa fa-search"></i>#}
+                    {#</button>#}
+                {#</span>#}
+            {#</div>#}
+        {#</div>#}
         <div class="row" style="padding-top: 15px; padding-bottom: 15px">
             <div class="col-xs-hidden col-sm-3 col-md-4">
                 <img src="{{ asset('uploads/custom/images/lessons.png') }}" style="max-height: 120px">
@@ -106,54 +154,72 @@
                 <tbody>
                     <tr>
                         <th style="background-color: #337ab7">
+                            <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
+                        </th>
+                        <th style="background-color: #337ab7">
                             <a href="#" style="color: #fff"> Titre </a>
                         </th>
                         <th style="background-color: #337ab7">
                             <a href="#" style="color: #fff"> Code </a>
                         </th>
-                        <th class="text-center" style="background-color: #337ab7">
-                            <a href="#" style="color: #fff"> Description </a>
-                        </th>
-                        <th class="text-center" style="background-color: #337ab7">
-                            <a href="#" style="color: #fff">
-                                <i class="fa fa-sign-in" title="Inscription publique" data-placement="top" data-toggle="tooltip"> </i>
-                            </a>
-                        </th>
-                        <th class="text-center" style="background-color: #337ab7">
-                            <a href="#" style="color: #fff">
-                                <i class="fa fa-sign-out" title="Désinscription publique" data-placement="top" data-toggle="tooltip"> </i>
-                            </a>
-                        </th>
-                        <th class="text-center" style="background-color: #337ab7">
-                            <a href="#" style="color: #fff">
-                                <i class="fa fa-check-square-o" title="Validation de l'inscription" data-placement="top" data-toggle="tooltip"> </i>
-                            </a>
-                        </th>
+                        {#<th class="text-center" style="background-color: #337ab7">#}
+                            {#<a href="#" style="color: #fff"> Description </a>#}
+                        {#</th>#}
+                        {#<th class="text-center" style="background-color: #337ab7">#}
+                            {#<a href="#" style="color: #fff">#}
+                                {#<i class="fa fa-sign-in" title="Inscription publique" data-placement="top" data-toggle="tooltip"> </i>#}
+                            {#</a>#}
+                        {#</th>#}
+                        {#<th class="text-center" style="background-color: #337ab7">#}
+                            {#<a href="#" style="color: #fff">#}
+                                {#<i class="fa fa-sign-out" title="Désinscription publique" data-placement="top" data-toggle="tooltip"> </i>#}
+                            {#</a>#}
+                        {#</th>#}
+                        {#<th class="text-center" style="background-color: #337ab7">#}
+                            {#<a href="#" style="color: #fff">#}
+                                {#<i class="fa fa-check-square-o" title="Validation de l'inscription" data-placement="top" data-toggle="tooltip"> </i>#}
+                            {#</a>#}
+                        {#</th>#}
                         <th class="text-center" style="color: white; background-color: #337ab7">
                              Actions
                         </th>
                     </tr>
                     <tr>
+                        <td></td>
                         <td>
-                            <a href="#"> Adopter les gestes et postures adaptés aux différentes situations afin d'éviter les douleurs et ménager son corps </a>
-                            <i class="fa fa-chevron-circle-right pull-right pointer-hand" data-toggle="collapse" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
+                            <input type="text" placeholder="Titre de la formation" class="input-filter form-control ng-pristine ng-valid ng-scope ng-touched" ng-model="params.filter()[name]" ng-disabled="$filterRow.disabled" name="training">
+                        </td>
+                        <td>
+                            <input type="text" placeholder="Code de la formation" class="input-filter form-control ng-pristine ng-valid ng-scope ng-touched" ng-model="params.filter()[name]" ng-disabled="$filterRow.disabled" name="training-code">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
+                        </td>
+                        <td>
+                            <a href="#">&nbsp; Adopter les gestes et postures adaptés aux différentes situations afin d'éviter les douleurs et ménager son corps </a>
+                            <i class="fa fa-chevron-circle-right pull-left pointer-hand" data-toggle="collapse" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
                         </td>
                         <td> M5N2F </td>
-                        <td class="text-center"> - </td>
+                        {#<td class="text-center"> - </td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
                         <td class="text-center">
-                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
-                        </td>
-                        <td class="text-center">
-                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
-                        </td>
-                        <td class="text-center">
-                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
-                        </td>
-                        <td class="text-center">
-                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
-                                <i class="fa fa-calendar pointer-hand"></i>
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Voir détails de la formation">
+                                <i class="fa fa-eye pointer-hand"></i>
                             </a>
-                            <a class="btn btn-primary btn-sm" title="" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la formation">
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Ajouter une séance">
+                                <i class="fa fa-calendar-plus-o pointer-hand"></i>
+                            </a>
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Modifier la formation">
                                 <i class="fa fa-edit"></i>
                             </a>
                             <span data-placement="top" data-toggle="tooltip" title="Supprimer la formation" class="btn btn-danger btn-sm delete-course-btn">
@@ -163,9 +229,13 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="#"> Alerter les interlocuteurs concernés par les dysfonctionnements et les risques constatés </a>
-                            <span data-placement="top" data-toggle="tooltip" title="Voir les sessions" class="pull-right" ><i data-toggle="collapse" class="fa fa-chevron-circle-right pointer-hand" data-target="#sessions-tab" style="color: #337ab7"></i></span>
-                            <div class="container-fluid>">
+                            <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
+                        </td>
+                        <td>
+                            <span data-placement="top" data-toggle="tooltip" title="Voir les sessions" class="pull-left" ><i data-toggle="collapse" class="fa fa-chevron-circle-right pointer-hand" data-target="#sessions-tab" style="color: #337ab7"></i></span>
+                            <a href="#">&nbsp; Alerter les interlocuteurs concernés par les dysfonctionnements et les risques constatés </a>
+                            {#<span data-placement="top" data-toggle="tooltip" title="Voir les sessions" class="pull-left" ><i data-toggle="collapse" class="fa fa-chevron-circle-right pointer-hand" data-target="#sessions-tab" style="color: #337ab7"></i></span>#}
+                            {#<div class="container-fluid>">#}
                                 <div id="sessions-tab" class="table-responsive collapse" aria-expanded="true" style="">
                                     <br>
                                     <table class="table">
@@ -203,30 +273,32 @@
                                                 <span data-placement="top" data-toggle="tooltip" title="Supprimer la formation" class="btn btn-danger btn-sm delete-course-btn">
                                                     <i data-toggle="modal" class="fa fa-trash pointer-hand" data-target="#delete-session-box"></i>
                                                 </span>
-                                                {#<i class="btn btn-danger fa fa-trash delete-session-btn" title="Supprimer la session" data-placement="top" data-toggle="tooltip"> </i>#}
                                             </td>
                                         </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
+                            {#</div>#}
                         </td>
                         <td> M4N2D </td>
-                        <td class="text-center"> - </td>
+                        {#<td class="text-center"> - </td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
                         <td class="text-center">
-                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
-                        </td>
-                        <td class="text-center">
-                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
-                        </td>
-                        <td class="text-center">
-                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
-                        </td>
-                        <td class="text-center">
-                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Voir détails de la formation">
+                                <i class="fa fa-eye pointer-hand"></i>
+                            </a>
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Ajouter une séance">
                                 <i class="fa fa-calendar pointer-hand"></i>
                             </a>
-                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="training-view-5.html" data-original-title="Modifier la formation">
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="training-view-5.html" title="Modifier la formation">
                                 <i class="fa fa-edit"></i>
                             </a>
                             <span data-placement="top" data-toggle="tooltip" title="Supprimer la formation" class="btn btn-danger btn-sm">
@@ -236,21 +308,27 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="#"> Alerter sa hiérarchie en cas de non-application de la procédure </a>
-                            <i class="fa fa-chevron-circle-right pull-right pointer-hand" data-toggle="collapse" data-placement="top" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
+                            <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
+                        </td>
+                        <td>
+                            <a href="#">&nbsp; Alerter sa hiérarchie en cas de non-application de la procédure </a>
+                            <i class="fa fa-chevron-circle-right pull-left pointer-hand" data-toggle="collapse" data-placement="top" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
                         </td>
                         <td> M4N3C </td>
-                        <td class="text-center"> - </td>
+                        {#<td class="text-center"> - </td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
                         <td class="text-center">
-                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
-                        </td>
-                        <td class="text-center">
-                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
-                        </td>
-                        <td class="text-center">
-                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
-                        </td>
-                        <td class="text-center">
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Voir détails de la formation">
+                                <i class="fa fa-eye pointer-hand"></i>
+                            </a>
                             <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
                                 <i class="fa fa-calendar pointer-hand"></i>
                             </a>
@@ -264,21 +342,27 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="#"> Aller chercher des informations, consulter des personnes ressources </a>
-                            <i class="fa fa-chevron-circle-right pull-right pointer-hand" data-toggle="collapse" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
+                            <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
+                        </td>
+                        <td>
+                            <a href="#">&nbsp; Aller chercher des informations, consulter des personnes ressources </a>
+                            <i class="fa fa-chevron-circle-right pull-left pointer-hand" data-toggle="collapse" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
                         </td>
                         <td> M6N1C </td>
-                        <td class="text-center"> - </td>
+                        {#<td class="text-center"> - </td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
                         <td class="text-center">
-                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
-                        </td>
-                        <td class="text-center">
-                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
-                        </td>
-                        <td class="text-center">
-                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
-                        </td>
-                        <td class="text-center">
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Voir détails de la formation">
+                                <i class="fa fa-eye pointer-hand"></i>
+                            </a>
                             <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
                                 <i class="fa fa-calendar pointer-hand"></i>
                             </a>
@@ -292,21 +376,27 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="fiche_formation.html"> Configuration de la plateforme CC </a>
-                            <i class="fa fa-chevron-circle-right pull-right pointer-hand" data-toggle="collapse" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
+                            <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
+                        </td>
+                        <td>
+                            <a href="fiche_formation.html">&nbsp; Configuration de la plateforme CC </a>
+                            <i class="fa fa-chevron-circle-right pull-left pointer-hand" data-toggle="collapse" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
                         </td>
                         <td> FL-CL-A-cp </td>
-                        <td class="text-center"> - </td>
+                        {#<td class="text-center"> - </td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
+                        {#<td class="text-center">#}
+                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
+                        {#</td>#}
                         <td class="text-center">
-                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
-                        </td>
-                        <td class="text-center">
-                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
-                        </td>
-                        <td class="text-center">
-                            <i class="fa fa-times-circle" style="color: #D9534F"></i>
-                        </td>
-                        <td class="text-center">
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Voir détails de la formation">
+                                <i class="fa fa-eye pointer-hand"></i>
+                            </a>
                             <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
                                 <i class="fa fa-calendar pointer-hand"></i>
                             </a>
@@ -354,23 +444,20 @@
                         <br>
                     </div>
                     <div class="modal-footer">
-                    <span class="pull-right">
+                    <span class="pull-left">
                         <span class="btn btn-default pointer-hand"
-                              data-dismiss="modal"
-                        >
+                              data-dismiss="modal">
                             Annuler
                         </span>
                         <span id="confirm-session-deletion-btn"
-                              class="btn btn-primary pointer-hand"
-                        >
-                            Ok
+                              class="btn btn-primary pointer-hand">
+                            OK
                         </span>
                     </span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     <div id="delete-session-box" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -387,7 +474,7 @@
                     <br>
                 </div>
                 <div class="modal-footer">
-                    <span class="pull-right">
+                    <span class="pull-left">
                         <span class="btn btn-default pointer-hand"
                               data-dismiss="modal"
                         >
@@ -403,14 +490,13 @@
             </div>
         </div>
     </div>
-    </div>
 
     {#<div id="push"></div>#}
         <div id="footer">
             <div class="container-fluid">
                 <div class="row">
                     <p>
-                        <span class="pull-right locale-select label label-default">FR</span>
+                        <span class="pull-left locale-select label label-default">FR</span>
                         <span>Développé par <a href="http://www.claroline.net" target="_blank">Claroline</a> Release 16.05</span>
                     </p>
                 </div>
@@ -424,6 +510,7 @@
     {% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
     
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" property="">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/esvit/ng-table/v1.0.0/dist/ng-table.min.css">
     
 {% endblock %}
 
@@ -437,4 +524,12 @@
             src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
     >
     </script>
+    <script>
+        $(document).ready(function(){
+            $(".dropdown-toggle").dropdown();
+        });
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+    <script src="https://cdn.rawgit.com/esvit/ng-table/v1.0.0/dist/ng-table.js"></script>
+
 {% endblock %}
