@@ -279,7 +279,7 @@
                         <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
                             <i class="fa fa-calendar pointer-hand"></i>
                         </a>
-                        <a href="training-view-5.html" class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la session">
+                        <a href="#" class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la session">
                             <i class="fa fa-edit"></i>
                         </a>
                         <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Envoyer un courriel aux participants de la session">
@@ -404,25 +404,6 @@
     </div>
 </div>
 
-
-
-
-<div id="view-registration-box" class="modal fade" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <h3 id="view-registration-header" class="modal-header">
-            </h3>
-            <div id="view-registration-body" class="modal-body">
-            </div>
-            <div class="modal-footer">
-                <input type="button"
-                       class="btn btn-default"
-                       data-dismiss="modal"
-                       value="Fermer"></div>
-        </div>
-    </div>
-</div>
-
 <div id="delete-session-box" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -455,38 +436,39 @@
         </div>
     </div>
 </div>
-<div id="delete-event-session-box" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    &times;
-                </button>
-                <h3>
-                    Suppression de la séance
-                </h3>
-            </div>
-            <div class="modal-body">
-                Êtes-vous sûr de vouloir supprimer cette séance ?
-                <br>
-            </div>
-            <div class="modal-footer">
-            <span class="pull-right">
-                <span class="btn btn-default pointer-hand"
-                      data-dismiss="modal"
-                >
-                    Annuler
-                </span>
-                <span id="confirm-session-deletion-btn"
-                      class="btn btn-primary pointer-hand"
-                >
-                    Ok
-                </span>
-            </span>
-            </div>
-        </div>
-    </div>
-</div>
+
+{#<div id="delete-event-session-box" class="modal fade" role="dialog">#}
+    {#<div class="modal-dialog">#}
+        {#<div class="modal-content">#}
+            {#<div class="modal-header">#}
+                {#<button type="button" class="close" data-dismiss="modal" aria-hidden="true">#}
+                    {#&times;#}
+                {#</button>#}
+                {#<h3>#}
+                    {#Suppression de la séance#}
+                {#</h3>#}
+            {#</div>#}
+            {#<div class="modal-body">#}
+                {#Êtes-vous sûr de vouloir supprimer cette séance ?#}
+                {#<br>#}
+            {#</div>#}
+            {#<div class="modal-footer">#}
+            {#<span class="pull-right">#}
+                {#<span class="btn btn-default pointer-hand"#}
+                      {#data-dismiss="modal"#}
+                {#>#}
+                    {#Annuler#}
+                {#</span>#}
+                {#<span id="confirm-session-deletion-btn"#}
+                      {#class="btn btn-primary pointer-hand"#}
+                {#>#}
+                    {#Ok#}
+                {#</span>#}
+            {#</span>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+{#</div>#}
 
 <div id="create-session" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -597,18 +579,15 @@
                                     </tr>
                                     <tr>
                                         <td>Cursus</td>
-                                        <td>
-                                            <i class="fa fa-check-square" style="color: #5CB85C"></i>
-                                            Expert pédagogique de Claroline Connect</br>
-                                            <i class="fa fa-check-square" style="color: #5CB85C"></i>
-                                            Expert technicien de Claroline Connect</br>
-                                            <i class="fa fa-square-o"></i>
-                                            S2CP</br>
-                                            <i class="fa fa-square-o"></i>
-                                            TEST</br>
-                                            <i class="fa fa-square-o"></i>
-                                            TEST Virginie
-                                        </td>
+                                            <div class="form">
+                                                <select class="form-control" id="sel3">
+                                                    <option selected>Choisir le cursus</option>
+                                                    <option>Mes  espaces</option>
+                                                    <option>Un espace d'activités</option>
+                                                    <option>Plusieurs espaces d'activités</option>
+                                                    <option>Tous les espaces d'activités</option>
+                                                </select>
+                                            </div>
                                     </tr>
                                 </table>
                             </div>

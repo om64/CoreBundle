@@ -3,11 +3,11 @@
 {% block panelTitle %}
 
     Gestion des formations
-        <button class="btn btn-success pull-right" title="Gestion des cursus">
-            <i class="fa fa-book"></i>
-        </button>
+        <a class="btn btn-success pull-right" title="Gestion des cursus" href="#" data-toggle="tooltip" data-placement="top">
+            <i class="fa fa-database" aria-hidden="true"></i>
+        </a>
         <a class="btn btn-success pull-right" title="Gestion des sessions" href="session_management.html" data-toggle="tooltip" data-placement="top">
-            <i class="fa fa-calendar" aria-hidden="true"></i>
+            <i class="fa fa-cubes" aria-hidden="true"></i>
         </a>
 
 {% endblock %}
@@ -114,10 +114,10 @@
                             <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
                         </th>
                         <th style="background-color: #337ab7">
-                            <a href="#" style="color: #fff"> Titre </a>
+                            <a href="#" style="color: #fff"> Intitulé de la formation</a>
                         </th>
                         <th style="background-color: #337ab7">
-                            <a href="#" style="color: #fff"> Code </a>
+                            <a href="#" style="color: #fff"> Code de la formation </a>
                         </th>
                         <th class="text-center" style="color: white; background-color: #337ab7">
                              Actions
@@ -142,12 +142,12 @@
                         </td>
                         <td> M5N2F </td>
                         <td class="text-center">
-                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Voir détails de la formation">
-                                <i class="fa fa-eye pointer-hand"></i>
-                            </a>
-                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Ajouter une séance">
-                                <i class="fa fa-calendar-plus-o pointer-hand"></i>
-                            </a>
+                            <span data-placement="top" data-toggle="tooltip" title="Voir les détails de la formation" class="btn btn-info btn-sm">
+                                <i data-toggle="modal" class="fa fa-eye pointer-hand" data-target="#view-training-details"></i>
+                            </span>
+                            <span data-placement="top" data-toggle="tooltip" title="Ajouter une session" class="btn btn-primary btn-sm">
+                                <i data-toggle="modal" class="fa fa-cube pointer-hand" data-target="#create-session"></i>
+                            </span>
                             <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Modifier la formation">
                                 <i class="fa fa-edit"></i>
                             </a>
@@ -167,55 +167,80 @@
                                     <br>
                                     <table class="table">
                                         <tbody>
-                                        <tr>
-                                            <th> Nom </th>
-                                            <th> Date de création </th>
-                                            <th class="text-center"> Espace d'activités </th>
-                                            <th class="text-center"> Statut </th>
-                                            <th class="text-center"> Session par défaut </th>
-                                            <th class="text-center"> Actions </th>
-                                        </tr>
-                                        <tr>
-                                            <p><h5><strong>Détails des sessions</strong></h5></p>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="training-view-6.html" class="show-users-btn pointer-hand"> Test Sessions </a>
-                                            </td>
-                                            <td> 21/08/2015 12:37 </td>
-                                            <td class="text-center">
-                                                <a class="fa fa-book" title="Alerter les interlocuteurs concernés par les dysfonctionnements et les risques constatés [Test Sessions] (M4N2D_1)" data-placement="top" data-toggle="tooltip" href="#"> </a>
-                                            </td>
-                                            <td class="text-center">
-                                                <i class="fa fa-circle" style="color: #706c6c" title="Non commencé" data-placement="top" data-toggle="tooltip"> </i>
-                                            </td>
-                                            <td class="text-center">
-                                                <span class="default-session-btn pointer-hand">
-                                                <i class="fa fa-times-circle" style="color: #D9534F"></i>
-                                                </span>
-                                            </td>
-                                            <td class="text-center">
-                                                <i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" title="Envoyer un courriel de confirmation à tous les apprenants de la session" data-placement="top" data-toggle="tooltip"> </i>
-                                                <i class="btn btn-default fa fa-edit edit-session-btn" title="Modifier la session" data-placement="top" data-toggle="tooltip"> </i>
-                                                <span data-placement="top" data-toggle="tooltip" title="Supprimer la formation" class="btn btn-danger btn-sm delete-course-btn">
-                                                    <i data-toggle="modal" class="fa fa-trash pointer-hand" data-target="#delete-session-box"></i>
-                                                </span>
-                                            </td>
-                                        </tr>
+                                            <tr>
+                                                <th> Nom </th>
+                                                <th> Date de début </th>
+                                                <th> Date de fin </th>
+                                                <th class="text-center"> Statut </th>
+                                                <th class="text-center"> Actions </th>
+                                            </tr>
+                                            <tr>
+                                                <p><h5><strong>Détails des sessions</strong></h5></p>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="session_file.html" class="show-users-btn pointer-hand"> Test Sessions </a>
+                                                    <i title="" style="color: greenyellow" aria-hidden="true" data-placement="top" data-toggle="tooltip" class="fa fa-star pointer-hand" data-original-title="Session par défaut"></i>
+                                                </td>
+                                                <td> 05/09/2016 10:00 </td>
+                                                <td> 07/09/2016 14:30 </td>
+                                                <td class="text-center">
+                                                    <i class="fa fa-circle-thin pointer-hand" style="color: #706c6c" title="Non commencé" data-placement="top" data-toggle="tooltip"> </i>
+                                                </td>
+                                                <td class="text-center">
+                                                    <i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" title="Envoyer un courriel de confirmation à tous les apprenants de la session" data-placement="top" data-toggle="tooltip"> </i>
+                                                    <i class="btn btn-default fa fa-edit edit-session-btn" title="Modifier la session" data-placement="top" data-toggle="tooltip"> </i>
+                                                    <span data-placement="top" data-toggle="tooltip" title="Supprimer la session" class="btn btn-danger btn-sm delete-course-btn">
+                                                        <i data-toggle="modal" class="fa fa-trash pointer-hand" data-target="#delete-session-box"></i>
+                                                    </span>
+                                                </td>
+                                            <tr>
+                                                <td>
+                                                    <a href="#" class="show-users-btn pointer-hand"> Test Sessions 2 </a>
+                                                </td>
+                                                <td> 20/06/2016 08:20 </td>
+                                                <td> 22/07/2016 12:00 </td>
+                                                <td class="text-center">
+                                                    <i class="fa fa-adjust pointer-hand" style="color: #706c6c" title="En cours" data-placement="top" data-toggle="tooltip"> </i>
+                                                </td>
+                                                <td class="text-center">
+                                                    <i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" title="Envoyer un courriel de confirmation à tous les apprenants de la session" data-placement="top" data-toggle="tooltip"> </i>
+                                                    <i class="btn btn-default fa fa-edit edit-session-btn" title="Modifier la session" data-placement="top" data-toggle="tooltip"> </i>
+                                                    <span data-placement="top" data-toggle="tooltip" title="Supprimer la session" class="btn btn-danger btn-sm delete-course-btn">
+                                                        <i data-toggle="modal" class="fa fa-trash pointer-hand" data-target="#delete-session-box"></i>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#" class="show-users-btn pointer-hand"> Test Sessions 3 </a>
+                                                </td>
+                                                <td> 21/08/2015 09:10 </td>
+                                                <td> 25/08/2015 15:20 </td>
+                                                <td class="text-center">
+                                                    <i class="fa fa-circle pointer-hand" style="color: #706c6c" title="Terminé" data-placement="top" data-toggle="tooltip"> </i>
+                                                </td>
+                                                <td class="text-center">
+                                                    <i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" title="Envoyer un courriel de confirmation à tous les apprenants de la session" data-placement="top" data-toggle="tooltip"> </i>
+                                                    <i class="btn btn-default fa fa-edit edit-session-btn" title="Modifier la session" data-placement="top" data-toggle="tooltip"> </i>
+                                                    <span data-placement="top" data-toggle="tooltip" title="Supprimer la session" class="btn btn-danger btn-sm delete-course-btn">
+                                                        <i data-toggle="modal" class="fa fa-trash pointer-hand" data-target="#delete-session-box"></i>
+                                                    </span>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                            {#</div>#}
                         </td>
                         <td> M4N2D </td>
                         <td class="text-center">
-                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Voir détails de la formation">
-                                <i class="fa fa-eye pointer-hand"></i>
-                            </a>
-                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Ajouter une séance">
-                                <i class="fa fa-calendar pointer-hand"></i>
-                            </a>
-                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="training-view-5.html" title="Modifier la formation">
+                            <span data-placement="top" data-toggle="tooltip" title="Voir les détails de la formation" class="btn btn-info btn-sm">
+                                <i data-toggle="modal" class="fa fa-eye pointer-hand" data-target="#view-training-details"></i>
+                            </span>
+                            <span data-placement="top" data-toggle="tooltip" title="Ajouter une session" class="btn btn-primary btn-sm">
+                                <i data-toggle="modal" class="fa fa-cube pointer-hand" data-target="#create-session"></i>
+                            </span>
+                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Modifier la formation">
                                 <i class="fa fa-edit"></i>
                             </a>
                             <span data-placement="top" data-toggle="tooltip" title="Supprimer la formation" class="btn btn-danger btn-sm">
@@ -233,12 +258,12 @@
                         </td>
                         <td> M4N3C </td>
                         <td class="text-center">
-                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Voir détails de la formation">
-                                <i class="fa fa-eye pointer-hand"></i>
-                            </a>
-                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
-                                <i class="fa fa-calendar pointer-hand"></i>
-                            </a>
+                            <span data-placement="top" data-toggle="tooltip" title="Voir les détails de la formation" class="btn btn-info btn-sm">
+                                <i data-toggle="modal" class="fa fa-eye pointer-hand" data-target="#view-training-details"></i>
+                            </span>
+                            <span data-placement="top" data-toggle="tooltip" title="Ajouter une session" class="btn btn-primary btn-sm">
+                                <i data-toggle="modal" class="fa fa-cube pointer-hand" data-target="#create-session"></i>
+                            </span>
                             <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la formation">
                                 <i class="fa fa-edit"></i>
                             </a>
@@ -257,12 +282,12 @@
                         </td>
                         <td> M6N1C </td>
                         <td class="text-center">
-                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Voir détails de la formation">
-                                <i class="fa fa-eye pointer-hand"></i>
-                            </a>
-                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
-                                <i class="fa fa-calendar pointer-hand"></i>
-                            </a>
+                            <span data-placement="top" data-toggle="tooltip" title="Voir les détails de la formation" class="btn btn-info btn-sm">
+                                <i data-toggle="modal" class="fa fa-eye pointer-hand" data-target="#view-training-details"></i>
+                            </span>
+                            <span data-placement="top" data-toggle="tooltip" title="Ajouter une session" class="btn btn-primary btn-sm">
+                                <i data-toggle="modal" class="fa fa-cube pointer-hand" data-target="#create-session"></i>
+                            </span>
                             <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Modifier la formation">
                                 <i class="fa fa-edit"></i>
                             </a>
@@ -280,23 +305,13 @@
                             <i class="fa fa-chevron-circle-right pull-left pointer-hand" data-toggle="collapse" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
                         </td>
                         <td> FL-CL-A-cp </td>
-                        {#<td class="text-center"> - </td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
-                        {#</td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
-                        {#</td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
-                        {#</td>#}
                         <td class="text-center">
-                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Voir détails de la formation">
-                                <i class="fa fa-eye pointer-hand"></i>
-                            </a>
-                            <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" data-original-title="Ajouter une séance">
-                                <i class="fa fa-calendar pointer-hand"></i>
-                            </a>
+                            <span data-placement="top" data-toggle="tooltip" title="Voir les détails de la formation" class="btn btn-info btn-sm">
+                                <i data-toggle="modal" class="fa fa-eye pointer-hand" data-target="#view-training-details"></i>
+                            </span>
+                            <span data-placement="top" data-toggle="tooltip" title="Ajouter une session" class="btn btn-primary btn-sm">
+                                <i data-toggle="modal" class="fa fa-cube pointer-hand" data-target="#create-session"></i>
+                            </span>
                             <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="training-view-8.html" data-original-title="Modifier la formation">
                                 <i class="fa fa-edit"></i>
                             </a>
@@ -308,125 +323,289 @@
                 </tbody>
             </table>
         </div>
-
-        <div id="view-registration-box" class="modal fade" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <h3 id="view-registration-header" class="modal-header">
-                    </h3>
-                    <div id="view-registration-body" class="modal-body">
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button"
-                               class="btn btn-default"
-                               data-dismiss="modal"
-                               value="Fermer"></div>
-                </div>
-            </div>
-        </div>
-
-        <div id="delete-course-box" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                            &times;
-                        </button>
-                        <h3>
-                            Suppression de la formation
-                        </h3>
-                    </div>
-                    <div class="modal-body">
-                        Êtes-vous sûr de vouloir supprimer cette formation ?
-                        <br>
-                    </div>
-                    <div class="modal-footer">
-                    <span class="pull-left">
-                        <span class="btn btn-default pointer-hand"
-                              data-dismiss="modal">
-                            Annuler
-                        </span>
-                        <span id="confirm-session-deletion-btn"
-                              class="btn btn-primary pointer-hand">
-                            OK
-                        </span>
-                    </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <div id="delete-session-box" class="modal fade" role="dialog">
+    </div>
+    <div id="delete-course-box" class="modal fade" role="dialog">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content modal-lg">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                         &times;
                     </button>
-                    <h3>
-                        Suppression de la session
-                    </h3>
+                    <h4>
+                        Suppression de la formation
+                    </h4>
                 </div>
                 <div class="modal-body">
-                    Êtes-vous sûr de vouloir supprimer cette session ?
+                    Êtes-vous sûr de vouloir supprimer cette formation ?
                     <br>
                 </div>
                 <div class="modal-footer">
-                    <span class="pull-left">
-                        <span class="btn btn-default pointer-hand"
-                              data-dismiss="modal"
-                        >
-                            Annuler
-                        </span>
-                        <span id="confirm-session-deletion-btn"
-                              class="btn btn-primary pointer-hand"
-                        >
-                            Ok
-                        </span>
+                    <span id="confirm-session-deletion-btn"
+                          class="btn btn-primary pointer-hand pull-right"
+                          data-dismiss="modal">
+                        OK
+                    </span>
+                    <span class="btn btn-default pointer-hand pull-right"
+                          data-dismiss="modal">
+                        Annuler
                     </span>
                 </div>
             </div>
         </div>
     </div>
 
-    {#<div id="push"></div>#}
-        {#<div id="footer">#}
-            {#<div class="container-fluid">#}
-                {#<div class="row">#}
-                    {#<p>#}
-                        {#<span class="pull-left locale-select label label-default">FR</span>#}
-                        {#<span>Développé par <a href="http://www.claroline.net" target="_blank">Claroline</a> Release 16.05</span>#}
-                    {#</p>#}
-                {#</div>#}
-            {#</div>#}
-        {#</div>#}
+    <div id="create-session" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content modal-lg">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                    <h4 class="modal-title">
+                        Ajout d'une session
+                    </h4>
+                </div>
+                <div class="modal-body" style="text-align: left">
+                    <div class="container-fluid">
+                        <div class="row" style="margin-top: 10px">
+                            <div class="panel panel-default">
+                                <div class="panel panel-body">
+                                    <table class="table table-responsive">
+                                        <tr>
+                                            <td>Nom</td>
+                                            <td>
+                                                <form>
+                                                    <input type="text" name="name" style="min-width: 30pc" placeholder="Nom de la session">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date de début</td>
+                                            <td>
+                                                <form>
+                                                    <input type="text" name="start-date" style="min-width: 30pc" placeholder="jj/mm/aaaa">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Heure de début</td>
+                                            <td>
+                                                <form>
+                                                    <input type="text" name="start-hour" style="min-width: 30pc" placeholder="hh:mm">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date de fin</td>
+                                            <td>
+                                                <form>
+                                                    <input type="text" name="end-date" style="min-width: 30pc" placeholder="jj/mm/aaaa">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Heure de fin</td>
+                                            <td>
+                                                <form>
+                                                    <input type="text" name="start-hour" style="min-width: 30pc" placeholder="hh:mm">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Statut</td>
+                                            <td>
+                                                <select class="form-control" id="sel1">
+                                                    <option selected>Non commencé</option>
+                                                    <option>En cours</option>
+                                                    <option>Terminé</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Uniquement à distance</td>
+                                            <td>
+                                                <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Définir comme session par défaut</td>
+                                            <td>
+                                                <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lieu par défaut</td>
+                                            <td>
+                                                <p><input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
+                                                    </br></br>
+                                                    Interne
+                                                    <select class="form-control" id="sel1">
+                                                        <option selected>Local 1</option>
+                                                        <option>Local 2</option>
+                                                        <option>Local 3</option>
+                                                        <option>Etc.</option>
+                                                    </select>
+                                                </p>
+                                                <p>Externe
+                                                <form>
+                                                    <input type="text" name="ext-room" style="min-width: 30pc" placeholder="Adresse et nom du local">
+                                                </form>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Inscription publique</td>
+                                            <td>
+                                                <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Désinscription publique</td>
+                                            <td>
+                                                <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cursus</td>
+                                            <td>
+                                                <div class="form">
+                                                    <select class="form-control" id="sel3">
+                                                        <option selected>Choisir le cursus</option>
+                                                        <option>Expert pédagogique de Claroline Connect</option>
+                                                        <option>Expert technicien de Claroline Connect</option>
+                                                        <option>S2CP</option>
+                                                        <option>TEST</option>
+                                                        <option>TEST Virginie</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary pull-right" data-dismiss="modal" title="Cliquez ici pour valider">OK</button>
+                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal" title="Annuler">Annuler</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="view-training-details" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content modal-lg">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                    <h4 class="modal-title">
+                        Détails de la formation
+                    </h4>
+                </div>
+                <div class="modal-body" style="text-align: left">
+                    <div class="container-fluid">
+                        <form novalidate="" enctype="multipart/form-data" method="POST" action="#">
+                            <div id="course_form" style="padding-top: 15px">
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3" for="course_form_description"> Description </label>
+                                    <div class="col-md-9">
+                                            <input id="course_form_description" class="form-control" type="text" value="Description" name="course_form[description]">
+                                        </div>
+                                    </div>
+                                </div>
+                                {#<div class="form-group row">#}
+                                    {#<label class="control-label col-md-3" for="course_form_icon"> Icône </label>#}
+                                    {#<div class="col-md-9">#}
+                                        {#<input id="course_form_icon" class="form-control" type="file" name="course_form[icon]">#}
+                                    {#</div>#}
+                                {#</div>#}
+                                {#<div class="form-group row">#}
+                                    {#<label class="control-label col-md-3 required" for="course_form_publicRegistration"> Inscription publique </label>#}
+                                    {#<div class="col-md-9">#}
+                                        {#<input id="course_form_publicRegistration" class="control-standalone control-standalone" type="checkbox" value="1" required="required" name="course_form[publicRegistration]">#}
+                                    {#</div>#}
+                                {#</div>#}
+                                {#<div class="form-group row">#}
+                                    {#<label class="control-label col-md-3 required" for="course_form_publicUnregistration"> Désinscription publique </label>#}
+                                    {#<div class="col-md-9">#}
+                                        {#<input id="course_form_publicUnregistration" class="control-standalone control-standalone" type="checkbox" value="1" required="required" name="course_form[publicUnregistration]">#}
+                                    {#</div>#}
+                                {#</div>#}
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3" for="course_form_description"> Nom de l'espace d'activités </label>
+                                    <div class="col-md-9">
+                                        <input id="course_form_description" class="form-control" type="text" value="Nom de l'espace d'activités" name="course_form[EA]">
+                                    </div>
+                                </div>
+                                {#<div class="form-group row">#}
+                                    {#<label class="control-label col-md-3" for="course_form_tutorRoleName"> Rôle des tuteurs </label>#}
+                                    {#<div class="col-md-9">#}
+                                        {#<input id="course_form_tutorRoleName" class="role-name-txt form-control" type="text" value="Formateur" name="course_form[tutorRoleName]">#}
+                                    {#</div>#}
+                                {#</div>#}
+                                {#<div class="form-group row">#}
+                                    {#<label class="control-label col-md-3" for="course_form_learnerRoleName"> Rôle des apprenants </label>#}
+                                    {#<div class="col-md-9">#}
+                                        {#<input id="course_form_learnerRoleName" class="role-name-txt form-control" type="text" value="Stagiaire" name="course_form[learnerRoleName]">#}
+                                    {#</div>#}
+                                {#</div>#}
+                                {#<div class="form-group row">#}
+                                    {#<label class="control-label col-md-3" for="course_form_maxUsers"> Nombre maximum d'utilisateurs </label>#}
+                                    {#<div class="col-md-9">#}
+                                        {#<input id="course_form_maxUsers" class="form-control" type="number" min="0" name="course_form[maxUsers]">#}
+                                    {#</div>#}
+                                {#</div>#}
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3 required" for="course_form_userValidation"> Validation de l'utilisateur </label>
+                                    <div class="col-md-9">
+                                        <input id="course_form_userValidation" class="control-standalone control-standalone" type="checkbox" value="1" required="required" name="course_form[userValidation]">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3 required" for="course_form_organizationValidation"> Validation par l'organisation </label>
+                                    <div class="col-md-9">
+                                        <input id="course_form_organizationValidation" class="control-standalone control-standalone" type="checkbox" value="1" required="required" name="course_form[organizationValidation]">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3 required" for="course_form_registrationValidation"> Validation de l'inscription </label>
+                                    <div class="col-md-9">
+                                        <input id="course_form_registrationValidation" class="control-standalone control-standalone" type="checkbox" value="1" required="required" name="course_form[registrationValidation]">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-md-3" for="course_form_validators"> Validateurs </label>
+                                    <div class="col-md-9">
+                                        <input id="course_form_description" class="form-control" type="text" value="Noms des validateurs" name="course_form[validators]">
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary pull-right" class="close" data-dismiss="modal"> Ok </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 {% endblock %}
 
 {% block stylesheets %}
     {{ parent() }}
     {% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
-    
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" property="">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/esvit/ng-table/v1.0.0/dist/ng-table.min.css">
-    
+
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-    <script type="text/javascript"
-            src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
-    >
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
     </script>
-    <script type="text/javascript"
-            src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-    >
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
     </script>
-    <script>
-        $(document).ready(function(){
-            $(".dropdown-toggle").dropdown();
-        });
-    </script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
-    <script src="https://cdn.rawgit.com/esvit/ng-table/v1.0.0/dist/ng-table.js"></script>
-
 {% endblock %}

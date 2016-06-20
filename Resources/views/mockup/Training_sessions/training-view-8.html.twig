@@ -1,4 +1,4 @@
-{% extends 'ClarolineCoreBundle::mockup/Training_sessions/training-tool5.html.twig' %}
+{% extends 'ClarolineCoreBundle::mockup/Training_sessions/training-tool-8.html.twig' %}
 
 {% block panelTitle %}Modification de la formation [Configuration de la plateforme CC]{% endblock %}
 
@@ -45,9 +45,9 @@
     </style>
 
     <div class="container-fluid">
-        <form novalidate="" enctype="multipart/form-data" method="POST" action="#">
-            {#<div class="panel-body">#}
-            <div id="course_form" style="padding-top: 15px">
+        <div class="row" style="padding: 15px">
+            <form novalidate="" enctype="multipart/form-data" method="POST" action="#">
+                <div id="course_form" style="padding-top: 15px">
                     <div class="form-group row">
                         <label class="control-label col-md-3 required" for="course_form_title"> Titre </label>
                         <div class="col-md-9">
@@ -63,192 +63,133 @@
                     <div class="form-group row">
                         <label class="control-label col-md-3" for="course_form_description"> Description </label>
                         <div class="col-md-9">
-                                <input id="course_form_description" class="form-control" type="text" value="Description" name="course_form[description]">
-                            </div>
+                            <input id="course_form_description" class="form-control" type="text" value="Description" name="course_form[description]">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="control-label col-md-3" for="course_form_icon"> Icône </label>
-                        <div class="col-md-9">
-                            <input id="course_form_icon" class="form-control" type="file" name="course_form[icon]">
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3" for="course_form_icon"> Icône </label>
+                    <div class="col-md-9">
+                        <input id="course_form_icon" class="form-control" type="file" name="course_form[icon]">
                     </div>
-                    <div class="form-group row">
-                        <label class="control-label col-md-3 required" for="course_form_publicRegistration"> Inscription publique </label>
-                        <div class="col-md-9">
-                            <input id="course_form_publicRegistration" class="control-standalone control-standalone" type="checkbox" value="1" required="required" name="course_form[publicRegistration]">
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3 required" for="course_form_publicRegistration"> Inscription publique </label>
+                    <div class="col-md-9">
+                        <input id="course_form_publicRegistration" class="control-standalone control-standalone" type="checkbox" value="1" required="required" name="course_form[publicRegistration]">
                     </div>
-                    <div class="form-group row">
-                        <label class="control-label col-md-3 required" for="course_form_publicUnregistration"> Désinscription publique </label>
-                        <div class="col-md-9">
-                            <input id="course_form_publicUnregistration" class="control-standalone control-standalone" type="checkbox" value="1" required="required" name="course_form[publicUnregistration]">
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3 required" for="course_form_publicUnregistration"> Désinscription publique </label>
+                    <div class="col-md-9">
+                        <input id="course_form_publicUnregistration" class="control-standalone control-standalone" type="checkbox" value="1" required="required" name="course_form[publicUnregistration]">
                     </div>
-                    <div class="form-group row">
-                        <label class="control-label col-md-3" for="course_form_workspace"> Espace d'activités </label>
-                        <div class="col-md-9">
-                            <select id="course_form_workspace" class="form-control" name="course_form[workspace]">
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3" for="course_form_workspace"> Espace d'activités </label>
+                    <div class="col-md-9">
+                        <select id="course_form_workspace" class="form-control" name="course_form[workspace]"></select>
                     </div>
-                    <div class="form-group row">
-                        <label class="control-label col-md-3" for="course_form_workspaceModel"> Modèle d'espace d'activités </label>
-                        <div class="col-md-9">
-                            <select id="course_form_workspaceModel" class="form-control" name="course_form[workspaceModel]">
-                                <option value=""></option>
-                                <option value="12">Modèle IFC</option>
-                            </select>
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3" for="course_form_workspaceModel"> Modèle d'espace d'activités </label>
+                    <div class="col-md-9">
+                        <select id="course_form_workspaceModel" class="form-control" name="course_form[workspaceModel]">
+                            <option value=""></option>
+                            <option value="12">Modèle IFC</option>
+                        </select>
                     </div>
-                    <div class="form-group row">
-                        <label class="control-label col-md-3" for="course_form_tutorRoleName"> Rôle des tuteurs </label>
-                        <div class="col-md-9">
-                            <input id="course_form_tutorRoleName" class="role-name-txt form-control" type="text" value="Formateur" name="course_form[tutorRoleName]">
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3" for="course_form_tutorRoleName"> Rôle des tuteurs </label>
+                    <div class="col-md-9">
+                        <input id="course_form_tutorRoleName" class="role-name-txt form-control" type="text" value="Formateur" name="course_form[tutorRoleName]">
                     </div>
-                    <div class="form-group row">
-                        <label class="control-label col-md-3" for="course_form_learnerRoleName"> Rôle des apprenants </label>
-                        <div class="col-md-9">
-                            <input id="course_form_learnerRoleName" class="role-name-txt form-control" type="text" value="Stagiaire" name="course_form[learnerRoleName]">
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3" for="course_form_learnerRoleName"> Rôle des apprenants </label>
+                    <div class="col-md-9">
+                        <input id="course_form_learnerRoleName" class="role-name-txt form-control" type="text" value="Stagiaire" name="course_form[learnerRoleName]">
                     </div>
-                    <div class="form-group row">
-                        <label class="control-label col-md-3" for="course_form_maxUsers"> Nombre maximum d'utilisateurs </label>
-                        <div class="col-md-9">
-                            <input id="course_form_maxUsers" class="form-control" type="number" min="0" name="course_form[maxUsers]">
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3" for="course_form_maxUsers"> Nombre maximum d'utilisateurs </label>
+                    <div class="col-md-9">
+                        <input id="course_form_maxUsers" class="form-control" type="number" min="0" name="course_form[maxUsers]">
                     </div>
-                    <div class="form-group row">
-                        <label class="control-label col-md-3 required" for="course_form_userValidation"> Validation de l'utilisateur </label>
-                        <div class="col-md-9">
-                            <input id="course_form_userValidation" class="control-standalone control-standalone" type="checkbox" value="1" required="required" name="course_form[userValidation]">
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3 required" for="course_form_userValidation"> Validation de l'utilisateur </label>
+                    <div class="col-md-9">
+                        <input id="course_form_userValidation" class="control-standalone control-standalone" type="checkbox" value="1" required="required" name="course_form[userValidation]">
                     </div>
-                    <div class="form-group row">
-                        <label class="control-label col-md-3 required" for="course_form_organizationValidation"> Validation par l'organisation </label>
-                        <div class="col-md-9">
-                            <input id="course_form_organizationValidation" class="control-standalone control-standalone" type="checkbox" value="1" required="required" name="course_form[organizationValidation]">
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3 required" for="course_form_organizationValidation"> Validation par l'organisation </label>
+                    <div class="col-md-9">
+                        <input id="course_form_organizationValidation" class="control-standalone control-standalone" type="checkbox" value="1" required="required" name="course_form[organizationValidation]">
                     </div>
-                    <div class="form-group row">
-                        <label class="control-label col-md-3 required" for="course_form_registrationValidation"> Validation de l'inscription </label>
-                        <div class="col-md-9">
-                            <input id="course_form_registrationValidation" class="control-standalone control-standalone" type="checkbox" value="1" required="required" name="course_form[registrationValidation]">
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3 required" for="course_form_registrationValidation"> Validation de l'inscription </label>
+                    <div class="col-md-9">
+                        <input id="course_form_registrationValidation" class="control-standalone control-standalone" type="checkbox" value="1" required="required" name="course_form[registrationValidation]">
                     </div>
-                    <div class="form-group row">
-                        <label class="control-label col-md-3" for="course_form_validators"> Validateurs </label>
-                        <div class="col-md-9">
-                            <input id="user-picker-input-validators-picker-1465896056" type="text" style="display: none;" name="course_form[validators]">
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3" for="course_form_validators"> Validateurs </label>
+                    <div class="col-md-9">
+                        <input id="user-picker-input-validators-picker-1465896056" type="text" style="display: none;" name="course_form[validators]">
                         <div class="input-group">
                             <input id="user-picker-input-view-validators-picker-1465896056" class="form-control user-picker user-picker-input user-picker-validators-picker-1465896056" type="text" placeholder="Ajouter un utilisateur">
-                            <span class="input-group-btn">
-                            <span class="btn btn-primary user-picker user-picker-validators-picker-1465896056" type="button">
-                            <i class="fa fa-user"></i>
-                            </span>
-                            </span>
+                        <span class="input-group-btn">
+                        <span class="btn btn-primary user-picker user-picker-validators-picker-1465896056" type="button">
+                        <i class="fa fa-user"></i>
+                        </span>
+                        </span>
                         </div>
                     </div>
                 </div>
-            {#</div>#}
-                <div class="panel-footer">
-                    <button class="btn btn-primary" type="submit"> Ok </button>
-                    <a class="btn btn-default" role="button" href="#"> Annuler </a>
-                </div>
-        </form>
+            </form>
+        </div>
+        <div class="row" style="padding: 15px; background-color: lightgrey">
+            <button class="btn btn-primary pull-right" type="submit"> Ok </button>
+            <a class="btn btn-default pull-right" role="button" href="#"> Annuler </a>
+        </div>
     </div>
 
-                {#<div id="role-name-choice" class="hidden">#}
-                {#</div>#}
-
-
-
-        <div id="view-registration-box" class="modal fade" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <h3 id="view-registration-header" class="modal-header">
+    <div id="delete-course-box" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h3>
+                        Suppression du cours
                     </h3>
-                    <div id="view-registration-body" class="modal-body">
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button"
-                               class="btn btn-default"
-                               data-dismiss="modal"
-                               value="Fermer"></div>
                 </div>
-            </div>
-        </div>
-
-            {#<div id="myModal" class="modal fade" role="dialog">#}
-
-
-
-        <div id="delete-course-box" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                            &times;
-                        </button>
-                        <h3>
-                            Suppression du cours
-                        </h3>
-                    </div>
-                    <div class="modal-body">
-                        Êtes-vous sûr de vouloir supprimer ce cours ?
-                        <br>
-                    </div>
-                    <div class="modal-footer">
-                    <span class="pull-right">
-                        <span class="btn btn-default pointer-hand"
-                              data-dismiss="modal"
-                        >
-                            Annuler
-                        </span>
-                        <span id="confirm-session-deletion-btn"
-                              class="btn btn-primary pointer-hand"
-                        >
-                            Ok
-                        </span>
+                <div class="modal-body">
+                    Êtes-vous sûr de vouloir supprimer ce cours ?
+                    <br>
+                </div>
+                <div class="modal-footer">
+                <span class="pull-right">
+                    <span class="btn btn-default pointer-hand"
+                          data-dismiss="modal"
+                    >
+                        Annuler
                     </span>
-                    </div>
+                    <span id="confirm-session-deletion-btn"
+                          class="btn btn-primary pointer-hand"
+                    >
+                        Ok
+                    </span>
+                </span>
                 </div>
             </div>
         </div>
-
-        {#<div id="registration-error-box" class="modal fade" role="dialog" aria-hidden="true">#}
-            {#<div class="modal-dialog">#}
-                {#<div class="modal-content">#}
-                    {#<div class="modal-header">#}
-                        {#<button type="button" class="close" data-dismiss="modal" aria-hidden="true">#}
-                            {#&times;#}
-                        {#</button>#}
-                        {#<h3>#}
-                            {#L&#039;inscription a échoué#}
-                        {#</h3>#}
-                    {#</div>#}
-                    {#<div class="modal-body" id="registration-error-box-body">#}
-                    {#</div>#}
-                    {#<div class="modal-footer">#}
-                        {#<button class="btn btn-default pull-right" data-dismiss="modal">#}
-                            {#Fermer#}
-                        {#</button>#}
-                    {#</div>#}
-                {#</div>#}
-            {#</div>#}
-        {#</div>#}
-
-    {#<div id="push"></div>#}
-        <div id="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <p>
-                        <span class="pull-right locale-select label label-default">FR</span>
-                        <span>Développé par <a href="http://www.claroline.net" target="_blank">Claroline</a> Release 16.05</span>
-                    </p>
-                </div>
-            </div>
-        </div>
+    </div>
 
 {% endblock %}
 
