@@ -54,22 +54,6 @@
         <img src="{{ asset('uploads/custom/images/sessions.jpg') }}" style="max-height: 120px">
         </div>
     </div>
-    {#<div class="row" style="padding: 0 15px 0 15px">#}
-        {#<div class="btn-group margin-top-sm" role="group">#}
-            {#<a class="btn btn-primary" href="#">#}
-                {#<i class="fa fa-plus-circle"></i>#}
-                {#Créer une session#}
-            {#</a>#}
-        {#<span id="import-courses-btn" class="btn btn-default">#}
-        {#<i class="fa fa-sign-in"></i>#}
-        {#Importer#}
-        {#</span>#}
-            {#<a class="btn btn-default" href="#">#}
-                {#<i class="fa fa-sign-out"></i>#}
-                {#Exporter#}
-            {#</a>#}
-        {#</div>#}
-    {#</div>#}
     <div class="row btn-group" style="padding: 15px 15px 0 15px">
         <button class="btn btn-primary dropdown-toggle" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button">
             <i class="fa fa-cog"></i>
@@ -92,17 +76,6 @@
                 </li>
             </ul>
     </div>
-    {#<div class="row" style="padding: 12px">#}
-        {#<div class="input-group col-md-6 pull-left margin-top-sm">#}
-            {#<input type="text" ondrop="return false;" aria-label="Select box" role="combobox" placeholder="Rechercher une session" class="ui-select-search input-xs ng-pristine ng-valid ng-touched"#}
-                {#spellcheck="false" style="width: 1722px;">#}
-            {#<span class="input-group-btn">#}
-                {#<button id="search-course-btn" class="filter btn btn-primary search-course-btn" data-max="50" data-order="ASC" data-ordered-by="title" type="button">#}
-                    {#<i class="fa fa-search"></i>#}
-                {#</button>#}
-            {#</span>#}
-        {#</div>#}
-    {#</div>#}
     <div class="row" style="margin: 10px">
         <span style="font-weight: bold">Afficher les sessions du : &nbsp;</span>
             <input id="from-date" type="text" placeholder="jj/mm/aaaa">
@@ -222,7 +195,7 @@
                         </span>
                     </td>
                     <td>
-                        <a href="fiche_formation.html"> Configuration de la plateforme CC  </a>
+                        <a href="fiche_configuration_CC.html"> Configuration de la plateforme CC  </a>
                     </td>
                     <td> FL-CL-A-cp </td>
                     <td class="text-center">
@@ -515,16 +488,140 @@
     </div>
 </div>
 
-{#<div id="footer">#}
-    {#<div class="container-fluid">#}
-        {#<div class="row">#}
-            {#<p>#}
-                {#<span class="pull-right locale-select label label-default">FR</span>#}
-                {#<span>Développé par <a href="http://www.claroline.net" target="_blank">Claroline</a> Release 16.05</span>#}
-            {#</p>#}
-        {#</div>#}
-    {#</div>#}
-{#</div>#}
+<div id="create-session" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modification de la session</h4>
+            </div>
+            <div class="modal-body" style="text-align: left">
+                <div class="container-fluid">
+                    <div class="row" style="margin-top: 10px">
+                        <div class="panel panel-default">
+                            <div class="panel panel-body">
+                                <table class="table table-responsive">
+                                    <tr>
+                                        <td>Nom</td>
+                                        <td>
+                                            <form>
+                                                <input type="text" name="name" style="min-width: 30pc" placeholder="Nom de la session">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date de début</td>
+                                        <td>
+                                            <form>
+                                                <input type="text" name="start-date" style="min-width: 30pc" placeholder="jj/mm/aaaa">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Heure de début</td>
+                                        <td>
+                                            <form>
+                                                <input type="text" name="start-hour" style="min-width: 30pc" placeholder="hh:mm">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date de fin</td>
+                                        <td>
+                                            <form>
+                                                <input type="text" name="end-date" style="min-width: 30pc" placeholder="jj/mm/aaaa">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Heure de fin</td>
+                                        <td>
+                                            <form>
+                                                <input type="text" name="start-hour" style="min-width: 30pc" placeholder="hh:mm">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Statut</td>
+                                        <td>
+                                            <select class="form-control" id="sel1">
+                                                <option selected>Non commencé</option>
+                                                <option>En cours</option>
+                                                <option>Terminé</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Uniquement à distance</td>
+                                        <td>
+                                            <i class="fa fa-square-o"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Définir comme session par défaut</td>
+                                        <td>
+                                            <i class="fa fa-check-square" style="color: #5CB85C"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lieu par défaut</td>
+                                        <td>
+                                            <p><i class="fa fa-square-o"></i></br></br>
+                                            Interne
+                                            <select class="form-control" id="sel1">
+                                                <option selected>Local 1</option>
+                                                <option>Local 2</option>
+                                                <option>Local 3</option>
+                                                <option>Etc.</option>
+                                            </select>
+                                            </p>
+                                            <p>Externe
+                                                <form>
+                                                    <input type="text" name="ext-room" style="min-width: 30pc" placeholder="Adresse et nom du local">
+                                                </form>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inscription publique</td>
+                                        <td>
+                                            <i class="fa fa-check-square" style="color: #5CB85C"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Désinscription publique</td>
+                                        <td>
+                                            <i class="fa fa-check-square" style="color: #5CB85C"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cursus</td>
+                                        <td>
+                                            <i class="fa fa-check-square" style="color: #5CB85C"></i>
+                                            Expert pédagogique de Claroline Connect</br>
+                                            <i class="fa fa-check-square" style="color: #5CB85C"></i>
+                                            Expert technicien de Claroline Connect</br>
+                                            <i class="fa fa-square-o"></i>
+                                            S2CP</br>
+                                            <i class="fa fa-square-o"></i>
+                                            TEST</br>
+                                            <i class="fa fa-square-o"></i>
+                                            TEST Virginie
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" title="Cliquez ici pour valider">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
 

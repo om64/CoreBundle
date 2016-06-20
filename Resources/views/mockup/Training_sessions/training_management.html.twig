@@ -3,11 +3,9 @@
 {% block panelTitle %}
 
     Gestion des formations
-    {#<span class="pull-left">#}
         <button class="btn btn-success pull-right" title="Gestion des cursus">
             <i class="fa fa-book"></i>
         </button>
-    {#</span>#}
         <a class="btn btn-success pull-right" title="Gestion des sessions" href="session_management.html" data-toggle="tooltip" data-placement="top">
             <i class="fa fa-calendar" aria-hidden="true"></i>
         </a>
@@ -15,12 +13,6 @@
 {% endblock %}
 
 {% block panelRest %}
-
-    {#<script>#}
-        {#$(document).ready(function(){#}
-            {#$(".dropdown-toggle").dropdown();#}
-        {#});#}
-    {#</script>#}
 
     <style type="text/css" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
@@ -85,41 +77,6 @@
                 </li>
             </ul>
         </div>
-        {#<div class="row" style="padding-left: 15px; padding-right: 15px">#}
-            {#<div class="btn-group margin-top-sm" role="group">#}
-                {#<a class="btn btn-primary" href="#">#}
-                    {#<i class="fa fa-plus-circle"></i>#}
-                    {#Créer une formation#}
-                {#</a>#}
-                {#<span id="import-courses-btn" class="btn btn-default">#}
-                {#<i class="fa fa-sign-in"></i>#}
-                {#Importer#}
-                {#</span>#}
-            {#<a class="btn btn-default" href="#">#}
-                {#<i class="fa fa-sign-out"></i>#}
-                {#Exporter#}
-            {#</a>#}
-            {#</div>#}
-            {#<div class="input-group col-md-6 pull-left margin-top-sm">#}
-                {#<input id="search-course-input" class="form-control search-course" type="text" data-max="50" data-order="ASC" data-ordered-by="title" value="" placeholder="Rechercher">#}
-                {#<span class="input-group-btn">#}
-                {#<button id="search-course-btn" class="filter btn btn-primary search-course-btn" data-max="50" data-order="ASC" data-ordered-by="title" type="button">#}
-                    {#<i class="fa fa-search"></i>#}
-                {#</button>#}
-                {#</span>#}
-            {#</div>#}
-        {#</div>#}
-        {#<div class="row" style="padding: 12px">#}
-            {#<div class="input-group col-md-6 pull-left margin-top-sm">#}
-                {#<input type="text" ondrop="return false;" aria-label="Select box" role="combobox" placeholder="Rechercher une formation" class="ui-select-search input-xs ng-pristine ng-valid ng-touched"#}
-                    {#spellcheck="false" style="width: 1722px;">#}
-                {#<span class="input-group-btn">#}
-                    {#<button id="search-course-btn" class="filter btn btn-primary search-course-btn" data-max="50" data-order="ASC" data-ordered-by="title" type="button">#}
-                        {#<i class="fa fa-search"></i>#}
-                    {#</button>#}
-                {#</span>#}
-            {#</div>#}
-        {#</div>#}
         <div class="row" style="padding-top: 15px; padding-bottom: 15px">
             <div class="col-xs-hidden col-sm-3 col-md-4">
                 <img src="{{ asset('uploads/custom/images/lessons.png') }}" style="max-height: 120px">
@@ -162,24 +119,6 @@
                         <th style="background-color: #337ab7">
                             <a href="#" style="color: #fff"> Code </a>
                         </th>
-                        {#<th class="text-center" style="background-color: #337ab7">#}
-                            {#<a href="#" style="color: #fff"> Description </a>#}
-                        {#</th>#}
-                        {#<th class="text-center" style="background-color: #337ab7">#}
-                            {#<a href="#" style="color: #fff">#}
-                                {#<i class="fa fa-sign-in" title="Inscription publique" data-placement="top" data-toggle="tooltip"> </i>#}
-                            {#</a>#}
-                        {#</th>#}
-                        {#<th class="text-center" style="background-color: #337ab7">#}
-                            {#<a href="#" style="color: #fff">#}
-                                {#<i class="fa fa-sign-out" title="Désinscription publique" data-placement="top" data-toggle="tooltip"> </i>#}
-                            {#</a>#}
-                        {#</th>#}
-                        {#<th class="text-center" style="background-color: #337ab7">#}
-                            {#<a href="#" style="color: #fff">#}
-                                {#<i class="fa fa-check-square-o" title="Validation de l'inscription" data-placement="top" data-toggle="tooltip"> </i>#}
-                            {#</a>#}
-                        {#</th>#}
                         <th class="text-center" style="color: white; background-color: #337ab7">
                              Actions
                         </th>
@@ -202,16 +141,6 @@
                             <i class="fa fa-chevron-circle-right pull-left pointer-hand" data-toggle="collapse" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
                         </td>
                         <td> M5N2F </td>
-                        {#<td class="text-center"> - </td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
-                        {#</td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
-                        {#</td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
-                        {#</td>#}
                         <td class="text-center">
                             <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Voir détails de la formation">
                                 <i class="fa fa-eye pointer-hand"></i>
@@ -234,8 +163,6 @@
                         <td>
                             <span data-placement="top" data-toggle="tooltip" title="Voir les sessions" class="pull-left" ><i data-toggle="collapse" class="fa fa-chevron-circle-right pointer-hand" data-target="#sessions-tab" style="color: #337ab7"></i></span>
                             <a href="#">&nbsp; Alerter les interlocuteurs concernés par les dysfonctionnements et les risques constatés </a>
-                            {#<span data-placement="top" data-toggle="tooltip" title="Voir les sessions" class="pull-left" ><i data-toggle="collapse" class="fa fa-chevron-circle-right pointer-hand" data-target="#sessions-tab" style="color: #337ab7"></i></span>#}
-                            {#<div class="container-fluid>">#}
                                 <div id="sessions-tab" class="table-responsive collapse" aria-expanded="true" style="">
                                     <br>
                                     <table class="table">
@@ -281,16 +208,6 @@
                             {#</div>#}
                         </td>
                         <td> M4N2D </td>
-                        {#<td class="text-center"> - </td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
-                        {#</td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
-                        {#</td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
-                        {#</td>#}
                         <td class="text-center">
                             <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Voir détails de la formation">
                                 <i class="fa fa-eye pointer-hand"></i>
@@ -315,16 +232,6 @@
                             <i class="fa fa-chevron-circle-right pull-left pointer-hand" data-toggle="collapse" data-placement="top" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
                         </td>
                         <td> M4N3C </td>
-                        {#<td class="text-center"> - </td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
-                        {#</td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
-                        {#</td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
-                        {#</td>#}
                         <td class="text-center">
                             <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Voir détails de la formation">
                                 <i class="fa fa-eye pointer-hand"></i>
@@ -349,16 +256,6 @@
                             <i class="fa fa-chevron-circle-right pull-left pointer-hand" data-toggle="collapse" data-target="#" aria-hidden="true" style="color: #337ab7"></i>
                         </td>
                         <td> M6N1C </td>
-                        {#<td class="text-center"> - </td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
-                        {#</td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
-                        {#</td>#}
-                        {#<td class="text-center">#}
-                            {#<i class="fa fa-times-circle" style="color: #D9534F"></i>#}
-                        {#</td>#}
                         <td class="text-center">
                             <a class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" href="#" title="Voir détails de la formation">
                                 <i class="fa fa-eye pointer-hand"></i>
