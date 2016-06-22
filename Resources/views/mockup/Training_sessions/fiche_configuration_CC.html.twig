@@ -2,8 +2,10 @@
 
 {% block panelTitle %}
 
-    [Formation] Configuration de la plateforme CC &nbsp;<a href="training-view-8.html" title="Modifier la formation"><i class="fa fa-pencil pointer-hand"></i></a>
+    [Formation] Configuration de la plateforme CC &nbsp;
 
+    <a><i title="Ajouter une session" class="fa fa-cube pointer-hand pull-right" data-toggle="modal" data-placement="top" data-target="#create-session"></i></a>
+    <a href="training-view-8.html" title="Modifier la formation"><i class="fa fa-pencil pointer-hand pull-right"></i>
 {% endblock %}
 
 {% block panelRest %}
@@ -74,7 +76,6 @@
                         <div class="panel-heading" style="background-color: #337ab7">
                             <h3 class="panel-title text-center">
                                 <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse2" aria-expanded="true">Sessions ouvertes</a>&nbsp;
-                                <i title="Ajouter une session" class="fa fa-cube pointer-hand" data-toggle="modal" data-placement="top" data-target="#create-session"></i>
                             </h3>
                         </div>
                         <div id="collapse2" class="panel-collapse collapse">
