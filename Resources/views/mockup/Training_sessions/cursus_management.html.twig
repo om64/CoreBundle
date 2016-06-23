@@ -1,0 +1,228 @@
+{% extends 'ClarolineCoreBundle::mockup/Training_sessions/cursus-tool.html.twig' %}
+
+{% block panelTitle %}
+
+    Gestion des cursus
+        <a class="btn btn-success pull-right" title="Gestion des formations" href="training_management.html" data-toggle="tooltip" data-placement="top">
+            <i class="fa fa-tasks" aria-hidden="true"></i>
+        </a>
+        <a class="btn btn-success pull-right" title="Gestion des sessions" href="session_management.html" data-toggle="tooltip" data-placement="top">
+            <i class="fa fa-cubes" aria-hidden="true"></i>
+        </a>
+
+{% endblock %}
+
+{% block panelRest %}
+
+    <style type="text/css" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+              /* For possible modals on this page */
+
+        .modal-header, h4, .close {
+            background-color: #5cb85c;
+            color:white !important;
+            text-align: center;
+            font-size: 20px;
+        }
+        .modal-footer {
+            background-color: #f9f9f9;
+        }
+
+        /* To give full width to tables */
+
+        table.table.table-hover {
+            width:100%;
+        }
+
+        /* To change the backgroud color of the top bar */
+
+        .navbar-inverse {
+            background-color: #5cb85c;
+            border-color: #5cb85c;
+        }
+        .navbar.navbar-inverse.navbar-fixed-top {
+            border-bottom: 2px solid #5cb85c;
+        }
+        #top_bar li:not(:last-child) > a, .top-bar li:not(:last-child) > a {
+            color: white;
+            border-right: 1px solid #5cb85c !important;
+        }
+        .panel-default > .panel-heading {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #ddd;
+        }
+    </style>
+
+    <div class="container-fluid" style="margin: 15px 0 15px">
+        <ul>
+            <li class="cursus-element" data-cursus-id="1">
+                <a href="#"> Expert Pédagogique de Claroline Connect </a>
+            <span class="dropdown">
+            <i id="option-btn-1" class="cursus-option-btn fa fa-cog pointer-hand" data-toggle="dropdown" data-cursus-id="1"></i>
+                <ul class="dropdown-menu" style="white-space: nowrap" aria-labelledby="option-btn-1" role="menu">
+                    <li role="presentation">
+                        <a class="pointer-hand view-cursus-hierarchy-btn" data-cursus-title="Expert Pédagogique de Claroline Connect" data-cursus-id="1" tabindex="-1" role="menuitem">
+                            <i class="fa fa-eye"></i>
+                            Voir la structure
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a class="pointer-hand edit-cursus-btn" data-cursus-id="1" tabindex="-1" role="menuitem">
+                            <i class="fa fa-edit"></i>
+                            Modifier
+                        </a>
+                    </li>
+                    <li class="divider" role="presentation"></li>
+                    <li role="presentation">
+                        <a class="pointer-hand delete-cursus-btn" data-cursus-id="1" tabindex="-1" role="menuitem">
+                            <i class="fa fa-trash"></i>
+                            Supprimer
+                        </a>
+                    </li>
+                </ul>
+                </span>
+            </li>
+            <li class="cursus-element" data-cursus-id="1">
+                <a href="#"> Expert technicien de Claroline Connect </a>
+            <span class="dropdown">
+            <i id="option-btn-1" class="cursus-option-btn fa fa-cog pointer-hand" data-toggle="dropdown" data-cursus-id="1"></i>
+                <ul class="dropdown-menu" style="white-space: nowrap" aria-labelledby="option-btn-1" role="menu">
+                    <li role="presentation">
+                        <a class="pointer-hand view-cursus-hierarchy-btn" data-cursus-title="Expert Pédagogique de Claroline Connect" data-cursus-id="1" tabindex="-1" role="menuitem">
+                            <i class="fa fa-eye"></i>
+                            Voir la structure
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a class="pointer-hand edit-cursus-btn" data-cursus-id="1" tabindex="-1" role="menuitem">
+                            <i class="fa fa-edit"></i>
+                            Modifier
+                        </a>
+                    </li>
+                    <li class="divider" role="presentation"></li>
+                    <li role="presentation">
+                        <a class="pointer-hand delete-cursus-btn" data-cursus-id="1" tabindex="-1" role="menuitem">
+                            <i class="fa fa-trash"></i>
+                            Supprimer
+                        </a>
+                    </li>
+                </ul>
+                </span>
+            </li>
+            <li class="cursus-element" data-cursus-id="1">
+                <a href="#"> S2CP </a>
+            <span class="dropdown">
+            <i id="option-btn-1" class="cursus-option-btn fa fa-cog pointer-hand" data-toggle="dropdown" data-cursus-id="1"></i>
+                <ul class="dropdown-menu" style="white-space: nowrap" aria-labelledby="option-btn-1" role="menu">
+                    <li role="presentation">
+                        <a class="pointer-hand view-cursus-hierarchy-btn" data-cursus-title="Expert Pédagogique de Claroline Connect" data-cursus-id="1" tabindex="-1" role="menuitem">
+                            <i class="fa fa-eye"></i>
+                            Voir la structure
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a class="pointer-hand edit-cursus-btn" data-cursus-id="1" tabindex="-1" role="menuitem">
+                            <i class="fa fa-edit"></i>
+                            Modifier
+                        </a>
+                    </li>
+                    <li class="divider" role="presentation"></li>
+                    <li role="presentation">
+                        <a class="pointer-hand delete-cursus-btn" data-cursus-id="1" tabindex="-1" role="menuitem">
+                            <i class="fa fa-trash"></i>
+                            Supprimer
+                        </a>
+                    </li>
+                </ul>
+                </span>
+            </li>
+            <li class="cursus-element" data-cursus-id="1">
+                <a href="#"> TEST </a>
+            <span class="dropdown">
+            <i id="option-btn-1" class="cursus-option-btn fa fa-cog pointer-hand" data-toggle="dropdown" data-cursus-id="1"></i>
+                <ul class="dropdown-menu" style="white-space: nowrap" aria-labelledby="option-btn-1" role="menu">
+                    <li role="presentation">
+                        <a class="pointer-hand view-cursus-hierarchy-btn" data-cursus-title="Expert Pédagogique de Claroline Connect" data-cursus-id="1" tabindex="-1" role="menuitem">
+                            <i class="fa fa-eye"></i>
+                            Voir la structure
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a class="pointer-hand edit-cursus-btn" data-cursus-id="1" tabindex="-1" role="menuitem">
+                            <i class="fa fa-edit"></i>
+                            Modifier
+                        </a>
+                    </li>
+                    <li class="divider" role="presentation"></li>
+                    <li role="presentation">
+                        <a class="pointer-hand delete-cursus-btn" data-cursus-id="1" tabindex="-1" role="menuitem">
+                            <i class="fa fa-trash"></i>
+                            Supprimer
+                        </a>
+                    </li>
+                </ul>
+                </span>
+            </li>
+            <li class="cursus-element" data-cursus-id="1">
+                <a href="#"> TEST Virginie </a>
+            <span class="dropdown">
+            <i id="option-btn-1" class="cursus-option-btn fa fa-cog pointer-hand" data-toggle="dropdown" data-cursus-id="1"></i>
+                <ul class="dropdown-menu" style="white-space: nowrap" aria-labelledby="option-btn-1" role="menu">
+                    <li role="presentation">
+                        <a class="pointer-hand view-cursus-hierarchy-btn" data-cursus-title="Expert Pédagogique de Claroline Connect" data-cursus-id="1" tabindex="-1" role="menuitem">
+                            <i class="fa fa-eye"></i>
+                            Voir la structure
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a class="pointer-hand edit-cursus-btn" data-cursus-id="1" tabindex="-1" role="menuitem">
+                            <i class="fa fa-edit"></i>
+                            Modifier
+                        </a>
+                    </li>
+                    <li class="divider" role="presentation"></li>
+                    <li role="presentation">
+                        <a class="pointer-hand delete-cursus-btn" data-cursus-id="1" tabindex="-1" role="menuitem">
+                            <i class="fa fa-trash"></i>
+                            Supprimer
+                        </a>
+                    </li>
+                </ul>
+                </span>
+            </li>
+        </ul>
+        <br>
+        <div class="btn-group margin-top-sm" role="group">
+            <span id="cursus-create-btn" class="btn btn-primary">
+                <i class="fa fa-plus-circle"></i>
+                Créer "Cursus"
+            </span>
+            <span id="import-cursus-btn" class="btn btn-default">
+                <i class="fa fa-sign-in"></i>
+                Importer
+            </span>
+            <a class="btn btn-default" href="#">
+                <i class="fa fa-sign-out"></i>
+                Exporter
+            </a>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
+
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+    </script>
+{% endblock %}

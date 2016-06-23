@@ -1,7 +1,7 @@
 {% extends 'ClarolineCoreBundle::mockup/Training_sessions/session_file_tool.html.twig' %}
 
 {% block panelTitle %}
-    [Session] Test Session &nbsp;<a href="training-view-8.html"><i class="fa fa-pencil"></i></a>{% endblock %}
+    [Session] Test Session{% endblock %}
 
 {% block panelRest %}
 
@@ -50,9 +50,11 @@
         <tr>
             <td>
                 <h3>
-                    <i class="btn btn-default fa fa-plus-square pull-right" data-toggle="tooltip" data-placement="top" title="Inviter des apprenants à la session"></i>
-                    <i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn pull-right" data-toggle="tooltip" data-placement="top" title="Envoyer un courriel à tous les apprenants de la session"></i>
-                    <i class="btn btn-default fa fa-graduation-cap pull-right" data-toggle="tooltip" data-placement="top" title="Générer les certifications"></i>
+                    <span class="pull-right">
+                    <a href="training-view-8.html"><button type="button" title="Modifier la session" class="btn btn-primary btn-sm" data-toggle="tooltip" data-target="training-view-8.html"><i class="fa fa-edit"></i></button></a>
+                    <button type="button" title="Envoyer un courriel à tous les apprenants de la session" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#"><i class="fa fa-envelope-o session-send-confirmation-mail-btn"></i></button>
+                    <button type="button" title="Générer les certifications" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#"><i class="fa fa-graduation-cap"></i></button>
+                    <button type="button" title="Inviter des apprenants à la session" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#"><i class="fa fa-plus-square"></i></button>
                 </h3>
             </td>
         </tr>
@@ -128,7 +130,7 @@
                     <div class="panel-heading text-center">
                         <h3 class="panel-title">
                         <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse3" aria-expanded="false">Tuteurs&nbsp;</a>
-                        <i data-original-title="Inscrire des tuteurs à la session" class="fa fa-user pointer-hand" id="register-tutors-btn" data-toggle="tooltip" data-placement="top"></i>
+                        <i data-original-title="Inscrire des tuteurs à la session" class="fa fa-user pointer-hand" data-toggle="tooltip" data-placement="top"></i>
                         </h3>
                     </div>
                     <div id="collapse3" class="panel-collapse collapse">
@@ -153,7 +155,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading text-center">
                         <h3 class="panel-title">
-                            <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse4" aria-expanded="false">Séances&nbsp;</a>
+                            <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse4" aria-expanded="false">Séances ouvertes&nbsp;</a>
                             <i data-original-title="Ajouter une séance" class="fa fa-calendar pointer-hand" data-toggle="modal" data-placement="top" data-target="#create-session-event"></i>
                         </h3>
                     </div>
@@ -176,15 +178,13 @@
                                             <input type="checkbox" ng-checked="cell.selected" ng-click="cell.onCheckboxChanged($event)">
                                         </label>
                                     </td>                                    <td>Séance 1</td>
-                                    <td>Lundi 5 juin 2016 - 14h00</td>
-                                    <td>Mardi 6 juin 2016 - 16h00</td>
+                                    <td>Lundi 4 juillet 2016 - 14h00</td>
+                                    <td>Mardi 5 juillet 2016 - 16h00</td>
                                     <td>Local 25</td>
                                     <td>
-                                        <i class="btn btn-default fa fa-edit" data-toggle="tooltip" data-placement="top" title="Modifier la séance"></i>
-                                        <i class="btn btn-default fa fa-files-o" data-toggle="tooltip" data-placement="top" title="Répéter la séance"></i>
-                                        {#<i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" data-toggle="tooltip" data-placement="top" title="Envoyer un courriel à tous les apprenants de la session"></i>#}
-                                        <i class="btn btn-danger fa fa-trash-o" data-toggle="tooltip" data-placement="top" title="Supprimer la séance"></i>
-                                        {#<i class="btn btn-default fa fa-check-square" style="color: #5CB85C" data-toggle="tooltip" data-placement="top" title="Consulter les présences"></i>#}
+                                        <button type="button" title="Modifier la séance" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit-session-event"><i class="fa fa-edit"></i></button>
+                                        <button type="button" title="Répéter la séance" class="btn btn-default btn-sm" data-toggle="modal" data-target="#"><i class="fa fa-files-o"></i></button>
+                                        <button type="button" title="Supprimer la séance" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-session-event"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -200,11 +200,69 @@
                                         1800 Labas</br>
                                         Local b.451</td>
                                     <td>
-                                        <i class="btn btn-default fa fa-edit" data-toggle="tooltip" data-placement="top" title="Modifier la séance"></i>
-                                        <i class="btn btn-default fa fa-files-o" data-toggle="tooltip" data-placement="top" title="Répéter la séance"></i>
-                                        {#<i class="btn btn-default fa fa-envelope-o session-send-confirmation-mail-btn" data-toggle="tooltip" data-placement="top" title="Envoyer un courriel à tous les apprenants de la session"></i>#}
-                                        <i class="btn btn-danger fa fa-trash-o" data-toggle="tooltip" data-placement="top" title="Supprimer la séance"></i>
-                                        {#<i class="btn btn-default fa fa-check-square" style="color: #5CB85C" data-toggle="tooltip" data-placement="top" title="Consulter les présences"></i>#}
+                                        <button type="button" title="Modifier la séance" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit-session-event"><i class="fa fa-edit"></i></button>
+                                        <button type="button" title="Répéter la séance" class="btn btn-default btn-sm" data-toggle="modal" data-target="#"><i class="fa fa-files-o"></i></button>
+                                        <button type="button" title="Supprimer la séance" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-session-event"><i class="fa fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" id="accordion">
+            <div class="panel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading text-center">
+                        <h3 class="panel-title">
+                            <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse5" aria-expanded="false">Séances terminées&nbsp;</a>
+                        </h3>
+                    </div>
+                    <div id="collapse5" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table table-hover">
+                                <th style="color: white; background-color: #5bc0de">
+                                    <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                                        <input type="checkbox" ng-checked="cell.selected" ng-click="cell.onCheckboxChanged($event)">
+                                    </label>
+                                </th>
+                                <th style="background-color: #5bc0de"><a style="color: #ffffff">Nom</a></th>
+                                <th style="background-color: #5bc0de"><a style="color: #ffffff">Date de début</a></th>
+                                <th style="background-color: #5bc0de"><a style="color: #ffffff">Date de fin</a></th>
+                                <th style="background-color: #5bc0de"><a style="color: #ffffff">Lieu</a></th>
+                                <th style="color: white; background-color: #5bc0de">Actions</th>
+                                <tr>
+                                    <td>
+                                        <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                                            <input type="checkbox" ng-checked="cell.selected" ng-click="cell.onCheckboxChanged($event)">
+                                        </label>
+                                    </td>                                    <td>Séance 1</td>
+                                    <td>Lundi 5 juin 2016 - 14h00</td>
+                                    <td>Mardi 6 juin 2016 - 16h00</td>
+                                    <td>Local 25</td>
+                                    <td>
+                                        <button type="button" title="Modifier la séance" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit-session-event"><i class="fa fa-edit"></i></button>
+                                        <button type="button" title="Répéter la séance" class="btn btn-default btn-sm" data-toggle="modal" data-target="#"><i class="fa fa-files-o"></i></button>
+                                        <button type="button" title="Supprimer la séance" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-session-event"><i class="fa fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                                            <input type="checkbox" ng-checked="cell.selected" ng-click="cell.onCheckboxChanged($event)">
+                                        </label>
+                                    </td>
+                                    <td>TP</td>
+                                    <td>Jeudi 16 juin 2016 - 10h00</td>
+                                    <td>Jeudi 16 juin 2016 - 10h50</td>
+                                    <td>Rue de la pierre, n° 28</br>
+                                        1800 Labas</br>
+                                        Local b.451</td>
+                                    <td>
+                                        <button type="button" title="Modifier la séance" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit-session-event"><i class="fa fa-edit"></i></button>
+                                        <button type="button" title="Répéter la séance" class="btn btn-default btn-sm" data-toggle="modal" data-target="#"><i class="fa fa-files-o"></i></button>
+                                        <button type="button" title="Supprimer la séance" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-session-event"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
                             </table>
@@ -216,99 +274,6 @@
     </div>
 </div>
 
-<div id="view-registration-box" class="modal fade" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <h3 id="view-registration-header" class="modal-header">
-            </h3>
-            <div id="view-registration-body" class="modal-body">
-            </div>
-            <div class="modal-footer">
-                <input type="button" class="btn btn-default" data-dismiss="modal" value="Fermer">
-            </div>
-        </div>
-    </div>
-</div>
-<div id="delete-session-box" class="modal fade" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    &times;
-                </button>
-                <h3>
-                    Suppression de la session
-                    <small>
-                        [<span id="delete-session-name-header"></span>]
-                    </small>
-                </h3>
-            </div>
-            <div class="modal-body">
-                Êtes-vous sûr de vouloir supprimer cette session ?
-                <br>
-                <br>
-                <div class="checkbox">
-                    <label>
-                        <input id="with-workspace-chk" type="checkbox">
-                        <b>
-                            Supprimer également l&#039;espace d&#039;activités associé
-                        </b>
-                    </label>
-                </div>
-            </div>
-            <div class="modal-footer">
-            <span class="pull-right">
-                <span class="btn btn-default pointer-hand"
-                      data-dismiss="modal"
-                >
-                    Annuler
-                </span>
-                <span id="confirm-session-deletion-btn"
-                      class="btn btn-primary pointer-hand">
-                    Ok
-                </span>
-            </span>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="registration-error-box" class="modal fade" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    &times;
-                </button>
-                <h3>
-                    L&#039;inscription a échoué
-                </h3>
-            </div>
-            <div class="modal-body" id="registration-error-box-body">
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-default pull-right" data-dismiss="modal">
-                    Fermer
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="view-registration-box" class="modal fade" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <h3 id="view-registration-header" class="modal-header">
-            </h3>
-            <div id="view-registration-body" class="modal-body">
-            </div>
-            <div class="modal-footer">
-                <input type="button"
-                       class="btn btn-default"
-                       data-dismiss="modal"
-                       value="Fermer">
-            </div>
-        </div>
-    </div>
-</div>
 <div id="create-session-event" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
@@ -328,6 +293,14 @@
                                         <td>
                                             <form>
                                                 <input type="text" name="name" style="min-width: 30pc" placeholder="Nom de la séance">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Description</td>
+                                        <td>
+                                            <form>
+                                                <textarea rows="4" cols="50" name="description"></textarea>
                                             </form>
                                         </td>
                                     </tr>
@@ -363,28 +336,6 @@
                                             </form>
                                         </td>
                                     </tr>
-                                    {#<tr>#}
-                                        {#<td>Statut</td>#}
-                                        {#<td>#}
-                                            {#<select class="form-control" id="sel1">#}
-                                                {#<option selected>Non commencé</option>#}
-                                                {#<option>En cours</option>#}
-                                                {#<option>Terminé</option>#}
-                                            {#</select>#}
-                                        {#</td>#}
-                                    {#</tr>#}
-                                    {#<tr>#}
-                                        {#<td>Uniquement à distance</td>#}
-                                        {#<td>#}
-                                            {#<i class="fa fa-square-o"></i>#}
-                                        {#</td>#}
-                                    {#</tr>#}
-                                    {#<tr>#}
-                                        {#<td>Définir comme session par défaut</td>#}
-                                        {#<td>#}
-                                            {#<i class="fa fa-check-square" style="color: #5CB85C"></i>#}
-                                        {#</td>#}
-                                    {#</tr>#}
                                     <tr>
                                         <td>Lieu</td>
                                         <td>
@@ -399,38 +350,11 @@
                                             </p>
                                             <p>Externe
                                                 <form>
-                                                    <input type="text" name="ext-room" style="min-width: 30pc" placeholder="Adresse et nom du local">
+                                                    <textarea rows="3" cols="40" name="event-place"></textarea>
                                                 </form>
                                             </p>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>Inscription publique</td>
-                                        <td>
-                                            <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Désinscription publique</td>
-                                        <td>
-                                            <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
-                                        </td>
-                                    </tr>
-                                    {#<tr>#}
-                                        {#<td>Cursus</td>#}
-                                        {#<td>#}
-                                            {#<i class="fa fa-check-square" style="color: #5CB85C"></i>#}
-                                            {#Expert pédagogique de Claroline Connect</br>#}
-                                            {#<i class="fa fa-check-square" style="color: #5CB85C"></i>#}
-                                            {#Expert technicien de Claroline Connect</br>#}
-                                            {#<i class="fa fa-square-o"></i>#}
-                                            {#S2CP</br>#}
-                                            {#<i class="fa fa-square-o"></i>#}
-                                            {#TEST</br>#}
-                                            {#<i class="fa fa-square-o"></i>#}
-                                            {#TEST Virginie#}
-                                        {#</td>#}
-                                    {#</tr>#}
                                 </table>
                             </div>
                         </div>
@@ -444,17 +368,101 @@
         </div>
     </div>
 </div>
-{#<div id="push"></div>#}
-{#<div id="footer">#}
-    {#<div class="container-fluid">#}
-        {#<div class="row">#}
-            {#<p>#}
-                {#<span class="pull-right locale-select label label-default">FR</span>#}
-                {#<span>Développé par <a href="http://www.claroline.net" target="_blank">Claroline</a> Release 16.05</span>#}
-            {#</p>#}
-        {#</div>#}
-    {#</div>#}
-{#</div>#}
+
+    <div id="edit-session-event" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modifier la séance</h4>
+            </div>
+            <div class="modal-body" style="text-align: left">
+                <div class="container-fluid">
+                    <div class="row" style="margin-top: 10px">
+                        <div class="panel panel-default">
+                            <div class="panel panel-body">
+                                <table class="table table-responsive">
+                                    <tr>
+                                        <td>Nom</td>
+                                        <td>
+                                            <form>
+                                                <input type="text" name="name" style="min-width: 30pc" placeholder="Nom de la séance">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Description</td>
+                                        <td>
+                                            <form>
+                                                <textarea rows="4" cols="50" name="description"></textarea>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date de début</td>
+                                        <td>
+                                            <form>
+                                                <input type="text" name="start-date" style="min-width: 30pc" placeholder="jj/mm/aaaa">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Heure de début</td>
+                                        <td>
+                                            <form>
+                                                <input type="text" name="start-hour" style="min-width: 30pc" placeholder="hh:mm">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date de fin</td>
+                                        <td>
+                                            <form>
+                                                <input type="text" name="end-date" style="min-width: 30pc" placeholder="jj/mm/aaaa">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Heure de fin</td>
+                                        <td>
+                                            <form>
+                                                <input type="text" name="start-hour" style="min-width: 30pc" placeholder="hh:mm">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lieu</td>
+                                        <td>
+                                            <p><i class="fa fa-square-o"></i></br></br>
+                                                Interne
+                                                <select class="form-control" id="sel1">
+                                                    <option selected>Local 1</option>
+                                                    <option>Local 2</option>
+                                                    <option>Local 3</option>
+                                                    <option>Etc.</option>
+                                                </select>
+                                            </p>
+                                            <p>Externe
+                                            <form>
+                                                <textarea rows="3" cols="40" name="event-place"></textarea>
+                                            </form>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary pull-right" data-dismiss="modal" title="Cliquez ici pour valider">OK</button>
+                <button type="button" class="btn btn-default pull-right" data-dismiss="modal" title="Annuler">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
 {% block stylesheets %}
