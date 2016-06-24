@@ -1,0 +1,339 @@
+{% extends 'ClarolineCoreBundle::mockup/Notifications/notifications-tool.html.twig' %}
+
+{% block panelTitle %}Paramètres des notifications{% endblock %}
+
+{% block panelRest %}
+
+    <style type="text/css" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+        /* For possible modals on this page */
+
+        .modal-header, h4, .close {
+            background-color: #27C24C;
+            color:white !important;
+            text-align: center;
+            font-size: 18px;
+        }
+        .modal-footer {
+            background-color: #f9f9f9;
+        }
+
+        /* To give full width to tables */
+
+        table.table.table-hover {
+            width:100%;
+        }
+
+        /* To change the backgroud color of the top bar */
+
+        .navbar-inverse {
+            background-color: #27C24C;
+            border-color: #27C24C;
+        }
+        .navbar.navbar-inverse.navbar-fixed-top {
+            border-bottom: 2px solid #27C24C;
+        }
+        #top_bar li:not(:last-child) > a, .top-bar li:not(:last-child) > a {
+            color: white;
+            border-right: 1px solid #5cb85c !important;
+        }
+        .panel-default > .panel-heading {
+            color: #fff;
+            background-color: #27C24C;
+            border: none;
+        }
+        table.table_portfolios .statusCol {
+            width: 250px;
+        }
+        table.table_portfolios .actionsCol {
+            width: 200px;
+        }
+        table.table_portfolios .portfolio .block {
+            display: block;
+        }
+        table.table_portfolios .portfolio td {
+            padding: 10px 15px;
+            vertical-align: middle;
+        }
+        table.table_portfolios .portfolio td .dropdown-menu a.delete {
+            color: #d9534f;
+        }
+        table.table_portfolios .portfolio td .dropdown-menu a.delete:hover {
+            background-color: #d2322d;
+            color: #fff;
+        }
+        table.table_portfolios .portfolio td .visibility .badge {
+            display: block;
+            float: left;
+            height: 15px;
+            margin-right: 5px;
+            width: 15px;
+        }
+        table.table_portfolios .portfolio td .visibility .badge.visibile_to_me {
+            background-color: #d9534f;
+        }
+        table.table_portfolios .portfolio td .visibility .badge.visible_for_some_users {
+            background-color: #ed9c28;
+        }
+        table.table_portfolios .portfolio td .visibility .badge.visible_for_platform_user {
+            background-color: #428bca;
+        }
+        table.table_portfolios .portfolio td .visibility .badge.visible_for_everybody {
+            background-color: #5cb85c;
+        }
+        table.table_portfolios .portfolio td .exchange_link.highlight {
+            border-color: #eea236;
+            color: #eea236;
+        }
+        table.table_portfolios .portfolio td .exchange_link .badge {
+            background-color: #f0ad4e;
+            top: 0;
+        }
+        div.pagination ul {
+            margin: 0;
+        }
+        .guided_portfolios_panel_group {
+            margin-bottom: 20px;
+        }
+        .guided_portfolios_panel_group .guided_portfolios_panel .panel-body {
+            padding-bottom: 0;
+            padding-top: 0;
+        }
+        .guided_portfolios_panel_group .guided_portfolios_panel table.table_portfolios {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+        .guided_portfolios_panel_group .guided_portfolios_panel table.table_portfolios tbody td {
+            border-top: 0 none;
+        }
+        .guided_portfolios_panel_group .guided_portfolios_panel table.table_portfolios tbody tr + tr td {
+            border-top: 1px solid #ddd;
+        }
+        #visibility_form a.remove, #guides_form a.remove {
+            color: #fff;
+            margin-left: 2px;
+        }
+        #visibility_form a.remove:hover, #guides_form a.remove:hover {
+            color: #ac2925;
+            text-decoration: none;
+        }
+        #visibility_form .form-collection-element, #guides_form .form-collection-element {
+            border-radius: 0.25em;
+            padding: 2px 5px 5px;
+        }
+        .portfolio_toolbar {
+            margin-bottom: 10px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        .clear {
+            clear: both;
+        }
+        .help_text {
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+        .widgets_container .loading_container {
+            margin-top: 40px;
+        }
+        .widgets_container .loading_container .loading_view {
+            margin: auto;
+        }
+        .widgets_container .add_data_button {
+            margin-bottom: 10px;
+        }
+        .widgets_container .panel .panel-heading .panel-title span {
+            cursor: pointer;
+        }
+        .widgets_container .panel .panel-heading .panel-title span:hover {
+            text-decoration: underline;
+        }
+        .widgets_container .panel .panel-heading .panel-title .loading {
+            margin-left: 5px;
+        }
+        .widgets_container .panel .panel-heading .panel-title input {
+            display: inline;
+            width: auto;
+        }
+        .widgets_container .panel .panel-heading .widget-actions {
+            position: absolute;
+            right: 30px;
+        }
+        .widgets_container .panel .panel-heading .widget-actions .btn {
+            position: relative;
+            right: 0;
+            top: 0;
+        }
+        .widgets_container .panel .panel-body.loading {
+            background-position: center center;
+            height: 60px;
+            margin-bottom: 0;
+            width: 100%;
+        }
+        .widgets_container .panel .panel-body .form-group.no-margin {
+            margin-bottom: 0;
+        }
+        .widgets_container .panel .panel-body .list_skill .skill + .skill {
+            margin-top: 5px;
+        }
+        .widgets_container .panel .panel-body .badge_list .badge_image {
+            height: 32px;
+            width: 32px;
+        }
+        .widgets_container .panel .panel-body .profile_picture span.fa {
+            font-size: 80px;
+        }
+        .widgets_container .panel .panel-body .profile_picture img {
+            height: 100px;
+            width: 100px;
+        }
+        .widgets_container .panel .panel-body .badge_collection .badge_collection_item {
+            height: auto;
+            padding: 2px 0 2px 5px;
+        }
+        .widgets_container .panel .panel-body .badge_collection .badge_collection_item .badge_selection_field {
+            margin-bottom: 0;
+            padding-bottom: 2px;
+            padding-top: 2px;
+        }
+        .widgets_container .panel .panel-body .badge_collection .badge_collection_item .badge_selection_field .badge_image {
+            height: 32px;
+            width: 32px;
+        }
+        .widgets_container .panel .panel-footer span.loading {
+            display: inline-block;
+            margin: 0;
+            vertical-align: middle;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li {
+            background-color: #f5f5f5;
+            transition: all 0.2s ease-in-out 0s;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li span.icon-bg {
+            background-color: #337ab7;
+            height: 3px;
+            left: 0;
+            position: absolute;
+            top: 0;
+            transition: height 0.2s ease-in-out 0s;
+            width: 100%;
+            z-index: 0;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li span.option-text {
+            position: relative;
+            z-index: 5;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li > a {
+            transition: all 0.2s ease-in-out 0s;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li > a:not(.btn) {
+            border-radius: 0;
+            border-top: 0 none;
+            margin-right: -1px !important;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li > a:focus:not(.btn), .portfolio-tabpanel ul.nav.nav-tabs > li > a:active:not(.btn) {
+            outline: medium none;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li:hover:not(.active) .icon-bg {
+            height: 100%;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li:hover:not(.active) a {
+            color: #ffffff;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li.active > a:hover, .portfolio-tabpanel ul.nav.nav-tabs > li.active > a:focus, .portfolio-tabpanel ul.nav.nav-tabs > li:not(.active) a:hover, .portfolio-tabpanel ul.nav.nav-tabs > li:not(.active) a:focus {
+            background-color: #f5f5f5;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li.active a {
+            background-color: #f5f5f5;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li.presentation-tab .icon-bg {
+            background-color: #337ab7;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li.widgets-tab .icon-bg {
+            background-color: #ffb61c;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li.list-tab .icon-bg {
+            background-color: #e94b3b;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li.exchange-space-tab .icon-bg {
+            background-color: #23ae89;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li.statistics-tab .icon-bg {
+            background-color: #800080;
+        }
+        .portfolio-tabpanel .tab-pane {
+            -moz-border-bottom-colors: none;
+            -moz-border-left-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-top-colors: none;
+            background-color: #f5f5f5;
+            border-color: -moz-use-text-color #ddd #ddd;
+            border-image: none;
+            border-style: none solid solid;
+            border-width: 0 1px 1px;
+            min-height: 150px;
+            padding: 10px;
+        }
+    </style>
+
+<div class="container-fluid" style="margin: 12px">
+    <div class="row content">
+        <div class="col-md-12">
+            <div class="portfolio-tabpanel" role="tabpanel">
+                <ul class="nav nav-tabs" role="tablist" id="portfolio_space_tabs">
+                    <li class="presentation-tab active">
+                        <a href="#presentation" aria-controls="presentation" role="tab" data-toggle="tab">
+                            <span class="icon-bg"></span>
+                                <span class="option-text">
+                                    <span class="visible-md-inline visible-lg-inline">Suivi par défaut</span>
+                                </span>
+                        </a>
+                    </li>
+                    <li class="widgets-tab experience-tab">
+                        <a href="#experience" aria-controls="experience" role="tab" data-toggle="tab">
+                            <span class="icon-bg"></span>
+                                <span class="option-text">
+                                    <span class="visible-md-inline visible-lg-inline">Ressources que je suis</span>
+                                </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="push"></div>
+    <div id="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <p>
+
+                    <span class="pull-right locale-select label label-default">FR</span>
+
+                                <span>
+                    Développé par <a href="http://www.claroline.net">Claroline</a> (dev-master)
+                </span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
+
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+</script>
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+</script>
+
+{% endblock %}

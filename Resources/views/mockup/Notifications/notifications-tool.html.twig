@@ -1,0 +1,12 @@
+{% extends 'HeVinciMockupBundle::library/claroline/tool.html.twig' %}
+
+{% set toolName = "Préférences" %}
+{% set toolSection = "Bureau" %}
+{% set toolPage = ['Paramètres des notifications', ''] %}
+{% set toolIcon = "arrow-up" %}
+
+{% block panelRest %}
+    <div class="panel-footer">
+        {% block panelFooter %}{% endblock %}
+    </div>
+{% endblock %}
