@@ -1,3 +1,37 @@
+.modal-header, h4, .close {
+    background-color: #27C24C;
+    color:white !important;
+    text-align: center;
+    font-size: 18px;
+}
+.modal-footer {
+    background-color: #f9f9f9;
+}
+
+/* To give full width to tables */
+
+table.table.table-hover {
+    width:100%;
+}
+
+/* To change the backgroud color of the top bar */
+
+.navbar-inverse {
+    background-color: #27C24C;
+    border-color: #27C24C;
+}
+.navbar.navbar-inverse.navbar-fixed-top {
+    border-bottom: 2px solid #27C24C;
+}
+#top_bar li:not(:last-child) > a, .top-bar li:not(:last-child) > a {
+    color: white;
+    border-right: 1px solid #5cb85c !important;
+}
+.panel-default > .panel-heading {
+    color: #fff;
+    background-color: #27C24C;
+    border: none;
+}
 table.table_portfolios .statusCol {
     width: 250px;
 }

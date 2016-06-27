@@ -42,21 +42,191 @@
             background-color: #27C24C;
             border: none;
         }
+        table.table_portfolios .statusCol {
+            width: 250px;
+        }
+        table.table_portfolios .actionsCol {
+            width: 200px;
+        }
+        table.table_portfolios .portfolio .block {
+            display: block;
+        }
+        table.table_portfolios .portfolio td {
+            padding: 10px 15px;
+            vertical-align: middle;
+        }
+        table.table_portfolios .portfolio td .dropdown-menu a.delete {
+            color: #d9534f;
+        }
+        table.table_portfolios .portfolio td .dropdown-menu a.delete:hover {
+            background-color: #d2322d;
+            color: #fff;
+        }
+        table.table_portfolios .portfolio td .visibility .badge {
+            display: block;
+            float: left;
+            height: 15px;
+            margin-right: 5px;
+            width: 15px;
+        }
+        table.table_portfolios .portfolio td .visibility .badge.visibile_to_me {
+            background-color: #d9534f;
+        }
+        table.table_portfolios .portfolio td .visibility .badge.visible_for_some_users {
+            background-color: #ed9c28;
+        }
+        table.table_portfolios .portfolio td .visibility .badge.visible_for_platform_user {
+            background-color: #428bca;
+        }
+        table.table_portfolios .portfolio td .visibility .badge.visible_for_everybody {
+            background-color: #5cb85c;
+        }
+        table.table_portfolios .portfolio td .exchange_link.highlight {
+            border-color: #eea236;
+            color: #eea236;
+        }
+        table.table_portfolios .portfolio td .exchange_link .badge {
+            background-color: #f0ad4e;
+            top: 0;
+        }
+        div.pagination ul {
+            margin: 0;
+        }
+        .guided_portfolios_panel_group {
+            margin-bottom: 20px;
+        }
+        .guided_portfolios_panel_group .guided_portfolios_panel .panel-body {
+            padding-bottom: 0;
+            padding-top: 0;
+        }
+        .guided_portfolios_panel_group .guided_portfolios_panel table.table_portfolios {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+        .guided_portfolios_panel_group .guided_portfolios_panel table.table_portfolios tbody td {
+            border-top: 0 none;
+        }
+        .guided_portfolios_panel_group .guided_portfolios_panel table.table_portfolios tbody tr + tr td {
+            border-top: 1px solid #ddd;
+        }
+        #visibility_form a.remove, #guides_form a.remove {
+            color: #fff;
+            margin-left: 2px;
+        }
+        #visibility_form a.remove:hover, #guides_form a.remove:hover {
+            color: #ac2925;
+            text-decoration: none;
+        }
+        #visibility_form .form-collection-element, #guides_form .form-collection-element {
+            border-radius: 0.25em;
+            padding: 2px 5px 5px;
+        }
+        .portfolio_toolbar {
+            margin-bottom: 10px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        .clear {
+            clear: both;
+        }
+        .help_text {
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li {
+            background-color: #f5f5f5;
+            transition: all 0.2s ease-in-out 0s;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li span.icon-bg {
+            background-color: #337ab7;
+            height: 3px;
+            left: 0;
+            position: absolute;
+            top: 0;
+            transition: height 0.2s ease-in-out 0s;
+            width: 100%;
+            z-index: 0;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li span.option-text {
+            position: relative;
+            z-index: 5;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li > a {
+            transition: all 0.2s ease-in-out 0s;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li > a:not(.btn) {
+            border-radius: 0;
+            border-top: 0 none;
+            margin-right: -1px !important;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li > a:focus:not(.btn), .portfolio-tabpanel ul.nav.nav-tabs > li > a:active:not(.btn) {
+            outline: medium none;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li:hover:not(.active) .icon-bg {
+            height: 100%;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li:hover:not(.active) a {
+            color: #ffffff;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li.active > a:hover, .portfolio-tabpanel ul.nav.nav-tabs > li.active > a:focus, .portfolio-tabpanel ul.nav.nav-tabs > li:not(.active) a:hover, .portfolio-tabpanel ul.nav.nav-tabs > li:not(.active) a:focus {
+            background-color: #f5f5f5;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li.active a {
+            background-color: #f5f5f5;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li.default-ressources-tab .icon-bg {
+            background-color: #337ab7;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li.widgets-tab .icon-bg {
+            background-color: #ffb61c;
+        }
+        .portfolio-tabpanel ul.nav.nav-tabs > li.list-tab .icon-bg {
+            background-color: #e94b3b;
+        }
+        /*.portfolio-tabpanel ul.nav.nav-tabs > li.exchange-space-tab .icon-bg {*/
+        /*background-color: #23ae89;*/
+        /*}*/
+        /*.portfolio-tabpanel ul.nav.nav-tabs > li.statistics-tab .icon-bg {*/
+        /*background-color: #800080;*/
+        /*}*/
+        .portfolio-tabpanel .tab-pane {
+            -moz-border-bottom-colors: none;
+            -moz-border-left-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-top-colors: none;
+            background-color: #f5f5f5;
+            border-color: -moz-use-text-color #ddd #ddd;
+            border-image: none;
+            border-style: none solid solid;
+            border-width: 0 1px 1px;
+            min-height: 150px;
+            padding: 10px;
+        }
     </style>
 
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid" style="margin: 12px">
+        <div class="row content">
             <div class="col-md-12">
-                <div class="section-content">
-                    <div class="panel panel-default">
-                        {#<div class="panel-heading">#}
-                            {#<h3 class="panel-title">Paramètres des notifications</h3>#}
-                        {#</div>#}
-                        <div class="panel-body">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a data-toggle="tab" href="#default">Suivi par défaut </a> </li>
-                                <li><a data-toggle="tab" href="#detail">Toutes les ressources suivies </a></li>
-                            </ul>
+                <div class="portfolio-tabpanel" role="tabpanel">
+                    <ul class="nav nav-tabs" role="tablist" id="portfolio_space_tabs">
+                        <li class="default-ressources-tab active">
+                            <a href="#default" aria-controls="default-ressources" role="tab" data-toggle="tab">
+                                <span class="icon-bg"></span>
+                                <span class="option-text">
+                                    <span class="visible-md-inline visible-lg-inline">Suivi par défaut</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="widgets-tab followed-ressources-tab">
+                            <a href="#detail" aria-controls="followed-ressources" role="tab" data-toggle="tab">
+                                <span class="icon-bg"></span>
+                                <span class="option-text">
+                                    <span class="visible-md-inline visible-lg-inline">Ressources que je suis</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
                             <form id="notification-user-parameters-form" action="/icap_notification/parameters" method="post">
                                 <div class="tab-content">
                                     <div id="default" class="tab-pane fade in active">
@@ -68,7 +238,7 @@
                                             <tr>
                                                 <th>Objet</th>
                                                 <th>Notifier</th>
-                                                <th>Envoyer un email</th>
+                                                <th>Envoyer un courriel</th>
                                                 <th><a class="text-primary" href="/icap_notification/rss/cb928f5774fb4e8ac37a1dba528ca9f3" target="_blank">Ajouter au flux RSS <i class="fa fa-rss"></i></a></th>
                                             </tr>
                                             </thead>
@@ -515,7 +685,7 @@
                                                     <tr>
                                                         <th>Objet</th>
                                                         <th>Notifier</th>
-                                                        <th>Envoyer un email</th>
+                                                        <th>Envoyer un courriel</th>
                                                         <th><a class="text-primary" href="/icap_notification/rss/cb928f5774fb4e8ac37a1dba528ca9f3" target="_blank">Ajouter au flux RSS <i class="fa fa-rss"></i></a></th>
                                                     </tr>
                                                     </thead>
