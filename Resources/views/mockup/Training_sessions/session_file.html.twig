@@ -45,7 +45,7 @@
         }
     </style>
 
-<div class="panel panel-default">
+<div class="container-fluid" style="margin-top: 10px">
     <table class="table">
         <tr>
             <td>
@@ -59,215 +59,192 @@
             </td>
         </tr>
     </table>
-    <div class="panel-body">
-        <div class="container-fluid" id="accordion">
-            <div class="panel-group">
-                <div class="panel panel-primary">
-                    <div class="panel-heading text-center">
-                        <h3 class="panel-title">
-                            <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse1" aria-expanded="false">Description de la session</a>
-                        </h3>
-                    </div>
-                    <div id="collapse1" class="panel-collapse collapse in">
-                        <div class="panel-body">
-                            Fuerit toto in consulatu sine provincia, cui fuerit, antequam designatus est, decreta provincia. Sortietur an non? Nam et non sortiri absurdum est, et, quod sortitus sis, non habere.
-                        Proficiscetur paludatus? Quo? Quo pervenire ante certam diem non licebit. ianuario, Februario, provinciam non habebit; Kalendis ei denique Martiis nascetur repente provincia
-                        </div>
-                    </div>
+    <div id="accordion" class="panel-group" aria-multiselectable="true" role="tablist">
+        <div class="panel panel-primary">
+            <div id="headingOne" class="panel-heading" role="tab">
+                <a class="collapsed" aria-controls="collapseOne" aria-expanded="false" href="#collapseOne" data-parent="#accordion" data-toggle="collapse" role="button">
+                    <h4 class="panel-title bg-primary">Description</h4>
+                </a>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse" aria-labelledby="headingOne" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                <div class="panel-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. </div>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div id="headingTwo" class="panel-heading" role="tab">
+                <a class="collapsed" aria-controls="collapseTwo" aria-expanded="false" href="#collapseTwo" data-parent="#accordion" data-toggle="collapse" role="button">
+                    <h4 class="panel-title bg-primary">Apprenants&nbsp;
+                    <i data-original-title="Inscrire des apprenants à la session" class="fa fa-user pointer-hand" id="register-learners-btn" data-toggle="tooltip" data-placement="top">
+                    </i>
+                    &nbsp;
+                    <i title="Inscrire des groupes à la session" class="fa fa-users pointer-hand" id="register-groups-btn" data-toggle="tooltip" data-placement="top">
+                    </i></h4>
+                </a>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" aria-labelledby="headingTwo" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <tr>
+                            <td>
+                                Tom
+                                Tom
+                                <small>(TomAdmin)</small>
+                                &nbsp;
+                        <span id="row-queued-user-management-1">
+                            <span class="label label-default">En attente</span>
+                            <span class="label label-success pointer-hand accept-registration-btn" data-queue-id="1"><i class="fa fa-check"></i></span>
+                            <span class="label label-danger pointer-hand decline-registration-btn" data-queue-id="1"><i class="fa fa-times"></i></span>
+                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Oli
+                                Oli
+                                <small>(PapyAdmin)</small>
+                                &nbsp;
+                        <span id="row-queued-user-management-1">
+                            <span class="label label-default">En attente</span>
+                            <span class="label label-success pointer-hand accept-registration-btn" data-queue-id="1"><i class="fa fa-check"></i></span>
+                            <span class="label label-danger pointer-hand decline-registration-btn" data-queue-id="1"><i class="fa fa-times"></i></span>
+                        </span>
+                            </td>
+                    </table>
                 </div>
             </div>
         </div>
-        <div class="container-fluid" id="accordion">
-            <div class="panel-group">
-                <div class="panel panel-primary">
-                    <div class="panel-heading text-center">
-                        <h3 class="panel-title">
-                            <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse2" aria-expanded="false">Apprenants&nbsp;</a>
-                            <i data-original-title="Inscrire des apprenants à la session" class="fa fa-user pointer-hand" id="register-learners-btn" data-toggle="tooltip" data-placement="top">
-                            </i>
-                            &nbsp;
-                            <i data-original-title="Inscrire des groupes à la session" class="fa fa-users pointer-hand" id="register-groups-btn" data-toggle="tooltip" data-placement="top">
-                            </i>
-                        </h3>
-                    </div>
-                    <div id="collapse2" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <table class="table table-hover">
-                                <tr>
-                                    <td>
-                                        Tom
-                                        Tom
-                                        <small>(TomAdmin)</small>
-                                        &nbsp;
-                                <span id="row-queued-user-management-1">
-                                    <span class="label label-default">En attente</span>
-                                    <span class="label label-success pointer-hand accept-registration-btn" data-queue-id="1"><i class="fa fa-check"></i></span>
-                                    <span class="label label-danger pointer-hand decline-registration-btn" data-queue-id="1"><i class="fa fa-times"></i></span>
-                                </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Oli
-                                        Oli
-                                        <small>(PapyAdmin)</small>
-                                        &nbsp;
-                                <span id="row-queued-user-management-1">
-                                    <span class="label label-default">En attente</span>
-                                    <span class="label label-success pointer-hand accept-registration-btn" data-queue-id="1"><i class="fa fa-check"></i></span>
-                                    <span class="label label-danger pointer-hand decline-registration-btn" data-queue-id="1"><i class="fa fa-times"></i></span>
-                                </span>
-                                    </td>
-                            </table>
-                        </div>
-                    </div>
+        <div class="panel panel-primary">
+            <div id="headingThree" class="panel-heading" role="tab">
+                <a class="collapsed" aria-controls="collapseThree" aria-expanded="false" href="#collapseThree" data-parent="#accordion" data-toggle="collapse" role="button">
+                    <h4 class="panel-title bg-primary">Tuteurs&nbsp;
+                    <i data-original-title="Inscrire des tuteurs à la session" class="fa fa-user pointer-hand" data-toggle="tooltip" data-placement="top"></i></h4>
+                </a>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" aria-labelledby="headingThree" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <tr>
+                            <td>Jane Doe&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>John Doe&nbsp;
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
-        <div class="container-fluid" id="accordion">
-            <div class="panel-group">
-                <div class="panel panel-primary">
-                    <div class="panel-heading text-center">
-                        <h3 class="panel-title">
-                        <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse3" aria-expanded="false">Tuteurs&nbsp;</a>
-                        <i data-original-title="Inscrire des tuteurs à la session" class="fa fa-user pointer-hand" data-toggle="tooltip" data-placement="top"></i>
-                        </h3>
-                    </div>
-                    <div id="collapse3" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <table class="table table-hover">
-                                <tr>
-                                    <td>Jane Doe&nbsp;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>John Doe&nbsp;
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
+        <div class="panel panel-primary">
+            <div id="headingFour" class="panel-heading" role="tab">
+                <a class="collapsed" aria-controls="collapseFour" aria-expanded="false" href="#collapseFour" data-parent="#accordion" data-toggle="collapse" role="button">
+                    <h4 class="panel-title bg-primary">Séances ouvertes&nbsp;
+                    <i data-original-title="Ajouter une séance" class="fa fa-calendar pointer-hand" data-toggle="modal" data-placement="top" data-target="#create-session-event"></i></h4>
+                </a>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse" aria-labelledby="headingFour" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <th style="color: white; background-color: #5bc0de">
+                            <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                                <input type="checkbox" ng-checked="cell.selected" ng-click="cell.onCheckboxChanged($event)">
+                            </label>
+                        </th>
+                        <th style="background-color: #5bc0de"><a style="color: #ffffff">Nom</a></th>
+                        <th style="background-color: #5bc0de"><a style="color: #ffffff">Date de début</a></th>
+                        <th style="background-color: #5bc0de"><a style="color: #ffffff">Date de fin</a></th>
+                        <th style="background-color: #5bc0de"><a style="color: #ffffff">Lieu</a></th>
+                        <th style="color: white; background-color: #5bc0de">Actions</th>
+                        <tr>
+                            <td>
+                                <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                                    <input type="checkbox" ng-checked="cell.selected" ng-click="cell.onCheckboxChanged($event)">
+                                </label>
+                            </td>                                    <td>Séance 1</td>
+                            <td>Lundi 4 juillet 2016 - 14h00</td>
+                            <td>Mardi 5 juillet 2016 - 16h00</td>
+                            <td>Local 25</td>
+                            <td>
+                                <button type="button" title="Modifier la séance" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit-session-event"><i class="fa fa-edit"></i></button>
+                                <button type="button" title="Répéter la séance" class="btn btn-default btn-sm" data-toggle="modal" data-target="#"><i class="fa fa-files-o"></i></button>
+                                <button type="button" title="Supprimer la séance" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-session-event"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                                    <input type="checkbox" ng-checked="cell.selected" ng-click="cell.onCheckboxChanged($event)">
+                                </label>
+                            </td>
+                            <td>TP</td>
+                            <td>Jeudi 1 septembre 2016 - 10h00</td>
+                            <td>Vendredi 2 septembre 2016 - 18h00</td>
+                            <td>Rue de la pierre, n° 28</br>
+                                1800 Labas</br>
+                                Local b.451</td>
+                            <td>
+                                <button type="button" title="Modifier la séance" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit-session-event"><i class="fa fa-edit"></i></button>
+                                <button type="button" title="Répéter la séance" class="btn btn-default btn-sm" data-toggle="modal" data-target="#"><i class="fa fa-files-o"></i></button>
+                                <button type="button" title="Supprimer la séance" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-session-event"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
-        <div class="container-fluid" id="accordion">
-            <div class="panel-group">
-                <div class="panel panel-primary">
-                    <div class="panel-heading text-center">
-                        <h3 class="panel-title">
-                            <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse4" aria-expanded="false">Séances ouvertes&nbsp;</a>
-                            <i data-original-title="Ajouter une séance" class="fa fa-calendar pointer-hand" data-toggle="modal" data-placement="top" data-target="#create-session-event"></i>
-                        </h3>
-                    </div>
-                    <div id="collapse4" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <table class="table table-hover">
-                                <th style="color: white; background-color: #5bc0de">
-                                    <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
-                                        <input type="checkbox" ng-checked="cell.selected" ng-click="cell.onCheckboxChanged($event)">
-                                    </label>
-                                </th>
-                                <th style="background-color: #5bc0de"><a style="color: #ffffff">Nom</a></th>
-                                <th style="background-color: #5bc0de"><a style="color: #ffffff">Date de début</a></th>
-                                <th style="background-color: #5bc0de"><a style="color: #ffffff">Date de fin</a></th>
-                                <th style="background-color: #5bc0de"><a style="color: #ffffff">Lieu</a></th>
-                                <th style="color: white; background-color: #5bc0de">Actions</th>
-                                <tr>
-                                    <td>
-                                        <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
-                                            <input type="checkbox" ng-checked="cell.selected" ng-click="cell.onCheckboxChanged($event)">
-                                        </label>
-                                    </td>                                    <td>Séance 1</td>
-                                    <td>Lundi 4 juillet 2016 - 14h00</td>
-                                    <td>Mardi 5 juillet 2016 - 16h00</td>
-                                    <td>Local 25</td>
-                                    <td>
-                                        <button type="button" title="Modifier la séance" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit-session-event"><i class="fa fa-edit"></i></button>
-                                        <button type="button" title="Répéter la séance" class="btn btn-default btn-sm" data-toggle="modal" data-target="#"><i class="fa fa-files-o"></i></button>
-                                        <button type="button" title="Supprimer la séance" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-session-event"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
-                                            <input type="checkbox" ng-checked="cell.selected" ng-click="cell.onCheckboxChanged($event)">
-                                        </label>
-                                    </td>
-                                    <td>TP</td>
-                                    <td>Jeudi 1 septembre 2016 - 10h00</td>
-                                    <td>Vendredi 2 septembre 2016 - 18h00</td>
-                                    <td>Rue de la pierre, n° 28</br>
-                                        1800 Labas</br>
-                                        Local b.451</td>
-                                    <td>
-                                        <button type="button" title="Modifier la séance" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit-session-event"><i class="fa fa-edit"></i></button>
-                                        <button type="button" title="Répéter la séance" class="btn btn-default btn-sm" data-toggle="modal" data-target="#"><i class="fa fa-files-o"></i></button>
-                                        <button type="button" title="Supprimer la séance" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-session-event"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+        <div class="panel panel-primary">
+            <div id="headingFive" class="panel-heading" role="tab">
+                <a class="collapsed" aria-controls="collapseFive" aria-expanded="false" href="#collapseFive" data-parent="#accordion" data-toggle="collapse" role="button">
+                    <h4 class="panel-title bg-primary">Séances terminées&nbsp;</h4>
+                </a>
             </div>
-        </div>
-        <div class="container-fluid" id="accordion">
-            <div class="panel-group">
-                <div class="panel panel-primary">
-                    <div class="panel-heading text-center">
-                        <h3 class="panel-title">
-                            <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse5" aria-expanded="false">Séances terminées&nbsp;</a>
-                        </h3>
-                    </div>
-                    <div id="collapse5" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <table class="table table-hover">
-                                <th style="color: white; background-color: #5bc0de">
-                                    <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
-                                        <input type="checkbox" ng-checked="cell.selected" ng-click="cell.onCheckboxChanged($event)">
-                                    </label>
-                                </th>
-                                <th style="background-color: #5bc0de"><a style="color: #ffffff">Nom</a></th>
-                                <th style="background-color: #5bc0de"><a style="color: #ffffff">Date de début</a></th>
-                                <th style="background-color: #5bc0de"><a style="color: #ffffff">Date de fin</a></th>
-                                <th style="background-color: #5bc0de"><a style="color: #ffffff">Lieu</a></th>
-                                <th style="color: white; background-color: #5bc0de">Actions</th>
-                                <tr>
-                                    <td>
-                                        <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
-                                            <input type="checkbox" ng-checked="cell.selected" ng-click="cell.onCheckboxChanged($event)">
-                                        </label>
-                                    </td>                                    <td>Séance 1</td>
-                                    <td>Lundi 5 juin 2016 - 14h00</td>
-                                    <td>Mardi 6 juin 2016 - 16h00</td>
-                                    <td>Local 25</td>
-                                    <td>
-                                        <button type="button" title="Modifier la séance" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit-session-event"><i class="fa fa-edit"></i></button>
-                                        <button type="button" title="Répéter la séance" class="btn btn-default btn-sm" data-toggle="modal" data-target="#"><i class="fa fa-files-o"></i></button>
-                                        <button type="button" title="Supprimer la séance" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-session-event"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
-                                            <input type="checkbox" ng-checked="cell.selected" ng-click="cell.onCheckboxChanged($event)">
-                                        </label>
-                                    </td>
-                                    <td>TP</td>
-                                    <td>Jeudi 16 juin 2016 - 10h00</td>
-                                    <td>Jeudi 16 juin 2016 - 10h50</td>
-                                    <td>Rue de la pierre, n° 28</br>
-                                        1800 Labas</br>
-                                        Local b.451</td>
-                                    <td>
-                                        <button type="button" title="Modifier la séance" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit-session-event"><i class="fa fa-edit"></i></button>
-                                        <button type="button" title="Répéter la séance" class="btn btn-default btn-sm" data-toggle="modal" data-target="#"><i class="fa fa-files-o"></i></button>
-                                        <button type="button" title="Supprimer la séance" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-session-event"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
+            <div id="collapseFive" class="panel-collapse collapse" aria-labelledby="headingFive" role="tabpanel" aria-expanded="false" style="height: 0px;">
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <th style="color: white; background-color: #5bc0de">
+                            <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                                <input type="checkbox" ng-checked="cell.selected" ng-click="cell.onCheckboxChanged($event)">
+                            </label>
+                        </th>
+                        <th style="background-color: #5bc0de"><a style="color: #ffffff">Nom</a></th>
+                        <th style="background-color: #5bc0de"><a style="color: #ffffff">Date de début</a></th>
+                        <th style="background-color: #5bc0de"><a style="color: #ffffff">Date de fin</a></th>
+                        <th style="background-color: #5bc0de"><a style="color: #ffffff">Lieu</a></th>
+                        <th style="color: white; background-color: #5bc0de">Actions</th>
+                        <tr>
+                            <td>
+                                <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                                    <input type="checkbox" ng-checked="cell.selected" ng-click="cell.onCheckboxChanged($event)">
+                                </label>
+                            </td>                                    <td>Séance 1</td>
+                            <td>Lundi 5 juin 2016 - 14h00</td>
+                            <td>Mardi 6 juin 2016 - 16h00</td>
+                            <td>Local 25</td>
+                            <td>
+                                <button type="button" title="Modifier la séance" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit-session-event"><i class="fa fa-edit"></i></button>
+                                <button type="button" title="Répéter la séance" class="btn btn-default btn-sm" data-toggle="modal" data-target="#"><i class="fa fa-files-o"></i></button>
+                                <button type="button" title="Supprimer la séance" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-session-event"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="dt-checkbox ng-scope" ng-if="cell.column.isCheckboxColumn">
+                                    <input type="checkbox" ng-checked="cell.selected" ng-click="cell.onCheckboxChanged($event)">
+                                </label>
+                            </td>
+                            <td>TP</td>
+                            <td>Jeudi 16 juin 2016 - 10h00</td>
+                            <td>Jeudi 16 juin 2016 - 10h50</td>
+                            <td>Rue de la pierre, n° 28</br>
+                                1800 Labas</br>
+                                Local b.451</td>
+                            <td>
+                                <button type="button" title="Modifier la séance" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit-session-event"><i class="fa fa-edit"></i></button>
+                                <button type="button" title="Répéter la séance" class="btn btn-default btn-sm" data-toggle="modal" data-target="#"><i class="fa fa-files-o"></i></button>
+                                <button type="button" title="Supprimer la séance" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-session-event"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
