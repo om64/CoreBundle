@@ -183,12 +183,6 @@
         .portfolio-tabpanel ul.nav.nav-tabs > li.list-tab .icon-bg {
             background-color: #e94b3b;
         }
-        /*.portfolio-tabpanel ul.nav.nav-tabs > li.exchange-space-tab .icon-bg {*/
-        /*background-color: #23ae89;*/
-        /*}*/
-        /*.portfolio-tabpanel ul.nav.nav-tabs > li.statistics-tab .icon-bg {*/
-        /*background-color: #800080;*/
-        /*}*/
         .portfolio-tabpanel .tab-pane {
             -moz-border-bottom-colors: none;
             -moz-border-left-colors: none;
@@ -227,27 +221,419 @@
                         </li>
                     </ul>
                 </div>
-                            <form id="notification-user-parameters-form" action="#" method="post">
-                                <div class="tab-content">
-                                    <div id="default" class="tab-pane fade">
-                                        <p></p>
+                    <form id="notification-user-parameters-form" action="#" method="post">
+                        <div class="tab-content">
+                            <div id="default" class="tab-pane fade">
+                                <p></p>
 
+                            <div class="table-responsive">
+                                <table id="notification-parameters-types-table" class="table table-striped table-bordered table-condensed">
+                                    <thead>
+                                    <tr>
+                                        <th>Objet</th>
+                                        <th>Notifier</th>
+                                        <th>Envoyer un courriel</th>
+                                        <th>Ajouter au flux RSS <i class="fa fa-rss"></i></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="types-table-body">
+                                    <tr>
+                                        <td>
+                                            Accès ressource
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="role-change_right[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="role-change_right[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="rss"
+                                                    name="role-change_right[]"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Nouvelle inscription
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="visible"
+                                                    name="role-subscribe[]"
+                                                    checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="mail"
+                                                    name="role-change_right[]"
+                                                    checked
+                                            />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="rss"
+                                                    name="role-subscribe[]"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Badges
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="visible"
+                                                    name="badge-award[]"
+                                                    checked                                     />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="mail"
+                                                    name="role-change_right[]"
+                                            />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="rss"
+                                                    name="badge-award[]"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Textes
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="visible"
+                                                    name="resource-text[]"
+                                                    checked                                     />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="mail"
+                                                    name="role-change_right[]"
+                                            />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="rss"
+                                                    name="resource-text[]"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Forum
+                                            <span class="rotate270 caret"></span>
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="visible"
+                                                    name="forum[]"
+                                                    checked                                     />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="mail"
+                                                    name="role-change_right[]"
+                                                    checked
+                                            />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="rss"
+                                                    name="forum[]"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Blog
+                                            <span class="rotate270 caret"></span>
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="visible"
+                                                    name="icap_blog[]"
+                                                    checked                                     />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="mail"
+                                                    name="role-change_right[]"
+                                            />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="rss"
+                                                    name="icap_blog[]"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Cours
+                                            <span class="rotate270 caret"></span>
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="visible"
+                                                    name="icap_lesson[]"
+                                                    checked                                     />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="mail"
+                                                    name="role-change_right[]"
+                                            />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="rss"
+                                                    name="icap_lesson[]"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Portfolio
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="visible"
+                                                    name="portfolio[]"
+                                                    checked                                     />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="mail"
+                                                    name="role-change_right[]"
+                                            />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="rss"
+                                                    name="portfolio[]"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Réseaux sociaux
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="visible"
+                                                    name="icap_socialmedia[]"
+                                                    checked                                     />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="mail"
+                                                    name="role-change_right[]"
+                                            />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="rss"
+                                                    name="icap_socialmedia[]"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Page Wiki
+                                            <span class="rotate270 caret"></span>
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="visible"
+                                                    name="icap_wiki[]"
+                                                    checked                                     />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="mail"
+                                                    name="role-change_right[]"
+                                            />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="rss"
+                                                    name="icap_wiki[]"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Evaluation
+                                            <span class="rotate270 caret"></span>
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="visible"
+                                                    name="icap_dropzone[]"
+                                                    checked                                     />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="mail"
+                                                    name="role-change_right[]"
+                                            />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="rss"
+                                                    name="icap_dropzone[]"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Collecticiel
+                                            <span class="rotate270 caret"></span>
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="visible"
+                                                    name="icap_dropzone[]"
+                                                    checked                                     />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="mail"
+                                                    name="role-change_right[]"
+                                            />
+                                        </td>
+                                        <td class="text-center">
+                                            <input
+                                                    type="checkbox"
+                                                    class="chk-type-visible"
+                                                    value="rss"
+                                                    name="icap_dropzone[]"
+                                            />
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                                <a class="btn btn-success pull-right" href="#">
+                                    Régénérer l&#039;URL du flux RSS
+                                </a>
+                                <button type="submit" id="edit-tools-btn" href="/desktop/tool/properties/tools/parameters/menu" class="btn btn-primary pull-right">
+                                    Modifier
+                                </button>
+                                <a class="btn btn-default pull-right" href="#">
+                                    Annuler
+                                </a>
+                            </div>
+                            <div id="detail" class="tab-pane fade">
+                                <p></p>
+                                <form id="notification-user-parameters-form" action="#" method="post">
                                     <div class="table-responsive">
-                                        <table id="notification-parameters-types-table" class="table table-striped table-bordered table-condensed">
-                                            <thead>
+                                        <table class="table">
+                                            <tbody>
                                             <tr>
-                                                <th>Objet</th>
-                                                <th>Notifier</th>
-                                                <th>Envoyer un courriel</th>
-                                                <th><a class="text-primary" href="#" target="_blank">Ajouter au flux RSS <i class="fa fa-rss"></i></a></th>
+                                                <th style="background-color: #337ab7">
+                                                    <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
+                                                </th>
+                                                <th style="background-color: #337ab7">
+                                                    <a href="#" style="color: #fff"> Objet </a>
+                                                </th>
+                                                <th class="text-center" style="color: white; background-color: #337ab7">
+                                                    Notifier
+                                                </th>
+                                                <th class="text-center" style="color: white; background-color: #337ab7">
+                                                    Envoyer un courriel
+                                                </th>
+                                                <th class="text-center" style="color: white; background-color: #337ab7">
+                                                    Ajouter au flux RSS
+                                                </th>
+                                                <th class="text-center" style="color: white; background-color: #337ab7">
+                                                    Ne plus suivre
+                                                </th>
                                             </tr>
-                                            </thead>
-                                            <tbody class="types-table-body">
                                             <tr>
                                                 <td>
-                                                    Accès ressource
+                                                    <input
+                                                            type="checkbox"
+                                                            class="chk-type-visible"
+                                                            value="visible"
+                                                            name="role-change_right[]"
+                                                    />
                                                 </td>
                                                 <td>
+                                                    <a href="#">Math / FAQ (Forum)</a>
+                                                </td>
+                                                <td class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -255,7 +641,7 @@
                                                             name="role-change_right[]"
                                                             checked                                     />
                                                 </td>
-                                                <td>
+                                                <td class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -263,7 +649,7 @@
                                                             name="role-change_right[]"
                                                     />
                                                 </td>
-                                                <td>
+                                                <td class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -271,12 +657,28 @@
                                                             name="role-change_right[]"
                                                     />
                                                 </td>
+                                                <td class="text-center">
+                                                    <input
+                                                            type="checkbox"
+                                                            class="chk-type-visible"
+                                                            value="visible"
+                                                            name="role-change_right[]"
+                                                    />
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    Nouvelle inscription
+                                                    <input
+                                                            type="checkbox"
+                                                            class="chk-type-visible"
+                                                            value="visible"
+                                                            name="role-change_right[]"
+                                                    />
                                                 </td>
                                                 <td>
+                                                    <a href="#">Géo / Semaine 1 / Synthèse (Collecticiel)</a>
+                                                </td>
+                                                <td class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -284,7 +686,7 @@
                                                             name="role-subscribe[]"
                                                             checked                                     />
                                                 </td>
-                                                <td>
+                                                <td class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -293,7 +695,7 @@
                                                             checked
                                                     />
                                                 </td>
-                                                <td>
+                                                <td class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -301,12 +703,28 @@
                                                             name="role-subscribe[]"
                                                     />
                                                 </td>
+                                                <td class="text-center">
+                                                    <input
+                                                            type="checkbox"
+                                                            class="chk-type-visible"
+                                                            value="visible"
+                                                            name="role-change_right[]"
+                                                    />
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    Badges
+                                                    <input
+                                                            type="checkbox"
+                                                            class="chk-type-visible"
+                                                            value="visible"
+                                                            name="role-change_right[]"
+                                                    />
                                                 </td>
                                                 <td>
+                                                    <a href="#">Français / Vos questions (Exercice) / Questions générales (Sujet)</a>
+                                                </td>
+                                                <td class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -314,7 +732,7 @@
                                                             name="badge-award[]"
                                                             checked                                     />
                                                 </td>
-                                                <td>
+                                                <td class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -322,428 +740,44 @@
                                                             name="role-change_right[]"
                                                     />
                                                 </td>
-                                                <td>
+                                                <td class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
                                                             value="rss"
                                                             name="badge-award[]"
-                                                    />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Textes
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="visible"
-                                                            name="resource-text[]"
-                                                            checked                                     />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="mail"
-                                                            name="role-change_right[]"
-                                                    />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="rss"
-                                                            name="resource-text[]"
-                                                    />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Forum
-                                                    <span class="rotate270 caret"></span>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="visible"
-                                                            name="forum[]"
-                                                            checked                                     />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="mail"
-                                                            name="role-change_right[]"
                                                             checked
                                                     />
                                                 </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="rss"
-                                                            name="forum[]"
-                                                    />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Blog
-                                                    <span class="rotate270 caret"></span>
-                                                </td>
-                                                <td>
+                                                <td class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
                                                             value="visible"
-                                                            name="icap_blog[]"
-                                                            checked                                     />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="mail"
                                                             name="role-change_right[]"
-                                                    />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="rss"
-                                                            name="icap_blog[]"
-                                                    />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Cours
-                                                    <span class="rotate270 caret"></span>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="visible"
-                                                            name="icap_lesson[]"
-                                                            checked                                     />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="mail"
-                                                            name="role-change_right[]"
-                                                    />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="rss"
-                                                            name="icap_lesson[]"
-                                                    />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Portfolio
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="visible"
-                                                            name="portfolio[]"
-                                                            checked                                     />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="mail"
-                                                            name="role-change_right[]"
-                                                    />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="rss"
-                                                            name="portfolio[]"
-                                                    />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Réseaux sociaux
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="visible"
-                                                            name="icap_socialmedia[]"
-                                                            checked                                     />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="mail"
-                                                            name="role-change_right[]"
-                                                    />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="rss"
-                                                            name="icap_socialmedia[]"
-                                                    />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Page Wiki
-                                                    <span class="rotate270 caret"></span>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="visible"
-                                                            name="icap_wiki[]"
-                                                            checked                                     />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="mail"
-                                                            name="role-change_right[]"
-                                                    />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="rss"
-                                                            name="icap_wiki[]"
-                                                    />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Evaluation
-                                                    <span class="rotate270 caret"></span>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="visible"
-                                                            name="icap_dropzone[]"
-                                                            checked                                     />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="mail"
-                                                            name="role-change_right[]"
-                                                    />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="rss"
-                                                            name="icap_dropzone[]"
-                                                    />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Collecticiel
-                                                    <span class="rotate270 caret"></span>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="visible"
-                                                            name="icap_dropzone[]"
-                                                            checked                                     />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="mail"
-                                                            name="role-change_right[]"
-                                                    />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                            type="checkbox"
-                                                            class="chk-type-visible"
-                                                            value="rss"
-                                                            name="icap_dropzone[]"
                                                     />
                                                 </td>
                                             </tr>
                                             </tbody>
                                         </table>
                                     </div>
-                                    <button type="submit" id="edit-tools-btn" href="#" class="btn btn-primary">
-                                        Modifier
-                                    </button>
-                                    <a class="btn btn-success" href="#">
+                                    <a class="btn btn-success pull-right" href="#">
                                         Régénérer l&#039;URL du flux RSS
                                     </a>
-                                    <a class="btn btn-default" href="#">
+                                    <button type="submit" id="edit-tools-btn" href="/desktop/tool/properties/tools/parameters/menu" class="btn btn-primary pull-right">
+                                        Modifier
+                                    </button>
+                                    <a class="btn btn-default pull-right" href="#">
                                         Annuler
                                     </a>
-                                    </div>
-                                    <div id="detail" class="tab-pane fade in active">
-                                        <p></p>
-                                        <form id="notification-user-parameters-form" action="#" method="post">
-                                            <div class="table-responsive">
-                                                <table id="notification-parameters-types-table" class="table table-striped table-bordered table-condensed">
-                                                    <thead>
-                                                    <tr>
-                                                        <th>Objet</th>
-                                                        <th>Notifier</th>
-                                                        <th>Envoyer un courriel</th>
-                                                        <th><a class="text-primary" href="#" target="_blank">Ajouter au flux RSS <i class="fa fa-rss"></i></a></th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody class="types-table-body">
-                                                    <tr>
-                                                        <td>
-                                                            Math / FAQ (Forum)
-                                                        </td>
-                                                        <td>
-                                                            <input
-                                                                    type="checkbox"
-                                                                    class="chk-type-visible"
-                                                                    value="visible"
-                                                                    name="role-change_right[]"
-                                                                    checked                                     />
-                                                        </td>
-                                                        <td>
-                                                            <input
-                                                                    type="checkbox"
-                                                                    class="chk-type-visible"
-                                                                    value="mail"
-                                                                    name="role-change_right[]"
-                                                            />
-                                                        </td>
-                                                        <td>
-                                                            <input
-                                                                    type="checkbox"
-                                                                    class="chk-type-visible"
-                                                                    value="rss"
-                                                                    name="role-change_right[]"
-                                                            />
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            Géo / Semaine 1 / Synthèse (Collecticiel)
-                                                        </td>
-                                                        <td>
-                                                            <input
-                                                                    type="checkbox"
-                                                                    class="chk-type-visible"
-                                                                    value="visible"
-                                                                    name="role-subscribe[]"
-                                                                    checked                                     />
-                                                        </td>
-                                                        <td>
-                                                            <input
-                                                                    type="checkbox"
-                                                                    class="chk-type-visible"
-                                                                    value="mail"
-                                                                    name="role-change_right[]"
-                                                                    checked
-                                                            />
-                                                        </td>
-                                                        <td>
-                                                            <input
-                                                                    type="checkbox"
-                                                                    class="chk-type-visible"
-                                                                    value="rss"
-                                                                    name="role-subscribe[]"
-                                                            />
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            Français / Vos questions (Exercice) / Questions générales (Sujet)
-                                                        </td>
-                                                        <td>
-                                                            <input
-                                                                    type="checkbox"
-                                                                    class="chk-type-visible"
-                                                                    value="visible"
-                                                                    name="badge-award[]"
-                                                                    checked                                     />
-                                                        </td>
-                                                        <td>
-                                                            <input
-                                                                    type="checkbox"
-                                                                    class="chk-type-visible"
-                                                                    value="mail"
-                                                                    name="role-change_right[]"
-                                                            />
-                                                        </td>
-                                                        <td>
-                                                            <input
-                                                                    type="checkbox"
-                                                                    class="chk-type-visible"
-                                                                    value="rss"
-                                                                    name="badge-award[]"
-                                                                    checked
-                                                            />
-                                                        </td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <button type="submit" id="edit-tools-btn" href="#" class="btn btn-primary">
-                                                Modifier
-                                            </button>
-                                            <a class="btn btn-success" href="#">
-                                                Régénérer l&#039;URL du flux RSS
-                                            </a>
-                                            <a class="btn btn-default" href="#">
-                                                Annuler
-                                            </a>
-                                            </form>
-                                        </div>
-
-                                    <div>
-
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div id="push"></div>
-</div>
 <div id="footer">
     <div class="container-fluid">
         <div class="row">
@@ -756,18 +790,6 @@
         </div>
     </div>
 </div>
-
-    {#<div id="push"></div>#}
-    <div id="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <p>
-                    <span class="pull-right locale-select label label-default">FR</span>
-                    <span>Développé par <a href="http://www.claroline.net" target="_blank">Claroline</a> Release 16.05</span>
-                </p>
-            </div>
-        </div>
-    </div>
 
 {% endblock %}
 {% block stylesheets %}

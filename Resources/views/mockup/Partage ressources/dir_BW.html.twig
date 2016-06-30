@@ -1,0 +1,629 @@
+{% extends 'ClarolineCoreBundle::mockup/Partage ressources/resources-tool.html.twig' %}
+
+{% block panelTitle %}Ressources{% endblock %}
+
+{% block panelRest %}
+
+<style type="text/css" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+    /* For possible modals on this page */
+
+    .modal-header, h4, .close {
+        background-color: #27C24C;
+        color:white !important;
+        text-align: center;
+        font-size: 18px;
+    }
+    .modal-footer {
+        background-color: #f9f9f9;
+    }
+
+    /* To give full width to tables */
+
+    table.table.table-hover {
+        width:100%;
+    }
+
+    /* To change the backgroud color of the top bar */
+
+    .navbar-inverse {
+        background-color: #27C24C;
+        border-color: #27C24C;
+    }
+    .navbar.navbar-inverse.navbar-fixed-top {
+        border-bottom: 2px solid #27C24C;
+    }
+
+    /* To have a portfolio-like look */
+
+    #top_bar li:not(:last-child) > a, .top-bar li:not(:last-child) > a {
+        color: white;
+        border-right: 1px solid #5cb85c !important;
+    }
+    .panel-default > .panel-heading {
+        color: #fff;
+        background-color: #27C24C;
+        border: none;
+    }
+    table.table_portfolios .statusCol {
+        width: 250px;
+    }
+    table.table_portfolios .actionsCol {
+        width: 200px;
+    }
+    table.table_portfolios .portfolio .block {
+        display: block;
+    }
+    table.table_portfolios .portfolio td {
+        padding: 10px 15px;
+        vertical-align: middle;
+    }
+    table.table_portfolios .portfolio td .dropdown-menu a.delete {
+        color: #d9534f;
+    }
+    table.table_portfolios .portfolio td .dropdown-menu a.delete:hover {
+        background-color: #d2322d;
+        color: #fff;
+    }
+    table.table_portfolios .portfolio td .visibility .badge {
+        display: block;
+        float: left;
+        height: 15px;
+        margin-right: 5px;
+        width: 15px;
+    }
+    table.table_portfolios .portfolio td .visibility .badge.visibile_to_me {
+        background-color: #d9534f;
+    }
+    table.table_portfolios .portfolio td .visibility .badge.visible_for_some_users {
+        background-color: #ed9c28;
+    }
+    table.table_portfolios .portfolio td .visibility .badge.visible_for_platform_user {
+        background-color: #428bca;
+    }
+    table.table_portfolios .portfolio td .visibility .badge.visible_for_everybody {
+        background-color: #5cb85c;
+    }
+    table.table_portfolios .portfolio td .exchange_link.highlight {
+        border-color: #eea236;
+        color: #eea236;
+    }
+    table.table_portfolios .portfolio td .exchange_link .badge {
+        background-color: #f0ad4e;
+        top: 0;
+    }
+    div.pagination ul {
+        margin: 0;
+    }
+    .guided_portfolios_panel_group {
+        margin-bottom: 20px;
+    }
+    .guided_portfolios_panel_group .guided_portfolios_panel .panel-body {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    .guided_portfolios_panel_group .guided_portfolios_panel table.table_portfolios {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    .guided_portfolios_panel_group .guided_portfolios_panel table.table_portfolios tbody td {
+        border-top: 0 none;
+    }
+    .guided_portfolios_panel_group .guided_portfolios_panel table.table_portfolios tbody tr + tr td {
+        border-top: 1px solid #ddd;
+    }
+    #visibility_form a.remove, #guides_form a.remove {
+        color: #fff;
+        margin-left: 2px;
+    }
+    #visibility_form a.remove:hover, #guides_form a.remove:hover {
+        color: #ac2925;
+        text-decoration: none;
+    }
+    #visibility_form .form-collection-element, #guides_form .form-collection-element {
+        border-radius: 0.25em;
+        padding: 2px 5px 5px;
+    }
+    .portfolio_toolbar {
+        margin-bottom: 10px;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    .clear {
+        clear: both;
+    }
+    .help_text {
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    .portfolio-tabpanel ul.nav.nav-tabs > li {
+        background-color: #f5f5f5;
+        transition: all 0.2s ease-in-out 0s;
+    }
+    .portfolio-tabpanel ul.nav.nav-tabs > li span.icon-bg {
+        background-color: #337ab7;
+        height: 3px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transition: height 0.2s ease-in-out 0s;
+        width: 100%;
+        z-index: 0;
+    }
+    .portfolio-tabpanel ul.nav.nav-tabs > li span.option-text {
+        position: relative;
+        z-index: 5;
+    }
+    .portfolio-tabpanel ul.nav.nav-tabs > li > a {
+        transition: all 0.2s ease-in-out 0s;
+    }
+    .portfolio-tabpanel ul.nav.nav-tabs > li > a:not(.btn) {
+        border-radius: 0;
+        border-top: 0 none;
+        margin-right: -1px !important;
+    }
+    .portfolio-tabpanel ul.nav.nav-tabs > li > a:focus:not(.btn), .portfolio-tabpanel ul.nav.nav-tabs > li > a:active:not(.btn) {
+        outline: medium none;
+    }
+    .portfolio-tabpanel ul.nav.nav-tabs > li:hover:not(.active) .icon-bg {
+        height: 100%;
+    }
+    .portfolio-tabpanel ul.nav.nav-tabs > li:hover:not(.active) a {
+        color: #ffffff;
+    }
+    .portfolio-tabpanel ul.nav.nav-tabs > li.active > a:hover, .portfolio-tabpanel ul.nav.nav-tabs > li.active > a:focus, .portfolio-tabpanel ul.nav.nav-tabs > li:not(.active) a:hover, .portfolio-tabpanel ul.nav.nav-tabs > li:not(.active) a:focus {
+        background-color: #f5f5f5;
+    }
+    .portfolio-tabpanel ul.nav.nav-tabs > li.active a {
+        background-color: #f5f5f5;
+    }
+    .portfolio-tabpanel ul.nav.nav-tabs > li.default-ressources-tab .icon-bg {
+        background-color: #337ab7;
+    }
+    .portfolio-tabpanel ul.nav.nav-tabs > li.widgets-tab .icon-bg {
+        background-color: #ffb61c;
+    }
+    .portfolio-tabpanel ul.nav.nav-tabs > li.list-tab .icon-bg {
+        background-color: #e94b3b;
+    }
+    .portfolio-tabpanel .tab-pane {
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-top-colors: none;
+        background-color: #f5f5f5;
+        border-color: -moz-use-text-color #ddd #ddd;
+        border-image: none;
+        border-style: none solid solid;
+        border-width: 0 1px 1px;
+        min-height: 150px;
+        padding: 10px;
+    }
+</style>
+
+    <div class="row content">
+        <div class="col-md-12">
+            <div class="section-content">
+                <div class="panel panel-default">
+                    <div id="data-attributes" data-max-post-size="512M"></div>
+                        <div class="main resource-manager tabpanel">
+                            <div class="tab-content">
+                                <div id="resources-tab-pane" class="tab-pane active" role="tabpanel">
+                                    <div class="navbar navbar-default navbar-static-top">
+                                        <ul class="nav navbar-nav" role="toolbar">
+                                            <li class="dropdown">
+                                            <a class="dropdown-toggle disabled" data-toggle="dropdown">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                            Ajouter
+                                            <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu create" role="menu"> </ul>
+                                                </li>
+                                                <li>
+                                                <a class="cut disabled" title="cut" data-placement="bottom" data-toggle="tooltip">
+                                                <i class="fa fa-scissors"></i>
+                                                </a>
+                                                </li>
+                                                <li>
+                                                    <a class="copy disabled" title="copy" data-placement="bottom" data-toggle="tooltip">
+                                                        <i class="fa fa-files-o"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="paste disabled" title="paste" data-placement="bottom" data-toggle="tooltip">
+                                                        <i class="fa fa-clipboard"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled">
+                                                        <i class="fa fa-folder-open"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="delete disabled" title="delete" data-placement="bottom" data-toggle="tooltip">
+                                                        <i class="fa fa-trash-o"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="download disabled" title="" data-placement="bottom" data-toggle="tooltip" data-original-title="Télécharger">
+                                                        <i class="fa fa-download"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled" title="" data-placement="bottom" data-toggle="tooltip" data-original-title="Importer">
+                                                        <i class="fa fa-sign-in"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="export disabled" title="" data-placement="bottom" data-toggle="tooltip" data-original-title="Exporter">
+                                                        <i class="fa fa-sign-out"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown">
+                                                    <a class="dropdown-toggle zoom" data-toggle="dropdown">
+                                                        <i class="fa fa-search-plus"></i>
+                                                        <span class="caret"></span>
+                                                    </a>
+                                                    <ul class="dropdown-menu zoom" role="menu">
+                                                        <li role="presentation">
+                                                            <a id="zoom50" role="menuitem">50%</a>
+                                                        </li>
+                                                        <li role="presentation">
+                                                            <a id="zoom75" role="menuitem">75%</a>
+                                                        </li>
+                                                        <li class="active" role="presentation">
+                                                            <a id="zoom100" role="menuitem">100%</a>
+                                                        </li>
+                                                        <li role="presentation">
+                                                        <li role="presentation">
+                                                        <li role="presentation">
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a>
+                                                        <input id="list-view-chk" class="list-view" type="checkbox" data-view="main">
+                                                        <label class="pointer-hand" style="font-weight: normal !important" for="list-view-chk"> Vue en liste </label>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a>
+                                                        <input id="select-all-nodes-chk" class="select-all-nodes" type="checkbox" data-view="main">
+                                                        <label class="pointer-hand" style="font-weight: normal !important" for="select-all-nodes-chk"> Tout sélectionner </label>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <form class="navbar-form pull-right" role="search">
+                                                <div class="input-group" style="width: 250px;">
+                                                    <input class="name form-control" type="text" value="" placeholder="Rechercher">
+                                                        <span class="input-group-btn">
+                                                            <button class="filter btn btn-default" type="button">
+                                                                <i class="fa fa-search"></i>
+                                                            </button>
+                                                            <button class="config-search-panel btn btn-default" type="button">
+                                                                <i class="fa fa-cog"></i>
+                                                            </button>
+                                                        </span>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <ul id="sortable" class="nodes ui-sortable ui-sortable-disabled">
+                                            <li id="17999" class="node-thumbnail node ui-state-default zoom100">
+                                                <div class="checkbox checkbox-left">
+                                                    <input class="node-chk-main" type="checkbox" data-mask="32767" data-allow-select="true" data-path="Information directions BW / Les classes inversées" data-mime-type="custom/activity" data-type="activity" data-node-name="Les classes inversées" value="17999">
+                                                </div>
+                                                <div id="node-element-17999" class="clickable-node node-element" data-mime-type="custom/activity" data-type="activity" data-id="17999" style="background-image: url('/bundles/clarolinecore/images/resources/icons/res_activity.png');"> </div>
+                                                <div class="dropdown" title="Les classes inversées" rel="tooltip">
+                                                    <a class="dropdown-toggle name dropdown-thumbnail" href="#" data-toggle="dropdown" role="button">
+                                                        <div class="node-name">
+                                                            <b>
+                                                                Les classes inversé
+                                                                <br>
+                                                                es
+                                                            </b>
+                                                            <i class="fa fa-caret-down"></i>
+                                                        </div>
+                                                    </a>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li role="presentation">
+                                                            <a class="node-menu-action" tabindex="-1" data-id="17999" data-is-custom="no" data-node-name="Les classes inversées" data-action="delete" href="#" role="menuitem"> Supprimer </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Editer les droits </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Voir le suivi de l'objet </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Renommer </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Editer les propriétés </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> J'aime </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Partager </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="pointer-hand"> Partager sur BW 3.0 </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Laisser un commentaire </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Laisser un pense-bête </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Favoris </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Taguer </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li id="13906" class="node-thumbnail node ui-state-default zoom100 ui-sortable-handle">
+                                                <div class="checkbox checkbox-left">
+                                                    <input class="node-chk-main" type="checkbox" data-mask="" data-allow-select="true" data-path="Claroline Connect, une solution pour votre école ?" data-mime-type="custom/directory" data-type="directory" data-node-name="Claroline Connect, une solution pour votre école ?" value="13906">
+                                                </div>
+                                                <div id="node-element-13906" class="clickable-node node-element" data-mime-type="custom/directory" data-type="directory" data-id="13906" style="background-image: url('/bundles/clarolinecore/images/resources/icons/res_folder.png');"> </div>
+                                                <div class="dropdown" title="Claroline Connect, une solution pour votre école ?" rel="tooltip"><a class="dropdown-toggle name dropdown-thumbnail" href="#" data-toggle="dropdown" role="button">
+                                                    <div class="node-name">
+                                                        Claroline Connect,
+                                                        <br>
+                                                        une solution pour...
+                                                        <i class="fa fa-caret-down"></i>
+                                                    </div>
+                                                    </a>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li class="disabled">
+                                                            <a> Télécharger </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Supprimer </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Editer les droits </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Voir le suivi de l'objet </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Renommer </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Editer les propriétés </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> J'aime </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Partager </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="pointer-hand"> Partager sur BW 3.0 </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Laisser un commentaire </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Laisser un pense-bête </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Favoris </a>
+                                                        </li>
+                                                        <li class="disabled">
+                                                            <a> Taguer </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                                <li id="13318" class="node-thumbnail node ui-state-default zoom100 ui-sortable-handle">
+                                                    <div class="checkbox checkbox-left">
+                                                        <input class="node-chk-main" type="checkbox" data-mask="" data-allow-select="true" data-path="Espace personnelOlivierMeinguet" data-mime-type="custom/directory" data-type="directory" data-node-name="Espace personnelOlivierMeinguet" value="13318">
+                                                    </div>
+                                                    <div id="node-element-13318" class="clickable-node node-element" data-mime-type="custom/directory" data-type="directory" data-id="13318" style="background-image: url('/bundles/clarolinecore/images/resources/icons/res_folder.png');"> </div>
+                                                    <div class="dropdown" title="Espace personnelOlivierMeinguet" rel="tooltip">
+                                                        <a class="dropdown-toggle name dropdown-thumbnail" href="#" data-toggle="dropdown" role="button">
+                                                            <div class="node-name">
+                                                                Espace
+                                                                <br>
+                                                                personnelOlivierMein
+                                                                <i class="fa fa-caret-down"></i>
+                                                            </div>
+                                                        </a>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li class="disabled">
+                                                                <a> Télécharger </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Supprimer </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Editer les droits </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Voir le suivi de l'objet </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Renommer </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Editer les propriétés </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> J'aime </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Partager </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pointer-hand"> Partager sur BW 3.0 </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Laisser un commentaire </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Laisser un pense-bête </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Favoris </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Taguer </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li id="17975" class="node-thumbnail node ui-state-default zoom100 ui-sortable-handle">
+                                                    <div class="checkbox checkbox-left">
+                                                        <input class="node-chk-main" type="checkbox" data-mask="" data-allow-select="true" data-path="Information directions BW" data-mime-type="custom/directory" data-type="directory" data-node-name="Information directions BW" value="17975">
+                                                    </div>
+                                                    <div id="node-element-17975" class="clickable-node node-element" data-mime-type="custom/directory" data-type="directory" data-id="17975" style="background-image: url('/bundles/clarolinecore/images/resources/icons/res_folder.png');"> </div>
+                                                    <div class="dropdown" title="Information directions BW" rel="tooltip">
+                                                        <a class="dropdown-toggle name dropdown-thumbnail" href="#" data-toggle="dropdown" role="button">
+                                                            <div class="node-name">
+                                                                Information
+                                                                <br>
+                                                                directions BW
+                                                                <i class="fa fa-caret-down"></i>
+                                                            </div>
+                                                        </a>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li class="disabled">
+                                                                <a> Télécharger </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Supprimer </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Editer les droits </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Voir le suivi de l'objet </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Renommer </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Editer les propriétés </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> J'aime </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Partager </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pointer-hand"> Partager sur BW 3.0 </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Laisser un commentaire </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Laisser un pense-bête </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Favoris </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Taguer </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li id="13229" class="node-thumbnail node ui-state-default zoom100 ui-sortable-handle">
+                                                    <div class="checkbox checkbox-left">
+                                                        <input class="node-chk-main" type="checkbox" data-mask="" data-allow-select="true" data-path="Changement avec le numérique" data-mime-type="custom/directory" data-type="directory" data-node-name="Changement avec le numérique" value="13229">
+                                                    </div>
+                                                    <div id="node-element-13229" class="clickable-node node-element" data-mime-type="custom/directory" data-type="directory" data-id="13229" style="background-image: url('/bundles/clarolinecore/images/resources/icons/res_folder.png');"> </div>
+                                                    <div class="dropdown" title="Changement avec le numérique" rel="tooltip">
+                                                        <a class="dropdown-toggle name dropdown-thumbnail" href="#" data-toggle="dropdown" role="button">
+                                                            <div class="node-name">
+                                                                Changement avec le
+                                                                <br>
+                                                                numérique
+                                                                <i class="fa fa-caret-down"></i>
+                                                            </div>
+                                                        </a>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li class="disabled">
+                                                                <a> Télécharger </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Supprimer </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Editer les droits </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Voir le suivi de l'objet </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Renommer </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Editer les propriétés </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> J'aime </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Partager </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="pointer-hand"> Partager sur BW 3.0 </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Laisser un commentaire </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Laisser un pense-bête </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Favoris </a>
+                                                            </li>
+                                                            <li class="disabled">
+                                                                <a> Taguer </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div id="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <p>
+
+                <span class="pull-right locale-select label label-default">FR</span>
+
+                                <span>
+                    Développé par <a href="http://www.claroline.net">Claroline</a> (dev-master)
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+</script>
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+</script>
+
+{% endblock %}
