@@ -4,17 +4,43 @@
 
 {% block panelRest %}
 
-    <style type="text/css" xmlns="http://www.w3.org/1999/html">
+    <style type="text/css" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+        /* For possible modals on this page */
 
         .modal-header, h4, .close {
             background-color: #5cb85c;
             color:white !important;
-            text-align: left;
+            text-align: center;
             font-size: 20px;
-            padding: 15px;
         }
         .modal-footer {
             background-color: #f9f9f9;
+        }
+
+        /* To give full width to tables */
+
+        table.table.table-hover {
+            width:100%;
+        }
+
+        /* To change the backgroud color of the top bar */
+
+        .navbar-inverse {
+            background-color: #5cb85c;
+            border-color: #5cb85c;
+        }
+        .navbar.navbar-inverse.navbar-fixed-top {
+            border-bottom: 2px solid #5cb85c;
+        }
+        #top_bar li:not(:last-child) > a, .top-bar li:not(:last-child) > a {
+            color: white;
+            border-right: 1px solid #5cb85c !important;
+        }
+        .panel-default > .panel-heading {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #ddd;
         }
     </style>
 
@@ -50,7 +76,7 @@
                                 <td style="background-color: lightgrey; font-weight: bold">Durée de connexion <a href="dashboard-view-9e.html"><button type="button" class="btn btn-default; pull-right"><i class="fa fa-bar-chart fa"></i></button></a></td>
                                 <td style="background-color: lightgrey; font-weight: bold">Nombre de consultations <a href="dashboard-view-9g.html"><button type="button" class="btn btn-default; pull-right">
                                             <i class="fa fa-bar-chart"></i></button></a></td>
-                                <td style="background-color: lightgrey; font-weight: bold">Nombre de messages <a href="dashboard-view-9i.html"><button type="button" class="btn btn-default; pull-right">
+                                <td style="background-color: lightgrey; font-weight: bold">Nombre de messages <a href="dashboard-view-9h.html"><button type="button" class="btn btn-default; pull-right">
                                             <i class="fa fa-bar-chart"></i></button></a></td>
                                 <td style="background-color: lightgrey; font-weight: bold">Actions</td>
                             </tr>
@@ -61,7 +87,7 @@
                                 <td>1h 08'</td>
                                 <td>30</td>
                                 <td>10</td>
-                                <td><button type="button" class="btn btn-default" title="Voir détails"><i class="fa fa-info"></i></button>
+                                <td class="text-center"><button type="button" class="btn btn-default" title="Voir détails"><i class="fa fa-info"></i></button>
                                     <button type="button" class="btn btn-default" title="Ajouter une tâche"><i class="fa fa-tasks"></i></button>
                                     <button type="button" class="btn btn-default" title="Envoyer un courriel"><i class="fa fa-envelope-o"></i></button>
                                     <button type="button" class="btn btn-default" title="Chatter"><i class="fa fa-comment"></i></button>
@@ -76,7 +102,7 @@
                                 <td>1h 25'</td>
                                 <td>36</td>
                                 <td>12</td>
-                                <td><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" title="Voir détails"><i class="fa fa-info"></i></button>
+                                <td class="text-center"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" title="Voir détails"><i class="fa fa-info"></i></button>
                                     <button type="button" class="btn btn-default" title="Ajouter une tâche"><i class="fa fa-tasks"></i></button>
                                     <button type="button" class="btn btn-default" title="Envoyer un courriel"><i class="fa fa-envelope-o"></i></button>
                                     <button type="button" class="btn btn-default" title="Chatter"><i class="fa fa-comment"></i></button>
@@ -91,7 +117,7 @@
                                 <td>2h 32'</td>
                                 <td>34</td>
                                 <td>11</td>
-                                <td><button type="button" class="btn btn-default" title="Voir détails"><i class="fa fa-info"></i></button>
+                                <td class="text-center"><button type="button" class="btn btn-default" title="Voir détails"><i class="fa fa-info"></i></button>
                                     <button type="button" class="btn btn-default" title="Ajouter une tâche"><i class="fa fa-tasks"></i></button>
                                     <button type="button" class="btn btn-default" title="Envoyer un courriel"><i class="fa fa-envelope-o"></i></button>
                                     <button type="button" class="btn btn-default" title="Chatter"><i class="fa fa-comment"></i></button>
@@ -106,7 +132,7 @@
                                 <td>1h 14'</td>
                                 <td>42</td>
                                 <td>7</td>
-                                <td><button type="button" class="btn btn-default" title="Voir détails"><i class="fa fa-info"></i></button>
+                                <td class="text-center"><button type="button" class="btn btn-default" title="Voir détails"><i class="fa fa-info"></i></button>
                                     <button type="button" class="btn btn-default" title="Ajouter une tâche"><i class="fa fa-tasks"></i></button>
                                     <button type="button" class="btn btn-default" title="Envoyer un courriel"><i class="fa fa-envelope-o"></i></button>
                                     <button type="button" class="btn btn-default" title="Chatter"><i class="fa fa-comment"></i></button>
@@ -121,7 +147,7 @@
                                 <td>2h 51'</td>
                                 <td>38</td>
                                 <td>6</td>
-                                <td><button type="button" class="btn btn-default" title="Voir détails"><i class="fa fa-info"></i></button>
+                                <td class="text-center"><button type="button" class="btn btn-default" title="Voir détails"><i class="fa fa-info"></i></button>
                                     <button type="button" class="btn btn-default" title="Ajouter une tâche"><i class="fa fa-tasks"></i></button>
                                     <button type="button" class="btn btn-default" title="Envoyer un courriel"><i class="fa fa-envelope-o"></i></button>
                                     <button type="button" class="btn btn-default" title="Chatter"><i class="fa fa-comment"></i></button>
@@ -136,7 +162,7 @@
                                 <td>1h 38'</td>
                                 <td>46</td>
                                 <td>8</td>
-                                <td><button type="button" class="btn btn-default" title="Voir détails"><i class="fa fa-info"></i></button>
+                                <td class="text-center"><button type="button" class="btn btn-default" title="Voir détails"><i class="fa fa-info"></i></button>
                                     <button type="button" class="btn btn-default" title="Ajouter une tâche"><i class="fa fa-tasks"></i></button>
                                     <button type="button" class="btn btn-default" title="Envoyer un courriel"><i class="fa fa-envelope-o"></i></button>
                                     <button type="button" class="btn btn-default" title="Chatter"><i class="fa fa-comment"></i></button>
@@ -153,8 +179,8 @@
     <div class="panel panel-footer">
         <div class="container-fluid">
             <ul class="pagination">
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="dashboard-view-9b.html">2</a></li>
+                <li><a href="dashboard-view-9a.html">1</a></li>
+                <li class="active"><a href="dashboard-view-9b.html.twig">2</a></li>
                 <li><a href="#">3</a></li>
                 <li><a href="#">4</a></li>
                 <li><a href="#">5</a></li>
@@ -256,7 +282,6 @@
 
     <!-- ChartJS -->
     <script type="text/javascript" src="{{ asset('uploads/custom/js/Chart.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('uploads/custom/js/modaal.min.js') }}"></script>
 
     <script>
         var canvas_html = '<canvas id="canvas" height="50px" width="300px"></canvas>';
@@ -476,14 +501,5 @@
         };
         };
     </script>
-
-{% block stylesheets %}
-    {{ parent() }}
-    {% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
-    <link href="{{ asset('uploads/custom/css/modaal.css') }}"
-          rel="stylesheet"
-          type="text/css"
-    />
-{% endblock %}
 
 {% endblock %}

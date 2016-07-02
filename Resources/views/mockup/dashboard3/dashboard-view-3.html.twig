@@ -4,19 +4,43 @@
 
 {% block panelRest %}
 
-    <style type="text/css" xmlns="http://www.w3.org/1999/html">
+    <style type="text/css" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
-        /* For the modal */
+        /* For possible modals on this page */
 
         .modal-header, h4, .close {
             background-color: #5cb85c;
             color:white !important;
-            text-align: left;
+            text-align: center;
             font-size: 20px;
-            padding: 15px;
         }
         .modal-footer {
             background-color: #f9f9f9;
+        }
+
+        /* To give full width to tables */
+
+        table.table.table-hover {
+            width:100%;
+        }
+
+        /* To change the backgroud color of the top bar */
+
+        .navbar-inverse {
+            background-color: #5cb85c;
+            border-color: #5cb85c;
+        }
+        .navbar.navbar-inverse.navbar-fixed-top {
+            border-bottom: 2px solid #5cb85c;
+        }
+        #top_bar li:not(:last-child) > a, .top-bar li:not(:last-child) > a {
+            color: white;
+            border-right: 1px solid #5cb85c !important;
+        }
+        .panel-default > .panel-heading {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #ddd;
         }
     </style>
 
@@ -28,7 +52,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6" style="margin-bottom: 10px">
-                    <h4>2. Sur quoi porte la vue ?</h4>
+                    <h4 style="padding: 12px; text-align: left">2. Sur quoi porte la vue ?</h4>
                 </div>
             </div>
             <div class="row" style="margin-bottom: 15px">
@@ -124,20 +148,20 @@
         <a href="dashboard-view-1.html"><button type="button" class="btn btn-default" title="Cliquez pour annuler la création de vue">Annuler</i></button></a>
         <a href="dashboard-view-4.html"><button type="button" class="btn btn-primary" title="Cliquez pour passer à l'étape suivante">Etape suivante</button></a>
     </div>
-    <div class="container">
-        <div class="row features" style="margin-top: 20px">
-            <div class="col-md-offset-1 col-md-10">
-                <div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">
-                    <p>La liste déroulante listant les exercices, forum doit être remplacée par une popup permettant une sélection multitple.</p>
-                    <p>Reste la question des parties de ressource (étapaes, questions, catégorie, message)
-                        </br>Proposition : mettre dans la liste Exercice / Etape, Exercice / Question -> on affiche alors toutes les étapes ou toutes les questions dans la liste déroulant</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="footer">
-        <div class="container-fluid">
-            <div class="row">
+    {#<div class="container">#}
+        {#<div class="row features" style="margin-top: 20px">#}
+            {#<div class="col-md-offset-1 col-md-10">#}
+                {#<div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">#}
+                    {#<p>La liste déroulante listant les exercices, forum doit être remplacée par une popup permettant une sélection multitple.</p>#}
+                    {#<p>Reste la question des parties de ressource (étapaes, questions, catégorie, message)#}
+                        {#</br>Proposition : mettre dans la liste Exercice / Etape, Exercice / Question -> on affiche alors toutes les étapes ou toutes les questions dans la liste déroulant</p>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+    <div id="footer" style="padding: 12px">
+        {#<div class="container-fluid">#}
+            {#<div class="row">#}
                 <p>
                     <span class="pull-right locale-select label label-default">FR</span>
                                 <span>
@@ -145,6 +169,6 @@
                 </span>
                 </p>
             </div>
-        </div>
-    </div>
+        {#</div>#}
+    {#</div>#}
 {% endblock %}

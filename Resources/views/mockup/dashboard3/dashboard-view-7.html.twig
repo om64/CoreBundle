@@ -4,19 +4,43 @@
 
 {% block panelRest %}
 
-    <style type="text/css" xmlns="http://www.w3.org/1999/html">
+    <style type="text/css" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 
-        /* For the modal */
+        /* For possible modals on this page */
 
         .modal-header, h4, .close {
             background-color: #5cb85c;
             color:white !important;
-            text-align: left;
+            text-align: center;
             font-size: 20px;
-            padding: 15px;
         }
         .modal-footer {
             background-color: #f9f9f9;
+        }
+
+        /* To give full width to tables */
+
+        table.table.table-hover {
+            width:100%;
+        }
+
+        /* To change the backgroud color of the top bar */
+
+        .navbar-inverse {
+            background-color: #5cb85c;
+            border-color: #5cb85c;
+        }
+        .navbar.navbar-inverse.navbar-fixed-top {
+            border-bottom: 2px solid #5cb85c;
+        }
+        #top_bar li:not(:last-child) > a, .top-bar li:not(:last-child) > a {
+            color: white;
+            border-right: 1px solid #5cb85c !important;
+        }
+        .panel-default > .panel-heading {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #ddd;
         }
     </style>
 
