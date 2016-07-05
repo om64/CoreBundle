@@ -7,7 +7,7 @@
             S'abonner au flux RSS <i class="fa fa-rss"></i>
         </a>
         <a class="btn btn-default pull-right disabled" style="color: black" href="#">
-            Générer l&#039;adresse du flux RSS
+            Créer le flux RSS
         </a>
     </p>
 
@@ -245,10 +245,10 @@
                                 <thead>
                                 <tr>
                                     <th style="color: white; background-color: #337ab7">Objet</th>
-                                    <th class="text-center" style="color: white; background-color: #337ab7">Recevoir une notification</br>sur la plateforme</th>
+                                    <th class="text-center" style="color: white; background-color: #337ab7">Recevoir une notification sur la plateforme</th>
+                                    <th class="text-center" style="color: white; background-color: #337ab7">Recevoir une notification sur mon smartphone</th>
                                     <th class="text-center" style="color: white; background-color: #337ab7">Recevoir un courriel</th>
                                     <th class="text-center" style="color: white; background-color: #337ab7">Ajouter au flux RSS <i class="fa fa-rss"></i></th>
-                                    <th class="text-center" style="color: white; background-color: #337ab7">Recevoir une notification</br>sur mon smartphone</th>
                                 </tr>
                                 </thead>
                                 <tbody class="types-table-body">
@@ -273,10 +273,10 @@
                                             <input type="checkbox" class="chk-type-visible" value="visible" name="role-change_right[]" checked/>
                                         </td>
                                         <td class="text-center">
-                                            <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]" checked/>
+                                            <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]"/>
                                         </td>
                                         <td class="text-center">
-                                            <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
+                                            <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]" checked/>
                                         </td>
                                         <td class="text-center">
                                             <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]"/>
@@ -476,7 +476,7 @@
                             </table>
                         </div>
                             <button type="submit" id="edit-tools-btn" href="#" class="btn btn-primary pull-right disabled">
-                                Modifier
+                                Enregistrer
                             </button>
                             <a class="btn btn-default pull-right" href="#">
                                 Annuler
@@ -496,7 +496,13 @@
                                                     <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
                                                 </th>
                                                 <th style="color: white; background-color: #337ab7">
-                                                    Recevoir une notification</br>sur la plateforme
+                                                    Recevoir une notification sur la plateforme
+                                                </th>
+                                                <th style="background-color: #337ab7">
+                                                    <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
+                                                </th>
+                                                <th style="color: white; background-color: #337ab7">
+                                                    Recevoir une notification sur mon smartphone
                                                 </th>
                                                 <th style="background-color: #337ab7">
                                                     <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
@@ -514,9 +520,6 @@
                                                     <input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">
                                                 </th>
                                                 <th style="color: white; background-color: #337ab7">
-                                                    Recevoir une notification</br>sur mon smartphone
-                                                </th>
-                                                <th style="color: white; background-color: #337ab7">
                                                     Suivre
                                                 </th>
                                             </tr>
@@ -524,7 +527,7 @@
                                                 <td>
                                                     <a href="#">Math / FAQ (Forum)</a>
                                                 </td>
-                                                <td colspan="2">
+                                                <td colspan="2" class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -532,7 +535,7 @@
                                                             name="role-change_right[]"
                                                             checked                                     />
                                                 </td>
-                                                <td colspan="2">
+                                                <td colspan="2" class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -540,7 +543,7 @@
                                                             name="role-change_right[]"
                                                     />
                                                 </td>
-                                                <td colspan="2">
+                                                <td colspan="2" class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -548,7 +551,7 @@
                                                             name="role-change_right[]"
                                                     />
                                                 </td>
-                                                <td colspan="2">
+                                                <td colspan="2" class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -556,7 +559,7 @@
                                                             name="role-change_right[]"
                                                     />
                                                 </td>
-                                                <td colspan="2">
+                                                <td colspan="2" class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -570,7 +573,7 @@
                                                 <td>
                                                     <a href="#">Géo / Semaine 1 / Synthèse (Collecticiel)</a>
                                                 </td>
-                                                <td colspan="2">
+                                                <td colspan="2" class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -578,7 +581,7 @@
                                                             name="role-subscribe[]"
                                                             checked                                     />
                                                 </td>
-                                                <td colspan="2">
+                                                <td colspan="2" class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -587,7 +590,7 @@
                                                             checked
                                                     />
                                                 </td>
-                                                <td colspan="2">
+                                                <td colspan="2" class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -595,7 +598,7 @@
                                                             name="role-subscribe[]"
                                                     />
                                                 </td>
-                                                <td colspan="2">
+                                                <td colspan="2" class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -603,7 +606,7 @@
                                                             name="role-change_right[]"
                                                     />
                                                 </td>
-                                                <td colspan="2">
+                                                <td colspan="2" class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -617,7 +620,7 @@
                                                 <td>
                                                     <a href="#">Français / Vos questions (Exercice) / Questions générales (Sujet)</a>
                                                 </td>
-                                                <td colspan="2">
+                                                <td colspan="2" class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -625,7 +628,7 @@
                                                             name="badge-award[]"
                                                             checked                                     />
                                                 </td>
-                                                <td colspan="2">
+                                                <td colspan="2" class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -633,7 +636,7 @@
                                                             name="role-change_right[]"
                                                     />
                                                 </td>
-                                                <td colspan="2">
+                                                <td colspan="2" class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -642,7 +645,7 @@
                                                             checked
                                                     />
                                                 </td>
-                                                <td colspan="2">
+                                                <td colspan="2" class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -650,7 +653,7 @@
                                                             name="role-change_right[]"
                                                     />
                                                 </td>
-                                                <td colspan="2">
+                                                <td colspan="2" class="text-center">
                                                     <input
                                                             type="checkbox"
                                                             class="chk-type-visible"
@@ -689,7 +692,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a class="btn btn-primary pull-right disabled" href="#">Modifier</a>
+                                <a class="btn btn-primary pull-right disabled" href="#">Enregistrer</a>
                                 <a class="btn btn-default pull-right" href="#">Annuler</a>
                             </form>
                         </div>
