@@ -48,101 +48,65 @@
         <div class="container-fluid">
             <div class="row features">
                 <div class="col-xs-3">
-                    <!-- Trigger the modal with a button -->
                     <a href="dashboard-view-2.html"><button type="button" class="btn btn-primary" title="Cliquez pour créer une vue"><i class="fa fa-plus"></i> Créer une vue</button></a>
                 </div>
             </div>
         </div>
         <div class="container-fluid" style="margin-top: 20px">
             <div class="row features">
-                <div class="col-md-6 col-lg-3 form-group input-group">
+                <div class="col-md-6 col-lg-4 form-group input-group">
                     <input type="text" class="form-control" placeholder="Recherche">
                     <span class="input-group-btn"><button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button> </span>
                 </div>
             </div>
         </div>
         <div class="container-fluid">
-
-                    <div class="table-responsive">
-            <table class="table">
-                <tbody>
-                    <tr>
-                        {#<th style="background-color: #337ab7">#}
-                            {#<input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()">#}
-                        {#</th>#}
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <tbody>
                         <th style="background-color: #337ab7">
                             <a href="#" style="color: #fff"> Intitulé de la vue</a>
                         </th>
                         <th class="text-center" style="color: white; background-color: #337ab7">
                              Actions
                         </th>
-                            <tr>
-                                {#<td><input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()"></td>#}
-                                <td><a href="#" title="Ouvrir cette vue">Exercices</a></td>
-                                <td class="text-center">
-                                    <a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>
-                                    <a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>
-                                    <a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                {#<td><input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()"></td>#}
-                                <td><a href="#" title="Ouvrir cette vue">Parcours</a></td>
-                                <td class="text-center">
-                                    <a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>
-                                    <a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>
-                                    <a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                {#<td><input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()"></td>#}
-                                <td><a href="#" title="Ouvrir cette vue">Fréquentation</a></td>
-                                <td class="text-center">
-                                    <a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>
-                                    <a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>
-                                    <a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                {#<td><input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()"></td>#}
-                                <td><a href="#" title="Ouvrir cette vue">Forums</a></td>
-                                <td class="text-center">
-                                    <a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>
-                                    <a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>
-                                    <a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>
-                                </td>
-                            </tr>
-                            {#<tr>#}
-                                {#<td><input type="checkbox" ng-checked="hcell.selected" ng-click="hcell.onCheckboxChange()"></td>#}
-                                {#<td><a href="dashboard-view-9a.html" title="Ouvrir cette vue">Géographie | Exercices | Pays et capitales</a></td>#}
-                                {#<td class="text-center">#}
-                                    {#<a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>#}
-                                    {#<a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>#}
-                                    {#<a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>#}
-                                {#</td>#}
-                            {#</tr>#}
-                        </tbody>
-                    </table>
-                </div>
+                        <tr>
+                            <td><a href="#" title="Ouvrir cette vue">Exercices</a></td>
+                            <td class="text-center">
+                                <a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>
+                                <a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>
+                                <a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" title="Ouvrir cette vue">Parcours</a></td>
+                            <td class="text-center">
+                                <a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>
+                                <a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>
+                                <a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" title="Ouvrir cette vue">Fréquentation</a></td>
+                            <td class="text-center">
+                                <a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>
+                                <a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>
+                                <a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" title="Ouvrir cette vue">Forums</a></td>
+                            <td class="text-center">
+                                <a href="#"><button type="button" class="btn btn-primary btn-sm" title="Editer cette vue"><i class="fa fa-pencil"></i> Editer</button></a>
+                                <a href="#"><button type="button" class="btn btn-default btn-sm" title="Partager cette vue"><i class="fa fa-share-alt"></i> Partager</button></a>
+                                <a href="#"><button type="button" class="btn btn-danger btn-sm" title="Supprimer cette vue"><i class="fa fa-trash-o"></i> Supprimer</button></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-{#</div>#}
-
-{#<div class="container">#}
-    {#<div class="row features" style="margin-top: 20px">#}
-        {#<div class="col-md-offset-1 col-md-10">#}
-            {#<div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow"><p>La page#}
-                {#d'accueil de la création de vues reprend une liste de vues préconfigurées que l'on peut éditer,#}
-                {#supprimer ou partager. C'est ici que viendront s'ajouter les vues créées.</p>#}
-                {#Ces vues sont dynamiques; elles se mettent à jour dès qu'on les ouvre.</p>#}
-                {#<p><strong>Il reste à déterminer quelles vues on propose par défaut.</strong></p>#}
-                {#<p>En cliquant sur "Créer une vue", l'utilisateur est invité à passer par <strong>différentes#}
-                {#étapes</strong>.</p>#}
-            {#</div>#}
-        {#</div>#}
-    {#</div>#}
-{#</div>#}
 
 {% endblock %}
 
