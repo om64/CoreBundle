@@ -1,6 +1,7 @@
 - Notifications/notification-intro.html.twig
 - Notifications/notification-view-1.html.twig
 - Notifications/notification-view-2.html.twig
+- Notifications/notification-view-3.html.twig
 - dashboard3/dashboard-view-1.html.twig
 - dashboard3/dashboard-view-2.html.twig
 - dashboard3/dashboard-view-3.html.twig
