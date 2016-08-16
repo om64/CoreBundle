@@ -55,10 +55,24 @@
             </div>
         </div>
         <div class="container-fluid">
+            <div class="row btn-group" style="padding: 15px">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-cog"></i>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>Exporter</li>
+                    <li class="divider" role="separator"></li>
+                    <li>Imprimer en PDF
+                    <li class="divider" role="separator"></li>
+                    <li>Envoyer un courriel</li>
+                    <li>Ajouter une tâche</li>
+                </ul>
+            </div>
             <div class="row features">
-                <div class="col-xs-12" style="padding: 12px">
-                    <p><img src="{{ asset('uploads/custom/images/arrow.png') }}" height="24px" width="24px"></img><a href="#"> Exporter</a> | <a href="#">Imprimer en PDF</a> | <a href="#">Ajouter une tâche</a></p>
-                </div>
+                {#<div class="col-xs-12" style="padding: 12px">#}
+                    {#<p><img src="{{ asset('uploads/custom/images/arrow.png') }}" height="24px" width="24px"></img><a href="#"> Exporter</a> | <a href="#">Imprimer en PDF</a> | <a href="#">Ajouter une tâche</a></p>#}
+                {#</div>#}
                 <div class="col-xs-12">
                     <div class="table-responsive">
                         <table class="table table-bordered table-responsive table-striped table-hover">

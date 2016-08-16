@@ -1,0 +1,179 @@
+{% extends 'ClarolineCoreBundle::mockup/dashboard/dashboard-tool.html.twig' %}
+
+{% block panelTitle %}Les utilisateurs de mes EA - Tous les exercices{% endblock %}
+
+{% block panelRest %}
+
+    <style type="text/css" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+        /* For possible modals on this page */
+
+        .modal-header, h4, .close {
+            background-color: #5cb85c;
+            color:white !important;
+            text-align: center;
+            font-size: 20px;
+        }
+        .modal-footer {
+            background-color: #f9f9f9;
+        }
+
+        /* To give full width to tables */
+
+        table.table.table-hover {
+            width:100%;
+        }
+
+        /* To change the backgroud color of the top bar */
+
+        .navbar-inverse {
+            background-color: #5cb85c;
+            border-color: #5cb85c;
+        }
+        .navbar.navbar-inverse.navbar-fixed-top {
+            border-bottom: 2px solid #5cb85c;
+        }
+        #top_bar li:not(:last-child) > a, .top-bar li:not(:last-child) > a {
+            color: white;
+            border-right: 1px solid #5cb85c !important;
+        }
+        .panel-default > .panel-heading {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #ddd;
+        }
+    </style>
+
+    <div class="panel-body">
+        <div id="conteneur" class="container-fluid">
+            <div class="row">
+                <p>Nom : <input type="text" placeholder=" 2016-03-05-1"></p>
+                <p><strong>SELECTION :</strong> Géographie</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6" style="margin-bottom: 10px">
+                    <h4 style="padding: 12px; text-align: left">2. Sur quoi porte la vue ?</h4>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 15px">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="form">
+                        <select class="form-control" id="sel3">
+                            <option>Choisir un objet</option>
+                            <option selected>Exercices</option>
+                            <option>Espaces d'activités</option>
+                            <option>Ressources</option>
+                            <option>Forums</option>
+                            <option>Parcours</option>
+                            <option>Activités</option>
+                            <option>Collecticiels</option>
+                            <option>Pages wikis</option>
+                            <option>Blogs</option>
+                            <option>Annonces</option>
+                            <option>Sondages</option>
+                            <option>Wikis</option>
+                            <option>Chats</option>
+                            <option>etc...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="form">
+                        <select class="form-control" id="sel1">
+                            <option selected>Pays et capitales</option>
+                            <option>Cours d'eau</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 15px">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="form">
+                        <select class="form-control" id="sel3">
+                            <option>Choisir un objet</option>
+                            <option>Exercices</option>
+                            <option>Espaces d'activités</option>
+                            <option>Ressources</option>
+                            <option selected>Forums</option>
+                            <option>Parcours</option>
+                            <option>Activités</option>
+                            <option>Collecticiels</option>
+                            <option>Pages wikis</option>
+                            <option>Blogs</option>
+                            <option>Annonces</option>
+                            <option>Sondages</option>
+                            <option>Wikis</option>
+                            <option>Chats</option>
+                            <option>etc...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="form">
+                        <select class="form-control" id="sel1">
+                            <option selected>Foire aux questions</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 15px">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <a href="#"><button type="button" class="btn btn-primary" title="Cliquez pour ajouter un objet"><i class="fa fa-plus"></i> Objet</button></a>
+                </div>
+            </div>
+            {#<div class="row" style="margin-bottom: 15px">#}
+                {#<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">#}
+                    {#<div class="form">#}
+                        {#<select class="form-control" id="sel3">#}
+                            {#<option >Choisir un objet</option>#}
+                            {#<option selected>Exercices</option>#}
+                            {#<option>Espaces d'activités</option>#}
+                            {#<option>Ressources</option>#}
+                            {#<option>Forums</option>#}
+                            {#<option>Parcours</option>#}
+                            {#<option>Activités</option>#}
+                            {#<option>Collecticiels</option>#}
+                            {#<option>Pages wikis</option>#}
+                            {#<option>Blogs</option>#}
+                            {#<option>Annonces</option>#}
+                            {#<option>Sondages</option>#}
+                            {#<option>Wikis</option>#}
+                            {#<option>Chats</option>#}
+                            {#<option>etc...</option>#}
+                        {#</select>#}
+                    {#</div>#}
+                {#</div>#}
+                {#<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">#}
+                {#</div>#}
+            {#</div>#}
+        </div>
+    </div>
+    <div class="panel-footer" style="text-align: right">
+        <a href="dashboard-view-2.html"><button type="button" class="btn btn-default" title="Cliquez pour revenir à l'étape précédente">Etape précédente</button></a>
+        <a href="dashboard-view-1.html"><button type="button" class="btn btn-default" title="Cliquez pour annuler la création de vue">Annuler</i></button></a>
+        <a href="dashboard-view-4.html"><button type="button" class="btn btn-primary" title="Cliquez pour passer à l'étape suivante">Etape suivante</button></a>
+    </div>
+    {#<div class="container">#}
+        {#<div class="row features" style="margin-top: 20px">#}
+            {#<div class="col-md-offset-1 col-md-10">#}
+                {#<div class="well well-lg" style="font-style: italic; background-color: lightgoldenrodyellow">#}
+                    {#<p>La liste déroulante listant les exercices, forum doit être remplacée par une popup permettant une sélection multitple.</p>#}
+                    {#<p>Reste la question des parties de ressource (étapaes, questions, catégorie, message)#}
+                        {#</br>Proposition : mettre dans la liste Exercice / Etape, Exercice / Question -> on affiche alors toutes les étapes ou toutes les questions dans la liste déroulante.</p>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+    <div id="footer" style="padding: 12px">
+        {#<div class="container-fluid">#}
+            {#<div class="row">#}
+                <p>
+                    <span class="pull-right locale-select label label-default">FR</span>
+                                <span>
+                    Développé par <a href="#">Claroline</a>
+                </span>
+                </p>
+            </div>
+        {#</div>#}
+    {#</div>#}
+{% endblock %}

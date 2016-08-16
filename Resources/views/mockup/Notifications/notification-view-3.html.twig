@@ -3,10 +3,10 @@
 {% block panelTitle %}
     <p style="padding: 5px">
         Paramètres des notifications
-        <a class="btn btn-default pull-right disabled" style="color: black" href="#">
+        <a class="btn btn-primary pull-right disabled" style="color: #FFFFFF" href="#">
             S'abonner au flux RSS <i class="fa fa-rss"></i>
         </a>
-        <a class="btn btn-primary pull-right" style="color: #FFFFFF" href="#">
+        <a class="btn btn-primary pull-right" style="color: #FFFFFF" href="notification-view-4.html">
             Créer le flux RSS
         </a>
     </p>
@@ -265,7 +265,7 @@
                                             <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
                                         </td>
                                         <td class="text-center">
-                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]" checked/>
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]"/>
                                         </td>
                                     </tr>
                                     <tr>
@@ -330,12 +330,29 @@
                                             <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
                                         </td>
                                         <td class="text-center">
-                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]" checked/>
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             - Ajout d'un commentaire
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]" checked/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Ajout d'un article
                                         </td>
                                         <td class="text-center">
                                             <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]" checked/>
@@ -353,6 +370,40 @@
                                     <tr>
                                         <td>
                                             - Suppression d'un blog
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Suppression d'un commentaire
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Suppression d'un article
                                         </td>
                                         <td class="text-center">
                                             <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]"/>
@@ -438,6 +489,23 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                            - Réponse aux commentaires
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
                                             Cours
                                         </td>
                                         <td class="text-center">
@@ -455,11 +523,28 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            Evaluation
+                                            <strong>Evaluation</strong>
                                             <span class="rotate270 caret"></span>
                                         </td>
                                         <td class="text-center">
-                                            <input type="checkbox" class="chk-type-visible" value="visible" name="role-change_right[]" checked/>
+                                            <input type="checkbox" disabled="" checked="" name="role-change_right[]" value="visible" class="chk-type-visible">
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" disabled="" checked="" name="role-change_right[]" value="visible" class="chk-type-visible">
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" disabled="" checked="" name="role-change_right[]" value="visible" class="chk-type-visible">
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" disabled="" checked="" name="role-change_right[]" value="visible" class="chk-type-visible">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Réception de corrections
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]" checked/>
                                         </td>
                                         <td class="text-center">
                                             <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]"/>
@@ -472,9 +557,97 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td> Exercices </td>
+                                        <td>
+                                            - Corrigés disponibles
+                                        </td>
                                         <td class="text-center">
-                                            <input type="checkbox" class="chk-type-visible" value="visible" name="role-change_right[]" checked/>
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]" checked/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Exercices</strong>
+                                        <span class="rotate270 caret"></span>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" disabled="" checked="" name="role-change_right[]" value="visible" class="chk-type-visible">
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" disabled="" checked="" name="role-change_right[]" value="visible" class="chk-type-visible">
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" disabled="" checked="" name="role-change_right[]" value="visible" class="chk-type-visible">
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" disabled="" checked="" name="role-change_right[]" value="visible" class="chk-type-visible">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Créations d'exercices
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Demandes de corrections
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Corrections disponibles
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]" checked/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Suppressions d'exercices
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]" checked/>
                                         </td>
                                         <td class="text-center">
                                             <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]"/>
@@ -569,7 +742,7 @@
                                             <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
                                         </td>
                                         <td class="text-center">
-                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]" checked/>
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]"/>
                                         </td>
                                     </tr>
                                     <tr>
@@ -643,8 +816,59 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                            - Création d'une section
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Modification d'une section
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Suppression d'une section
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
                                             Parcours
-                                            <span class="rotate270 caret"></span>
+                                            {#<span class="rotate270 caret"></span>#}
                                         </td>
                                         <td class="text-center">
                                             <input type="checkbox" class="chk-type-visible" value="visible" name="role-change_right[]" checked/>
@@ -690,15 +914,33 @@
                                             <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
                                         </td>
                                         <td class="text-center">
-                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]" checked/>
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            Sondages
+                                            <strong>Sondages</strong>
+                                            <span class="rotate270 caret"></span>
                                         </td>
                                         <td class="text-center">
-                                            <input type="checkbox" class="chk-type-visible" value="visible" name="role-change_right[]" checked/>
+                                            <input type="checkbox" disabled="" checked="" name="role-change_right[]" value="visible" class="chk-type-visible">
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" disabled="" checked="" class="chk-type-visible" value="mail" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" disabled="" class="chk-type-visible" value="rss" name="role-change_right[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" disabled="" class="chk-type-visible" value="phone" name="role-change_right[]"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Création des sondages
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]" checked/>
                                         </td>
                                         <td class="text-center">
                                             <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]"/>
@@ -707,9 +949,61 @@
                                             <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
                                         </td>
                                         <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Suppression des sondages
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            - Sondages clôturés
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]" checked/>
+                                        </td>
+                                        <td class="text-center">
                                             <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]" checked/>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td>
+                                            - Réponses aux sondages
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="visible" name="forum[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="mail" name="role-change_right[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="rss" name="role-change_right[]" checked/>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="chk-type-visible" value="phone" name="role-change_right[]" checked/>
+                                        </td>
+                                    </tr>
+
                                     <tr>
                                         <td>
                                             Textes

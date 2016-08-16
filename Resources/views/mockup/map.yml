@@ -2,9 +2,11 @@
 - Notifications/notification-view-1.html.twig
 - Notifications/notification-view-2.html.twig
 - Notifications/notification-view-3.html.twig
+- Notifications/notification-view-4.html.twig
 - dashboard3/dashboard-view-1.html.twig
 - dashboard3/dashboard-view-2.html.twig
 - dashboard3/dashboard-view-3.html.twig
+- dashboard3/dashboard-view-3b.html.twig
 - dashboard3/dashboard-view-4.html.twig
 - dashboard3/dashboard-view-5.html.twig
 - dashboard3/dashboard-view-6.html.twig
