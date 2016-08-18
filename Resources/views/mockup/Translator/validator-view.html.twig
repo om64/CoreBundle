@@ -1,0 +1,600 @@
+{% extends 'ClarolineCoreBundle::mockup/Translator/translator-tool.html.twig' %}
+
+{% block panelTitle %}
+    <p style="padding: 5px" xmlns="http://www.w3.org/1999/html">
+        Plateforme de traduction
+    </p>
+
+{% endblock %}
+
+{% block panelRest %}
+
+    <style type="text/css" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+        /* For modals on this page */
+
+        .modal-header, h4, .close {
+            background-color: #27C24C;
+            color:white !important;
+            text-align: center;
+            font-size: 18px;
+        }
+        .modal-footer {
+            background-color: #f9f9f9;
+        }
+
+        /* To give full width to tables */
+
+        table.table.table-hover {
+            width:100%;
+        }
+
+        /* To change the background color of the top bar */
+
+        .navbar-inverse {
+            background-color: #27C24C;
+            border-color: #27C24C;
+        }
+        .navbar.navbar-inverse.navbar-fixed-top {
+            border-bottom: 2px solid #27C24C;
+        }
+
+        /* To have a portfolio-like look */
+
+        #top_bar li:not(:last-child) > a, .top-bar li:not(:last-child) > a {
+            color: white;
+            border-right: 1px solid #5cb85c !important;
+        }
+        .panel-default > .panel-heading {
+            color: #fff;
+            background-color: #27C24C;
+            border: none;
+        }
+        table.table_translations .statusCol {
+            width: 250px;
+        }
+        table.table_translations .actionsCol {
+            width: 200px;
+        }
+        table.table_translations .translation .block {
+            display: block;
+        }
+        table.table_translations .translation td {
+            padding: 10px 15px;
+            vertical-align: middle;
+        }
+        table.table_translations .translation td .dropdown-menu a.delete {
+            color: #d9534f;
+        }
+        table.table_translations .translation td .dropdown-menu a.delete:hover {
+            background-color: #d2322d;
+            color: #fff;
+        }
+        table.table_translations .translation td .visibility .badge {
+            display: block;
+            float: left;
+            height: 15px;
+            margin-right: 5px;
+            width: 15px;
+        }
+        table.table_translations .translation td .visibility .badge.visibile_to_me {
+            background-color: #d9534f;
+        }
+        table.table_translations .translation td .visibility .badge.visible_for_some_users {
+            background-color: #ed9c28;
+        }
+        table.table_translations .translation td .visibility .badge.visible_for_platform_user {
+            background-color: #428bca;
+        }
+        table.table_translations .translation td .visibility .badge.visible_for_everybody {
+            background-color: #5cb85c;
+        }
+        table.table_translations .translation td .exchange_link.highlight {
+            border-color: #eea236;
+            color: #eea236;
+        }
+        table.table_translations .translation td .exchange_link .badge {
+            background-color: #f0ad4e;
+            top: 0;
+        }
+        div.pagination ul {
+            margin: 0;
+        }
+        .translations_panel_group {
+            margin-bottom: 20px;
+        }
+        .translations_panel_group .translations_panel .panel-body {
+            padding-bottom: 0;
+            padding-top: 0;
+        }
+        .translations_panel_group .translations_panel table.table_translations {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+        .translations_panel_group .translations_panel table.table_translations tbody td {
+            border-top: 0 none;
+        }
+        .translations_panel_group .translations_panel table.table_translations tbody tr + tr td {
+            border-top: 1px solid #ddd;
+        }
+        #visibility_form a.remove, #guides_form a.remove {
+            color: #fff;
+            margin-left: 2px;
+        }
+        #visibility_form a.remove:hover, #guides_form a.remove:hover {
+            color: #ac2925;
+            text-decoration: none;
+        }
+        #visibility_form .form-collection-element, #guides_form .form-collection-element {
+            border-radius: 0.25em;
+            padding: 2px 5px 5px;
+        }
+        .translation_toolbar {
+            margin-bottom: 10px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        .clear {
+            clear: both;
+        }
+        .help_text {
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+        .translation-tabpanel ul.nav.nav-tabs > li {
+            background-color: #f5f5f5;
+            transition: all 0.2s ease-in-out 0s;
+        }
+        .translation-tabpanel ul.nav.nav-tabs > li span.icon-bg {
+            background-color: #337ab7;
+            height: 3px;
+            left: 0;
+            position: absolute;
+            top: 0;
+            transition: height 0.2s ease-in-out 0s;
+            width: 100%;
+            z-index: 0;
+        }
+        .translation-tabpanel ul.nav.nav-tabs > li span.option-text {
+            position: relative;
+            z-index: 5;
+        }
+        .translation-tabpanel ul.nav.nav-tabs > li > a {
+            transition: all 0.2s ease-in-out 0s;
+        }
+        .translation-tabpanel ul.nav.nav-tabs > li > a:not(.btn) {
+            border-radius: 0;
+            border-top: 0 none;
+            margin-right: -1px !important;
+        }
+        .translation-tabpanel ul.nav.nav-tabs > li > a:focus:not(.btn), .translation-tabpanel ul.nav.nav-tabs > li > a:active:not(.btn) {
+            outline: medium none;
+        }
+        .translation-tabpanel ul.nav.nav-tabs > li:hover:not(.active) .icon-bg {
+            height: 100%;
+        }
+        .translation-tabpanel ul.nav.nav-tabs > li:hover:not(.active) a {
+            color: #ffffff;
+        }
+        .translation-tabpanel ul.nav.nav-tabs > li.active > a:hover, .translation-tabpanel ul.nav.nav-tabs > li.active > a:focus, .translation-tabpanel ul.nav.nav-tabs > li:not(.active) a:hover, .translation-tabpanel ul.nav.nav-tabs > li:not(.active) a:focus {
+            background-color: #f5f5f5;
+        }
+        .translation-tabpanel ul.nav.nav-tabs > li.active a {
+            background-color: #f5f5f5;
+        }
+        .translation-tabpanel ul.nav.nav-tabs > li.default-ressources-tab .icon-bg {
+            background-color: #337ab7;
+        }
+        .translation-tabpanel ul.nav.nav-tabs > li.translation-tab .icon-bg {
+            background-color: #ffb61c;
+        }
+        .translation-tabpanel ul.nav.nav-tabs > li.list-tab .icon-bg {
+            background-color: #e94b3b;
+        }
+        .translation-tabpanel .tab-pane {
+            -moz-border-bottom-colors: none;
+            -moz-border-left-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-top-colors: none;
+            background-color: #f5f5f5;
+            border-color: -moz-use-text-color #ddd #ddd;
+            border-image: none;
+            border-style: none solid solid;
+            border-width: 0 1px 1px;
+            min-height: 150px;
+            padding: 10px;
+        }
+    </style>
+
+    <div class="container-fluid" style="margin: 12px">
+        <div class="row content">
+            <div class="col-md-12">
+                <div class="translation-tabpanel" role="tabpanel">
+                    <ul class="nav nav-tabs" role="tablist" id="translation_space_tabs">
+                        <li class="translation-tab active">
+                            <a href="#detail" aria-controls="translations" role="tab" data-toggle="tab">
+                                <span class="icon-bg"></span>
+                                <span class="option-text">
+                                    <span class="visible-md-inline visible-lg-inline">Traductions</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                    <div id="detail" class="tab-pane fade in active">
+                        <div class="table-responsive" style="padding-top: 10px">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td> Bundle à traduire : </td>
+                                        <td>
+                                            <form action="">
+                                                <select name="bundle">
+                                                    <option value="core" selected>Core - Distribution</option>
+                                                    <option value="mobileapp">MobileApp</option>
+                                                    <option value="nettheme">NetTheme</option>
+                                                    <option value="translator">Translator</option>
+                                                    <option value="chat">Chat</option>
+                                                    <option value="ldap">LDAP</option>
+                                                    <option value="remoteusersync">RemoteUserSynchronization</option>
+                                                    <option value="videojs">VideoJS</option>
+                                                    <option value="cursus">Cursus</option>
+                                                    <option value="">Survey</option>
+                                                    <option value="">PdfPlayer</option>
+                                                    <option value="">VideoPlayer</option>
+                                                    <option value="">FlashCard</option>
+                                                    <option value="">Installation</option>
+                                                    <option value="">Migration</option>
+                                                    <option value="">Scorm</option>
+                                                    <option value="">Kernel</option>
+                                                    <option value="">PdfGenerator</option>
+                                                    <option value="">Agenda</option>
+                                                    <option value="">ActivityTool</option>
+                                                    <option value="">Forum</option>
+                                                    <option value="">WebResource</option>
+                                                    <option value="">Annoucement</option>
+                                                    <option value="">ImagePlayer</option>
+                                                    <option value="">RssReader</option>
+                                                    <option value="">Tag</option>
+                                                    <option value="">Team</option>
+                                                    <option value="">TextPlayer</option>
+                                                    <option value="">FrontEnd</option>
+                                                    <option value="">Result</option>
+                                                    <option value="">Facebook</option>
+                                                    <option value="">Mockup</option>
+                                                    <option value="">UserTracking</option>
+                                                    <option value="">AngularUiBootstrap</option>
+                                                    <option value="">AngularDataTable</option>
+                                                    <option value="">AngularUiSelectize</option>
+                                                    <option value="">Demo</option>
+                                                    <option value="">Example</option>
+                                                    <option value="">Taxonomy</option>
+                                                    <option value="">Assignment</option>
+                                                    <option value="">Directory</option>
+                                                </select>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            Langue-cible :
+                                        </td>
+                                        <td>
+                                            <form action="">
+                                                <select name="language">
+                                                    <option value="french">Français</option>
+                                                    <option value="english" selected>English</option>
+                                                    <option value="dutch">Nederlands</option>
+                                                    <option value="italian">Italiano</option>
+                                                    <option value="german">Deutsch</option>
+                                                </select>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <form id="notification-user-parameters-form" action="#" method="post">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <th style="background-color: #337ab7">
+                                                <a href="#" style="color: #fff"> Clés </a>
+                                            </th>
+                                            <th style="color: white; background-color: #337ab7">
+                                                <a href="#" style="color: #fff"> Domaine de traduction </a>
+                                            </th>
+                                            <th style="color: white; background-color: #337ab7">
+                                                <a href="#" style="color: #fff"> Traduction initiale </a>
+                                            </th>
+                                            <th style="color: white; background-color: #337ab7"> Autre proposition </th>
+                                            <th style="color: white; background-color: #337ab7"> Actions </th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                set_as_header_in_home_page
+                                            </td>
+                                            <td>
+                                                <form action="">
+                                                    <select name="language">
+                                                        <option value="domain1">Domaine 1</option>
+                                                        <option value="domain2">Domaine 2</option>
+                                                        <option value="domain3">Domaine 3</option>
+                                                        <option value="domain4">Domaine 4</option>
+                                                        <option value="domain5">Domaine 5</option>
+                                                    </select>
+                                                </form>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="key_to_translate" placeholder="Choisir ce menu en tant que le menu d''en-tête dans la page d''accueil">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="translation_submit" placeholder="Choisir comme en-tête de la page d''accueil">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" title="Voir l'historique des traductions" data-toggle="modal" data-target="#myModal"><i class="fa fa-info"></i></button>
+                                                <button type="button" class="btn btn-primary" title="Soumettre une traduction" data-toggle="modal" data-target="#SubmitModal"><i class="fa fa-share-square-o"></i></button>
+                                                <button type="button" class="btn btn-primary" title="Valider la traduction" data-toggle="modal" data-target="#ValidatorValidateModal"><i class="fa fa-check-square-o"></i></button>
+                                                <button type="button" class="btn btn-danger disabled" title="Vous n'avez pas les droits de verrouillage" data-toggle="tooltip"><i class="fa fa-lock"></i></button>
+                                                <button type="button" class="btn btn-success disabled" title="Vous n'avez pas les droits de déverrouillage" data-toggle="tooltip"><i class="fa fa-unlock"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                read_more
+                                            </td>
+                                            <td>
+                                                <form action="">
+                                                    <select name="language">
+                                                        <option value="domain1">Domaine 1</option>
+                                                        <option value="domain2">Domaine 2</option>
+                                                        <option value="domain3">Domaine 3</option>
+                                                        <option value="domain4">Domaine 4</option>
+                                                        <option value="domain5">Domaine 5</option>
+                                                    </select>
+                                                </form>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="key_to_translate" placeholder="Read more">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="translation_submit">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" title="Voir l'historique des traductions" data-toggle="modal" data-target="#myModal"><i class="fa fa-info"></i></button>
+                                                <button type="button" class="btn btn-primary" title="Soumettre une traduction" data-toggle="modal" data-target="#SubmitModal"><i class="fa fa-share-square-o"></i></button>
+                                                <button type="button" class="btn btn-primary" title="Valider la traduction" data-toggle="modal" data-target="#ValidatorValidateModal"><i class="fa fa-check-square-o"></i></button>
+                                                <button type="button" class="btn btn-danger disabled" title="Vous n'avez pas les droits de verrouillage" data-toggle="tooltip"><i class="fa fa-lock"></i></button>
+                                                <button type="button" class="btn btn-success disabled" title="Vous n'avez pas les droits de déverrouillage" data-toggle="tooltip"><i class="fa fa-unlock"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                select_page
+                                            </td>
+                                            <td>
+                                                <form action="">
+                                                    <select name="language">
+                                                        <option value="domain1">Domaine 1</option>
+                                                        <option value="domain2">Domaine 2</option>
+                                                        <option value="domain3">Domaine 3</option>
+                                                        <option value="domain4">Domaine 4</option>
+                                                        <option value="domain5">Domaine 5</option>
+                                                    </select>
+                                                </form>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="key_to_translate" placeholder="Select this page">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="translation_submit">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-info" title="Voir l'historique des traductions" data-toggle="modal" data-target="#myModal"><i class="fa fa-info"></i></button>
+                                                <button type="button" class="btn btn-primary" title="Soumettre une traduction" data-toggle="modal" data-target="#SubmitModal"><i class="fa fa-share-square-o"></i></button>
+                                                <button type="button" class="btn btn-primary" title="Valider la traduction" data-toggle="modal" data-target="#ValidatorValidateModal"><i class="fa fa-check-square-o"></i></button>
+                                                <button type="button" class="btn btn-danger" title="Verrouiller la traduction" data-toggle="modal" data-target="#TranslatorLockModal"><i class="fa fa-lock"></i></button>
+                                                <button type="button" class="btn btn-success" title="Déverrouiller la traduction" data-toggle="modal" data-target="#TranslatorUnlockModal"><i class="fa fa-unlock"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                confirm_delete_content_message
+                                            </td>
+                                            <td>
+                                                <form action="">
+                                                    <select name="language">
+                                                        <option value="domain1">Domaine 1</option>
+                                                        <option value="domain2">Domaine 2</option>
+                                                        <option value="domain3">Domaine 3</option>
+                                                        <option value="domain4">Domaine 4</option>
+                                                        <option value="domain5">Domaine 5</option>
+                                                    </select>
+                                                </form>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="key_to_translate" placeholder="Are you sure you want to delete this content ?">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="translation_submit">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-default" title="Voir l'historique des traductions" data-toggle="modal" data-target="#myModal"><i class="fa fa-info"></i></button>
+                                                <button type="button" class="btn btn-default" title="Soumettre une traduction" data-toggle="modal" data-target="#SubmitModal"><i class="fa fa-share-square-o"></i></button>
+                                                <button type="button" class="btn btn-default" title="Valider la traduction" data-toggle="modal" data-target="#TranslatorValidateModal"><i class="fa fa-check-square-o"></i></button>
+                                                <button type="button" class="btn btn-default" title="Verrouiller la traduction" data-toggle="modal" data-target="#TranslatorLockModal"><i class="fa fa-lock"></i></button>
+                                                <button type="button" class="btn btn-default" title="Déverrouiller la traduction" data-toggle="modal" data-target="#TranslatorUnlockModal"><i class="fa fa-unlock"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                menu_settings
+                                            </td>
+                                            <td>
+                                                <form action="">
+                                                    <select name="language">
+                                                        <option value="domain1">Domaine 1</option>
+                                                        <option value="domain2">Domaine 2</option>
+                                                        <option value="domain3">Domaine 3</option>
+                                                        <option value="domain4">Domaine 4</option>
+                                                        <option value="domain5">Domaine 5</option>
+                                                    </select>
+                                                </form>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="key_to_translate" placeholder="Menu settings">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="translation_submit">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-default" title="Voir l'historique des traductions" data-toggle="modal" data-target="#myModal"><i class="fa fa-info"></i></button>
+                                                <button type="button" class="btn btn-default" title="Soumettre une traduction" data-toggle="modal" data-target="#SubmitModal"><i class="fa fa-share-square-o"></i></button>
+                                                <button type="button" class="btn btn-default" title="Valider la traduction" data-toggle="modal" data-target="#TranslatorValidateModal"><i class="fa fa-check-square-o"></i></button>
+                                                <button type="button" class="btn btn-default" title="Verrouiller la traduction"><i class="fa fa-lock"></i></button>
+                                                <button type="button" class="btn btn-default" title="Déverrouiller la traduction"><i class="fa fa-unlock"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row" style="padding-top: 15px; padding-bottom: 15px">
+                                <div class="col-xs-12 col-sm-9 col-md-8">
+                                    <div class="pagination">
+                                        <ul>
+                                            <li class="prev disabled">
+                                                <span>← Précédent</span>
+                                            </li>
+                                            <li class="active">
+                                                <span>1</span>
+                                            </li>
+                                            <li class="prev disabled">
+                                                <a href="#">2</a>
+                                            </li>
+                                            <li class="prev disabled">
+                                                <a href="#">3</a>
+                                            </li>
+                                            <li class="prev disabled">
+                                                <a href="#">4</a>
+                                            </li>
+                                            <li class="next disabled">
+                                                <a href="#">Suivant →</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal -->
+                            <div id="myModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Historique de traduction</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>2016-08-16 : Olivier Meinguet : En-tête</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="SubmitModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Soumission de traduction</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Votre proposition de traduction est soumise à validation. Merci pour votre aide.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ValidatorValidateModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Validation de traduction</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Vous avez validé cette traduction. Merci pour votre aide.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="TranslatorLockModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Verouillage des modifications</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Vous n'avez pas les droits de verouillage des modifications. Seuls les validateurs finaux peuvent effectuer cette opération.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="TranslatorUnlockModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Déverouillage des modifications</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Vous n'avez pas les droits de déverouillage des modifications. Seuls les validateurs finaux peuvent effectuer cette opération.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% include 'ClarolineNetThemeBundle::site_layout.css.html.twig' %}
+
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+</script>
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+</script>
+
+{% endblock %}

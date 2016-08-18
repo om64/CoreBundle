@@ -1,0 +1,33 @@
+translations: Translations
+translators_forums: Translators' forums
+bundle_to_translate: Bundle to translate
+target_language: Target language
+keys: Keys
+translation_platform: Translation platform
+english: English
+french: French
+dutch: Dutch
+german: German
+italian: Italian
+key_search: Search key or translation
+preceding: Preceding
+next: Next
+translation_field: Translation field
+initial_translation: Initial translation
+validation: Validation
+actions: Actions
+management: Management
+validate_initial_trans: Validate the initial translation
+submit_trans: Submit a new translation
+validate_trans: Validate the translation
+lock_trans: Lock the translation
+unlock_trans: Unlock the translation
+see_forum: Have a look at the forum of this bundle
+info: Have a look at the information
+date: Date
+author: Author
+french_version: French version
+confirm_change: Do you want to confirm this change ?
+submitted_trans: Submitted translation
+trans_history: History of translations
+close: Close

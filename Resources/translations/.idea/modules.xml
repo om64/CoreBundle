@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/formalibre.iml" filepath="$PROJECT_DIR$/.idea/formalibre.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/translations.iml" filepath="$PROJECT_DIR$/.idea/translations.iml" />
     </modules>
   </component>
 </project>

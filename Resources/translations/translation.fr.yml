@@ -1,0 +1,33 @@
+translations: Traductions
+translators_forums: Forums des traducteurs
+bundle_to_translate: Bundle à traduire
+target_language: Langue-cible
+keys: Clés
+translation_platform: Plateforme de traduction
+english: Anglais
+french: Français
+dutch: Néerlandais
+german: Allemand
+italian: Italien
+key_search: Recherche clé ou traduction
+preceding: Précédent
+next: Suivant
+translation_field: Domaine de traduction
+initial_translation: Traduction initiale
+validation: Validation
+actions: Actions
+management: Administration
+validate_initial_trans: Valider la traduction initiale
+submit_trans: Soumettre une nouvelle traduction
+validate_trans: Valider la traduction
+lock_trans: Verrouiller la traduction
+unlock_trans: Déverouiller la traduction
+see_forum: Aller sur le forum du bundle
+info: Voir les informations
+date: Date
+author: Auteur
+french_version: Version française
+confirm_change: Confirmez-vous cette modification ?
+submitted_trans: Traduction soumise
+trans_history: Historique des traductions
+close: Fermer

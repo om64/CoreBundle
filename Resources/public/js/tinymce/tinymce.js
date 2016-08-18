@@ -240,7 +240,8 @@
      */
 
     // Get theme to load inside tinymce in order to have no display differences
-    var themeCSS = _.find(_.pluck(document.styleSheets, 'href'), function(link){return link.indexOf("themes/") !== -1});
+    //var themeCSS = _.find(_.pluck(document.styleSheets, 'href'), function(link){return link.indexOf("themes/") !== -1});
+    var themeCSS = []
 
     tinymce.claroline.configuration = {
         paste_data_images: true,
