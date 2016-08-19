@@ -423,7 +423,7 @@
                                 <table id="forums" class="table table-striped table-bordered table-condensed">
                                     <tbody>
                                         <th style="background-color: #337ab7">
-                                            <a href="#" style="color: #fff"> Liste des forums par bundle </a>
+                                            <a href="#" style="color: #fff"> {{ 'forum_list'|trans({}, 'translation') }} </a>
                                         </th>
                                         <tr>
                                             <td> <a href="#" target="_blank"> Core - Distribution </a></td>
@@ -445,11 +445,10 @@
                             </div>
                         </div>
 
-                        <!-- Modal -->
+                        <!-- Modals-->
+
                         <div id="info" class="modal fade" role="dialog">
                             <div class="modal-dialog">
-
-                                <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -480,7 +479,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="trans_val" class="modal fade" role="dialog">
+                        <div id="valid_val" class="modal fade" role="dialog">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -521,35 +520,38 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Soumission de traduction</h4>
+                                        <h4 class="modal-title"> {{ 'submit_trans'|trans({}, 'translation') }} </h4>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Votre proposition de traduction est soumise à validation. Merci pour votre aide.</p>
+                                        <p> {{ 'submit_trans_msg'|trans({}, 'translation') }} </p>
+                                        <p><input type="text" name="translation_submit" placeholder=" {{ 'my_prop'|trans({}, 'translation') }} "></p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal"> {{ 'close'|trans({}, 'translation') }} </button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal"> {{ 'cancel'|trans({}, 'translation') }} </button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"> {{ 'confirm'|trans({}, 'translation') }} </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        {#<div id="TranslatorLockModal" class="modal fade" role="dialog">#}
-                            {#<div class="modal-dialog">#}
+                        <div id="trans_val" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
 
-                                {#<!-- Modal content-->#}
-                                {#<div class="modal-content">#}
-                                    {#<div class="modal-header">#}
-                                        {#<button type="button" class="close" data-dismiss="modal">&times;</button>#}
-                                        {#<h4 class="modal-title">Verouillage des modifications</h4>#}
-                                    {#</div>#}
-                                    {#<div class="modal-body">#}
-                                        {#<p>Vous n'avez pas les droits de verouillage des modifications. Seuls les validateurs finaux peuvent effectuer cette opération.</p>#}
-                                    {#</div>#}
-                                    {#<div class="modal-footer">#}
-                                        {#<button type="button" class="btn btn-default" data-dismiss="modal"> {{ 'close'|trans({}, 'translation') }} </button>#}
-                                    {#</div>#}
-                                {#</div>#}
-                            {#</div>#}
-                        {#</div>#}
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title"> {{ 'validate_initial_trans'|trans({}, 'translation') }} </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p> {{ 'init_trans_msg'|trans({}, 'translation') }} </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal"> {{ 'cancel'|trans({}, 'translation') }} </button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"> {{ 'confirm'|trans({}, 'translation') }} </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         {#<div id="TranslatorUnlockModal" class="modal fade" role="dialog">#}
                             {#<div class="modal-dialog">#}
 

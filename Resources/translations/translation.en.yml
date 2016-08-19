@@ -31,3 +31,9 @@ confirm_change: Do you want to confirm this change ?
 submitted_trans: Submitted translation
 trans_history: History of translations
 close: Close
+cancel: Cancel
+confirm: Confirm
+init_trans_msg: You think the initial translation is correct. Do you confirm this ?
+submit_trans_msg: Have you had a look at the proposals in the history?
+my_prop: My proposal
+forum_list: List of forums by bundles
