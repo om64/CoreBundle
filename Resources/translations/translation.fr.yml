@@ -33,7 +33,11 @@ trans_history: Historique des traductions
 close: Fermer
 cancel: Annuler
 confirm: Confirmer
-init_trans_msg: Vous pensez que le traduction initiale est correcte. Confirmez-vous cela ?
+init_trans_msg: Vous pensez que le traduction initiale est correcte. Voulez-vous confirmer cela ?
 submit_trans_msg: Avez-vous pensé à regarder les différentes propositions dans l'historique ?
 my_prop: Ma proposition de traduction
 forum_list: Liste des forums par bundle
+new_trans: Nouvelle traduction
+choose_trans: Choisir une des traductions soumises
+final_trans_msg: Vous pensez que le traduction suivante est correcte: %trans% . Voulez-vous confirmer cela ?
+confirm_choose_trans: Confirmation du choix final

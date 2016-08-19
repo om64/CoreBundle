@@ -455,7 +455,7 @@
                                         <h4 class="modal-title"> {{ 'trans_history'|trans({}, 'translation') }} </h4>
                                     </div>
                                     <div class="modal-body">
-                                        <p><strong> {{ 'french_version'|trans({}, 'translation') }}  :</strong>  {{ 'confirm_change'|trans({}, 'translation') }} </p>
+                                        <p><strong> {{ 'french_version'|trans({}, 'translation') }}  :</strong> Voulez-vous confirmer cette modification ? </p>
                                         <div class="table-responsive">
                                             <table class="table">
                                                 <tbody>
@@ -515,8 +515,6 @@
                         </div>
                         <div id="SubmitModal" class="modal fade" role="dialog">
                             <div class="modal-dialog">
-
-                                <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -524,7 +522,15 @@
                                     </div>
                                     <div class="modal-body">
                                         <p> {{ 'submit_trans_msg'|trans({}, 'translation') }} </p>
-                                        <p><input type="text" name="translation_submit" placeholder=" {{ 'my_prop'|trans({}, 'translation') }} "></p>
+                                        {#<p><input type="text" name="translation_submit" placeholder=" {{ 'my_prop'|trans({}, 'translation') }} "></p>#}
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading"> {{ 'new_trans'|trans({}, 'translation') }} </div>
+                                            <div class="panel-body">
+                                                <p>Insérer ici <strong>tinymce</strong> pour composer des propositions de traduction.</p>
+                                                <textarea rows="4" cols="80" name="new_translation" required>
+                                                </textarea>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal"> {{ 'cancel'|trans({}, 'translation') }} </button>
@@ -535,8 +541,6 @@
                         </div>
                         <div id="trans_val" class="modal fade" role="dialog">
                             <div class="modal-dialog">
-
-                                <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -552,6 +556,7 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                         {#<div id="TranslatorUnlockModal" class="modal fade" role="dialog">#}
                             {#<div class="modal-dialog">#}
 
@@ -592,5 +597,40 @@
 </script>
 <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
 </script>
+{#<script src="/bundles/clarolinecore/js/iframe/iframe.js" type="text/javascript">#}
+{#<script src="/vendor/twitter/bootstrap/js/bootstrap.js" type="text/javascript">#}
+{#<script src="/vendor/jms/twig-js/twig.js" type="text/javascript">#}
+{#<script src="/js/39964d4.fr.js" type="text/javascript">#}
+{#<script src="/vendor/jquery/ui/jqueryui.js" type="text/javascript">#}
+{#<script src="/js/dd81a76.js">#}
+{#<script src="/bundles/fosjsrouting/js/router.js" type="text/javascript">#}
+{#<script src="/js/routing?callback=fos.Router.setData" type="text/javascript">#}
+{#<script src="/packages/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" type="text/javascript">#}
+{#<script src="/packages/bootstrap-datepicker/js/locales/bootstrap-datepicker.fr.js" type="text/javascript">#}
+{#<script src="/packages/underscore/underscore.js" type="text/javascript">#}
+{#<script src="/packages/backbone/backbone.js" type="text/javascript">#}
+{#<script src="/vendor/claroline/js/libraries.js" type="text/javascript">#}
+{#<script src="/bundles/stfalcontinymce/vendor/tinymce/tinymce.jquery.min.js" type="text/javascript">#}
+{#<script src="/bundles/stfalcontinymce/vendor/tinymce/jquery.tinymce.min.js" type="text/javascript">#}
+{#<!-- this is not duplicated file -->#}
+{#<script src="/bundles/clarolinecore/js/tinymce/tinymce.js" type="text/javascript">#}
+{#<script src="/bundles/clarolinecore/js/tinymce/resource_picker_button.js" type="text/javascript">#}
+{#<script src="/bundles/clarolinecore/js/tinymce/resource_picker.js" type="text/javascript">#}
+{#<script src="/bundles/clarolinecore/js/tinymce/resource_upload_button.js" type="text/javascript">#}
+{#<script type="text/javascript">#}
+{#<script src="/packages/video.js/dist/video.min.js">#}
+{#<script>#}
+{#<script>#}
+{#<link rel="stylesheet" href="/packages/video.js/dist/video-js.min.css">#}
+{#<script src="/js/tinymce/plugins/formula/langs.js" type="text/javascript">#}
+{#<script>#}
+{#<script type="text/javascript">#}
+{#<script type="text/javascript">#}
+{#<script type="text/javascript">#}
+{#<script src="http://3l.claroline.com/translations/path_wizards" type="text/javascript">#}
+{#<script src="/vendor/innovapath/angular-js.js" type="text/javascript">#}
+{#<script src="/vendor/innovapath/angular-ui.js" type="text/javascript">#}
+{#<script src="/vendor/innovapath/wizards.js" type="text/javascript">#}
+{#<script type="text/javascript">#}
 
 {% endblock %}

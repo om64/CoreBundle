@@ -2,7 +2,7 @@
 
 {% block panelTitle %}
     <p style="padding: 5px" xmlns="http://www.w3.org/1999/html">
-        Plateforme de traduction
+        {{ 'translation_platform'|trans({}, 'translation') }}
     </p>
 
 {% endblock %}
@@ -212,373 +212,358 @@
                 <div class="translation-tabpanel" role="tabpanel">
                     <ul class="nav nav-tabs" role="tablist" id="translation_space_tabs">
                         <li class="translation-tab active">
-                            <a href="#detail" aria-controls="translations" role="tab" data-toggle="tab">
+                            <a href="#translations" aria-controls="translations" role="tab" data-toggle="tab">
                                 <span class="icon-bg"></span>
                                 <span class="option-text">
-                                    <span class="visible-md-inline visible-lg-inline">Traductions</span>
+                                    <span class="visible-md-inline visible-lg-inline"> {{ 'translations'|trans({}, 'translation') }} </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="forums-tab">
+                            <a href="#forums" aria-controls="forums" role="tab" data-toggle="tab">
+                                <span class="icon-bg"></span>
+                                <span class="option-text">
+                                    <span class="visible-md-inline visible-lg-inline"> {{ 'translators_forums'|trans({}, 'translation') }} </span>
                                 </span>
                             </a>
                         </li>
                     </ul>
                 </div>
-                    <div id="detail" class="tab-pane fade in active">
-                        <div class="table-responsive" style="padding-top: 10px">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <td> Bundle à traduire : </td>
-                                        <td>
-                                            <form action="">
-                                                <select name="bundle">
-                                                    <option value="core" selected>Core - Distribution</option>
-                                                    <option value="mobileapp">MobileApp</option>
-                                                    <option value="nettheme">NetTheme</option>
-                                                    <option value="translator">Translator</option>
-                                                    <option value="chat">Chat</option>
-                                                    <option value="ldap">LDAP</option>
-                                                    <option value="remoteusersync">RemoteUserSynchronization</option>
-                                                    <option value="videojs">VideoJS</option>
-                                                    <option value="cursus">Cursus</option>
-                                                    <option value="">Survey</option>
-                                                    <option value="">PdfPlayer</option>
-                                                    <option value="">VideoPlayer</option>
-                                                    <option value="">FlashCard</option>
-                                                    <option value="">Installation</option>
-                                                    <option value="">Migration</option>
-                                                    <option value="">Scorm</option>
-                                                    <option value="">Kernel</option>
-                                                    <option value="">PdfGenerator</option>
-                                                    <option value="">Agenda</option>
-                                                    <option value="">ActivityTool</option>
-                                                    <option value="">Forum</option>
-                                                    <option value="">WebResource</option>
-                                                    <option value="">Annoucement</option>
-                                                    <option value="">ImagePlayer</option>
-                                                    <option value="">RssReader</option>
-                                                    <option value="">Tag</option>
-                                                    <option value="">Team</option>
-                                                    <option value="">TextPlayer</option>
-                                                    <option value="">FrontEnd</option>
-                                                    <option value="">Result</option>
-                                                    <option value="">Facebook</option>
-                                                    <option value="">Mockup</option>
-                                                    <option value="">UserTracking</option>
-                                                    <option value="">AngularUiBootstrap</option>
-                                                    <option value="">AngularDataTable</option>
-                                                    <option value="">AngularUiSelectize</option>
-                                                    <option value="">Demo</option>
-                                                    <option value="">Example</option>
-                                                    <option value="">Taxonomy</option>
-                                                    <option value="">Assignment</option>
-                                                    <option value="">Directory</option>
-                                                </select>
-                                            </form>
-                                        </td>
-                                        <td>
-                                            Langue-cible :
-                                        </td>
-                                        <td>
-                                            <form action="">
-                                                <select name="language">
-                                                    <option value="french">Français</option>
-                                                    <option value="english" selected>English</option>
-                                                    <option value="dutch">Nederlands</option>
-                                                    <option value="italian">Italiano</option>
-                                                    <option value="german">Deutsch</option>
-                                                </select>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <form id="notification-user-parameters-form" action="#" method="post">
+                <form id="translations-form" action="#" method="post">
+                    <div class="tab-content">
+                        <div id="translations" class="tab-pane fade in active">
                             <div class="table-responsive">
-                                <table class="table">
+                                <table id="bundle-lge-choice" class="table">
                                     <tbody>
                                         <tr>
-                                            <th style="background-color: #337ab7">
-                                                <a href="#" style="color: #fff"> Clés </a>
-                                            </th>
-                                            <th style="color: white; background-color: #337ab7">
-                                                <a href="#" style="color: #fff"> Domaine de traduction </a>
-                                            </th>
-                                            <th style="color: white; background-color: #337ab7">
-                                                <a href="#" style="color: #fff"> Traduction initiale </a>
-                                            </th>
-                                            <th style="color: white; background-color: #337ab7"> Autre proposition </th>
-                                            <th style="color: white; background-color: #337ab7"> Actions </th>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                set_as_header_in_home_page
-                                            </td>
+                                            <td> {{ 'bundle_to_translate'|trans({}, 'translation') }} </td>
                                             <td>
                                                 <form action="">
-                                                    <select name="language">
-                                                        <option value="domain1">Domaine 1</option>
-                                                        <option value="domain2">Domaine 2</option>
-                                                        <option value="domain3">Domaine 3</option>
-                                                        <option value="domain4">Domaine 4</option>
-                                                        <option value="domain5">Domaine 5</option>
+                                                    <select name="bundle">
+                                                        <option value="core" selected>Core - Distribution</option>
+                                                        <option value="mobileapp">MobileApp</option>
+                                                        <option value="nettheme">NetTheme</option>
+                                                        <option value="translator">Translator</option>
+                                                        <option value="chat">Chat</option>
+                                                        <option value="ldap">LDAP</option>
+                                                        <option value="remoteusersync">RemoteUserSynchronization</option>
+                                                        <option value="videojs">VideoJS</option>
+                                                        <option value="cursus">Cursus</option>
+                                                        <option value="">Survey</option>
+                                                        <option value="">PdfPlayer</option>
+                                                        <option value="">VideoPlayer</option>
+                                                        <option value="">FlashCard</option>
+                                                        <option value="">Installation</option>
+                                                        <option value="">Migration</option>
+                                                        <option value="">Scorm</option>
+                                                        <option value="">Kernel</option>
+                                                        <option value="">PdfGenerator</option>
+                                                        <option value="agenda" selected>Agenda</option>
+                                                        <option value="activitytool">ActivityTool</option>
+                                                        <option value="forum">Forum</option>
+                                                        <option value="">WebResource</option>
+                                                        <option value="">Annoucement</option>
+                                                        <option value="">ImagePlayer</option>
+                                                        <option value="">RssReader</option>
+                                                        <option value="">Tag</option>
+                                                        <option value="">Team</option>
+                                                        <option value="">TextPlayer</option>
+                                                        <option value="">FrontEnd</option>
+                                                        <option value="">Result</option>
+                                                        <option value="">Facebook</option>
+                                                        <option value="">Mockup</option>
+                                                        <option value="">UserTracking</option>
+                                                        <option value="">AngularUiBootstrap</option>
+                                                        <option value="">AngularDataTable</option>
+                                                        <option value="">AngularUiSelectize</option>
+                                                        <option value="">Demo</option>
+                                                        <option value="">Example</option>
+                                                        <option value="">Taxonomy</option>
+                                                        <option value="">Assignment</option>
+                                                        <option value="">Directory</option>
                                                     </select>
                                                 </form>
                                             </td>
-                                            <td>
-                                                <input type="text" name="key_to_translate" placeholder="Choisir ce menu en tant que le menu d''en-tête dans la page d''accueil">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="translation_submit" placeholder="Choisir comme en-tête de la page d''accueil">
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-info" title="Voir l'historique des traductions" data-toggle="modal" data-target="#myModal"><i class="fa fa-info"></i></button>
-                                                <button type="button" class="btn btn-primary" title="Soumettre une traduction" data-toggle="modal" data-target="#SubmitModal"><i class="fa fa-share-square-o"></i></button>
-                                                <button type="button" class="btn btn-primary" title="Valider la traduction" data-toggle="modal" data-target="#ValidatorValidateModal"><i class="fa fa-check-square-o"></i></button>
-                                                <button type="button" class="btn btn-danger disabled" title="Vous n'avez pas les droits de verrouillage" data-toggle="tooltip"><i class="fa fa-lock"></i></button>
-                                                <button type="button" class="btn btn-success disabled" title="Vous n'avez pas les droits de déverrouillage" data-toggle="tooltip"><i class="fa fa-unlock"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                read_more
-                                            </td>
+                                            <td> {{ 'target_language'|trans({}, 'translation') }} </td>
                                             <td>
                                                 <form action="">
                                                     <select name="language">
-                                                        <option value="domain1">Domaine 1</option>
-                                                        <option value="domain2">Domaine 2</option>
-                                                        <option value="domain3">Domaine 3</option>
-                                                        <option value="domain4">Domaine 4</option>
-                                                        <option value="domain5">Domaine 5</option>
+                                                        <option value="french"> {{ 'french'|trans({}, 'translation') }} </option>
+                                                        <option value="english" selected> {{ 'english'|trans({}, 'translation') }} </option>
+                                                        <option value="dutch"> {{ 'dutch'|trans({}, 'translation') }} </option>
+                                                        <option value="italian"> {{ 'italian'|trans({}, 'translation') }} </option>
+                                                        <option value="german"> {{ 'german'|trans({}, 'translation') }} </option>
                                                     </select>
                                                 </form>
-                                            </td>
-                                            <td>
-                                                <input type="text" name="key_to_translate" placeholder="Read more">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="translation_submit">
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-info" title="Voir l'historique des traductions" data-toggle="modal" data-target="#myModal"><i class="fa fa-info"></i></button>
-                                                <button type="button" class="btn btn-primary" title="Soumettre une traduction" data-toggle="modal" data-target="#SubmitModal"><i class="fa fa-share-square-o"></i></button>
-                                                <button type="button" class="btn btn-primary" title="Valider la traduction" data-toggle="modal" data-target="#ValidatorValidateModal"><i class="fa fa-check-square-o"></i></button>
-                                                <button type="button" class="btn btn-danger disabled" title="Vous n'avez pas les droits de verrouillage" data-toggle="tooltip"><i class="fa fa-lock"></i></button>
-                                                <button type="button" class="btn btn-success disabled" title="Vous n'avez pas les droits de déverrouillage" data-toggle="tooltip"><i class="fa fa-unlock"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                select_page
-                                            </td>
-                                            <td>
-                                                <form action="">
-                                                    <select name="language">
-                                                        <option value="domain1">Domaine 1</option>
-                                                        <option value="domain2">Domaine 2</option>
-                                                        <option value="domain3">Domaine 3</option>
-                                                        <option value="domain4">Domaine 4</option>
-                                                        <option value="domain5">Domaine 5</option>
-                                                    </select>
-                                                </form>
-                                            </td>
-                                            <td>
-                                                <input type="text" name="key_to_translate" placeholder="Select this page">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="translation_submit">
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-info" title="Voir l'historique des traductions" data-toggle="modal" data-target="#myModal"><i class="fa fa-info"></i></button>
-                                                <button type="button" class="btn btn-primary" title="Soumettre une traduction" data-toggle="modal" data-target="#SubmitModal"><i class="fa fa-share-square-o"></i></button>
-                                                <button type="button" class="btn btn-primary" title="Valider la traduction" data-toggle="modal" data-target="#ValidatorValidateModal"><i class="fa fa-check-square-o"></i></button>
-                                                <button type="button" class="btn btn-danger" title="Verrouiller la traduction" data-toggle="modal" data-target="#TranslatorLockModal"><i class="fa fa-lock"></i></button>
-                                                <button type="button" class="btn btn-success" title="Déverrouiller la traduction" data-toggle="modal" data-target="#TranslatorUnlockModal"><i class="fa fa-unlock"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                confirm_delete_content_message
-                                            </td>
-                                            <td>
-                                                <form action="">
-                                                    <select name="language">
-                                                        <option value="domain1">Domaine 1</option>
-                                                        <option value="domain2">Domaine 2</option>
-                                                        <option value="domain3">Domaine 3</option>
-                                                        <option value="domain4">Domaine 4</option>
-                                                        <option value="domain5">Domaine 5</option>
-                                                    </select>
-                                                </form>
-                                            </td>
-                                            <td>
-                                                <input type="text" name="key_to_translate" placeholder="Are you sure you want to delete this content ?">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="translation_submit">
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-default" title="Voir l'historique des traductions" data-toggle="modal" data-target="#myModal"><i class="fa fa-info"></i></button>
-                                                <button type="button" class="btn btn-default" title="Soumettre une traduction" data-toggle="modal" data-target="#SubmitModal"><i class="fa fa-share-square-o"></i></button>
-                                                <button type="button" class="btn btn-default" title="Valider la traduction" data-toggle="modal" data-target="#TranslatorValidateModal"><i class="fa fa-check-square-o"></i></button>
-                                                <button type="button" class="btn btn-default" title="Verrouiller la traduction" data-toggle="modal" data-target="#TranslatorLockModal"><i class="fa fa-lock"></i></button>
-                                                <button type="button" class="btn btn-default" title="Déverrouiller la traduction" data-toggle="modal" data-target="#TranslatorUnlockModal"><i class="fa fa-unlock"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                menu_settings
-                                            </td>
-                                            <td>
-                                                <form action="">
-                                                    <select name="language">
-                                                        <option value="domain1">Domaine 1</option>
-                                                        <option value="domain2">Domaine 2</option>
-                                                        <option value="domain3">Domaine 3</option>
-                                                        <option value="domain4">Domaine 4</option>
-                                                        <option value="domain5">Domaine 5</option>
-                                                    </select>
-                                                </form>
-                                            </td>
-                                            <td>
-                                                <input type="text" name="key_to_translate" placeholder="Menu settings">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="translation_submit">
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-default" title="Voir l'historique des traductions" data-toggle="modal" data-target="#myModal"><i class="fa fa-info"></i></button>
-                                                <button type="button" class="btn btn-default" title="Soumettre une traduction" data-toggle="modal" data-target="#SubmitModal"><i class="fa fa-share-square-o"></i></button>
-                                                <button type="button" class="btn btn-default" title="Valider la traduction" data-toggle="modal" data-target="#TranslatorValidateModal"><i class="fa fa-check-square-o"></i></button>
-                                                <button type="button" class="btn btn-default" title="Verrouiller la traduction"><i class="fa fa-lock"></i></button>
-                                                <button type="button" class="btn btn-default" title="Déverrouiller la traduction"><i class="fa fa-unlock"></i></button>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="row" style="padding-top: 15px; padding-bottom: 15px">
-                                <div class="col-xs-12 col-sm-9 col-md-8">
-                                    <div class="pagination">
-                                        <ul>
-                                            <li class="prev disabled">
-                                                <span>← Précédent</span>
-                                            </li>
-                                            <li class="active">
-                                                <span>1</span>
-                                            </li>
-                                            <li class="prev disabled">
-                                                <a href="#">2</a>
-                                            </li>
-                                            <li class="prev disabled">
-                                                <a href="#">3</a>
-                                            </li>
-                                            <li class="prev disabled">
-                                                <a href="#">4</a>
-                                            </li>
-                                            <li class="next disabled">
-                                                <a href="#">Suivant →</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <th style="background-color: #337ab7">
+                                                <a href="#" style="color: #fff"> {{ 'keys'|trans({}, 'translation') }} </a>
+                                            </th>
+                                            <th style="color: white; background-color: #337ab7">
+                                                <a href="#" style="color: #fff"> {{ 'translation_field'|trans({}, 'translation') }} </a>
+                                            </th>
+                                            <th style="color: white; background-color: #337ab7">
+                                                <a href="#" style="color: #fff"> {{ 'initial_translation'|trans({}, 'translation') }} </a>
+                                            </th>
+                                            <th style="color: white; background-color: #337ab7"> {{ 'actions'|trans({}, 'translation') }} </th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input class="input-filter form-control ng-pristine ng-valid ng-scope ng-touched" type="text" name="training" ng-disabled="$filterRow.disabled"
+                                                       ng-model="params.filter()[name]" placeholder=" {{ 'key_search'|trans({}, 'translation') }}">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>confirm</td>
+                                            <td>agenda</td>
+                                            <td>Confirm modification ?</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'validate_initial_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#trans_val"><i class="fa fa-check-square-o"></i></button>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'choose_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#valid_val"><i class="fa fa-list-alt"></i></button>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'submit_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#SubmitModal"><i class="fa fa-share-square-o"></i></button>
+                                                <a href="#"><button type="button" class="btn btn-primary" title=" {{ 'see_forum'|trans({}, 'translation') }} " data-toggle="tooltip bottom"><i class="fa fa-comments-o"></i></button></a>
+                                                <button type="button" class="btn btn-danger" title=" {{ 'lock_trans'|trans({}, 'translation') }} " data-toggle="tooltip bottom"><i class="fa fa-lock"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        <tr>
+                                            <td>agenda</td>
+                                            <td>tools</td>
+                                            <td>Agenda</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'validate_initial_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#trans_val"><i class="fa fa-check-square-o"></i></button>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'choose_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#valid_val"><i class="fa fa-list-alt"></i></button>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'submit_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#SubmitModal"><i class="fa fa-share-square-o"></i></button>
+                                                <a href="#"><button type="button" class="btn btn-primary" title=" {{ 'see_forum'|trans({}, 'translation') }} " data-toggle="tooltip bottom"><i class="fa fa-comments-o"></i></button></a>
+                                                <button type="button" class="btn btn-danger" title=" {{ 'lock_trans'|trans({}, 'translation') }} " data-toggle="tooltip bottom"><i class="fa fa-lock"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>date_range_too_small</td>
+                                            <td>validators</td>
+                                            <td>The event must last at least 15 minutes.</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'validate_initial_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#trans_val"><i class="fa fa-check-square-o"></i></button>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'choose_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#valid_val"><i class="fa fa-list-alt"></i></button>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'submit_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#SubmitModal"><i class="fa fa-share-square-o"></i></button>
+                                                <a href="#"><button type="button" class="btn btn-primary" title=" {{ 'see_forum'|trans({}, 'translation') }} " data-toggle="tooltip bottom"><i class="fa fa-comments-o"></i></button></a>
+                                                <button type="button" class="btn btn-danger" title=" {{ 'lock_trans'|trans({}, 'translation') }} " data-toggle="tooltip bottom"><i class="fa fa-lock"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                mark_task_as_done
+                                            </td>
+                                            <td>widget</td>
+                                            <td>Mark this task as done</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'validate_initial_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#trans_val"><i class="fa fa-check-square-o"></i></button>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'choose_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#valid_val"><i class="fa fa-list-alt"></i></button>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'submit_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#SubmitModal"><i class="fa fa-share-square-o"></i></button>
+                                                <a href="#"><button type="button" class="btn btn-primary" title=" {{ 'see_forum'|trans({}, 'translation') }} " data-toggle="tooltip bottom"><i class="fa fa-comments-o"></i></button></a>
+                                                <button type="button" class="btn btn-danger" title=" {{ 'lock_trans'|trans({}, 'translation') }} " data-toggle="tooltip bottom"><i class="fa fa-lock"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>cant_modify_task</td>
+                                            <td>widget</td>
+                                            <td>You cannot modify this task</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'validate_initial_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#trans_val"><i class="fa fa-check-square-o"></i></button>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'choose_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#valid_val"><i class="fa fa-list-alt"></i></button>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'submit_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#SubmitModal"><i class="fa fa-share-square-o"></i></button>
+                                                <a href="#"><button type="button" class="btn btn-primary" title=" {{ 'see_forum'|trans({}, 'translation') }} " data-toggle="tooltip bottom"><i class="fa fa-comments-o"></i></button></a>
+                                                <button type="button" class="btn btn-danger" title=" {{ 'lock_trans'|trans({}, 'translation') }} " data-toggle="tooltip bottom"><i class="fa fa-lock"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>remove_event_confirm</td>
+                                            <td>agenda</td>
+                                            <td>Are you sure you want to remove this event ?</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'validate_initial_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#trans_val"><i class="fa fa-check-square-o"></i></button>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'choose_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#valid_val"><i class="fa fa-list-alt"></i></button>
+                                                <button type="button" class="btn btn-primary" title=" {{ 'submit_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#SubmitModal"><i class="fa fa-share-square-o"></i></button>
+                                                <a href="#"><button type="button" class="btn btn-primary" title=" {{ 'see_forum'|trans({}, 'translation') }} " data-toggle="tooltip bottom"><i class="fa fa-comments-o"></i></button></a>
+                                                <button type="button" class="btn btn-danger" title=" {{ 'lock_trans'|trans({}, 'translation') }} " data-toggle="tooltip bottom"><i class="fa fa-lock"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            <!-- Modal -->
-                            <div id="myModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
+                                <div class="pagination">
+                                    <ul>
+                                        <li class="prev disabled">
+                                            <span>←  {{ 'preceding'|trans({}, 'translation') }}</span>
+                                        </li>
+                                        <li class="active">
+                                            <span>1</span>
+                                        </li>
+                                        <li class="prev disabled">
+                                            <a href="#">2</a>
+                                        </li>
+                                        <li class="prev disabled">
+                                            <a href="#">3</a>
+                                        </li>
+                                        <li class="prev disabled">
+                                            <a href="#">4</a>
+                                        </li>
+                                        <li class="next disabled">
+                                            <a href="#"> {{ 'next'|trans({}, 'translation') }} →</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                        </div>
+                        <div id="forums" class="tab-pane fade" style="margin-top: 10px">
+                            <div class="table-responsive">
+                                <table id="forums" class="table table-striped table-bordered table-condensed">
+                                    <tbody>
+                                        <th style="background-color: #337ab7">
+                                            <a href="#" style="color: #fff"> {{ 'forum_list'|trans({}, 'translation') }} </a>
+                                        </th>
+                                        <tr>
+                                            <td> <a href="#" target="_blank"> Core - Distribution </a></td>
+                                        </tr>
+                                        <tr>
+                                            <td> <a href="#" target="_blank"> MobileApp </a></td>
+                                        </tr>
+                                        <tr>
+                                            <td> <a href="#" target="_blank"> NetThemeCore </a></td>
+                                        </tr>
+                                        <tr>
+                                            <td> <a href="#" target="_blank"> Translator </a></td>
+                                        </tr>
+                                        <tr>
+                                            <td> Etc... </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
 
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Historique de traduction</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>2016-08-16 : Olivier Meinguet : En-tête</p>
+                        <!-- Modals-->
+
+                        <div id="valid_val" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title"> {{ 'choose_trans'|trans({}, 'translation') }} </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p><strong> {{ 'french_version'|trans({}, 'translation') }}  :</strong> Voulez-vous confirmer cette modification ? </p>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <tbody>
+                                                <tr>
+                                                    <th style="background-color: #337ab7"> <a href="#" style="color: #fff"> {{ 'date'|trans({}, 'translation') }} </a> </th>
+                                                    <th style="color: white; background-color: #337ab7"> <a href="#" style="color: #fff"> {{ 'author'|trans({}, 'translation') }} </a> </th>
+                                                    <th style="color: white; background-color: #337ab7"> {{ 'submitted_trans'|trans({}, 'translation') }} </th>
+                                                    <th style="color: white; background-color: #337ab7"> {{ 'actions'|trans({}, 'translation') }} </th>
+                                                </tr>
+                                                <tr>
+                                                    <td>2016-08-18</td>
+                                                    <td>Olivier MEINGUET</td>
+                                                    <td>Do you want to confirm this change ?</td>
+                                                    <td><button type="button" class="btn btn-primary" title=" {{ 'choose_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#final_val"><i class="fa fa-check-square-o"></i></button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2016-08-19</td>
+                                                    <td>Sherlock HOLMES</td>
+                                                    <td>Do you want to confirm this modification ?</td>
+                                                    <td><button type="button" class="btn btn-primary" title=" {{ 'choose_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#final_val"><i class="fa fa-check-square-o"></i></button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2016-08-20</td>
+                                                    <td>Charles DICKENS</td>
+                                                    <td>Do you wish to confirm this change ?</td>
+                                                    <td><button type="button" class="btn btn-primary" title=" {{ 'choose_trans'|trans({}, 'translation') }} " data-toggle="modal" data-target="#final_val"><i class="fa fa-check-square-o"></i></button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal"> {{ 'close'|trans({}, 'translation') }} </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div id="SubmitModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Soumission de traduction</h4>
+                        </div>
+                        <div id="SubmitModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title"> {{ 'submit_trans'|trans({}, 'translation') }} </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        {#<p> {{ 'submit_trans_msg'|trans({}, 'translation') }} </p>#}
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading"> {{ 'new_trans'|trans({}, 'translation') }} </div>
+                                            <div class="panel-body">
+                                                <p>Insérer ici <strong>tinymce</strong> pour composer des propositions de traduction.</p>
+                                                <textarea rows="4" cols="80" name="new_translation" required>
+                                                </textarea>
+                                            </div>
                                         </div>
-                                        <div class="modal-body">
-                                            <p>Votre proposition de traduction est soumise à validation. Merci pour votre aide.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal"> {{ 'cancel'|trans({}, 'translation') }} </button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"> {{ 'confirm'|trans({}, 'translation') }} </button>
                                     </div>
                                 </div>
                             </div>
-                            <div id="ValidatorValidateModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Validation de traduction</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Vous avez validé cette traduction. Merci pour votre aide.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                                        </div>
+                        </div>
+                        <div id="trans_val" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title"> {{ 'validate_initial_trans'|trans({}, 'translation') }} </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p> {{ 'init_trans_msg'|trans({}, 'translation') }} </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal"> {{ 'cancel'|trans({}, 'translation') }} </button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"> {{ 'confirm'|trans({}, 'translation') }} </button>
                                     </div>
                                 </div>
                             </div>
-                            <div id="TranslatorLockModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Verouillage des modifications</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Vous n'avez pas les droits de verouillage des modifications. Seuls les validateurs finaux peuvent effectuer cette opération.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                                        </div>
+                        </div>
+                        <div id="final_val" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title"> {{ 'confirm_choose_trans'|trans({}, 'translation') }} </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p> {{ 'final_trans_msg'|trans({}, 'translation') }} </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal"> {{ 'cancel'|trans({}, 'translation') }} </button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"> {{ 'confirm'|trans({}, 'translation') }} </button>
                                     </div>
                                 </div>
                             </div>
-                            <div id="TranslatorUnlockModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Déverouillage des modifications</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Vous n'avez pas les droits de déverouillage des modifications. Seuls les validateurs finaux peuvent effectuer cette opération.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
+    </div>
 
 {% endblock %}
 
